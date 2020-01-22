@@ -256,7 +256,7 @@
 {
     user-select: text;
     background-color: white;
-    margin: 0.8em 0 0.8em 0;
+    margin: 12px 0;
 }
 
 #emoji-data-finder-unit .emoji-table .emoji-data
@@ -272,7 +272,8 @@
     font-family: "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Emoji", sans-serif;
     font-size: 72px;
     line-height: 1em;
-    padding: 0.2em;
+    padding: 14px 0;
+    min-width: 100px;
     white-space: nowrap;
 }
 

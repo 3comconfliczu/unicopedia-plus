@@ -635,6 +635,22 @@ function getCharacterData (character)
             break;
         }
     }
+    for (let positionalCategory of extraData.indicPositionalCategories)
+    {
+        if ((parseInt (positionalCategory.first, 16) <= index) && (index <= parseInt (positionalCategory.last, 16)))
+        {
+            characterData.indicPositionalCategory = positionalCategory.property;
+            break;
+        }
+    }
+    for (let syllabicCategory of extraData.indicSyllabicCategories)
+    {
+        if ((parseInt (syllabicCategory.first, 16) <= index) && (index <= parseInt (syllabicCategory.last, 16)))
+        {
+            characterData.indicSyllabicCategory = syllabicCategory.property;
+            break;
+        }
+    }
     let codePoints = unicodeData;
     if (codePoint in codePoints)
     {
@@ -658,7 +674,9 @@ function getCharacterData (character)
         characterData.uppercase = uniHexify (data.uppercase);
         characterData.lowercase = uniHexify (data.lowercase);
         characterData.titlecase = uniHexify (data.titlecase);
-        characterData.foldings =  data.foldings && data.foldings.map (folding => uniHexify (folding));
+        characterData.foldings = data.foldings && data.foldings.map (folding => uniHexify (folding));
+        characterData.joiningType = data.joiningType;
+        characterData.joiningGroup = data.joiningGroup;
     }
     return characterData;
 }

@@ -243,12 +243,15 @@ The following utilities are currently available:
 - In input, more hexadecimal formats are allowed, including Unicode escape sequences, such as `\u611B` or `\u{1F49C}`. Moving out of the field or typing the Enter key converts all valid codes to standard Unicode code point format.
 - Information is provided for the 277,510 assigned characters (or code points) defined in the **Unicode 12.1** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Extra information is also obtained from the following data files:
+    - [ArabicShaping.txt](https://www.unicode.org/Public/UNIDATA/ArabicShaping.txt)
     - [Blocks.txt](https://www.unicode.org/Public/UNIDATA/Blocks.txt)
     - [CaseFolding.txt](https://www.unicode.org/Public/UNIDATA/CaseFolding.txt)
     - [DerivedAge.txt](https://www.unicode.org/Public/UNIDATA/DerivedAge.txt)
     - [DerivedCoreProperties.txt](https://www.unicode.org/Public/UNIDATA/DerivedCoreProperties.txt)
     - [EastAsianWidth.txt](https://www.unicode.org/Public/UNIDATA/EastAsianWidth.txt)
     - [EquivalentUnifiedIdeograph.txt](https://www.unicode.org/Public/UNIDATA/EquivalentUnifiedIdeograph.txt)
+    - [IndicPositionalCategory.txt](https://www.unicode.org/Public/UNIDATA/IndicPositionalCategory.txt)
+    - [IndicSyllabicCategory.txt](https://www.unicode.org/Public/UNIDATA/IndicSyllabicCategory.txt)
     - [LineBreak.txt](https://www.unicode.org/Public/UNIDATA/LineBreak.txt)
     - [NameAliases.txt](https://www.unicode.org/Public/UNIDATA/NameAliases.txt)
     - [PropList.txt](https://www.unicode.org/Public/UNIDATA/PropList.txt)

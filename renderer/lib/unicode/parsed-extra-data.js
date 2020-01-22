@@ -182,6 +182,37 @@ for (let line of lines)
         }
     }
 }
+let indicPositionalCategories = [ ];
+//
+// Copy of https://www.unicode.org/Public/UNIDATA/IndicPositionalCategory.txt
+lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'IndicPositionalCategory.txt'), { encoding: 'ascii' }).split ("\n");
+for (let line of lines)
+{
+    if (line && (line[0] !== "#"))
+    {
+        let found = line.match (/^([0-9a-fA-F]{4,})(?:\.\.([0-9a-fA-F]{4,}))?\s+;\s+(\w+)\s+#/);
+        if (found)
+        {
+            indicPositionalCategories.push ({ first: found[1], last: found[2] || found[1], property: found[3] });
+        }
+    }
+}
+//
+let indicSyllabicCategories = [ ];
+//
+// Copy of https://www.unicode.org/Public/UNIDATA/IndicSyllabicCategory.txt
+lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'IndicSyllabicCategory.txt'), { encoding: 'ascii' }).split ("\n");
+for (let line of lines)
+{
+    if (line && (line[0] !== "#"))
+    {
+        let found = line.match (/^([0-9a-fA-F]{4,})(?:\.\.([0-9a-fA-F]{4,}))?\s+;\s+(\w+)\s+#/);
+        if (found)
+        {
+            indicSyllabicCategories.push ({ first: found[1], last: found[2] || found[1], property: found[3] });
+        }
+    }
+}
 //
 module.exports =
 {
@@ -195,6 +226,8 @@ module.exports =
     equivalentUnifiedIdeographs,
     eastAsianWidths,
     verticalOrientations,
-    lineBreaks
+    lineBreaks,
+    indicPositionalCategories,
+    indicSyllabicCategories
 };
 //

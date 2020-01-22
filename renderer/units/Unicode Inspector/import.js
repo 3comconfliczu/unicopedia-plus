@@ -233,6 +233,10 @@ module.exports.start = function (context)
                         { name: "East Asian Width", value: data.eastAsianWidth },
                         { name: "Vertical Orientation", value: data.verticalOrientation },
                         { name: "Equivalent Unified Ideograph", value: data.equivalentUnifiedIdeograph },
+                        { name: "Joining Type", value: data.joiningType },
+                        { name: "Joining Group", value: data.joiningGroup },
+                        { name: "Indic Positional Category", value: data.indicPositionalCategory },
+                        { name: "Indic Syllabic Category", value: data.indicSyllabicCategory },
                         { name: "Core Properties", value: data.coreProperties },
                         { name: "Extended Properties", value: data.extendedProperties },
                         { name: "Emoji Properties", value: data.emojiProperties }

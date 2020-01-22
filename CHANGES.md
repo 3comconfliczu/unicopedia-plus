@@ -1,6 +1,13 @@
-# Release Notes
+# Release notes
 
-This project adheres to [Semantic Versioning](https://semver.org/).
+This project adheres to [Semantic Versioning](http://semver.org/).
+
+## 6.2.3
+
+- Added release notes (CHANGES.md).
+- Improved layout of emoji in the **Emoji Data Finder** utility.
+- Added support for 4 Unicode properties: `Joining Type`, `Joining Group`, `Indic Positional Category`, `Indic Syllabic Category` to the **Unicode Inspector** utilty. 
+- Fixed incorrect build on `win32` by temporarily removing the `--asar` option of the `electron-packager` command.
 
 ## 6.2.2
 

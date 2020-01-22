@@ -213,5 +213,37 @@ for (let line of lines)
     }
 }
 //
+const joiningTypes =
+{
+    "R": "Right_Joining",
+    "L": "Left_Joining",
+    "D": "Dual_Joining",
+    "C": "Join_Causing",
+    "U": "Non_Joining",
+    "T": "Transparent"
+};
+//
+function snakeCasify (string)
+{
+    return string.split (/[ _]/).map (w => w[0].toUpperCase () + w.substr (1).toLowerCase ()).join ("_");
+}
+//
+// Copy of https://www.unicode.org/Public/UNIDATA/ArabicShaping.txt
+lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'ArabicShaping.txt'), { encoding: 'ascii' }).split ("\n");
+for (let line of lines)
+{
+    if (line && (line[0] !== "#"))
+    {
+        let fields = line.split (";");
+        let code = fields[0].trim ();
+        // let name = fields[1].trim ();
+        let joiningType = fields[2].trim ();
+        let joiningGroup = fields[3].trim ();
+        let data = codePoints[`U+${code}`];
+        data.joiningType = joiningTypes[joiningType];
+        data.joiningGroup = snakeCasify (joiningGroup);
+    }
+}
+//
 module.exports = codePoints;
 //
