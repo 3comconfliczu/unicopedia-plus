@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.3.0
+
+- Fixed unsuccessful run of app (after *start* or *build* of downloaded source code) on several platforms, by changing incorrectly synchronized directory name on GitHub repository: `cldr` -> `CLDR` (uppercase).
+- Restored the `--asar` option of the `electron-packager` command for all platforms in the `package.json` file.
+- Updated `Electron` to version `7.1.10`.
+
 ## 6.2.3
 
 - Added release notes (CHANGES.md).
