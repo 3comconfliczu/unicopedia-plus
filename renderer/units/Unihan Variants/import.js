@@ -178,10 +178,13 @@ module.exports.start = function (context)
     let variantTags =
     [
         'kCompatibilityVariant',
-        'kSemanticVariant',
+        //
         'kSimplifiedVariant',
-        'kSpecializedSemanticVariant',
         'kTraditionalVariant',
+        //
+        'kSemanticVariant',
+        'kSpecializedSemanticVariant',
+        //
         'kZVariant'
     ];
     //
@@ -247,8 +250,8 @@ module.exports.start = function (context)
         'kSimplifiedVariant': " Simplified ",
         'kSpecializedSemanticVariant': " Specialized ",
         'kTraditionalVariant': " Traditional ",
-        'kZVariant': " Shape ",
-        'kYasuokaVariant': " Yasuoka "
+        'kYasuokaVariant': " Yasuoka ",
+        'kZVariant': " Shape "
     };
     //
     let dotString;

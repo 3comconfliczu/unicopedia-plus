@@ -67,28 +67,29 @@
 {
     display: flex;
     align-items: center;
-    vertical-align: middle;
     height: 48px;
     font-size: 36px;
     line-height: 1em;
     background-color: white;
     border: 1px solid var(--color-border);
     user-select: text;
-    padding: 0 6px;
 }
 
 #unihan-variants-unit .linear-character
 {
     min-width: 48px;
     width: 48px;
+    border-width: 2px;
+    justify-content: center;
 }
 
 #unihan-variants-unit .linear-variants
 {
     width: 100%;
-    margin-left: 0.5em;
+    margin-left: 0.333em;
     white-space: nowrap;
     overflow: hidden;
+    padding: 0 6px;
 }
 
 #unihan-variants-unit .options

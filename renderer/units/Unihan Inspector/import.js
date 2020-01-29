@@ -541,11 +541,11 @@ module.exports.start = function (context)
                      unified.push (String.fromCodePoint (parseInt (unicodeData.decomposition.replace ("U+", ""), 16)));
                 }
                 let compatibility = compatibilityVariants[character] || [ ];
+                let simplified = getVariants (character, 'kSimplifiedVariant');
+                let traditional = getVariants (character, 'kTraditionalVariant');
                 let semantic = getVariants (character, 'kSemanticVariant');
                 let specialized = getVariants (character, 'kSpecializedSemanticVariant');
                 let shape = getVariants (character, 'kZVariant');
-                let simplified = getVariants (character, 'kSimplifiedVariant');
-                let traditional = getVariants (character, 'kTraditionalVariant');
                 let yasuoka = getYasuokaVariants (character).filter (variant => filterRegex.test (variant));
                 let unihanFields =
                 [
@@ -554,14 +554,18 @@ module.exports.start = function (context)
                     { name: "Radical/Strokes", value: rsValues, class: rsClasses },
                     { name: "Definition", value: definitionValue },
                     { name: "Numeric Value", value: numericValue },
-                    // null,
+                    //
                     { name: "Unified Variant", value: unified.join (" ") },
                     { name: "Compatibility Variants", value: compatibility.join (" ") },
-                    { name: "Semantic Variants", value: semantic.join (" ") },
-                    { name: "Specialized Variants", value: specialized.join (" ") },
-                    { name: "Shape (Z-) Variants", value: shape.join (" ") },
+                    //
                     { name: "Simplified Variants", value: simplified.join (" ") },
                     { name: "Traditional Variants", value: traditional.join (" ") },
+                    //
+                    { name: "Semantic Variants", value: semantic.join (" ") },
+                    { name: "Specialized Variants", value: specialized.join (" ") },
+                    //
+                    { name: "Shape (Z-) Variants", value: shape.join (" ") },
+                    //
                     { name: "Yasuoka Variants", value: yasuoka.join (" ") }
                 ];
                 appendFields (unihanInfo, unihanFields);

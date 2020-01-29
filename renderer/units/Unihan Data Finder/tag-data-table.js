@@ -1,8 +1,8 @@
 //
-const deferredSymbols = (process.platform === 'darwin');
-//
 const regexUnicode = require ('../../lib/regex-unicode.js');
 const unicode = require ('../../lib/unicode/unicode.js');
+//
+const deferredSymbols = (process.platform === 'darwin');
 //
 module.exports.create = function (characterInfos, params)
 {

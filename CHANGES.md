@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.4.0
+
+- Updated release notes (CHANGES.md).
+- Reordered variant relations by logical groups in the **Unihan Variants** utility.
+- Improved linear layout and used thicker border for looked up character in the **Unihan Variants** utility.
+
 ## 6.3.0
 
 - Fixed unsuccessful run of app (after *start* or *build* of downloaded source code) on several platforms, by changing incorrectly synchronized directory name on GitHub repository: `cldr` -> `CLDR` (uppercase).
@@ -17,29 +23,29 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 6.2.2
 
-- Fixed missing handling of `Save Results...` in the `Unihan Radical-Strokes` utility.
+- Fixed missing handling of `Save Results...` in the **Unihan Radical-Strokes** utility.
 
 ## 6.2.1
 
-- Allowed alt-click as an alternative to shift-click in the `CJK Font Variants` utility.
-- Added a hidden "save DOT source" debug feature to the `Unihan Variants` utility.
+- Allowed alt-click as an alternative to shift-click in the **CJK Font Variants** utility.
+- Added a hidden "save DOT source" debug feature to the **Unihan Variants** utility.
 - Updated instructions.
 
 ## 6.2.0
 
-- Added the full list of radical-strokes combinations as tooltip to each Unihan character listed in the `Unihan Radical-Strokes` utility.
-- Added the detailed list of code points with Unicode names as tooltip to each emoji listed in the `Emoji Data Finder` utility.
+- Added the full list of radical-strokes combinations as tooltip to each Unihan character listed in the **Unihan Radical-Strokes** utility.
+- Added the detailed list of code points with Unicode names as tooltip to each emoji listed in the **Emoji Data Finder** utility.
 
 ## 6.1.0
 
-- Added a "Save as SVG" feature to the `Unihan Variants` utility.
+- Added a "Save as SVG" feature to the **Unihan Variants** utility.
 - Updated instructions and screenshots accordingly.
 
 ## 6.0.0
 
-- Added a new `Unihan Variants` utility.
+- Added a new **Unihan Variants** utility.
 - Updated screenshots, instructions and `README.md` file accordingly.
-- Improved horizontal centering of Unihan characters in the `View by Grid` feature of the `Unihan Data Finder` utility.
+- Improved horizontal centering of Unihan characters in the **View by Grid** feature of the **Unihan Data Finder** utility.
 - Enabled opening of external links in SVG graphs.
 - Updated `Electron` to version `7.1.9`.
 - Updated `Electron Packager` to version `14.2.0`.
@@ -143,7 +149,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 - Added new CJK samples.
 - Improved support for `Emoji 12.1`.
-- Added separator lines for non compact layout in the `Radical/Strokes` feature of the `Unihan Data Finder` utility.
+- Added separator lines for non compact layout in the **Radical/Strokes** feature of the **Unihan Data Finder** utility.
 - Updated `Electron` to version `7.1.1`.
 
 ## 5.12.0
@@ -197,7 +203,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 5.9.0
 
-- Improved the results of the **Find by Tag Value** feature of the **Unihan Data Finder**: display all values, with non-matching ones grayed out.
+- Improved the results of the **Find by Tag Value** feature of the **Unihan Data Finder** utility: display all values, with non-matching ones grayed out.
 - Updated screenshot.
 - Fixed incorrect build date in About dialog.
 - Updated `Electron` to version `6.0.10`.
@@ -390,9 +396,9 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 4.6.0
 
-- Added Compact Layout option to the **Radical/Strokes** feature of the **Unihan Data Finder** utility.
+- Added `Compact Layout` option to the **Radical/Strokes** feature of the **Unihan Data Finder** utility.
 - Removed pointless codes info for lone surrogates in the **Unicode Inspector** utility.
-- Renamed Developer category to Common.
+- Renamed `Developer` category to `Common`.
 
 ## 4.5.5
 
@@ -416,13 +422,13 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 4.3.0
 
-- Added Unicode sample script: **Write Parsed Numeric Values Data to File**
-- Added Unihan sample scripts: **Detect Misclassified Compatibility Ideographs** and **Write Unihan Compatibility Variants to File**
-- Improved layout of emoji data table in the **Emoji Data Finder** utility
-- Added numeric value field and CJK Numerals samples to the **Unicode Inspector** utility
-- Reordered normalization forms in the **Unicode Normalizer** utility
-- Added Unihan numeric value and compatibility variants infos to the **Unihan Inspector** utility
-- Updated `Electron` to version `4.1.4`
+- Added Unicode sample script: `Write Parsed Numeric Values Data to File`.
+- Added Unihan sample scripts: `Detect Misclassified Compatibility Ideographs` and `Write Unihan Compatibility Variants to File`.
+- Improved layout of emoji data table in the **Emoji Data Finder** utility.
+- Added numeric value field and CJK Numerals samples to the **Unicode Inspector** utility.
+- Reordered normalization forms in the **Unicode Normalizer** utility.
+- Added Unihan numeric value and compatibility variants infos to the **Unihan Inspector** utility.
+- Updated `Electron` to version `4.1.4`.
 
 ## 4.2.0
 
