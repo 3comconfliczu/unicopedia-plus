@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.4.1
+
+- Improved copy to clipboard of both linear fields (looked up character and its variants) in the **Unihan Variants** utility: used tab separator instead of line break.
+- Added new Unihan reference link.
+- Updated `Electron` to version `7.1.11`.
+
 ## 6.4.0
 
 - Updated release notes (CHANGES.md).

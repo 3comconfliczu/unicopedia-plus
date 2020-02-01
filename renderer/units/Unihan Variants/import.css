@@ -57,39 +57,51 @@
 
 #unihan-variants-unit .linear-wrapper
 {
-    display: flex;
-    align-items: center;
     margin: 1.25em 0 1em 0;
+    background: none;
+    border: none;
 }
 
-#unihan-variants-unit .linear-character,
-#unihan-variants-unit .linear-variants
+#unihan-variants-unit .linear-row
 {
-    display: flex;
-    align-items: center;
-    height: 48px;
     font-size: 36px;
     line-height: 1em;
-    background-color: white;
-    border: 1px solid var(--color-border);
+    vertical-align: middle;
+    height: 48px;
     user-select: text;
 }
 
 #unihan-variants-unit .linear-character
 {
-    min-width: 48px;
+    background-color: white;
+    border: 2px solid var(--color-border);
+    text-align: center;
+    vertical-align: middle;
     width: 48px;
-    border-width: 2px;
-    justify-content: center;
+    min-width: 48px;
 }
 
 #unihan-variants-unit .linear-variants
 {
+    background-color: white;
+    border: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: middle;
     width: 100%;
-    margin-left: 0.333em;
     white-space: nowrap;
     overflow: hidden;
     padding: 0 6px;
+}
+
+#unihan-variants-unit .linear-gap
+{
+    width: 12px;
+    min-width: 12px;
+    vertical-align: middle;
+    background: none;
+    border: none;
+    visibility: hidden;
+    user-select: none;
 }
 
 #unihan-variants-unit .options

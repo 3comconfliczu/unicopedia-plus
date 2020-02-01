@@ -291,14 +291,11 @@ module.exports.start = function (context)
             }
             unihanHistoryIndex = -1;
             unihanHistorySave = null;
-            let symbols = document.createElement ('div');
-            symbols.className = 'symbols';
             let symbol = document.createElement ('span');
             symbol.className = 'symbol';
             symbol.title = getTooltip (character);
             symbol.textContent = character;
-            symbols.appendChild (symbol);
-            linearCharacter.appendChild (symbols);
+            linearCharacter.appendChild (symbol);
             let relations = getVariantRelations (character);
             // console.log (relations);
             let variants = [ ];
@@ -317,17 +314,14 @@ module.exports.start = function (context)
             // console.log (variants);
             if (variants.length > 0)
             {
-                let symbols = document.createElement ('div');
-                symbols.className = 'symbols';
                 for (let variant of variants)
                 {
                     let symbol = document.createElement ('span');
                     symbol.className = 'symbol';
                     symbol.title = getTooltip (variant);
                     symbol.textContent = variant;
-                    symbols.appendChild (symbol);
+                    linearVariants.appendChild (symbol);
                 }
-                linearVariants.appendChild (symbols);
             }
             try
             {
