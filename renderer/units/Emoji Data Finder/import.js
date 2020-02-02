@@ -130,6 +130,25 @@ module.exports.start = function (context)
     //
     const cldrAnnotations = require ('../../lib/unicode/get-cldr-annotations.js') ("en.xml");
     //
+    const emojiGroups = require ('emoji-test-groups');
+    //
+    const emojiIndices = { };
+    //
+    for (let groupIndex = 0; groupIndex < emojiGroups.length; groupIndex++)
+    {
+        let group = emojiGroups[groupIndex];
+        let subgroups = group.subgroups;
+        for (let subgroupIndex = 0; subgroupIndex < subgroups.length; subgroupIndex++)
+        {
+            let subgroup = subgroups[subgroupIndex];
+            let characters = subgroup.characters;
+            for (let character of characters)
+            {
+                emojiIndices[character] = [ groupIndex, subgroupIndex ];
+            }
+        }
+    }
+    //
     function getTooltip (emoji)
     {
         let tooltip = [ ];
@@ -250,6 +269,10 @@ module.exports.start = function (context)
             codes.textContent = getEmojiCodePoints (character);
             codes.title = getTooltip (character);
             codesData.appendChild (codes);
+            let [ groupIndex, subgroupIndex ] = emojiIndices[emojiList[character].toFullyQualified || character];
+            let group = emojiGroups[groupIndex].name;
+            let subgroup = emojiGroups[groupIndex].subgroups[subgroupIndex].name;
+            let age = emojiList[character].age;
             let status;
             if (emojiList[character].isComponent)
             {
@@ -263,8 +286,7 @@ module.exports.start = function (context)
             {
                 status = "Fully Qualified (Keyboard/Palette)";
             }
-            let age = emojiList[character].age;
-            emojiTable.title = `Age: Emoji ${age} (${versionDates[age]})\nStatus: ${status}`;
+            emojiTable.title = `Group: ${group}\nSubgroup: ${subgroup}\nAge: Emoji ${age} (${versionDates[age]})\nStatus: ${status}`;
             if (emojiList[character].toFullyQualified)
             {
                 emoji.classList.add ('non-fully-qualified');
@@ -615,11 +637,72 @@ module.exports.start = function (context)
         }
     );
     //
-    const samples = require ('./samples.json');
+    let samples = require ('./samples.json');
+    //
+    samples.push (null);    // Separator
+    //
+    let statusSample = { label: "Status Types" };
+    statusSample.items =
+    [
+        {
+            label: "All Emoji",
+            string: Object.keys (emojiList).join ("")
+        },
+        {
+            label: "Component Emoji",
+            string: Object.keys (emojiList).filter (emoji => emojiList[emoji].isComponent).join ("")
+        },
+        {
+            label: "Display/Process Emoji",
+            string: Object.keys (emojiList).filter (emoji => emojiList[emoji].toFullyQualified).join ("")
+        },
+        {
+            label: "Keyboard/Palette Emoji",
+            string: Object.keys (emojiList).filter (emoji => !(emojiList[emoji].toFullyQualified || emojiList[emoji].isComponent)).join ("")
+        }
+    ];
+    samples.push (statusSample);
+    //
+    samples.push (null);    // Separator
+    //
+    let sortGroups = true;
+    //
+    let groupSamples = [ ];
+    function mapAllEmoji (emoji)
+    {
+        let allEmoji = emoji;
+        let nonFullyQualifiedEmoji = emojiList[emoji].toNonFullyQualified;
+        if (nonFullyQualifiedEmoji)
+        {
+            for (let emoji of nonFullyQualifiedEmoji)
+            {
+                allEmoji += emoji;
+            }
+        }
+        return allEmoji;
+    }
+    for (let group of emojiGroups)
+    {
+        let groupSample = { label: group.name };
+        groupSample.items = [ ];
+        for (let subgroup of group.subgroups)
+        {
+            groupSample.items.push ({ label: subgroup.name, string: subgroup.characters.map (mapAllEmoji).join ("") });
+        }
+        if (sortGroups)
+        {
+            groupSample.items.sort ((a, b) => a.label.localeCompare (b.label));
+        }
+        groupSamples.push (groupSample);
+    }
+    if (sortGroups)
+    {
+        groupSamples.sort ((a, b) => a.label.localeCompare (b.label));
+    }
     //
     let emojiMenu = sampleMenus.makeMenu
     (
-        samples,
+        [...samples, ...groupSamples],
         (sample) =>
         {
             textInputString.value = sample.string;

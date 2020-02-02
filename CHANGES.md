@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.4.2
+
+- Added emoji groups and subgroups to samples and tooltips of the **Emoji Data Finder** utility.
+
 ## 6.4.1
 
 - Improved copy to clipboard of both linear fields (looked up character and its variants) in the **Unihan Variants** utility: used tab separator instead of line break.
