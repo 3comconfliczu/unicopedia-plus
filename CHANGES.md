@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.5.0
+
+- Added standardized variation sequence of CJK compatibility characters in the **Unicode Inspector** and **Unihan Inspector** utilities.
+- Updated samples (`IVD Sequences` and `Standardized Variations`) of the **CJK Font Variants** utility.
+- Revamped the zoom level actions (`Actual Size`, `Zoom In`, `Zoom Out`) of the `View` menu.
+- Updated `Electron` to version `8.0.0`.
+
 ## 6.4.2
 
 - Added emoji groups and subgroups to samples and tooltips of the **Emoji Data Finder** utility.

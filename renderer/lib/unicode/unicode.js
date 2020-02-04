@@ -666,6 +666,7 @@ function getCharacterData (character)
         characterData.combining = combiningClasses[data.combining];
         characterData.bidi = bidiClasses[data.bidi];
         characterData.decomposition = uniHexify (data.decomposition);
+        characterData.standardizedVariation = data.standardizedVariation && uniHexify (data.standardizedVariation);
         characterData.decimal = data.decimal;
         characterData.digit = data.digit;
         characterData.numeric = data.numeric;

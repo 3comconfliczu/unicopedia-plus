@@ -186,6 +186,8 @@ module.exports.start = function (context)
                     cell.className = 'properties';
                     let name = data.name || "<unassigned>"; // "UNASSIGNED CHARACTER"
                     let age = data.age && `Unicode ${data.age} (${data.ageDate})`;
+                    let standardizedVariation = data.standardizedVariation;
+                    standardizedVariation = standardizedVariation && standardizedVariation.replace (" ", "\xA0");
                     let numericType = "";
                     let numericValue = "";
                     if (data.numeric)
@@ -223,6 +225,7 @@ module.exports.start = function (context)
                         { name: "Bidirectional Class", value: data.bidi },
                         { name: "Mirrored", value: data.mirrored },
                         { name: "Decomposition", value: data.decomposition },
+                        { name: "Standardized Variation", value: standardizedVariation },
                         { name: "Uppercase", value: data.uppercase },
                         { name: "Lowercase", value: data.lowercase },
                         { name: "Titlecase", value: data.titlecase },

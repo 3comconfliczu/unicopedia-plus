@@ -245,5 +245,24 @@ for (let line of lines)
     }
 }
 //
+// Copy of https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt
+lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'StandardizedVariants.txt'), { encoding: 'ascii' }).split ("\n");
+for (let line of lines)
+{
+    if (line && (line[0] !== "#"))
+    {
+        let fields = line.split (";");
+        let codes = fields[0].trim ();
+        let description = fields[1].trim ();
+        let found = description.match (/^CJK COMPATIBILITY IDEOGRAPH-([0-9A-F]{4,5})$/u);
+        if (found)
+        {
+            code = found[1];
+            let data = codePoints[`U+${code}`];
+            data.standardizedVariation = codes;
+        }
+    }
+}
+//
 module.exports = codePoints;
 //

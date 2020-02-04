@@ -413,8 +413,10 @@ module.exports.start = function (context)
                 unihanWrapper.appendChild (unihanRadicalTag);
             }
             //
-            let unicodeData = unicode.getCharacterData (unihanCharacter.textContent);
+            let unicodeData = unicode.getCharacterData (character);
             let age = unicodeData.age && `Unicode ${unicodeData.age} (${unicodeData.ageDate})`;
+            let standardizedVariation = unicodeData.standardizedVariation;
+            standardizedVariation = standardizedVariation && standardizedVariation.replace (" ", "\xA0");
             let numericType = "";
             if (unicodeData.numeric)
             {
@@ -439,6 +441,7 @@ module.exports.start = function (context)
                 { name: "General Category", value: unicodeData.category },
                 { name: "Extended Properties", value: unicodeData.extendedProperties },
                 { name: "Decomposition", value: unicodeData.decomposition },
+                { name: "Standardized Variation", value: standardizedVariation },
                 { name: "Equivalent Unified Ideograph", value: unicodeData.equivalentUnifiedIdeograph },
                 { name: numericType, value: unicodeData.numeric }
             ];
@@ -459,14 +462,10 @@ module.exports.start = function (context)
                     let value = document.createElement ('span');
                     value.className = 'value';
                     let text = Array.isArray (unicodeField.value) ? unicodeField.value.join (", ") : unicodeField.value;
+                    value.textContent = text;
                     if (unicodeField.toolTip)
                     {
-                        value.textContent = text;
                         value.title = unicodeField.toolTip;
-                    }
-                    else
-                    {
-                        appendTextWithLinks (value, text);
                     }
                     field.appendChild (value);
                     unicodeInfo.appendChild (field);

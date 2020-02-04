@@ -136,6 +136,10 @@
                 "string": "龍󠄀龍󠄁龍󠄂"
             },
             {
+                "label": "Joyful",
+                "string": "㐂󠄀㐂󠄁㐂󠄂"
+            },
+            {
                 "label": "Noble",
                 "string": "卿󠄀卿󠄁卿󠄂"
             },
@@ -282,20 +286,20 @@
         ]
     },
     {
-        "label": "Standardized Variants",
+        "label": "Standardized Variations",
         "items":
         [
             {
                 "label": "Han",
-                "string": "漢漢︀漢漢︁漢"
+                "string": "漢漢︀漢漢︁"
             },
             {
                 "label": "Lord",
-                "string": "卿卿︀卿卿︁卿卿︂卿"
+                "string": "卿卿︀卿卿︁卿卿︂"
             },
             {
                 "label": "Turtle",
-                "string": "龜龜︀龜龜︁龜龜︂龜"
+                "string": "龜龜︀龜龜︁龜龜︂"
             },
             {
                 "label": "Punctuation",
