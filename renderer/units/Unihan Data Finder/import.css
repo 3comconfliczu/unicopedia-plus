@@ -544,6 +544,11 @@
     background-color: var(--color-highlight);
 }
 
+#unihan-data-finder-unit .view-by-grid .search-data td.symbol-cell.misclassified
+{
+    background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.9));
+}
+
 #unihan-data-finder-unit .instructions ul
 {
     margin: -0.5em 0 1em 0;

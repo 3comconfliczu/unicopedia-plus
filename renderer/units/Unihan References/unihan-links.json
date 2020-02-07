@@ -227,8 +227,42 @@
     ],
     [
         {
+            "name": "CJK Compatibility Ideographs",
+            "href": "https://blogs.adobe.com/CCJKType/2012/03/cjk-compatibility-ideographs.html"
+        },
+        {
+            "name": "Standardized Variants—Part 1",
+            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants.html"
+        },
+        {
+            "name": "Standardized Variants—Part 2",
+            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants-2.html"
+        },
+        {
+            "name": "Standardized Variants—Part 3",
+            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants-3.html"
+        },
+        {
+            "name": "Standardized Variants—Part 4",
+            "href": "https://blogs.adobe.com/CCJKType/2013/09/standardized-variants-4.html"
+        },
+        {
             "name": "Unicode Version 11.0 CJK Unified Ideographs & CJK Compatibility Ideographs (Version 2018-06-05) - ideographs-unicode-11.pdf",
             "href": "https://blogs.adobe.com/CCJKType/files/2018/06/ideographs-unicode-11.pdf"
+        }
+    ],
+    [
+        {
+            "name": "Stabilizing CJK Compatibility Ideographs through the use of Standardized Variants (WG2 N4246R2) - n4246.pdf",
+            "href": "https://www.unicode.org/wg2/docs/n4246.pdf"
+        },
+        {
+            "name": "Preserving round-trip integrity of CJK compatibility ideographs - n4247.pdf",
+            "href": "https://www.unicode.org/wg2/docs/n4247.pdf"
+        },
+        {
+            "name": "Response to WG2 N4247 (Preserving round-trip integrity of CJK compatibility ideographs) - n4309.pdf",
+            "href": "https://www.unicode.org/wg2/docs/n4309.pdf"
         }
     ],
     [

@@ -257,6 +257,7 @@ The following utilities are currently available:
     - [PropList.txt](https://www.unicode.org/Public/UNIDATA/PropList.txt)
     - [Scripts.txt](https://www.unicode.org/Public/UNIDATA/Scripts.txt)
     - [ScriptExtensions.txt](https://www.unicode.org/Public/UNIDATA/ScriptExtensions.txt)
+    - [StandardizedVariants.txt](https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt)
     - [VerticalOrientation.txt](https://www.unicode.org/Public/UNIDATA/VerticalOrientation.txt)
     - [emoji-data.txt](https://www.unicode.org/Public/emoji/12.1/emoji-data.txt)
 
@@ -356,7 +357,7 @@ The following utilities are currently available:
     - *Unihan_Variants.txt*
 - Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the list of Unihan tags.
 - In addition, the utility provides, for each Unihan character:
-    - basic Unicode information: name, age, plane, block, script, script extensions, general category, extended properties, decomposition, equivalent unified ideograph, numeric value;
+    - basic Unicode information: name, age, plane, block, script, script extensions, general category, extended properties, decomposition, standardized variation, equivalent unified ideograph, numeric value;
     - basic Unihan information: set (IICore or full), status (unified or compatibility ideograph), radical/strokes, definition, numeric value, variant characters.
 - Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.

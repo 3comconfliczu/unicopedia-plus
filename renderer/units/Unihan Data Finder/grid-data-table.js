@@ -102,7 +102,12 @@ module.exports.create = function (characters, params, highlightedCharacter)
             symbol.className = 'symbol';
             if (unihanRegex.test (character))
             {
-                let status = unifiedRegex.test (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+                let isUnified = unifiedRegex.test (character);
+                let status = isUnified ? "Unified Ideograph" : "Compatibility Ideograph";
+                if (isUnified && /[\uF900-\uFAFF]/.test (character))
+                {
+                    symbolCell.classList.add ('misclassified');
+                }
                 symbolCell.title = `Code Point: ${data.codePoint}\nAge: Unicode ${data.age} (${data.ageDate})\nStatus: ${status}`;
                 if (deferredSymbols)
                 {

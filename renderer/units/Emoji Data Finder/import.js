@@ -214,9 +214,9 @@ module.exports.start = function (context)
         return emojiBySequence;
     }
     //
-    // https://unicode.org/emoji/charts/emoji-versions.html
-    // http://www.unicode.org/reports/tr51/#Versioning
-    // https://unicode.org/Public/emoji/
+    // https://www.unicode.org/emoji/charts/emoji-versions.html
+    // https://www.unicode.org/reports/tr51/#Versioning
+    // https://www.unicode.org/Public/emoji/
     const versionDates =
     {
         "0.0": "Date Unknown",

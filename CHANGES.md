@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.5.1
+
+- Added faint highlighted style to the 12 misclassified CJK *Unified* Ideographs belonging to the CJK *Compatibility* Ideograph block in the **View by Grid** feature of the **Unihan Data Finder** utility.
+- Removed max length restriction of input field in the **Filter Text** feature of the **Emoji Data Finder** utility.
+- Updated instructions, reference links, and regex example.
+
 ## 6.5.0
 
 - Added standardized variation sequence of CJK compatibility characters to the **Unicode Inspector** and **Unihan Inspector** utilities.
@@ -126,7 +132,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 - Fixed incorrect display of age information in specific cases.
 - Fixed missing non-character information for plane 16 private use characters.
-- Added regex example to the **Match Character** feature of the **Unicode Data Finder** utility, for the total of 137,929 Unicode characters defined in [Unicode 12.1](https://unicode.org/versions/Unicode12.1.0/).
+- Added regex example to the **Match Character** feature of the **Unicode Data Finder** utility, for the total of 137,929 Unicode characters defined in [Unicode 12.1](https:/www.unicode.org/versions/Unicode12.1.0/).
 
 ## 5.15.0
 

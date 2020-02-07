@@ -65,7 +65,7 @@ const categories =
     "C": "Other"                        // Cc | Cf | Cs | Co | Cn
 };
 //
-// https://unicode.org/reports/tr44/#CCC_Values_Table
+// https://www.unicode.org/reports/tr44/#CCC_Values_Table
 // https://www.unicode.org/Public/UNIDATA/extracted/DerivedCombiningClass.txt
 const combiningClasses =
 {
@@ -132,7 +132,7 @@ const combiningClasses =
     "240": "Iota_Subscript"         // Greek iota subscript only
 };
 //
-// https://unicode.org/reports/tr44/#BC_Values_Table
+// https://www.unicode.org/reports/tr44/#BC_Values_Table
 // https://www.unicode.org/Public/UNIDATA/extracted/DerivedBidiClass.txt
 const bidiClasses =
 {

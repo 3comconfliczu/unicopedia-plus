@@ -136,7 +136,7 @@
         },
         {
             "name": "NamedSequences.txt",
-            "href": "https://unicode.org/Public/UNIDATA/NamedSequences.txt"
+            "href": "https://www.unicode.org/Public/UNIDATA/NamedSequences.txt"
         }
     ],
     [
@@ -220,7 +220,7 @@
         },
         {
             "name": "FAQ - Variation Sequences",
-            "href": "https://unicode.org/faq/vs.html"
+            "href": "https://www.unicode.org/faq/vs.html"
         },
         {
             "name": "FAQ - Characters and Combining Marks",
