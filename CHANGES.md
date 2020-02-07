@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 6.5.1
 
-- Added faint highlighted style to the 12 misclassified CJK *Unified* Ideographs belonging to the CJK *Compatibility* Ideograph block in the **View by Grid** feature of the **Unihan Data Finder** utility.
+- Added faint highlighted style to the 12 misclassified CJK *Unified* Ideographs belonging to the CJK *Compatibility* Ideographs block in the **View by Grid** feature of the **Unihan Data Finder** utility.
 - Removed max length restriction of input field in the **Filter Text** feature of the **Emoji Data Finder** utility.
 - Updated instructions, reference links, and regex example.
 
