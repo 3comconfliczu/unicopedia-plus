@@ -344,6 +344,8 @@ The following utilities are currently available:
 
 <img src="screenshots/unihan-data-finder-view-by-grid.png" width="1080px" alt="Unihan Data Finder - View by Grid screenshot">
 
+<img src="screenshots/unihan-data-finder-view-by-grid-misclassified.png" width="1080px" alt="Unihan Data Finder - View by Grid (Misclassified) screenshot">
+
 ## Unihan Inspector
 
 - The **Unihan Inspector** utility displays all available Unihan tags for each of the 88,889 Unihan characters defined in  the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
