@@ -132,7 +132,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 - Fixed incorrect display of age information in specific cases.
 - Fixed missing non-character information for plane 16 private use characters.
-- Added regex example to the **Match Character** feature of the **Unicode Data Finder** utility, for the total of 137,929 Unicode characters defined in [Unicode 12.1](https:/www.unicode.org/versions/Unicode12.1.0/).
+- Added regex example to the **Match Character** feature of the **Unicode Data Finder** utility, for the total of 137,929 Unicode characters defined in [Unicode 12.1](https://www.unicode.org/versions/Unicode12.1.0/).
 
 ## 5.15.0
 
