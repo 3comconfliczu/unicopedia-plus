@@ -117,6 +117,7 @@
                         <li><code>^(?=.*katakana)(?=.*\ba\b)</code><br>Characters whose name contains both "katakana" and whole-word "a"</li>
                         <li><code>^(?=.*bamboo)(?!.*radical)</code><br>Characters whose name contains "bamboo" but not "radical"</li>
                         <li><code>\b\w+boat\b</code><br>Characters whose name contains words ending with "boat", but are not "boat"</li>
+                        <li><code>.{72,}</code><br>Characters whose name's length is greater than or equal to 72</li>
                     </ul>
                 </details>
             </div>
@@ -145,9 +146,10 @@
                     <summary>Regex Examples</summary>
                     <p><span class="match-decomposition off"><svg><use href="/images/search.svg#match-decomposition-icon"></use></svg></span> (<em>Match Decomposition</em>) toggled <strong>off</strong>:</p>
                     <ul>
+                        <li><code>\p{White_Space}</code><br>Characters with the 'White_Space' binary property</li>
                         <li><code>\s</code><br>Characters considered white space in Unicode by the regular expression engine</li>
                         <li><code>(?!.)[^]</code> or <code>(?!.)[\s\S]</code><br>Characters considered line terminators in Unicode by the regular expression engine</li>
-                        <li><code>\p{White_Space}</code><br>Characters with the 'White_Space' binary property</li>
+                        <li><code>.*</code> or <code>[^]</code> or <code>\p{Assigned}</code><br>All assigned Unicode characters</li>
                         <li><code>\p{Private_Use}</code><br>Characters with the 'General_Category' property equal to 'Private_Use'</li>
                         <li><code>\P{Private_Use}</code> or <code>[^\p{Private_Use}]</code><br>Characters without the 'General_Category' property equal to 'Private_Use'</li>
                         <li><code>(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code> or <code>[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 137,929 Unicode characters defined in <a href="https://www.unicode.org/versions/Unicode12.1.0/">Unicode 12.1</a>.</li>

@@ -192,6 +192,7 @@
                     <summary>Regex Examples</summary>
                     <p><span class="match-variants off"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>off</strong>:</p>
                     <ul>
+                        <li><code>.</code> or <code>\p{Assigned}</code><br>All Unihan characters</li>
                         <li><code>\p{Unified_Ideograph}</code><br>Unihan characters with the 'unified ideograph' status</li>
                         <li><code>[^\p{Unified_Ideograph}]</code> or <code>\P{Unified_Ideograph}</code><br>Unihan characters with the 'compatibility ideograph' status</li>
                         <li><code>(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code><br>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead</li>

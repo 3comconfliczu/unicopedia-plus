@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.5.2
+
+- Updated CJK reference links.
+- Updated Unicode and Unihan regex examples.
+- Updated `Electron` to version `8.0.1`.
+- Updated `Electron Packager` to version `14.2.1`.
+
 ## 6.5.1
 
 - Added faint highlighted style to the 12 misclassified CJK *Unified* Ideographs belonging to the CJK *Compatibility* Ideographs block in the **View by Grid** feature of the **Unihan Data Finder** utility.
