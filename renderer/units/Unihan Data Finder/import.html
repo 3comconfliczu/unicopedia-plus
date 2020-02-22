@@ -135,34 +135,34 @@
                     <summary>Regex Examples</summary>
                     <p><kbd>kDefinition</kbd></p>
                     <ul>
-                        <li><code>\bp[io]ng\b</code><br>Unihan characters whose 'kDefinition' tag value contains the word "ping" or "pong"</li>
-                        <li><code>(?=.*black)(?=.*white)</code><br>Unihan characters whose 'kDefinition' tag value contains both "black" and "white"</li>
-                        <li><code>'(fe)?male' principle</code><br>Unihan characters whose 'kDefinition' tag value contains either "'male' principle" or "'female' principle"</li>
-                        <li><code>\p{Script=Han}{4}</code><br>Unihan characters whose 'kDefinition' tag value contains four successive characters with the 'Script' property equal to 'Han'</li>
+                        <li>Unihan characters whose 'kDefinition' tag value contains the word "ping" or "pong":<br><code class="select-all">\bp[io]ng\b</code></li>
+                        <li>Unihan characters whose 'kDefinition' tag value contains both "black" and "white":<br><code class="select-all">(?=.*black)(?=.*white)</code></li>
+                        <li>Unihan characters whose 'kDefinition' tag value contains either "'male' principle" or "'female' principle":<br><code class="select-all">'(fe)?male' principle</code></li>
+                        <li>Unihan characters whose 'kDefinition' tag value contains four successive characters with the 'Script' property equal to 'Han':<br><code class="select-all">\p{Script=Han}{4}</code></li>
                     </ul>
                     <p><kbd>kIICore</kbd></p>
                     <ul>
-                        <li><code>.</code> or <code>[^]</code> or <code>[\s\S]</code><br>Unihan characters whose 'kIICore' tag value is not empty, i.e., which belong to the IICore set of 9,810 CJK unified ideographs in common usage</li>
+                        <li>Unihan characters whose 'kIICore' tag value exists, i.e., which belong to the IICore set of 9,810 CJK unified ideographs in common usage:<br><code class="select-all">.</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
                     </ul>
                     <p><kbd>kJapaneseKun</kbd></p>
                     <ul>
-                        <li><code>^(kita|higashi|minami|nishi)$</code><br>Unihan characters whose 'kJapaneseKun' tag value is "kita" or "higashi" or "minami" or "nishi", i.e., the four cardinal directions: North, East, South, West</li>
+                        <li>Unihan characters whose 'kJapaneseKun' tag value is "kita" or "higashi" or "minami" or "nishi", i.e., the four cardinal directions: North, East, South, West:<br><code class="select-all">^(kita|higashi|minami|nishi)$</code></li>
                     </ul>
                     <p><kbd>kJapaneseOn</kbd></p>
                     <ul>
-                        <li><code>^(ichi|itsu)$</code><br>Unihan characters whose 'kJapaneseOn' tag value is either "ichi" or "itsu"</li>
+                        <li>Unihan characters whose 'kJapaneseOn' tag value is either "ichi" or "itsu":<br><code class="select-all">^(ichi|itsu)$</code></li>
                     </ul>
                     <p><kbd>kPrimaryNumeric</kbd></p>
                     <ul>
-                        <li><code>10*</code><br>Unihan characters whose 'kPrimaryNumeric' tag value is a power of 10</li>
+                        <li>Unihan characters whose 'kPrimaryNumeric' tag value is a power of 10:<br><code class="select-all">10*</code></li>
                     </ul>
                     <p><kbd>kRSUnicode</kbd></p>
                     <ul>
-                        <li><code>^90'?\.0</code><br>Unihan characters whose 'kRSUnicode' tag value corresponds to a KangXi or CJK radical #90 (Half Tree Trunk) plus 0 strokes</li>
+                        <li>Unihan characters whose 'kRSUnicode' tag value corresponds to a KangXi or CJK radical #90 (Half Tree Trunk) plus 0 strokes:<br><code class="select-all">^90'?\.0</code></li>
                     </ul>
                     <p><kbd>kTotalStrokes</kbd></p>
                     <ul>
-                        <li><code>[4-9]\d</code><br>Unihan characters whose 'kTotalStrokes' tag value corresponds to a total stroke count of 40 or more</li>
+                        <li>Unihan characters whose 'kTotalStrokes' tag value corresponds to a total stroke count of 40 or more:<br><code class="select-all">[4-9]\d</code></li>
                     </ul>
                 </details>
             </div>
@@ -192,15 +192,15 @@
                     <summary>Regex Examples</summary>
                     <p><span class="match-variants off"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>off</strong>:</p>
                     <ul>
-                        <li><code>.</code> or <code>\p{Assigned}</code><br>All Unihan characters</li>
-                        <li><code>\p{Unified_Ideograph}</code><br>Unihan characters with the 'unified ideograph' status</li>
-                        <li><code>[^\p{Unified_Ideograph}]</code> or <code>\P{Unified_Ideograph}</code><br>Unihan characters with the 'compatibility ideograph' status</li>
-                        <li><code>(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code><br>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead</li>
+                        <li>All Unihan characters:<br><code class="select-all">.</code> or <code class="select-all">\p{Assigned}</code></li>
+                        <li>Unihan characters with the 'unified ideograph' status:<br><code class="select-all">\p{Unified_Ideograph}</code></li>
+                        <li>Unihan characters with the 'compatibility ideograph' status:<br><code class="select-all">[^\p{Unified_Ideograph}]</code> or <code class="select-all">\P{Unified_Ideograph}</code></li>
+                        <li>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead:<br><code class="select-all">(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code></li>
                     </ul>
                     <p><span class="match-variants on"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>on</strong>:</p>
                     <ul>
-                        <li><code>邑|阜</code><br>Unihan characters made up of the ideographs 邑 and 阜, and their common variant 阝</li>
-                        <li><code>[上中下]</code><br>Unihan characters belonging to the set of three ideographs: 上, 中 and 下, along with their variants: 丄, 塚 and 丅</li>
+                        <li>Unihan characters made up of the ideographs 邑 and 阜, and their common variant 阝:<br><code class="select-all">邑|阜</code></li>
+                        <li>Unihan characters belonging to the set of three ideographs: 上, 中 and 下, along with their variants: 丄, 塚 and 丅:<br><code class="select-all">[上中下]</code></li>
                     </ul>
                 </details>
             </div>

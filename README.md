@@ -39,7 +39,7 @@ The following utilities are currently available:
 - The **CJK Font Variants** utility displays simultaneously any string of CJK (Chinese/Japanese/Korean) characters in five different typefaces belonging to the open-source set of [Google Noto CJK Fonts](https://github.com/googlefonts/noto-cjk):
 
 | Language | Tag | Code | Typeface |
-|----------|-----|------|----------|
+| -------- | --- | ---- | -------- |
 | Japanese | ja | JP | Noto Sans CJK JP Regular |
 | Korean | ko | KR | Noto Sans CJK KR Regular |
 | Simplified Chinese | zh-Hans | SC | Noto Sans CJK SC Regular |

@@ -373,9 +373,16 @@
 
 #emoji-data-finder-unit .regex-examples code
 {
-    user-select: text;
     color: inherit;
+    white-space: normal;
+    overflow-wrap: break-word;
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#emoji-data-finder-unit .regex-examples code.select-all
+{
+    user-select: all;
+    cursor: text;
 }
 
 #emoji-data-finder-unit summary

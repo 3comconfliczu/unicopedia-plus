@@ -152,7 +152,9 @@ module.exports.start = function (context)
                         { name: "JavaScript", value: data.javaScript },
                         { name: "ECMAScript 6", value: data.ecmaScript6 },
                         { name: "URL Escape", value: data.urlEncoding },
-                        { name: "HTML Entity", value: data.entity },
+                        // { name: "HTML Entity", value: data.decimalEntity, toolTip: data.namedEntity },
+                        { name: "HTML Decimal", value: data.decimalEntity },
+                        { name: "HTML Named", value: data.namedEntity },
                         null,
                         { name: "UTF-32", value: data.utf32 },
                         { name: "UTF-16", value: data.utf16 },
@@ -177,6 +179,10 @@ module.exports.start = function (context)
                             let value = document.createElement ('span');
                             value.className = 'value';
                             value.textContent = code.value.replace (/ /g, "\xA0");
+                            if (code.toolTip)
+                            {
+                                value.title = code.toolTip;
+                            }
                             field.appendChild (value);
                             cell.appendChild (field);
                         }

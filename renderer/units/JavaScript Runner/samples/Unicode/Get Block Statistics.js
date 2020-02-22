@@ -7,7 +7,7 @@ let allBlocks = blocks.map
         return { name: block.name, size: parseInt (block.last, 16) - parseInt (block.first, 16) + 1 };
     }
 );
-allBlocks.sort ((a, b) => a.size - b.size).reverse ();
+allBlocks.sort ((a, b) => a.name.localeCompare (b.name)).sort ((a, b) => b.size - a.size);
 $.writeln (`Number of blocks: ${allBlocks.length}`);
 allBlocks.forEach
 (

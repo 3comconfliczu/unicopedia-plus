@@ -2,6 +2,8 @@
 const unicodeData = require ('./parsed-unicode-data.js');
 const extraData = require ('./parsed-extra-data.js');
 //
+const entities = require ('./parsed-xhtml-character-entities.js');
+//
 const characterCount = Object.keys (unicodeData).length;
 //
 const planes =
@@ -478,6 +480,11 @@ function characterToDecimalEntity (character)
     return `&#${character.codePointAt (0)};`;
 }
 //
+function characterToNamedEntity (character)
+{
+    return entities[character];
+}
+//
 function characterToJavaScriptEscape (character)
 {
     let escape = "";
@@ -515,7 +522,8 @@ function getCharacterData (character)
         characterData.utf16 = characterToUtf16Code (character);
         characterData.utf8 = characterToUtf8Code (character);
         characterData.urlEncoding = characterToUrlEncoding (character);
-        characterData.entity = characterToDecimalEntity (character)
+        characterData.decimalEntity = characterToDecimalEntity (character);
+        characterData.namedEntity = characterToNamedEntity (character);
         characterData.javaScript = characterToJavaScriptEscape (character);
         characterData.ecmaScript6 = characterToEcmaScript6Escape (character);
     }

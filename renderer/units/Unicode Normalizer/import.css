@@ -119,7 +119,7 @@
 {
     text-align: left;
     padding: 0.25em 0.75em;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 #unicode-normalizer-unit .forms-table tr th
@@ -177,9 +177,14 @@
 
 #unicode-normalizer-unit .instructions code
 {
-    user-select: text;
     color: inherit;
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#unicode-normalizer-unit .instructions code.select-all
+{
+    user-select: all;
+    cursor: text;
 }
 
 #unicode-normalizer-unit summary

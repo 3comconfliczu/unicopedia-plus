@@ -112,12 +112,12 @@
                 <details class="regex-examples">
                     <summary>Regex Examples</summary>
                     <ul>
-                        <li><code>^(cjk|kangxi) radical</code><br>Characters whose name starts with either "cjk radical" or "kangxi radical"</li>
-                        <li><code>^(?=.*hiragana)(?=.*katakana)</code><br>Characters whose name contains both "hiragana" and "katakana"</li>
-                        <li><code>^(?=.*katakana)(?=.*\ba\b)</code><br>Characters whose name contains both "katakana" and whole-word "a"</li>
-                        <li><code>^(?=.*bamboo)(?!.*radical)</code><br>Characters whose name contains "bamboo" but not "radical"</li>
-                        <li><code>\b\w+boat\b</code><br>Characters whose name contains words ending with "boat", but are not "boat"</li>
-                        <li><code>.{72,}</code><br>Characters whose name's length is greater than or equal to 72</li>
+                        <li>Characters whose name starts with either "cjk radical" or "kangxi radical":<br><code class="select-all">^(cjk|kangxi) radical</code></li>
+                        <li>Characters whose name contains both "hiragana" and "katakana":<br><code class="select-all">^(?=.*hiragana)(?=.*katakana)</code></li>
+                        <li>Characters whose name contains both "katakana" and whole-word "a":<br><code class="select-all">^(?=.*katakana)(?=.*\ba\b)</code></li>
+                        <li>Characters whose name contains "bamboo" but not "radical":<br><code class="select-all">^(?=.*bamboo)(?!.*radical)</code></li>
+                        <li>Characters whose name contains words ending with "boat", but are not "boat":<br><code class="select-all">\b\w+boat\b</code></li>
+                        <li>Characters whose name's length is greater than or equal to 72:<br><code class="select-all">.{72,}</code></li>
                     </ul>
                 </details>
             </div>
@@ -146,39 +146,39 @@
                     <summary>Regex Examples</summary>
                     <p><span class="match-decomposition off"><svg><use href="/images/search.svg#match-decomposition-icon"></use></svg></span> (<em>Match Decomposition</em>) toggled <strong>off</strong>:</p>
                     <ul>
-                        <li><code>\p{White_Space}</code><br>Characters with the 'White_Space' binary property</li>
-                        <li><code>\s</code><br>Characters considered white space in Unicode by the regular expression engine</li>
-                        <li><code>(?!.)[^]</code> or <code>(?!.)[\s\S]</code><br>Characters considered line terminators in Unicode by the regular expression engine</li>
-                        <li><code>.*</code> or <code>[^]</code> or <code>\p{Assigned}</code><br>All assigned Unicode characters</li>
-                        <li><code>\p{Private_Use}</code><br>Characters with the 'General_Category' property equal to 'Private_Use'</li>
-                        <li><code>\P{Private_Use}</code> or <code>[^\p{Private_Use}]</code><br>Characters without the 'General_Category' property equal to 'Private_Use'</li>
-                        <li><code>(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code> or <code>[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 137,929 Unicode characters defined in <a href="https://www.unicode.org/versions/Unicode12.1.0/">Unicode 12.1</a>.</li>
-                        <li><code>[\p{Open_Punctuation}\p{Close_Punctuation}]</code> or <code>\p{Open_Punctuation}|\p{Close_Punctuation}</code><br>Characters with the 'General_Category' property equal to 'Open_Punctuation' or 'Close_Punctuation'</li>
-                        <li><code>(?=\p{Dash})(?!\p{Dash_Punctuation})</code> or <code>(?=\p{Dash})(?=\P{Dash_Punctuation})</code><br>Characters with the 'Dash' binary property, but without the 'General_Category' property equal to 'Dash_Punctuation'</li>
-                        <li><code>\p{Radical}</code><br>Characters with the 'Radical' binary property</li>
-                        <li><code>\p{Hex_Digit}</code><br>Characters with the 'Hex_Digit' binary property</li>
-                        <li><code>\p{Regional_Indicator}</code><br>Characters with the 'Regional_Indicator' binary property</li>
-                        <li><code>\p{Emoji_Modifier}</code><br>Characters with the 'Emoji_Modifier' binary property</li>
-                        <li><code>\p{Script=Hiragana}</code><br>Characters with the 'Script' property equal to 'Hiragana'</li>
-                        <li><code>(?=\p{Script=Han})(?=\p{Other_Letter})</code><br>Characters belonging to the Unihan set, i.e., with the 'Script' property equal to 'Han' and the 'General_Category' property equal to 'Other_Letter'</li>
-                        <li><code>(?=\p{Script=Latin})(?=\p{Number})</code><br>Characters with the 'Script' property equal to 'Latin' and the 'General_Category' property equal to 'Number'</li>
-                        <li><code>(?=\p{Emoji_Modifier_Base})(?!\p{Emoji_Presentation})</code> or <code>(?=\p{Emoji_Modifier_Base})(?=\P{Emoji_Presentation})</code><br>Characters with the 'Emoji_Modifier_Base' binary property, but without the 'Emoji_Presentation' binary property</li>
-                        <li><code>(?=\p{Ideographic})(?!\p{Unified_Ideograph})</code> or <code>(?=\p{Ideographic})(?=\P{Unified_Ideograph})</code><br>Characters with the 'Ideographic' binary property, but without the 'Unified_Ideograph' binary property</li>
-                        <li><code>(?=\p{Script_Extensions=Han})(?!\p{Script=Han})</code>or <code>(?=\p{Script_Extensions=Han})(?=\P{Script=Han})</code><br>Characters with the 'Script_Extensions' property equal to 'Han', but without the 'Script' property equal to 'Han'</li>
+                        <li>Characters with the 'White_Space' binary property:<br><code class="select-all">\p{White_Space}</code></li>
+                        <li>Characters considered white space in Unicode by the regular expression engine:<br><code class="select-all">\s</code></li>
+                        <li>Characters considered line terminators in Unicode by the regular expression engine:<br><code class="select-all">(?!.)[^]</code> or <code class="select-all">(?!.)[\s\S]</code></li>
+                        <li>All assigned Unicode characters:<br><code class="select-all">.*</code> or <code class="select-all">[^]</code> or <code class="select-all">\p{Assigned}</code></li>
+                        <li>Characters with the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\p{Private_Use}</code></li>
+                        <li>Characters without the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\P{Private_Use}</code> or <code class="select-all">[^\p{Private_Use}]</code></li>
+                        <li>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 137,929 Unicode characters defined in Unicode 12.1:<br><code class="select-all">[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>or<br><code class="select-all">(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code></li>
+                        <li>Characters with the 'General_Category' property equal to 'Open_Punctuation' or 'Close_Punctuation':<br><code class="select-all">[\p{Open_Punctuation}\p{Close_Punctuation}]</code><br>or<br><code class="select-all">\p{Open_Punctuation}|\p{Close_Punctuation}</code></li>
+                        <li>Characters with the 'Dash' binary property, but without the 'General_Category' property equal to 'Dash_Punctuation':<br><code class="select-all">(?=\p{Dash})(?!\p{Dash_Punctuation})</code><br>or<br><code class="select-all">(?=\p{Dash})(?=\P{Dash_Punctuation})</code></li>
+                        <li>Characters with the 'Radical' binary property:<br><code class="select-all">\p{Radical}</code></li>
+                        <li>Characters with the 'Hex_Digit' binary property:<br><code class="select-all">\p{Hex_Digit}</code></li>
+                        <li>Characters with the 'Regional_Indicator' binary property:<br><code class="select-all">\p{Regional_Indicator}</code></li>
+                        <li>Characters with the 'Emoji_Modifier' binary property:<br><code class="select-all">\p{Emoji_Modifier}</code></li>
+                        <li>Characters with the 'Script' property equal to 'Hiragana':<br><code class="select-all">\p{Script=Hiragana}</code></li>
+                        <li>Characters belonging to the Unihan set, i.e., with the 'Script' property equal to 'Han' and the 'General_Category' property equal to 'Other_Letter':<br><code class="select-all">(?=\p{Script=Han})(?=\p{Other_Letter})</code></li>
+                        <li>Characters with the 'Script' property equal to 'Latin' and the 'General_Category' property equal to 'Number':<br><code class="select-all">(?=\p{Script=Latin})(?=\p{Number})</code></li>
+                        <li>Characters with the 'Emoji_Modifier_Base' binary property, but without the 'Emoji_Presentation' binary property:<br><code class="select-all">(?=\p{Emoji_Modifier_Base})(?!\p{Emoji_Presentation})</code><br>or<br><code class="select-all">(?=\p{Emoji_Modifier_Base})(?=\P{Emoji_Presentation})</code></li>
+                        <li>Characters with the 'Ideographic' binary property, but without the 'Unified_Ideograph' binary property:<br><code class="select-all">(?=\p{Ideographic})(?!\p{Unified_Ideograph})</code><br>or<br><code class="select-all">(?=\p{Ideographic})(?=\P{Unified_Ideograph})</code></li>
+                        <li>Characters with the 'Script_Extensions' property equal to 'Han', but without the 'Script' property equal to 'Han':<br><code class="select-all">(?=\p{Script_Extensions=Han})(?!\p{Script=Han})</code><br>or<br><code class="select-all">(?=\p{Script_Extensions=Han})(?=\P{Script=Han})</code></li>
                     </ul>
                     <p><span class="match-decomposition on"><svg><use href="/images/search.svg#match-decomposition-icon"></use></svg></span> (<em>Match Decomposition</em>) toggled <strong>on</strong>:</p>
                     <ul>
-                        <li><code>∫{4}</code><br>Character made of four integrals, i.e., a quadruple integral operator</li>
-                        <li><code>\d\d</code><br>Characters containing two digits (0 to 9)</li>
-                        <li><code>\w/\w</code><br>Characters made of two letters separated by a slash</li>
-                        <li><code>f[fil]</code><br>Characters which are latin small ligatures starting wih 'f'</li>
-                        <li><code>^ホ$</code><br>Characters made of a single katakana letter 'ho'</li>
-                        <li><code>上|下</code><br>Characters containing either 上 (up, top, high) or 下 (down, bottom, low)</li>
-                        <li><code>左|中|右</code><br>Characters containing 左 (left), 中 (middle) or 右 (right)</li>
-                        <li><code>[月火水木金土日]</code><br>Characters containing one ideograph, Japanese shorthand for each of the seven days of the week</li>
-                        <li><code>〔\p{Script=Han}〕</code><br>Characters made of a single bracketed ideograph</li>
-                        <li><code>\(\p{Script=Han}\)</code><br>Characters made of a single parenthesized ideograph</li>
-                        <li><code>\p{Script=Arabic}\s\p{Script=Arabic}</code><br>Characters made of Arabic letters separated by white space, forming intricate Arabic ligatures</li>
+                        <li>Character made of four integrals, i.e., a quadruple integral operator:<br><code class="select-all">∫{4}</code></li>
+                        <li>Characters containing two digits (0 to 9):<br><code class="select-all">\d\d</code></li>
+                        <li>Characters made of two letters separated by a slash:<br><code class="select-all">\w/\w</code></li>
+                        <li>Characters which are latin small ligatures starting wih 'f':<br><code class="select-all">f[fil]</code></li>
+                        <li>Characters made of a single katakana letter 'ho':<br><code class="select-all">^ホ$</code></li>
+                        <li>Characters containing either 上 (up, top, high) or 下 (down, bottom, low):<br><code class="select-all">上|下</code></li>
+                        <li>Characters containing 左 (left), 中 (middle) or 右 (right):<br><code class="select-all">左|中|右</code></li>
+                        <li>Characters containing one ideograph, Japanese shorthand for each of the seven days of the week:<br><code class="select-all">[月火水木金土日]</code></li>
+                        <li>Characters made of a single bracketed ideograph:<br><code class="select-all">〔\p{Script=Han}〕</code></li>
+                        <li>Characters made of a single parenthesized ideograph:<br><code class="select-all">\(\p{Script=Han}\)</code></li>
+                        <li>Characters made of Arabic letters separated by white space, forming intricate Arabic ligatures:<br><code class="select-all">\p{Script=Arabic}\s\p{Script=Arabic}</code></li>
                     </ul>
                 </details>
             </div>

@@ -256,6 +256,13 @@
     padding: 0.25em 0.5em;
 }
 
+#unihan-radical-strokes-unit .radicals-table th.header-variants
+{
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #unihan-radical-strokes-unit .radicals-table tr.even
 {
     background-color: white;
@@ -271,6 +278,7 @@
     font-family: "Sans CJK TC";
     font-size: 14px;
     padding: 0.25em 0.5em;
+    white-space: nowrap;
 }
 
 #unihan-radical-strokes-unit .radicals-table td.data-strokes
@@ -294,24 +302,28 @@
 #unihan-radical-strokes-unit .radicals-table td.data-index
 {
     text-align: right;
+    width: 1em;
 }
 
 #unihan-radical-strokes-unit .radicals-table th.header-radical,
-#unihan-radical-strokes-unit .radicals-table td.data-kangxi
+#unihan-radical-strokes-unit .radicals-table td.data-radical
 {
     text-align: center;
+    width: 3em;
 }
 
 #unihan-radical-strokes-unit .radicals-table th.header-name,
 #unihan-radical-strokes-unit .radicals-table td.data-name
 {
     text-align: left;
+    width: 7em;
 }
 
 #unihan-radical-strokes-unit .radicals-table th.header-variants,
 #unihan-radical-strokes-unit .radicals-table td.data-variants
 {
     text-align: center;
+    width: 7em;
 }
 
 #unihan-radical-strokes-unit .instructions ul

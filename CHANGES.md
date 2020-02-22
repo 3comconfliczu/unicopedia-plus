@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.5.3
+
+- Added HTML named entity to the list of codes in the **Unicode Inspector** utility.
+- Improved code selection for regex examples and Unicode escape sequences.
+- Improved layout of additional tables in instructions and documentation.
+- Improved `Get Block Statistics` sample script.
+- Reorganized CSS code architecture.
+
 ## 6.5.2
 
 - Updated CJK reference links.

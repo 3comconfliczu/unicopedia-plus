@@ -584,7 +584,7 @@
 
 #unihan-data-finder-unit .regex-examples p
 {
-    margin: -0.1em 0 1.5em 1.5em;
+    margin: 1.25em 0 1em 1.5em;
 }
 
 #unihan-data-finder-unit .regex-examples ul
@@ -604,9 +604,16 @@
 
 #unihan-data-finder-unit .regex-examples code
 {
-    user-select: text;
     color: inherit;
+    white-space: normal;
+    overflow-wrap: break-word;
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#unihan-data-finder-unit .regex-examples code.select-all
+{
+    user-select: all;
+    cursor: text;
 }
 
 #unihan-data-finder-unit .regex-examples .match-variants
@@ -664,8 +671,9 @@
 #unihan-data-finder-unit .unihan-blocks td
 {
     text-align: left;
+    vertical-align: middle;
     padding: 0.25em 0.5em;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 #unihan-data-finder-unit .unihan-blocks th.size-header,

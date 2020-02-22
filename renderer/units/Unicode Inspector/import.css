@@ -162,9 +162,14 @@
 
 #unicode-inspector-unit .instructions code
 {
-    user-select: text;
     color: inherit;
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#unicode-inspector-unit .instructions code
+{
+    user-select: all;
+    cursor: text;
 }
 
 #unicode-inspector-unit summary

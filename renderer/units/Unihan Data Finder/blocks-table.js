@@ -34,7 +34,7 @@ module.exports.create = function (unihanBlocks)
         dataRow.className = 'data-row';
         let dataName = document.createElement ('td');
         dataName.className = 'name';
-        dataName.textContent = unihanBlock.name;
+        dataName.textContent = unihanBlock.name.replace (/ (.)$/, "\u00A0$1");
         dataRow.appendChild (dataName);
         let dataRange = document.createElement ('td');
         dataRange.className = 'range';

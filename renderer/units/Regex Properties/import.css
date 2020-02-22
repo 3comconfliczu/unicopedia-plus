@@ -83,6 +83,7 @@
 
 #regex-properties-unit .instructions table
 {
+    width: unset;
     margin: 0.25em 0 0.75em 0;
 }
 
@@ -141,9 +142,14 @@
 
 #regex-properties-unit .instructions code
 {
-    user-select: text;
     color: inherit;
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#regex-properties-unit .instructions code.select-all
+{
+    user-select: all;
+    cursor: text;
 }
 
 #regex-properties-unit summary
