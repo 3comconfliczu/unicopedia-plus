@@ -226,6 +226,7 @@
     font-size: small;
     margin: 0.25em 0 0.8em 0;
     user-select: text;
+    cursor: text;
 }
 
 #emoji-data-finder-unit .results .results-button
@@ -254,9 +255,10 @@
 
 #emoji-data-finder-unit .emoji-table
 {
-    user-select: text;
     background-color: white;
     margin: 12px 0;
+    user-select: text;
+    cursor: text;
 }
 
 #emoji-data-finder-unit .emoji-table .emoji-data

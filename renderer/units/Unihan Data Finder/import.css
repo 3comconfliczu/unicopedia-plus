@@ -254,6 +254,7 @@
     font-size: small;
     margin: 0.25em 0 0.8em 0;
     user-select: text;
+    cursor: text;
 }
 
 #unihan-data-finder-unit .results .results-button
@@ -339,7 +340,6 @@
 
 #unihan-data-finder-unit .search-data .data-table
 {
-    user-select: text;
     margin: 0.8em 0;
 }
 
@@ -396,6 +396,8 @@
     text-align: left;
     vertical-align: middle;
     background-color: white;
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-data-finder-unit .search-data .data-row.variant
@@ -488,6 +490,8 @@
 #unihan-data-finder-unit .view-by-grid .search-data table
 {
     table-layout: fixed;
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-data-finder-unit .view-by-grid .search-data th.empty-header,
@@ -653,8 +657,9 @@
 {
     margin-top: 0.25em;
     margin-bottom: 1.5em;
-    user-select: text;
     width: unset;
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-data-finder-unit .unihan-blocks tr:nth-child(even)

@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.6.0
+
+- Added support for `Emoji 13.0` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:
+    - Updated instructions/documentation.
+    - Updated emoji age and date informations, including special handling of emoji characters before `Emoji 1.0`.
+    - Updated `emoji-test-list`, `emoji-test-groups`, `emoji-test-patterns` NPM modules to their version `13.0.0`.
+- Added partial support for `Emoji 13.0` to the emoji properties of the **Unicode Inspector** utility:
+    - Updated `emoji-data.txt` data file to version `13.0`.
+- Used text cursor for all user-selectable text.
+
 ## 6.5.3
 
 - Added HTML named entity to the list of codes in the **Unicode Inspector** utility.

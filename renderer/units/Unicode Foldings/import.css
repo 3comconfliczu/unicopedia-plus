@@ -75,7 +75,6 @@
     text-align: left;
     vertical-align: middle;
     padding: 4px 6px;
-    /* user-select: text; */
 }
 
 #unicode-foldings-unit table.case-data td
@@ -85,6 +84,7 @@
     background-color: white;
     overflow-wrap: break-word;
     user-select: text;
+    cursor: text;
 }
 
 #unicode-foldings-unit table.case-data td.characters-string

@@ -191,6 +191,7 @@
     font-size: small;
     margin: 0.25em 0 0.8em 0;
     user-select: text;
+    cursor: text;
 }
 
 #unicode-data-finder-unit .results .results-button
@@ -299,7 +300,6 @@
 
 #unicode-data-finder-unit .search-data .data-table
 {
-    user-select: text;
     margin: 0.8em 0;
 }
 
@@ -312,7 +312,6 @@
     font-size: 13px;
     line-height: 1em;
     padding: 0.5em;
-    user-select: none;
 }
 
 #unicode-data-finder-unit .search-data .symbol-header
@@ -337,6 +336,8 @@
 #unicode-data-finder-unit .search-data .row
 {
     background-color: white;
+    user-select: text;
+    cursor: text;
 }
 
 #unicode-data-finder-unit .search-data .row.unassigned
@@ -360,6 +361,7 @@
 #unicode-data-finder-unit .search-data .unassigned .symbol
 {
     user-select: none;
+    cursor: default;
 }
 
 #unicode-data-finder-unit .search-data .symbol

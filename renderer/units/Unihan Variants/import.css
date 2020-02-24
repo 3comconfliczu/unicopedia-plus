@@ -69,6 +69,7 @@
     vertical-align: middle;
     height: 48px;
     user-select: text;
+    cursor: text;
 }
 
 #unihan-variants-unit .linear-character

@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "6.5.3",
+    "version": "6.6.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -32,9 +32,9 @@
     "license": "MIT",
     "private": false,
     "dependencies": {
-        "emoji-test-groups": "^12.1.0",
-        "emoji-test-list": "^12.1.0",
-        "emoji-test-patterns": "^12.1.0",
+        "emoji-test-groups": "^13.0.0",
+        "emoji-test-list": "^13.0.0",
+        "emoji-test-patterns": "^13.0.0",
         "grapheme-splitter": "^1.0.4",
         "viz.js": "^2.1.2"
     },

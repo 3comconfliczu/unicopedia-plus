@@ -155,7 +155,7 @@ module.exports.start = function (context)
         for (let character of emoji)
         {
             let data = unicode.getCharacterBasicData (character);
-            tooltip.push (`${data.codePoint.replace (/U\+/, "U\u034F\+")}\xA0${data.name}`); // U+034F COMBINING GRAPHEME JOINER
+            tooltip.push (`${data.codePoint.replace (/U\+/, "U\u034F\+")}\xA0${data.name || "????"}`); // U+034F COMBINING GRAPHEME JOINER
         }
         return "<" + tooltip.join (",\n") + ">";
     }
@@ -215,19 +215,41 @@ module.exports.start = function (context)
     }
     //
     // https://www.unicode.org/emoji/charts/emoji-versions.html
-    // https://www.unicode.org/reports/tr51/#Versioning
-    // https://www.unicode.org/Public/emoji/
+    // https://www.unicode.org/reports/tr51/
+    //
+    // There are three special values used for emoji characters before E1.0:
+    // E0.0: Emoji components that were defined before E1.0.
+    // E0.6: Emoji characters deriving from Japanese carriers that were incorporated in Unicode 6.0
+    // E0.7: Emoji characters deriving from the Wing/Webdings, which appeared in Unicode v7.0. Also includes those incorporated in ARIB that began to be treated as emoji in this time period.
+    //
+    const versionAges =
+    {
+        "0.6": "Unicode 6.0",
+        "0.7": "Unicode 7.0",
+        "1.0": "Emoji 1.0",
+        "2.0": "Emoji 2.0",
+        "3.0": "Emoji 3.0",
+        "4.0": "Emoji 4.0",
+        "5.0": "Emoji 5.0",
+        "11.0": "Emoji 11.0",
+        "12.0": "Emoji 12.0",
+        "12.1": "Emoji 12.1",
+        "13.0": "Emoji 13.0"
+    };
+    //
     const versionDates =
     {
-        "0.0": "Date Unknown",
-        "1.0": "August 2015",
+        "0.6": "October 2010",  // Unicode 6.0
+        "0.7": "June 2014",     // Unicode 7.0
+        "1.0": "June 2015",
         "2.0": "November 2015",
         "3.0": "June 2016",
         "4.0": "November 2016",
         "5.0": "June 2017",
-        "11.0": "June 2018",
+        "11.0": "May 2018",
         "12.0": "March 2019",
-        "12.1": "October 2019"
+        "12.1": "October 2019",
+        "13.0": "March 2020"
     };
     //
     function updateDataList (characters, emojiDataList)
@@ -272,7 +294,9 @@ module.exports.start = function (context)
             let [ groupIndex, subgroupIndex ] = emojiIndices[emojiList[character].toFullyQualified || character];
             let group = emojiGroups[groupIndex].name;
             let subgroup = emojiGroups[groupIndex].subgroups[subgroupIndex].name;
-            let age = emojiList[character].age;
+            let emojiAge = emojiList[character].age;
+            let age = versionAges[emojiAge] || "Age Unknown";
+            let date = versionDates[emojiAge] || "Date Unknown";
             let status;
             if (emojiList[character].isComponent)
             {
@@ -286,7 +310,7 @@ module.exports.start = function (context)
             {
                 status = "Fully Qualified (Keyboard/Palette)";
             }
-            emojiTable.title = `Group: ${group}\nSubgroup: ${subgroup}\nAge: Emoji ${age} (${versionDates[age]})\nStatus: ${status}`;
+            emojiTable.title = `Group: ${group}\nSubgroup: ${subgroup}\nAge: ${age} (${date})\nStatus: ${status}`;
             if (emojiList[character].toFullyQualified)
             {
                 emoji.classList.add ('non-fully-qualified');

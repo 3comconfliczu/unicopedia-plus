@@ -73,6 +73,7 @@
     font-family: Monaco, "Noto Mono", monospace;
     font-size: 13px;
     user-select: text;
+    cursor: text;
 }
 
 #regex-properties-unit .instructions p

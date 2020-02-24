@@ -31,6 +31,7 @@
     font-size: 17px;
     font-weight: 600;
     user-select: text;
+    cursor: text;
 }
 
 #emoji-picture-book-unit .plain-panel .sheet
@@ -44,6 +45,7 @@
     padding: 0.2em;
     width: 100%;
     user-select: text;
+    cursor: text;
 }
 
 #emoji-picture-book-unit .plain-panel .sheet .emoji

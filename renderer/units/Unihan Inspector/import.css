@@ -89,7 +89,6 @@
 
 #unihan-inspector-unit .unihan-card
 {
-    user-select: text;
     background: white;
     border: 1px solid var(--color-border);
     text-align: center;
@@ -100,6 +99,8 @@
     align-items: center;
     /* padding: 0.5em 1em; */
     /* justify-content: center; */
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-inspector-unit .unihan-wrapper
@@ -144,7 +145,6 @@
 #unihan-inspector-unit .unihan-card .typeface-widget
 {
     display: inline-flex;
-    user-select: none;
     color: white;
     background-color: var(--color-accent);
     align-items: center;
@@ -153,6 +153,8 @@
     padding: 1px 3px 2px 3px;
     border-radius: 4px;
     margin-bottom: 0.5em;
+    user-select: none;
+    cursor: default;
 }
 
 #unihan-inspector-unit .unihan-card .typeface-widget.default
@@ -200,13 +202,14 @@
     font-family: Monaco, "Noto Mono", monospace;
     font-size: 13.5px;
     line-height: 1.25em;
-    user-select: text;
     background: white;
     border: 1px solid var(--color-border);
     /* border-radius: 8px; */
     text-align: left;
     padding: 0.5em 1em;
     margin-left: 0.9em;
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-inspector-unit .unicode-info
@@ -276,6 +279,7 @@
 #unihan-inspector-unit span.unihan-character-link:hover
 {
     border: 1px dotted var(--color);
+    cursor: default;
 }
 
 #unihan-inspector-unit span.unihan-character-link.clickable:hover
@@ -284,7 +288,6 @@
     border: 1px solid var(--color-accent);
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.9));
     cursor: pointer;
-    user-select: none;
 }
 
 #unihan-inspector-unit .tags-data
@@ -296,8 +299,9 @@
 {
     font-family: Monaco, "Noto Mono", monospace;
     font-size: 13.5px;
-    user-select: text;
     margin: 0.75em 0;
+    user-select: text;
+    cursor: text;
 }
 
 #unihan-inspector-unit .tags-data .tags-list .list

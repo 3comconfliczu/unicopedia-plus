@@ -59,12 +59,16 @@
     ],
     [
         {
-            "name": "emoji-ordering.txt",
-            "href": "https://www.unicode.org/emoji/charts/emoji-ordering.txt"
+            "name": "emoji-data.txt",
+            "href": "hhttps://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-data.txt"
         },
         {
             "name": "emoji-test.txt",
-            "href": "https://www.unicode.org/Public/emoji/12.1/emoji-test.txt"
+            "href": "https://www.unicode.org/Public/emoji/13.0/emoji-test.txt"
+        },
+        {
+            "name": "emoji-ordering.txt",
+            "href": "https://www.unicode.org/emoji/charts/emoji-ordering.txt"
         }
     ],
     [

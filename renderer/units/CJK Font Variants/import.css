@@ -177,6 +177,7 @@
     line-height: 1em;
     /* overflow: hidden; */
     /* user-select: text; */
+    /* cursor: text; */
 }
 
 #cjk-font-variants-unit .sheet.horizontal .table .cjk-data-base,
@@ -244,6 +245,7 @@
     min-height: 1.1em;
     /* overflow: hidden; */
     /* user-select: text; */
+    /* cursor: text; */
 }
 
 #cjk-font-variants-unit .sheet.vertical .table .cjk-data-base,
