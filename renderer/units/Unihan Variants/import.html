@@ -6,16 +6,24 @@
                 <button class="lookup-button" type="button">Lookup</button>
             </span>
             <span class="option-group">
-                <label class="checkbox" title="If checked, Yasuoka variants are also included; if unchecked, only the standard Unihan variants are listed"><input class="extra-variants-checkbox" type="checkbox">&nbsp;Extra Variants</label>
-                <label class="checkbox" title="If checked, detailed relations are displayed, making use of a directed labeled graph; if unchecked, a basic undirected graph is used instead"><input class="detailed-relations-checkbox" type="checkbox">&nbsp;Detailed Relations</label>
+                <label class="checkbox" title="If checked, Yasuoka variants are also included;&#10;if unchecked, only the standard Unihan variants are listed"><input class="extra-variants-checkbox" type="checkbox">&nbsp;Extra Variants</label>
             </span>
         </div>
         <table class="linear-wrapper">
-            <tr class="linear-row">
+            <tr class="linear-row characters">
                 <td class="linear-character"></td><td class="linear-gap"></td><td class="linear-variants"></td>
             </tr>
+            <tr class="linear-row-gap"></tr>
+            <tr class="linear-row code-points">
+                <td class="linear-code-point"></td><td class="linear-gap"></td><td class="linear-code-points"></td>
+            </tr>
+        </table>
         </table>
         <div class="options">
+            <span class="option-group">
+                <label class="checkbox" title="If checked, detailed relations are displayed, making use of a directed labeled graph;&#10;if unchecked, a basic undirected graph is used instead"><input class="detailed-relations-checkbox" type="checkbox">&nbsp;Detailed Relations</label>
+                <label class="checkbox" title="If checked, code points are displayed below each Unihan character of the graph"><input class="code-points-checkbox" type="checkbox">&nbsp;Code Points</label>
+            </span>
             <span class="action">
                 <button class="save-svg-button" type="button">Save...</button>
             </span>
@@ -33,6 +41,7 @@
                 <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
                 <li>Click the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.</li>
                 <li>Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.</li>
+                <li>Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.</li>
                 <li>The different variant relations are indicated using the following labels:
                     <ul>
                         <li><code>Semantic</code>: characters listed under the <em>kSemanticVariant</em> Unihan tag</li>

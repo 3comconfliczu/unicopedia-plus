@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 6.7.0
+
+- Added display of code points to the **Unihan Variants** utility.
+- Updated Unicode release dates.
+- Updated `Electron` to version `8.0.2`.
+
 ## 6.6.0
 
 - Added support for `Emoji 13.0` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:

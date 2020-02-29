@@ -403,6 +403,7 @@ const lineBreaks =
 // https://www.unicode.org/history/publicationdates.html
 const versionDates =
 {
+    "1.0": "October 1991",
     "1.1": "June 1993",
     "2.0": "July 1996",
     "2.1": "May 1998",
@@ -412,7 +413,7 @@ const versionDates =
     "4.0": "April 2003",
     "4.1": "March 2005",
     "5.0": "July 2006",
-    "5.1": "March 2008",
+    "5.1": "April 2008",
     "5.2": "October 2009",
     "6.0": "October 2010",
     "6.1": "January 2012",
@@ -424,7 +425,8 @@ const versionDates =
     "10.0": "June 2017",
     "11.0": "June 2018",
     "12.0": "March 2019",
-    "12.1": "May 2019"
+    "12.1": "May 2019",
+    "13.0": "March 2020"
 };
 //
 function uniHexify (string)
@@ -554,7 +556,7 @@ function getCharacterData (character)
         if ((parseInt (version.first, 16) <= index) && (index <= parseInt (version.last, 16)))
         {
             characterData.age = version.age;
-            characterData.ageDate = versionDates[version.age];
+            characterData.ageDate = versionDates[version.age] || "Date Unknown";
             break;
         }
     }
@@ -834,7 +836,7 @@ function getCharacterBasicData (character)
         if ((parseInt (version.first, 16) <= index) && (index <= parseInt (version.last, 16)))
         {
             characterBasicData.age = version.age;
-            characterBasicData.ageDate = versionDates[version.age];
+            characterBasicData.ageDate = versionDates[version.age] || "Date Unknown";
             break;
         }
     }

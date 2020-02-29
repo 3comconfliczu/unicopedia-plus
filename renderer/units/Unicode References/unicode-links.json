@@ -301,6 +301,16 @@
     ],
     [
         {
+            "name": "Valid JavaScript variable names in ES5 · Mathias Bynens",
+            "href": "https://mathiasbynens.be/notes/javascript-identifiers"
+        },
+        {
+            "name": "Valid JavaScript variable names in ES2015 · Mathias Bynens",
+            "href": "https://mathiasbynens.be/notes/javascript-identifiers-es6"
+        }
+    ],
+    [
+        {
             "name": "It’s not wrong that \"🤦🏼‍♂️\".length == 7",
             "href": "https://hsivonen.fi/string-length/"
         }

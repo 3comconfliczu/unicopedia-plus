@@ -4,6 +4,7 @@
     [
         layout = dot
         rankdir = {{rankdir}}
+        comment = {{comment}}
     ]
     node
     [
@@ -12,14 +13,12 @@
         fillcolor = white
         fixedsize = true
         width = 0.75
-        fontname = "system-ui, sans-serif"
-        fontsize = 36
         fontcolor = black
     ]
     edge
     [
-        fontsize = 10
         fontname = "system-ui, sans-serif"
+        fontsize = 10
         arrowsize = 0.75
     ]
 {{data}}

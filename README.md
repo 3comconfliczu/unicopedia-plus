@@ -421,6 +421,7 @@ The following utilities are currently available:
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.
 - Click the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.
 - Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
+- Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
 - The different variant relations are indicated using the following labels:
     - `Semantic`: characters listed under the *kSemanticVariant* Unihan tag
     - `Shape`: characters listed under the *kZVariant* Unihan tag

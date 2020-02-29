@@ -50,7 +50,8 @@
     outline-color: var(--color-error);
 }
 
-#unihan-variants-unit .checkbox:last-of-type
+#unihan-variants-unit .code-points-checkbox,
+#unihan-variants-unit .save-svg-button
 {
     margin-left: 1.5em;
 }
@@ -64,34 +65,37 @@
 
 #unihan-variants-unit .linear-row
 {
-    font-size: 36px;
+    background-color: white;
+    font-size: 48px;
     line-height: 1em;
     vertical-align: middle;
-    height: 48px;
+    height: 64px;
     user-select: text;
     cursor: text;
 }
 
-#unihan-variants-unit .linear-character
+#unihan-variants-unit .linear-character,
+#unihan-variants-unit .linear-code-point
 {
-    background-color: white;
     border: 2px solid var(--color-border);
     text-align: center;
     vertical-align: middle;
-    width: 48px;
-    min-width: 48px;
+    width: 64px;
+    min-width: 64px;
 }
 
-#unihan-variants-unit .linear-variants
+#unihan-variants-unit .linear-variants,
+#unihan-variants-unit .linear-code-points
 {
-    background-color: white;
     border: 1px solid var(--color-border);
     text-align: left;
     vertical-align: middle;
     width: 100%;
     white-space: nowrap;
+    max-width: 0;
     overflow: hidden;
-    padding: 0 6px;
+    text-overflow: ellipsis;
+    padding: 0 8px;
 }
 
 #unihan-variants-unit .linear-gap
@@ -105,10 +109,30 @@
     user-select: none;
 }
 
+#unihan-variants-unit .linear-row-gap
+{
+    height: 6px;
+    border: none;
+    background: none;
+}
+
+#unihan-variants-unit .linear-variants
+{
+    letter-spacing: 6px;
+}
+
+#unihan-variants-unit .linear-row.code-points
+{
+    font-family: Monaco, "Noto Mono", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    height: 2em;
+}
+
 #unihan-variants-unit .options
 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 

@@ -4,9 +4,12 @@ const unit = document.getElementById ('unihan-variants-unit');
 const unihanInput = unit.querySelector ('.unihan-input');
 const lookupButton = unit.querySelector ('.lookup-button');
 const extraVariantsCheckbox = unit.querySelector ('.extra-variants-checkbox');
-const detailedRelationsCheckbox = unit.querySelector ('.detailed-relations-checkbox');
 const linearCharacter = unit.querySelector ('.linear-character');
 const linearVariants = unit.querySelector ('.linear-variants');
+const linearCodePoint = unit.querySelector ('.linear-code-point');
+const linearCodePoints = unit.querySelector ('.linear-code-points');
+const codePointsCheckbox = unit.querySelector ('.code-points-checkbox');
+const detailedRelationsCheckbox = unit.querySelector ('.detailed-relations-checkbox');
 const saveSVGButton = unit.querySelector ('.save-svg-button');
 const graphContainer = unit.querySelector ('.graph-container');
 //
@@ -50,6 +53,7 @@ module.exports.start = function (context)
         unihanHistory: [ ],
         unihanCharacter: "",
         extraVariantsCheckbox: false,
+        codePointsCheckbox: false,
         detailedRelationsCheckbox: false,
         defaultFolderPath: context.defaultFolderPath,
         instructions: true
@@ -257,6 +261,30 @@ module.exports.start = function (context)
     let dotString;
     let svgResult;
     //
+    let parser = new DOMParser ();
+    let serializer = new XMLSerializer ();
+    //
+    function postProcessSVG (svg)
+    {
+        let doc = parser.parseFromString (svg, 'text/xml');
+        let ellipses = doc.documentElement.querySelectorAll ('ellipse');
+        for (let ellipse of ellipses)
+        {
+            let cx = ellipse.getAttribute ('cx');
+            let texts = ellipse.parentNode.querySelectorAll ('text');
+            for (let text of texts)
+            {
+                let textAnchor = text.getAttribute ('text-anchor');
+                if (textAnchor !== "middle")
+                {
+                    text.setAttribute ('text-anchor', "middle");
+                    text.setAttribute ('x', cx);
+                }
+            }
+        }
+        return serializer.serializeToString (doc);
+    }
+    //
     function displayData (character)
     {
         dotString = "";
@@ -272,6 +300,8 @@ module.exports.start = function (context)
         {
             linearVariants.firstChild.remove ();
         }
+        linearCodePoint.textContent = "";
+        linearCodePoints.textContent = "";
         while (graphContainer.firstChild)
         {
             graphContainer.firstChild.remove ();
@@ -296,6 +326,7 @@ module.exports.start = function (context)
             symbol.title = getTooltip (character);
             symbol.textContent = character;
             linearCharacter.appendChild (symbol);
+            linearCodePoint.textContent = unicode.charactersToCodePoints (character);
             let relations = getVariantRelations (character);
             // console.log (relations);
             let variants = [ ];
@@ -322,12 +353,35 @@ module.exports.start = function (context)
                     symbol.textContent = variant;
                     linearVariants.appendChild (symbol);
                 }
+                linearCodePoints.textContent = unicode.charactersToCodePoints (variants.join (""));
             }
             try
             {
+                function getOptionsString (character, isLookedUp)
+                {
+                    let codePoint = unicode.charactersToCodePoints (character);
+                    let label = (codePointsCheckbox.checked) ?
+                        '<<FONT FACE="system-ui, sans-serif" POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE="Monaco, Noto Mono, monospace" POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>' :
+                        '<<FONT FACE="system-ui, sans-serif" POINT-SIZE="36">{{character}}</FONT>>'                        
+                    let options =
+                    [
+                        { name: "tooltip", value: JSON.stringify (getTooltip (character)) },
+                        { name: "style", value: isLookedUp && "bold" },
+                        { name: "label", value: label.replace ("{{character}}", character).replace ("{{codepoint}}", codePoint.replace ("U+", "")) }
+                    ];
+                    let optionsArray = [ ];
+                    for (let option of options)
+                    {
+                        if (option.value)
+                        {
+                            optionsArray.push (`${option.name} = ${option.value}`);
+                        }
+                    }
+                    return optionsArray.join (", ");
+                }
                 let data = "";
-                data += `    "${character}" [ tooltip = ${JSON.stringify (getTooltip (character))}, style = bold ]`;
-                data += variants.map (variant => `\n    "${variant}" [ tooltip = ${JSON.stringify (getTooltip (variant))} ]`).join ("");
+                data += `    "${character}" [ ${getOptionsString (character, true)} ]`;
+                data += variants.map (variant => `\n    "${variant}" [ ${getOptionsString (variant)} ]`).join ("");
                 if (detailedRelationsCheckbox.checked)
                 {
                     let toCharacters = { };
@@ -382,10 +436,12 @@ module.exports.start = function (context)
                     data += variants.map (variant => `\n    "${character}" -- "${variant}"`).join ("");
                 }
                 // console.log (data);
+                let codePoint = unicode.charactersToCodePoints (character);
                 dotString =
                     dotTemplate
                     .replace ('{{graph}}', detailedRelationsCheckbox.checked ? 'digraph' : 'graph')
                     .replace ('{{rankdir}}', detailedRelationsCheckbox.checked ? 'LR' : 'TB')
+                    .replace ('{{comment}}', JSON.stringify (`${character} ${codePoint} | ${context.name} | ${context.app}`))
                     .replace ('{{data}}', data);
                 // console.log (dotString);
                 viz.renderString (dotString, { engine: 'dot', format: 'svg' })
@@ -393,7 +449,7 @@ module.exports.start = function (context)
                 (
                     result =>
                     {
-                        svgResult = result;
+                        svgResult = postProcessSVG (result); // Hack to fix incorrect horizontal centering of text in circle!
                         graphContainer.innerHTML = svgResult;
                         saveSVGButton.disabled = false;
                     }
@@ -410,7 +466,6 @@ module.exports.start = function (context)
         unihanInput.value = "";
         unihanInput.dispatchEvent (new Event ('input'));
         displayData (character);
-        unit.scrollTop = 0;
     }
     //
     graphContainer.addEventListener
@@ -459,6 +514,9 @@ module.exports.start = function (context)
     //
     extraVariantsCheckbox.checked = prefs.extraVariantsCheckbox;
     extraVariantsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
+    //
+    codePointsCheckbox.checked = prefs.codePointsCheckbox;
+    codePointsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
     //
     detailedRelationsCheckbox.checked = prefs.detailedRelationsCheckbox;
     detailedRelationsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
@@ -515,6 +573,7 @@ module.exports.stop = function (context)
         unihanHistory: unihanHistory,
         unihanCharacter: currentUnihanCharacter,
         extraVariantsCheckbox: extraVariantsCheckbox.checked,
+        codePointsCheckbox: codePointsCheckbox.checked,
         detailedRelationsCheckbox: detailedRelationsCheckbox.checked,
         defaultFolderPath: defaultFolderPath,
         instructions: instructions.open

@@ -446,7 +446,7 @@ module.exports.start = function (context)
     //
     const GraphemeSplitter = require ('grapheme-splitter');
     //
-    var splitter = new GraphemeSplitter ();
+    let splitter = new GraphemeSplitter ();
     //
     function isWideGrapheme (grapheme)
     {
