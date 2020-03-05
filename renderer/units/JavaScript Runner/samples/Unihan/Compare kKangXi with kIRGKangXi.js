@@ -1,8 +1,7 @@
 // Compare kKangXi with kIRGKangXi
-const { codePoints, coreSet, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
-let set = fullSet;
+const { codePoints, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
 let diffs = [ ];
-set.forEach
+fullSet.forEach
 (
     codePoint =>
     {

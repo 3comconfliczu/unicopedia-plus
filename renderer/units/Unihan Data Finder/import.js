@@ -69,8 +69,8 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const regexUnicode = require ('../../lib/regex-unicode.js');
     //
+    const regexp = require ('../../lib/unicode/regexp.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     //
     let unihanCount = unihanData.fullSet.length;
@@ -278,7 +278,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { useRegex: tagUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { useRegex: tagUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -360,7 +360,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (searchString, { wholeWord: tagWholeWord.checked, useRegex: tagUseRegex.checked });
+                        regex = regexp.build (searchString, { wholeWord: tagWholeWord.checked, useRegex: tagUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -492,7 +492,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -521,6 +521,7 @@ module.exports.start = function (context)
         'kSemanticVariant',
         'kSimplifiedVariant',
         'kSpecializedSemanticVariant',
+        "kSpoofingVariant",
         'kTraditionalVariant',
         'kZVariant'
     ];
@@ -619,7 +620,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (searchString, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                        regex = regexp.build (searchString, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -708,9 +709,6 @@ module.exports.start = function (context)
     const nameIndex = keyIndex.build (unihanBlocks, 'name', (a, b) => a.localeCompare (b));
     const firstIndex = keyIndex.build (unihanBlocks, 'first', (a, b) =>  parseInt (a, 16) - parseInt (b, 16));
     //
-    // Unihan character
-    let unihanRegex = regexUnicode.build ('(?=\\p{Script=Han})(?=\\p{Other_Letter})', { useRegex: true });
-    //
     let blocks = { };
     //
     unihanBlocks.forEach
@@ -725,11 +723,12 @@ module.exports.start = function (context)
             block.size = block.lastIndex - block.firstIndex + 1;
             block.characters = [ ];
             block.coreCount = 0;
+            block.core2020Count = 0;
             block.fullCount = 0;
             for (let index = block.firstIndex; index <= block.lastIndex; index++)
             {
                 let character = String.fromCodePoint (index);
-                if (unihanRegex.test (character))
+                if (regexp.isUnihan (character))
                 {
                     block.fullCount++;
                 }
@@ -751,14 +750,25 @@ module.exports.start = function (context)
         }
     }
     //
+    for (let codePoint of unihanData.core2020Set)
+    {
+        let index = parseInt (codePoint.replace ("U+", ""), 16);
+        for (let block of unihanBlocks)
+        {
+            if ((block.firstIndex <= index) && (index <= block.lastIndex))
+            {
+                block.core2020Count++;
+                break;
+            }
+        }
+    }
+    //
     function updateGridResults (hitCount, totalCount)
     {
         gridHitCount.textContent = hitCount;
         gridTotalCount.textContent = totalCount;
         gridResultsButton.disabled = (hitCount <= 0);
     }
-    //
-    let assignedRegex = regexUnicode.build ('\\p{Assigned}', { useRegex: true });
     //
     let currentCharactersByGrid = [ ];
     //
@@ -774,7 +784,7 @@ module.exports.start = function (context)
         {
             characters.push (String.fromCodePoint (index));
         }
-        currentCharactersByGrid = characters.filter (character => assignedRegex.test (character));
+        currentCharactersByGrid = characters.filter (character => regexp.isUnihan (character));
         updateGridResults (block.fullCount, block.size);
         gridSearchData.appendChild (gridDataTable.create (block.characters, gridParams, highlightedCharacter));
     }
@@ -805,7 +815,7 @@ module.exports.start = function (context)
         }
     );
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}))\s*$/u;
     //
     function parseUnihanCharacter (inputString)
     {
@@ -821,7 +831,7 @@ module.exports.start = function (context)
             {
                 character = String.fromCodePoint (parseInt (match[2], 16));
             }
-            if (!unihanRegex.test (character))
+            if (!regexp.isUnihan (character))
             {
                 character = "";
             }

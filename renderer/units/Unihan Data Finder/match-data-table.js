@@ -1,5 +1,5 @@
 //
-const regexUnicode = require ('../../lib/regex-unicode.js');
+const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
@@ -116,7 +116,7 @@ module.exports.create = function (characters, regex, params)
             dataRow.appendChild (ageData);
             let statusData = document.createElement ('td');
             statusData.className = 'status-data';
-            statusData.textContent = /\p{Unified_Ideograph}/u.test (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+            statusData.textContent = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
             dataRow.appendChild (statusData);
             let blockNameData = document.createElement ('td');
             blockNameData.className = 'block-name-data';

@@ -4,9 +4,6 @@ const rsTags =
 [
     "kRSUnicode",
     "kRSKangXi",
-    "kRSJapanese",
-    "kRSKanWa",
-    "kRSKorean",
     "kRSAdobe_Japan1_6"
 ];
 //

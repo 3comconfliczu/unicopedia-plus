@@ -4,6 +4,7 @@ const variantProperties =
     "kSemanticVariant",
     "kSimplifiedVariant",
     "kSpecializedSemanticVariant",
+    "kSpoofingVariant",
     "kTraditionalVariant",
     "kZVariant"
 ];

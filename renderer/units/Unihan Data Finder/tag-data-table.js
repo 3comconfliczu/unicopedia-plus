@@ -1,5 +1,5 @@
 //
-const regexUnicode = require ('../../lib/regex-unicode.js');
+const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
@@ -82,14 +82,12 @@ module.exports.create = function (characterInfos, params)
         headerRow.appendChild (blockNameHeader);
         table.appendChild (headerRow);
         //
-        let unifiedRegex = regexUnicode.build ('\\p{Unified_Ideograph}', { useRegex: true });
-        //
         for (let characterInfo of characterInfos)
         {
             let data = unicode.getCharacterBasicData (characterInfo.character);
             let dataRow = document.createElement ('tr');
             dataRow.className = 'data-row';
-            let status = unifiedRegex.test (characterInfo.character) ? "Unified Ideograph" : "Compatibility Ideograph";
+            let status = regexp.isUnified (characterInfo.character) ? "Unified Ideograph" : "Compatibility Ideograph";
             dataRow.title = `Age: Unicode ${data.age} (${data.ageDate})\nStatus: ${status}`;
             let symbolData = document.createElement ('td');
             symbolData.className = 'symbol-data';

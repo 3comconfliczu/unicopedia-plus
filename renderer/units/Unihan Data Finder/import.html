@@ -20,7 +20,7 @@
                     </div>
                     <div class="action-group search-group">
                         <span class="action search-wrap">
-                            <input class="search-string" type="search" maxlength="256" placeholder="Unihan tag value...">
+                            <input class="search-string" type="search" maxlength="384" placeholder="Unihan tag value...">
                             <span class="search-message"></span>
                         </span>
                         <span class="action">
@@ -84,7 +84,7 @@
                             <select class="select-block-range"></select>
                         </span>
                         <span class="action">
-                            <input class="specimen" type="search" maxlength="256" title="Unihan specimen (character or code point)" placeholder="Specimen...">
+                            <input class="specimen" type="search" maxlength="64" title="Unihan specimen (character or code point)" placeholder="Specimen...">
                         </span>
                         <span class="action">
                             <button class="go-button" type="button">Go</button>
@@ -109,7 +109,7 @@
                         <li>Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.</li>
                         <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the 88,889 Unihan characters (or code points) defined in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
+                        <li>The search is performed on the 93,858 Unihan characters (or code points) defined in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
                             <ul>
                                 <li><em>Unihan_DictionaryIndices.txt</em></li>
                                 <li><em>Unihan_DictionaryLikeData.txt</em></li>
@@ -142,7 +142,7 @@
                     </ul>
                     <p><kbd>kIICore</kbd></p>
                     <ul>
-                        <li>Unihan characters whose 'kIICore' tag value exists, i.e., which belong to the IICore set of 9,810 CJK unified ideographs in common usage:<br><code class="select-all">.</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
+                        <li>Unihan characters whose 'kIICore' tag value exists, i.e., which belong to the 'International Ideographs Core' set of 9,810 CJK unified ideographs in common usage:<br><code class="select-all">.</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
                     </ul>
                     <p><kbd>kJapaneseKun</kbd></p>
                     <ul>
@@ -164,6 +164,10 @@
                     <ul>
                         <li>Unihan characters whose 'kTotalStrokes' tag value corresponds to a total stroke count of 40 or more:<br><code class="select-all">[4-9]\d</code></li>
                     </ul>
+                    <p><kbd>kUnihanCore2020</kbd></p>
+                    <ul>
+                        <li>Unihan characters whose 'kUnihanCore2020' tag value exists, i.e., which belong to the 'Unihan Core (2020)' set of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia:<br><code class="select-all">.</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
+                    </ul>
                 </details>
             </div>
         </div>
@@ -177,7 +181,7 @@
                         <li>Click on the <kbd><svg style="width: 15px; height: 15px; vertical-align: text-bottom; stroke: var(--color);"><use href="/images/search.svg#match-variants-icon"></use></svg></kbd> (<em>Match Variants</em>) toggle button to extend the search to characters whose <em>variants</em> match the query string.</li>
                         <li>Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the set of 88,889 Unihan characters defined in <strong>Unicode 12.1</strong>.</li>
+                        <li>The search is performed on the set of 93,858 Unihan characters defined in <strong>Unicode 13.0</strong>.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -192,10 +196,11 @@
                     <summary>Regex Examples</summary>
                     <p><span class="match-variants off"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>off</strong>:</p>
                     <ul>
-                        <li>All Unihan characters:<br><code class="select-all">.</code> or <code class="select-all">\p{Assigned}</code></li>
+                        <li>All Unihan characters:<br><code class="select-all">.</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
                         <li>Unihan characters with the 'unified ideograph' status:<br><code class="select-all">\p{Unified_Ideograph}</code></li>
                         <li>Unihan characters with the 'compatibility ideograph' status:<br><code class="select-all">[^\p{Unified_Ideograph}]</code> or <code class="select-all">\P{Unified_Ideograph}</code></li>
                         <li>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead:<br><code class="select-all">(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code></li>
+                        <li>Unihan characters belonging to the 'CJK Unified Ideographs Extension G' block:<br><code class="select-all">[\u{30000}-\u{3134F}]</code></li>
                     </ul>
                     <p><span class="match-variants on"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>on</strong>:</p>
                     <ul>
@@ -210,7 +215,7 @@
                 <details class="instructions">
                     <summary>Instructions</summary>
                     <ul>
-                        <li>The <strong>View by Grid</strong> feature of the <strong>Unihan Data Finder</strong> utility displays in real time a grid view of the blocks containing the 88,889 Unihan characters.</li>
+                        <li>The <strong>View by Grid</strong> feature of the <strong>Unihan Data Finder</strong> utility displays in real time a grid view of the 10 blocks containing the 93,858 Unihan characters defined in <strong>Unicode 13.0</strong>.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
                         <li>A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>.</li>
                         <li>It is also possible to directly enter a Unihan character or code point in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the character, scroll it into view, and highlight it.</li>

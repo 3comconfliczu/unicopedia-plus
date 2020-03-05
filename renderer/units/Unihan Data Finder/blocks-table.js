@@ -20,13 +20,20 @@ module.exports.create = function (unihanBlocks)
     let coreSetHeader = document.createElement ('th');
     coreSetHeader.className = 'core-set-header';
     coreSetHeader.textContent = "IICore";
+    coreSetHeader.title = "International Ideographs Core";
     headerRow.appendChild (coreSetHeader);
+    let core2020SetHeader = document.createElement ('th');
+    core2020SetHeader.className = 'core-2020-set-header';
+    core2020SetHeader.textContent = "UCore";
+    core2020SetHeader.title = "Unihan Core (2020)";
+    headerRow.appendChild (core2020SetHeader);
     let fullSetHeader = document.createElement ('th');
     fullSetHeader.className = 'full-set-header';
     fullSetHeader.textContent = "Full\xA0Set";
     headerRow.appendChild (fullSetHeader);
     blocksTable.appendChild (headerRow);
     let coreTotal = 0;
+    let core2020Total = 0;
     let fullTotal = 0;
     for (let unihanBlock of unihanBlocks)
     {
@@ -51,6 +58,12 @@ module.exports.create = function (unihanBlocks)
         coreTotal += coreCount;
         dataCoreSet.textContent = coreCount.toLocaleString ('en');
         dataRow.appendChild (dataCoreSet);
+        let dataCore2020Set = document.createElement ('td');
+        dataCore2020Set.className = 'core-2020-set';
+        let core2020Count = unihanBlock.core2020Count;
+        core2020Total += core2020Count;
+        dataCore2020Set.textContent = core2020Count.toLocaleString ('en');
+        dataRow.appendChild (dataCore2020Set);
         let dataFullSet = document.createElement ('td');
         dataFullSet.className = 'full-set';
         let fullCount = unihanBlock.fullCount;
@@ -70,6 +83,10 @@ module.exports.create = function (unihanBlocks)
     dataCoreTotal.className = 'core-total';
     dataCoreTotal.textContent = coreTotal.toLocaleString ('en');
     totalRow.appendChild (dataCoreTotal);
+    let dataCore2020Total = document.createElement ('td');
+    dataCore2020Total.className = 'core-2020-total';
+    dataCore2020Total.textContent = core2020Total.toLocaleString ('en');
+    totalRow.appendChild (dataCore2020Total);
     let dataFullTotal = document.createElement ('td');
     dataFullTotal.className = 'full-total';
     dataFullTotal.textContent = fullTotal.toLocaleString ('en');

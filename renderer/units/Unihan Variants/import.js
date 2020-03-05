@@ -8,8 +8,8 @@ const linearCharacter = unit.querySelector ('.linear-character');
 const linearVariants = unit.querySelector ('.linear-variants');
 const linearCodePoint = unit.querySelector ('.linear-code-point');
 const linearCodePoints = unit.querySelector ('.linear-code-points');
-const codePointsCheckbox = unit.querySelector ('.code-points-checkbox');
 const detailedRelationsCheckbox = unit.querySelector ('.detailed-relations-checkbox');
+const codePointsCheckbox = unit.querySelector ('.code-points-checkbox');
 const saveSVGButton = unit.querySelector ('.save-svg-button');
 const graphContainer = unit.querySelector ('.graph-container');
 //
@@ -44,6 +44,7 @@ module.exports.start = function (context)
     //
     const dotTemplate = fs.readFileSync (path.join (__dirname, 'template.dot'), { encoding: 'utf8' });
     //
+    const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
@@ -53,8 +54,8 @@ module.exports.start = function (context)
         unihanHistory: [ ],
         unihanCharacter: "",
         extraVariantsCheckbox: false,
-        codePointsCheckbox: false,
         detailedRelationsCheckbox: false,
+        codePointsCheckbox: false,
         defaultFolderPath: context.defaultFolderPath,
         instructions: true
     };
@@ -62,14 +63,7 @@ module.exports.start = function (context)
     //
     unihanHistory = prefs.unihanHistory;
     //
-    // Unihan characters
-    const unihanPattern = '(?:(?=\\p{Script=Han})(?=\\p{Other_Letter}).)';
-    const unihanRegex = new RegExp (unihanPattern, 'u');
-    //
-    const unifiedPattern = '\\p{Unified_Ideograph}';
-    const unifiedRegex = new RegExp (unifiedPattern, 'u');
-    //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}))\s*$/u;
     //
     function parseUnihanCharacter (inputString)
     {
@@ -85,7 +79,7 @@ module.exports.start = function (context)
             {
                 character = String.fromCodePoint (parseInt (match[2], 16));
             }
-            if (!unihanRegex.test (character))
+            if (!regexp.isUnihan (character))
             {
                 character = "";
             }
@@ -175,7 +169,7 @@ module.exports.start = function (context)
     function getTooltip (character)
     {
         let data = unicode.getCharacterBasicData (character);
-        let status = unifiedRegex.test (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+        let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
         return `Code Point: ${data.codePoint}\nAge: Unicode ${data.age} (${data.ageDate})\nStatus: ${status}`;
     }
     //
@@ -188,6 +182,8 @@ module.exports.start = function (context)
         //
         'kSemanticVariant',
         'kSpecializedSemanticVariant',
+        //
+        'kSpoofingVariant',
         //
         'kZVariant'
     ];
@@ -253,6 +249,7 @@ module.exports.start = function (context)
         'kSemanticVariant': " Semantic ",
         'kSimplifiedVariant': " Simplified ",
         'kSpecializedSemanticVariant': " Specialized ",
+        'kSpoofingVariant': " Spoofing ",
         'kTraditionalVariant': " Traditional ",
         'kYasuokaVariant': " Yasuoka ",
         'kZVariant': " Shape "
@@ -515,11 +512,11 @@ module.exports.start = function (context)
     extraVariantsCheckbox.checked = prefs.extraVariantsCheckbox;
     extraVariantsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
     //
-    codePointsCheckbox.checked = prefs.codePointsCheckbox;
-    codePointsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
-    //
     detailedRelationsCheckbox.checked = prefs.detailedRelationsCheckbox;
     detailedRelationsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
+    //
+    codePointsCheckbox.checked = prefs.codePointsCheckbox;
+    codePointsCheckbox.addEventListener ('click', (event) => { updateUnihanData (currentUnihanCharacter); });
     //
     currentUnihanCharacter = prefs.unihanCharacter;
     updateUnihanData (currentUnihanCharacter);
@@ -573,8 +570,8 @@ module.exports.stop = function (context)
         unihanHistory: unihanHistory,
         unihanCharacter: currentUnihanCharacter,
         extraVariantsCheckbox: extraVariantsCheckbox.checked,
-        codePointsCheckbox: codePointsCheckbox.checked,
         detailedRelationsCheckbox: detailedRelationsCheckbox.checked,
+        codePointsCheckbox: codePointsCheckbox.checked,
         defaultFolderPath: defaultFolderPath,
         instructions: instructions.open
     };

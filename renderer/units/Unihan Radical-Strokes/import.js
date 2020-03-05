@@ -123,7 +123,7 @@ module.exports.start = function (context)
     rsRadicalSelect.addEventListener ('input', event => { rsCurrentRadical = event.currentTarget.value; });
     //
     const minStrokes = 0;
-    const maxStrokes = 62;  // 𠔻 U+2053B kRSKangXi 12.62
+    const maxStrokes = 76;  // 𱁬 U+3106C kRSUnicode 173.76
     //
     let allOption = document.createElement ('option');
     allOption.textContent = "All";
@@ -153,9 +153,6 @@ module.exports.start = function (context)
     [
         "kRSUnicode",   // Must be first
         "kRSKangXi",
-        "kRSJapanese",
-        "kRSKanWa",
-        "kRSKorean",
         "kRSAdobe_Japan1_6"
     ];
     //

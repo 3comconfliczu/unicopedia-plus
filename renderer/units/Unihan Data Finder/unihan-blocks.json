@@ -35,6 +35,11 @@
             "last": "2EBEF"
         },
         {
+            "name": "CJK Unified Ideographs Extension G",
+            "first": "30000",
+            "last": "3134F"
+        },
+        {
             "name": "CJK Compatibility Ideographs",
             "first": "F900",
             "last": "FAFF"

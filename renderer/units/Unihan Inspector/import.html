@@ -7,7 +7,7 @@
             </span>
             <span class="option-group">
                 <button class="random-button" type="button">Random</button>
-                <label class="checkbox"><input class="full-set-checkbox" type="checkbox">&nbsp;Full Set</label>
+                <label class="checkbox"><input class="full-set-checkbox" type="checkbox">&nbsp;Full Unihan Set</label>
             </span>
         </div>
         <div class="info-container"></div>
@@ -16,7 +16,7 @@
         <details class="instructions">
             <summary>Instructions</summary>
             <ul>
-                <li>The <strong>Unihan Inspector</strong> utility displays all the available Unihan tags for each of the 88,889 Unihan characters defined in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
+                <li>The <strong>Unihan Inspector</strong> utility displays all the available Unihan tags for each of the 93,858 Unihan characters defined in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
                     <ul>
                         <li><em>Unihan_DictionaryIndices.txt</em></li>
                         <li><em>Unihan_DictionaryLikeData.txt</em></li>
@@ -37,7 +37,7 @@
                 </li>
                 <li>Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.</li>
                 <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
-                <li>It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Full Set</kbd> checkbox to perform the draw on the full set of 88,889 Unihan characters, or restrict it to the IICore set of 9,810 CJK unified ideographs in common usage.</li>
+                <li>It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Full Unihan Set</kbd> checkbox to perform the draw on the full set of 93,858 Unihan characters, or restrict it to the IICore set of 9,810 CJK unified ideographs in common usage.</li>
                 <li>The currently looked up character is displayed at a large scale, followed by its code point.</li>
                 <li>Click on <kbd>◀</kbd> or <kbd>▶</kbd> to step through five different CJK typefaces, among:
                     <ul>
@@ -56,6 +56,7 @@
                         <li><code>Compatibility Variants</code>: characters whose decomposition is the looked up character</li>
                         <li><code>Semantic Variants</code>: characters listed under the <em>kSemanticVariant</em> Unihan tag</li>
                         <li><code>Specialized Variants</code>: characters listed under the <em>kSpecializedSemanticVariant</em> Unihan tag</li>
+                        <li><code>Spoofing Variants</code>: characters listed under the <em>kSpoofingVariant</em> Unihan tag</li>
                         <li><code>Shape (Z-) Variants</code> characters listed under the <em>kZVariant</em> Unihan tag</li>
                         <li><code>Simplified Variants</code>: characters listed under the <em>kSimplifiedVariant</em> Unihan tag</li>
                         <li><code>Traditional Variants</code>: characters listed under the <em>kTraditionalVariant</em> Unihan tag</li>
@@ -64,7 +65,7 @@
                 </li>
                 <li>Notes:
                     <ul>
-                        <li>The top Radical/Strokes fields are displaying data obtained from the only informative IRG source: <em>kRSUnicode</em>, while the bottom ones (in grayed-out style, if any) make use of the provisional sources: <em>kRSKangXi</em>, <em>kRSJapanese</em>, <em>kRSKanWa</em>, <em>kRSKorean</em> and <em>kRSAdobe_Japan1_6</em>.</li>
+                        <li>The top Radical/Strokes fields are displaying data obtained from the only informative IRG source: <em>kRSUnicode</em>, while the bottom ones (in grayed-out style, if any) make use of the provisional sources: <em>kRSKangXi</em> and <em>kRSAdobe_Japan1_6</em>.</li>
                         <li>IICore (<em>International Ideographs Core</em>) represents a set of 9,810 important Unihan characters in everyday use throughout East Asia; it has been developed by the IRG.</li>
                         <li>IRG stands for <em>Ideographic Rapporteur Group</em>, a committee advising the Unicode Consortium about Asian language characters.</li>
                         <li>Radicals do <em>not</em> belong to the Unihan character set; they are allowed to be looked up here merely as a convenience, since they are closely related, and because their appearance is similar, or even identical, to their equivalent unified ideograph.</li>

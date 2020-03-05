@@ -685,6 +685,8 @@
 #unihan-data-finder-unit .unihan-blocks td.size,
 #unihan-data-finder-unit .unihan-blocks th.core-set-header,
 #unihan-data-finder-unit .unihan-blocks td.core-set,
+#unihan-data-finder-unit .unihan-blocks th.core-2020-set-header,
+#unihan-data-finder-unit .unihan-blocks td.core-2020-set,
 #unihan-data-finder-unit .unihan-blocks th.core-total-header,
 #unihan-data-finder-unit .unihan-blocks td.core-total,
 #unihan-data-finder-unit .unihan-blocks th.full-set-header,
@@ -707,6 +709,7 @@
 }
 
 #unihan-data-finder-unit .unihan-blocks th.core-total-header,
+#unihan-data-finder-unit .unihan-blocks th.core-2020-total-header,
 #unihan-data-finder-unit .unihan-blocks th.full-total-header
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.9), hsla(0, 0%, 100%, 0.9));
@@ -715,14 +718,17 @@
 #unihan-data-finder-unit .unihan-blocks td.range,
 #unihan-data-finder-unit .unihan-blocks td.size,
 #unihan-data-finder-unit .unihan-blocks td.core-set,
+#unihan-data-finder-unit .unihan-blocks td.core-2020-set,
 #unihan-data-finder-unit .unihan-blocks td.full-set,
 #unihan-data-finder-unit .unihan-blocks td.core-total,
+#unihan-data-finder-unit .unihan-blocks td.core-2020-total,
 #unihan-data-finder-unit .unihan-blocks td.full-total
 {
     font-family: Monaco, "Noto Mono", monospace;
 }
 
 #unihan-data-finder-unit .unihan-blocks td.core-total,
+#unihan-data-finder-unit .unihan-blocks td.core-2020-total,
 #unihan-data-finder-unit .unihan-blocks td.full-total
 {
     font-weight: bold;

@@ -62,7 +62,8 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const regexUnicode = require ('../../lib/regex-unicode.js');
+    //
+    const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     //
     const dataTable = require ('./data-table.js');
@@ -206,7 +207,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { useRegex: nameUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { useRegex: nameUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -251,7 +252,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (searchString, { wholeWord: nameWholeWord.checked, useRegex: nameUseRegex.checked });
+                        regex = regexp.build (searchString, { wholeWord: nameWholeWord.checked, useRegex: nameUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -379,7 +380,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -424,7 +425,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (searchString, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                        regex = regexp.build (searchString, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -535,8 +536,6 @@ module.exports.start = function (context)
         blockResultsButton.disabled = (hitCount <= 0);
     }
     //
-    let assignedRegex = regexUnicode.build ('\\p{Assigned}', { useRegex: true });
-    //
     let currentCharactersByBlock = [ ];
     //
     function displayRangeTable (blockKey, highlightedCharacter)
@@ -551,7 +550,7 @@ module.exports.start = function (context)
         {
             characters.push (String.fromCodePoint (index));
         }
-        currentCharactersByBlock = characters.filter (character => assignedRegex.test (character));
+        currentCharactersByBlock = characters.filter (character => regexp.isAssigned (character));
         updateBlockResults (currentCharactersByBlock.length, block.size);
         blockSearchData.appendChild (dataTable.create (characters, blockParams, highlightedCharacter));
     }

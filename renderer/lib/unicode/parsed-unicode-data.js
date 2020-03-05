@@ -99,9 +99,13 @@ for (let line of lines)
                 else
                 {
                     let character = String.fromCodePoint (index);
-                    if (/\p{Unified_Ideograph}/u.test (character))
+                    if (/^CJK Ideograph/.test (rangeName))
                     {
                         name = "CJK UNIFIED IDEOGRAPH-" + code;
+                    }
+                    else if (/^Tangut Ideograph/.test (rangeName))
+                    {
+                        name = "TANGUT IDEOGRAPH-" + code;
                     }
                     else if (/\p{Private_Use}/u.test (character))
                     {

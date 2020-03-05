@@ -1,5 +1,5 @@
 //
-const regexUnicode = require ('../../lib/regex-unicode.js');
+const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 //
 const deferredSymbols = false;
@@ -78,8 +78,6 @@ module.exports.create = function (characters, params, highlightedCharacter)
         );
         table.appendChild (header);
         //
-        let unihanRegex = regexUnicode.build ('(?=\\p{Script=Han})(?=\\p{Other_Letter})', { useRegex: true });
-        let unifiedRegex = regexUnicode.build ('\\p{Unified_Ideograph}', { useRegex: true });
         let colCount = hexDigits.length;
         let colIndex = 0;
         let row;
@@ -100,9 +98,9 @@ module.exports.create = function (characters, params, highlightedCharacter)
             symbolCell.className = 'symbol-cell';
             let symbol = document.createElement ('span');
             symbol.className = 'symbol';
-            if (unihanRegex.test (character))
+            if (regexp.isUnihan (character))
             {
-                let isUnified = unifiedRegex.test (character);
+                let isUnified = regexp.isUnified (character);
                 let status = isUnified ? "Unified Ideograph" : "Compatibility Ideograph";
                 if (isUnified && /[\uF900-\uFAFF]/.test (character))
                 {

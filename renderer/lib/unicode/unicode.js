@@ -895,7 +895,7 @@ function matchVerticalOrientation (character, orientationArray)
     }
     return match;
 }
-
+//
 module.exports =
 {
     characterCount,

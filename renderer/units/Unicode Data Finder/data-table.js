@@ -1,5 +1,5 @@
 //
-const regexUnicode = require ('../../lib/regex-unicode.js');
+const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
@@ -77,11 +77,10 @@ module.exports.create = function (characters, params, highlightedCharacter)
         header.appendChild (blockNameHeader);
         table.appendChild (header);
         //
-        let assignedRegex = regexUnicode.build ('\\p{Assigned}', { useRegex: true });
         for (let character of characters)
         {
             let data = unicode.getCharacterBasicData (character);
-            let isAssignedCharacter = assignedRegex.test (character);
+            let isAssignedCharacter = regexp.isAssigned (character);
             let row = document.createElement ('tr');
             row.className = 'row';
             if (!isAssignedCharacter)

@@ -2,6 +2,18 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.0.0
+
+- Added support for **Unicode 13.0**.
+- Updated scripts and regex samples.
+- Updated all screenshots.
+- Updated `Electron` to version `8.0.3`.
+
+**WARNING**: until `Electron` supports `Unicode 13.0`, some features yield results still pertaining to `Unicode 12.1` and are therefore unreliable:
+- Unicode properties `\p{...}` or `\P{...}` in regular expressions entered in the various search input fields.
+- Normalization.
+- Case folding.
+
 ## 6.7.0
 
 - Added display of code points to the **Unihan Variants** utility.

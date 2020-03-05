@@ -1,15 +1,12 @@
 // Get Radical Statistics
-const { codePoints, coreSet, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
+const { codePoints, coreSet, core2020Set, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
 const { fromRadical } = require ('./lib/unicode/get-rs-strings.js');
-const set = fullSet;    // coreSet or fullSet
+const set = fullSet;    // coreSet, core2020Set, fullSet
 const extraSources = false;
 const rsTags =
 [
     "kRSUnicode",
     "kRSKangXi",
-    "kRSJapanese",
-    "kRSKanWa",
-    "kRSKorean",
     "kRSAdobe_Japan1_6"
 ];
 //
@@ -55,7 +52,20 @@ for (let codePoint of set)
     }
 }
 radicals.sort ((a, b) => a.count - b.count).reverse ();
-$.writeln (`Unihan ${set === fullSet ? "full set" : "core set"}${extraSources ? " + Extra sources" : ""}:`);
+let setName;
+switch (set)
+{
+    case coreSet:
+        setName = "International Ideographs Core";
+        break;
+    case core2020Set:
+        setName = "Unihan Core (2020)";
+        break;
+    case fullSet:
+        setName = "Full Unihan";
+        break;
+}
+$.writeln (`${setName} set${extraSources ? " + Extra sources" : ""}:`);
 for (let index = 0; index < radicals.length; index++)
 {
     $.writeln (`${fromRadical (radicals[index].index, false, true)}: ${radicals[index].count} characters`);

@@ -69,7 +69,7 @@
                             <select class="select-block-range"></select>
                         </span>
                         <span class="action-no-flex">
-                            <input class="specimen" type="search" maxlength="256" title="Unicode specimen (code point or character)" placeholder="Specimen...">
+                            <input class="specimen" type="search" maxlength="64" title="Unicode specimen (code point or character)" placeholder="Specimen...">
                         </span>
                         <span class="action">
                             <button class="go-button" type="button">Go</button>
@@ -98,7 +98,7 @@
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
                         <li>When available, name aliases are displayed (in italics and smaller typeface) after the unique and immutable Unicode name. A correction alias is indicated by a leading reference mark <code>※</code>.</li>
                         <li>All names and aliases are obtained from the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> and <a title="https://www.unicode.org/Public/UNIDATA/NameAliases.txt" href="https://www.unicode.org/Public/UNIDATA/NameAliases.txt">NameAliases.txt</a> data files.</li>
-                        <li>The search is performed on the 277,510 assigned characters (or code points) defined in the <strong>Unicode 12.1</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
+                        <li>The search is performed on the 283,440 assigned characters (or code points) defined in the <strong>Unicode 13.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -131,7 +131,7 @@
                         <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
                         <li>Click on the <kbd><svg style="width: 15px; height: 15px; vertical-align: text-bottom;"><use href="/images/search.svg#match-decomposition-icon"></use></svg></kbd> (<em>Match Decomposition</em>) toggle button to extend the search to characters whose <em>decomposition mapping</em> matches the query string.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the 277,510 assigned characters (or code points) defined in the <strong>Unicode 12.1</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
+                        <li>The search is performed on the 283,440 assigned characters (or code points) defined in the <strong>Unicode 13.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -149,10 +149,10 @@
                         <li>Characters with the 'White_Space' binary property:<br><code class="select-all">\p{White_Space}</code></li>
                         <li>Characters considered white space in Unicode by the regular expression engine:<br><code class="select-all">\s</code></li>
                         <li>Characters considered line terminators in Unicode by the regular expression engine:<br><code class="select-all">(?!.)[^]</code> or <code class="select-all">(?!.)[\s\S]</code></li>
-                        <li>All assigned Unicode characters:<br><code class="select-all">.*</code> or <code class="select-all">[^]</code> or <code class="select-all">\p{Assigned}</code></li>
+                        <li>All assigned Unicode characters:<br><code class="select-all">.*</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
                         <li>Characters with the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\p{Private_Use}</code></li>
                         <li>Characters without the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\P{Private_Use}</code> or <code class="select-all">[^\p{Private_Use}]</code></li>
-                        <li>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 137,929 Unicode characters defined in Unicode 12.1:<br><code class="select-all">[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>or<br><code class="select-all">(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code></li>
+                        <li>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 143,859 Unicode characters defined in Unicode 13.0:<br><code class="select-all">[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>or<br><code class="select-all">(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code></li>
                         <li>Characters with the 'General_Category' property equal to 'Open_Punctuation' or 'Close_Punctuation':<br><code class="select-all">[\p{Open_Punctuation}\p{Close_Punctuation}]</code><br>or<br><code class="select-all">\p{Open_Punctuation}|\p{Close_Punctuation}</code></li>
                         <li>Characters with the 'Dash' binary property, but without the 'General_Category' property equal to 'Dash_Punctuation':<br><code class="select-all">(?=\p{Dash})(?!\p{Dash_Punctuation})</code><br>or<br><code class="select-all">(?=\p{Dash})(?=\P{Dash_Punctuation})</code></li>
                         <li>Characters with the 'Radical' binary property:<br><code class="select-all">\p{Radical}</code></li>
@@ -190,7 +190,7 @@
                     <ul>
                         <li>The <strong>List by Block</strong> feature of the <strong>Unicode Data Finder</strong> utility displays in real time a list of basic data (symbol, code point, name/aliases, block) of Unicode characters belonging to the same block range.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>A block can be selected either by <kbd>Block Range</kbd> or by <kbd>Block Name</kbd>, as defined in the <strong>Unicode 12.1</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/Blocks.txt" href="https://www.unicode.org/Public/UNIDATA/Blocks.txt">Blocks.txt</a> data file.</li>
+                        <li>A block can be selected either by <kbd>Block Range</kbd> or by <kbd>Block Name</kbd>, as defined in the <a title="https://www.unicode.org/Public/UNIDATA/Blocks.txt" href="https://www.unicode.org/Public/UNIDATA/Blocks.txt">Blocks.txt</a> data file.</li>
                         <li>It is also possible to directly enter a code point (or character) in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the code point, scroll its basic data into view, and highlight its hexadecimal code value.</li>
                         <li>You can quickly reuse a previously entered code point by using the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate up and down through the history stack in the <kbd>Specimen</kbd> field.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:

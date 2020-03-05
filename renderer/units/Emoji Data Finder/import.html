@@ -165,6 +165,7 @@
                         <li>Emoji with the 'Emoji_Modifier_Base' property, but without the 'Emoji_Presentation' property (<em>non-fully-qualified</em>):<br><code class="select-all">^(?!\p{Emoji_Presentation})\p{Emoji_Modifier_Base}$</code></li>
                         <li>Emoji with the 'Emoji_Modifier_Base' property, but without the 'Emoji_Presentation' property (<em>fully-qualified</em>):<br><code class="select-all">^(?!\p{Emoji_Presentation})\p{Emoji_Modifier_Base}\uFE0F$</code></li>
                         <li>Emoji made of a single code point belonging to the BMP (Basic Multilingual Plane):<br><code class="select-all">^[\u0000-\uFFFF]$</code></li>
+                        <li>Emoji made of a single code point belonging to a non-BMP "astral plane":<br><code class="select-all">^[^\u0000-\uFFFF]$</code></li>
                         <li>Emoji made of exactly six or eight code points:<br><code class="select-all">^......(..)?$</code> or <code class="select-all">^(.{6}|.{8})$</code></li>
                     </ul>
                 </details>

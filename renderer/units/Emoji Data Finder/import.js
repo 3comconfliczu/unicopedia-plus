@@ -49,8 +49,8 @@ module.exports.start = function (context)
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
     const sampleMenus = require ('../../lib/sample-menus.js');
-    const regexUnicode = require ('../../lib/regex-unicode.js');
     //
+    const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     //
     const defaultPrefs =
@@ -373,7 +373,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { useRegex: nameUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { useRegex: nameUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -418,7 +418,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (name, { wholeWord: nameWholeWord.checked, useRegex: nameUseRegex.checked });
+                        regex = regexp.build (name, { wholeWord: nameWholeWord.checked, useRegex: nameUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -534,7 +534,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexUnicode.build (event.currentTarget.value, { useRegex: sequenceUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { useRegex: sequenceUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -579,7 +579,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexUnicode.build (sequence, { useRegex: sequenceUseRegex.checked });
+                        regex = regexp.build (sequence, { useRegex: sequenceUseRegex.checked });
                     }
                     catch (e)
                     {

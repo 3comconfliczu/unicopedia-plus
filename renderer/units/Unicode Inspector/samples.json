@@ -220,6 +220,10 @@
                 "string": "㋿㍻㍼㍽㍾"
             },
             {
+                "label": "Musical Symbols",
+                "string": "𝄞𝄡𝄢"
+            },
+            {
                 "label": "Ornaments",
                 "string": "༺﴾※﴿༻"
             },
@@ -319,7 +323,7 @@
             },
             {
                 "label": "Inside Block",
-                "string": "\u0530\u18F6\u20C0\u2427\u2B74\u4DB6\uD83C\uDC2C\uD83E\uDC0C"
+                "string": "\u0530\u18F6\u20C0\u2427\u2B74\uD83C\uDC2C\uD83E\uDC0C"
             },
             {
                 "label": "No Block",
@@ -327,7 +331,7 @@
             },
             {
                 "label": "No Plane",
-                "string": "\uD8C0\uDC00\uD900\uDC00\uD940\uDC00\uD980\uDC00\uD9C0\uDC00\uDA00\uDC00\uDA40\uDC00\uDA80\uDC00\uDAC0\uDC00\uDB00\uDC00"
+                "string": "\uD900\uDC00\uD940\uDC00\uD980\uDC00\uD9C0\uDC00\uDA00\uDC00\uDA40\uDC00\uDA80\uDC00\uDAC0\uDC00\uDB00\uDC00"
             },
             {
                 "label": "Non-Character",

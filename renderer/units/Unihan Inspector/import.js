@@ -26,6 +26,7 @@ module.exports.start = function (context)
 {
     const { remote } = require ('electron');
     //
+    const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const numericValuesData = require ('../../lib/unicode/parsed-numeric-values-data.js');
@@ -71,48 +72,22 @@ module.exports.start = function (context)
     //
     currentTypefaceDefault = prefs.typefaceDefault;
     //
-    // Unihan characters
-    const unihanPattern = '(?:(?=\\p{Script=Han})(?=\\p{Other_Letter}).)';
-    //
-    // Radicals
-    const radicalPattern = '\\p{Radical}';
-    //
-    // Unihan characters and radicals
-    const unihanOrRadicalPattern = `${unihanPattern}|${radicalPattern}`;
-    //
-    // Han script characters:
-    // - CJK radicals
-    // - KangXi radicals
-    // - Ideographic iteration mark
-    // - Ideographic number zero
-    // - Hangzhou numerals
-    // - Vertical ideographic iteration mark
-    // - Unihan characters
-    const hanPattern = '\\p{Script=Han}';
-    //
-    const filterPattern = unihanOrRadicalPattern;
-    //
-    const unifiedPattern = '\\p{Unified_Ideograph}';
-    //
-    const radicalRegex = new RegExp (radicalPattern, 'u');
-    const filterRegex = new RegExp (filterPattern, 'u');
-    const unifiedRegex = new RegExp (unifiedPattern, 'u');
-    //
     function getTooltip (character)
     {
         let data = unicode.getCharacterBasicData (character);
-        return `${data.codePoint.replace (/U\+/, "U\u034F\+")}\xA0${character}` + (radicalRegex.test (character) ? " (Radical)" : ""); // U+034F COMBINING GRAPHEME JOINER
+        return `${data.codePoint.replace (/U\+/, "U\u034F\+")}\xA0${character}` + (regexp.isRadical (character) ? " (Radical)" : ""); // U+034F COMBINING GRAPHEME JOINER
     }
     function onLinkClick (event)
     {
         updateUnihanData (event.currentTarget.dataset.char);
     }
     //
+    const codePointOrCharacterPattern = '\\b(U\\+[0-9a-fA-F]{4,5})\\b|(.)';
+    const codePointOrCharacterRegex = new RegExp (codePointOrCharacterPattern, 'gu');
+    //
     function appendTextWithLinks (node, text)
     {
-        const codePointPattern = '\\bU\\+[0-9a-fA-F]{4,5}\\b';
-        const regex = new RegExp (`(${codePointPattern})|(${filterPattern})`, 'gu');
-        let matches = text.matchAll (regex);
+        let matches = text.matchAll (codePointOrCharacterRegex);
         let clickables = [ ];
         for (let match of matches)
         {
@@ -125,7 +100,7 @@ module.exports.start = function (context)
             {
                 codePoint = matched.toUpperCase ();
                 char = String.fromCodePoint (parseInt (codePoint.replace ("U+", "") , 16));
-                if (filterRegex.test (char))
+                if (regexp.isUnihan (char) || regexp.isRadical (char))
                 {
                     clickables.push ({ type: 'code-point', matched, index, lastIndex, codePoint, char });
                 }
@@ -133,8 +108,11 @@ module.exports.start = function (context)
             else if (match[2])
             {
                 char = matched;
-                codePoint = unicode.characterToCodePoint (char);
-                clickables.push ({ type: 'char', matched, index, lastIndex, codePoint, char });
+                if (regexp.isUnihan (char) || regexp.isRadical (char))
+                {
+                    codePoint = unicode.characterToCodePoint (char);
+                    clickables.push ({ type: 'char', matched, index, lastIndex, codePoint, char });
+                }
             }
         }
         for (let index = clickables.length - 2; index >= 0; index--)
@@ -249,7 +227,7 @@ module.exports.start = function (context)
         }
     }
     //
-    function getIICoreTooltip (valueString)
+    function getCoreSetTooltip (valueString)
     {
         const sources =
         {
@@ -261,9 +239,22 @@ module.exports.start = function (context)
             "P": "North Korea", // "KP"
             "T": "Taiwan"       // "TW"
         };
-        // let sourceArray = valueString.match (/[GHJKMPT]/g).map (source => `${source} (${sources[source]})`).sort ();
-        let sourceArray = valueString.match (/[GHJKMPT]/g).map (source => sources[source]).sort ();
-        return `Priority:\xA0${valueString.match (/[ABC]/)[0]}\nSource:\xA0${sourceArray.join (", ")}`;
+        let priority = valueString.match (/[ABC]/);
+        let source = valueString.match (/[GHJKMPT]/g).map (source => sources[source]).sort ().join (", ");
+        let properties =
+        [
+            { "name": "Priority", "value": priority && priority[0] },
+            { "name": "Source", "value": source }
+        ];
+        let tooltip = [ ];
+        for (let property of properties)
+        {
+            if (property.value)
+            {
+                tooltip.push (`${property.name}:\xA0${property.value}`);
+            }
+        }
+        return tooltip.join ("\n");
     }
     //
     function displayData (character)
@@ -404,7 +395,7 @@ module.exports.start = function (context)
             typefacePrevious.addEventListener ('click', event => { updateTypeface (true); });
             typefaceNext.addEventListener ('click', event => { updateTypeface (false); });
             //
-            if (radicalRegex.test (character))
+            if (regexp.isRadical (character))
             {
                 let unihanRadicalTag = document.createElement ('div');
                 unihanRadicalTag.className = 'unihan-radical-tag';
@@ -476,9 +467,23 @@ module.exports.start = function (context)
             unihanInfo.className = 'unihan-info';
             if (tags)
             {
-                let iiCoreSet = ("kIICore" in tags) ? "IICore" : "Full";
-                let iiCoreSetToolTip = ("kIICore" in tags) ? getIICoreTooltip (tags["kIICore"]) : "";
-                let status = unifiedRegex.test (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+                let coreSet;
+                let coreSetToolTip;
+                if ("kIICore" in tags)
+                {
+                    coreSet = "IICore (International Ideographs Core)";
+                    coreSetToolTip = getCoreSetTooltip (tags["kIICore"]);
+                }
+                else if ("kUnihanCore2020" in tags)
+                {
+                    coreSet = "Unihan Core (2020)";
+                    coreSetToolTip = getCoreSetTooltip (tags["kUnihanCore2020"]);
+                }
+                else
+                {
+                    coreSet = "Full Unihan";
+                }
+                let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
                 let rsValues = [ ];
                 let rsClasses = [ ];
                 let rsIRGCount = 0;
@@ -487,9 +492,6 @@ module.exports.start = function (context)
                 [
                     "kRSUnicode",   // Must be first
                     "kRSKangXi",
-                    "kRSJapanese",
-                    "kRSKanWa",
-                    "kRSKorean",
                     "kRSAdobe_Japan1_6"
                 ];
                 //
@@ -544,11 +546,12 @@ module.exports.start = function (context)
                 let traditional = getVariants (character, 'kTraditionalVariant');
                 let semantic = getVariants (character, 'kSemanticVariant');
                 let specialized = getVariants (character, 'kSpecializedSemanticVariant');
+                let spoofing = getVariants (character, 'kSpoofingVariant');
                 let shape = getVariants (character, 'kZVariant');
-                let yasuoka = getYasuokaVariants (character).filter (variant => filterRegex.test (variant));
+                let yasuoka = getYasuokaVariants (character).filter (variant => regexp.isUnihan (variant));
                 let unihanFields =
                 [
-                    { name: "Set", value: iiCoreSet, toolTip: iiCoreSetToolTip },
+                    { name: "Set", value: coreSet, toolTip: coreSetToolTip },
                     { name: "Status", value: status },
                     { name: "Radical/Strokes", value: rsValues, class: rsClasses },
                     { name: "Definition", value: definitionValue },
@@ -563,13 +566,15 @@ module.exports.start = function (context)
                     { name: "Semantic Variants", value: semantic.join (" ") },
                     { name: "Specialized Variants", value: specialized.join (" ") },
                     //
+                    { name: "Spoofing Variants", value: spoofing.join (" ") },
+                    //
                     { name: "Shape (Z-) Variants", value: shape.join (" ") },
                     //
                     { name: "Yasuoka Variants", value: yasuoka.join (" ") }
                 ];
                 appendFields (unihanInfo, unihanFields);
             }
-            else if (radicalRegex.test (character))
+            else if (regexp.isRadical (character))
             {
                 let radicalIndex = -1;
                 for (let kangxiIndex = 0; kangxiIndex < kangxiRadicals.length; kangxiIndex++)
@@ -828,7 +833,7 @@ module.exports.start = function (context)
         }
     }
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}))\s*$/u;
     //
     function parseUnihanCharacter (inputString)
     {
@@ -844,7 +849,7 @@ module.exports.start = function (context)
             {
                 character = String.fromCodePoint (parseInt (match[2], 16));
             }
-            if (!filterRegex.test (character))
+            if (!(regexp.isUnihan (character) || regexp.isRadical (character)))
             {
                 character = "";
             }
