@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.1.0
+
+- Added `All Group` menu item to all groups of the `Samples` menu in the **Emoji Data Finder** utility.
+- Added age of emoji to the tooltip of all displayed emoji in the **Emoji Picture Book** utility.
+- Updated `Electron` to version `8.1.0`.
+
 ## 7.0.0
 
 - Added support for **Unicode 13.0**.
@@ -9,7 +15,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Updated all screenshots.
 - Updated `Electron` to version `8.0.3`.
 
-**WARNING**: until `Electron` supports `Unicode 13.0`, some features yield results still pertaining to `Unicode 12.1` and are therefore unreliable:
+**Warning**: until `Electron` supports `Unicode 13.0`, some features yield results still pertaining to `Unicode 12.1` and are therefore partially unreliable:
 - Unicode properties `\p{...}` or `\P{...}` in regular expressions entered in the various search input fields.
 - Normalization.
 - Case folding.

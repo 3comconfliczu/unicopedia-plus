@@ -297,7 +297,7 @@ The following utilities are currently available:
 - Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the 93,858 Unihan characters (or code points) defined in  the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The search is performed on the 93,858 Unihan characters (or code points) defined in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*
@@ -348,7 +348,7 @@ The following utilities are currently available:
 
 ## Unihan Inspector
 
-- The **Unihan Inspector** utility displays all available Unihan tags for each of the 93,858 Unihan characters defined in  the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The **Unihan Inspector** utility displays all available Unihan tags for each of the 93,858 Unihan characters defined in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*

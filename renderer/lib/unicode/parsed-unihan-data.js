@@ -29,35 +29,35 @@ const tags =
     {
         "name": "Cantonese",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[a-z]{1,6}[1-6]"
     },
     "kCCCII":
     {
         "name": "CCCII (Chinese Character Code for Information Interchange)",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9A-F]{6}"
     },
     "kCheungBauer":
     {
         "name": "Cheung-Bauer",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{3}\\/[0-9]{2};[A-Z]*;[a-z1-6\\[\\]\\/,]+"
     },
     "kCheungBauerIndex":
     {
         "name": "Cheung-Bauer Index",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{3}\\.[01][0-9]"
     },
     "kCihaiT":
     {
         "name": "Cihai",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}\\.[0-9]{3}"
     },
     "kCNS1986":
@@ -75,15 +75,14 @@ const tags =
     "kCompatibilityVariant":
     {
         "name": "Compatibility Variant",
-        "category": "Variants", // "IRG Sources"
-        // "syntax": "U\\+2?[0-9A-F]{4}"
+        "category": "Variants", // Originally "IRG Sources"
         "syntax": "U\\+[23]?[0-9A-F]{4}"
     },
     "kCowles":
     {
         "name": "Cowles",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{1,4}(\\.[0-9]{1,2})?"
     },
     "kDaeJaweon":
@@ -108,21 +107,21 @@ const tags =
     {
         "name": "Fenn",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]+a?[A-KP*]"
     },
     "kFennIndex":
     {
         "name": "Fenn Index",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9][0-9]{0,2}\\.[01][0-9]"
     },
     "kFourCornerCode":
     {
         "name": "Four-Corner Code",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}(\\.[0-9])?"
     },
     "kFrequency":
@@ -177,36 +176,35 @@ const tags =
     {
         "name": "GSR (Grammata Serica Recensa)",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}[a-vx-z]'?"
     },
     "kHangul":
     {
         "name": "Hangul",
         "category": "Readings",
-        "delimiter": " ",
-        // "syntax": "[\\u{1100}-\\u{1112}][\\u{1161}-\\u{1175}][\\u{11A8}-\\u{11C2}]?:[01EN]{1,3}"
+        "separator": " ",
         "syntax": "[\\u{1100}-\\u{1112}][\\u{1161}-\\u{1175}][\\u{11A8}-\\u{11C2}]?:[01ENX]{1,3}"
     },
     "kHanYu":
     {
         "name": "Hanyu Da Zidian (HDZ)",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-8][0-9]{4}\\.[0-3][0-9][0-3]"
     },
     "kHanyuPinlu":
     {
         "name": "Xiandai Hanyu Pinlu Cidian",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[a-z\\u{300}-\\u{302}\\u{304}\\u{308}\\u{30C}]+\\([0-9]+\\)"
     },
     "kHanyuPinyin":
     {
         "name": "Hanyu Pinyin",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "(\\d{5}\\.\\d{2}0,)*\\d{5}\\.\\d{2}0:([a-z\\u{300}-\\u{302}\\u{304}\\u{308}\\u{30C}]+,)*[a-z\\u{300}-\\u{302}\\u{304}\\u{308}\\u{30C}]+"
     },
     "kHDZRadBreak":
@@ -219,7 +217,7 @@ const tags =
     {
         "name": "HK Glyph",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kHKSCS":
@@ -232,56 +230,54 @@ const tags =
     {
         "name": "IBM Japan",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "F[ABC][0-9A-F]{2}"
     },
     "kIICore":
     {
         "name": "IICore (International Ideographs Core)",
         "category": "IRG Sources",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[ABC][GHJKMPT]{1,7}"
     },
     "kIRGDaeJaweon":
     {
         "name": "IRG Dae Jaweon",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}\\.[0-9]{2}[01]"
     },
     "kIRGDaiKanwaZiten":
     {
         "name": "IRG Dai Kanwa Ziten",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{5}'?"
     },
     "kIRGHanyuDaZidian":
     {
         "name": "IRG Hanyu Da Zidian",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-8][0-9]{4}\\.[0-3][0-9][01]"
     },
     "kIRGKangXi":
     {
         "name": "IRG KangXi",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[01][0-9]{3}\\.[0-7][0-9][01]"
     },
     "kIRG_GSource":
     {
         "name": "IRG Source: China",
         "category": "IRG Sources",
-        // "syntax": "G4K|G[013578EKS]-[0-9A-F]{4}|G9-[0-9A-F]{4,8}|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|GHZR?-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG)-\\d{4}|G(CYY|JZ|ZFY|ZJW|ZYS)-\\d{5}|GFZ(-\\d{5})?|GGFZ-\\d{6}|G(LK|Z)-\\d{7}"
         "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|JZ|KJ|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}"
     },
     "kIRG_HSource":
     {
         "name": "IRG Source: Hong Kong",
         "category": "IRG Sources",
-        // "syntax": "H(-[0-9A-F]{4,5}|(B[012]|D)-[0-9A-F]{4})"
         "syntax": "H-[0-9A-F]{4}|H(B[012]|D)-[0-9A-F]{4}|HU-[023][0-9A-F]{4}"
     },
     "kIRG_JSource":
@@ -294,14 +290,12 @@ const tags =
     {
         "name": "IRG Source: North Korea",
         "category": "IRG Sources",
-        // "syntax": "KP[01]-[0-9A-F]{4}"
         "syntax": "KP([01]-[0-9A-F]{4}|U-[023][0-9A-F]{4})"
     },
     "kIRG_KSource":
     {
         "name": "IRG Source: South Korea",
         "category": "IRG Sources",
-        // "syntax": "K([0-6]-[0-9A-F]{4}|C-[0-9]{5})"
         "syntax": "K[0-6]-[0-9A-F]{4}|KC-\\d{5}|KU-[023][0-9A-F]{4}"
     },
     "kIRG_MSource":
@@ -320,7 +314,6 @@ const tags =
     {
         "name": "IRG Source: Taiwan",
         "category": "IRG Sources",
-        // "syntax": "T[1-7A-F]-[0-9A-F]{4}"
         "syntax": "T([1-7A-F]|13)-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"
     },
     "kIRG_UKSource":
@@ -333,185 +326,180 @@ const tags =
     {
         "name": "IRG Source: Unicode",
         "category": "IRG Sources",
-        // "syntax": "U(TC|CI|K|SAT)-[0-9]{5}"
         "syntax": "UTC-\\d{5}"
     },
     "kIRG_VSource":
     {
         "name": "IRG Source: Vietnam",
         "category": "IRG Sources",
-        // "syntax": "V[0-4U]-[02]?[0-9A-F]{4}"
         "syntax": "V[0-4U]-[023]?[0-9A-F]{4}"
     },
     "kJa":
     {
         "name": "JA (Unified Japanese IT Vendors Contemporary Ideographs, 1993)",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9A-F]{4}S?"
     },
     "kJapaneseKun":
     {
         "name": "Japanese Kun-Yomi",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[A-Z]+"
     },
     "kJapaneseOn":
     {
         "name": "Japanese On-Yomi",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[A-Z]+"
     },
     "kJinmeiyoKanji":
     {
         "name": "Jinmeiyō Kanji",
         "category": "Other Mappings",
-        "delimiter": " ",
-        // "syntax": "(20[0-9]{2})(:U\\+2?[0-9A-F]{4})?"
+        "separator": " ",
         "syntax": "(20[0-9]{2})(:U\\+[23]?[0-9A-F]{4})?"
     },
     "kJis0":
     {
         "name": "JIS X 0208-1990",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kJIS0213":
     {
         "name": "JIS X 0213:2004",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[12],[0-9]{2},[0-9]{1,2}"
     },
     "kJis1":
     {
         "name": "JIS X 0212-1990",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kJoyoKanji":
     {
         "name": "Jōyō Kanji",
         "category": "Other Mappings",
-        "delimiter": " ",
-        // "syntax": "(20[0-9]{2})|(U\\+2?[0-9A-F]{4})"
+        "separator": " ",
         "syntax": "(20[0-9]{2})|(U\\+[23]?[0-9A-F]{4})"
     },
     "kKangXi":
     {
         "name": "KangXi",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}\\.[0-9]{2}[01]"
     },
     "kKarlgren":
     {
         "name": "Karlgren",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}[A*]?"
     },
     "kKorean":
     {
         "name": "Korean",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[A-Z]+"
     },
     "kKoreanEducationHanja":
     {
         "name": "Korean Education Hanja",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "20[0-9]{2}"
     },
     "kKoreanName":
     {
         "name": "Korean Name",
         "category": "Other Mappings",
-        "delimiter": " ",
-        // "syntax": "(20[0-9]{2})(:U\\+2?[0-9A-F]{4})*"
+        "separator": " ",
         "syntax": "(20[0-9]{2})(:U\\+[23]?[0-9A-F]{4})*"
     },
     "kKPS0":
     {
         "name": "KPS 9566-97",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9A-F]{4}"
     },
     "kKPS1":
     {
         "name": "KPS 10721-2000",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9A-F]{4}"
     },
     "kKSC0":
     {
         "name": "KS X 1001:1992 (KS C 5601-1989)",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kKSC1":
     {
         "name": "KS X 1002:1991 (KS C 5657-1991)",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kLau":
     {
         "name": "Lau",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}"
     },
     "kMainlandTelegraph":
     {
         "name": "Mainland Telegraph",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kMandarin":
     {
         "name": "Mandarin",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[a-z\\u{300}-\\u{302}\\u{304}\\u{308}\\u{30C}]+"
     },
     "kMatthews":
     {
         "name": "Matthews",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}(a|\\.5)?"
     },
     "kMeyerWempe":
     {
         "name": "Meyer-Wempe",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}[a-t*]?"
     },
     "kMorohashi":
     {
         "name": "Morohashi",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{5}'?"
     },
     "kNelson":
     {
         "name": "Nelson",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kOtherNumeric":
@@ -524,7 +512,7 @@ const tags =
     {
         "name": "Phonetic Index (Ten Thousand Characters: An Analytic Dictionary)",
         "category": "Dictionary-like Data",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,3}[A-D]?\\*?"
     },
     "kPrimaryNumeric":
@@ -543,102 +531,98 @@ const tags =
     {
         "name": "Adobe-Japan1-6 Radical-Stroke Count",
         "category": "Radical-Stroke Counts",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[CV]\\+[0-9]{1,5}\\+[1-9][0-9]{0,2}\\.[1-9][0-9]?\\.[0-9]{1,2}"
     },
     "kRSKangXi":
     {
         "name": "KangXi Radical-Stroke Count",
         "category": "Radical-Stroke Counts",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,2}\\.-?[0-9]{1,2}"
     },
     "kRSUnicode":
     {
         "name": "Unicode Radical-Stroke Count",
         "category": "Radical-Stroke Counts",    // Originally "IRG Sources"
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,2}'?\\.-?[0-9]{1,2}"
     },
     "kSBGY":
     {
         "name": "SBGY (Song Ben Guang Yun)",
         "category": "Dictionary Indices",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{3}\\.[0-7][0-9]"
     },
     "kSemanticVariant":
     {
         "name": "Semantic Variant",
         "category": "Variants",
-        "delimiter": " ",
-        // "syntax": "U\\+2?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
     },
     "kSimplifiedVariant":
     {
         "name": "Simplified Variant",
         "category": "Variants",
-        "delimiter": " ",
-        // "syntax": "U\\+2?[0-9A-F]{4}"
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}"
     },
     "kSpecializedSemanticVariant":
     {
         "name": "Specialized Semantic Variant",
         "category": "Variants",
-        "delimiter": " ",
-        // "syntax": "U\\+2?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
     },
     "kSpoofingVariant":
     {
         "name": "Spoofing Variant",
         "category": "Variants",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}"
     },
     "kTaiwanTelegraph":
     {
         "name": "Taiwan Telegraph",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}"
     },
     "kTang":
     {
         "name": "Tang",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "\\*?[A-Za-z()\\u{E6}\\u{251}\\u{259}\\u{25B}\\u{300}\\u{30C}]+"
     },
     "kTGH":
     {
         "name": "TGH (Tōngyòng Guīfàn Hànzìbiǎo)",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "20[0-9]{2}:[1-9][0-9]{0,3}"
     },
     "kTGHZ2013":
     {
         "name": "TGHZ (Tōngyòng Guīfàn Hànzì Zìdiǎn)",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{3}\\.[0-9]{3}(,[0-9]{3}\\.[0-9]{3})*:[a-z\\u{300}-\\u{302}\\u{304}\\u{308}\\u{30C}]+"
     },
     "kTotalStrokes":
     {
         "name": "Total Strokes",
         "category": "Radical-Stroke Counts",  // Originally "IRG Sources"
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[1-9][0-9]{0,2}"
     },
     "kTraditionalVariant":
     {
         "name": "Traditional Variant",
         "category": "Variants",
-        "delimiter": " ",
-        // "syntax": "U\\+2?[0-9A-F]{4}"
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}"
     },
     "kUnihanCore2020":
@@ -651,29 +635,28 @@ const tags =
     {
         "name": "Vietnamese",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[A-Za-z\\u{110}\\u{111}\\u{300}-\\u{303}\\u{306}\\u{309}\\u{31B}\\u{323}]+"
     },
     "kXerox":
     {
         "name": "Xerox",
         "category": "Other Mappings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{3}:[0-9]{3}"
     },
     "kXHC1983":
     {
         "name": "XHC (Xiàndài Hànyǔ Cídiǎn) 1983",
         "category": "Readings",
-        "delimiter": " ",
+        "separator": " ",
         "syntax": "[0-9]{4}\\.[0-9]{3}\\*?(,[0-9]{4}\\.[0-9]{3}\\*?)*:[a-z\\u{300}\\u{301}\\u{304}\\u{308}\\u{30C}]+"
     },
     "kZVariant":
     {
         "name": "Shape (Z-) Variant",
         "category": "Variants",
-        "delimiter": " ",
-        // "syntax": "U\\+2?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZ]+)?(,k[A-Za-z0-9]+(:[TBZ]+)?)*)?"
+        "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZ]+)?(,k[A-Za-z0-9]+(:[TBZ]+)?)*)?"
     }
 };
@@ -827,7 +810,7 @@ const categories =
         "name": "Variants",
         "tags":
         [
-            "kCompatibilityVariant",
+            "kCompatibilityVariant",   // Originally in "IRG Sources"
             "kSemanticVariant",
             "kSimplifiedVariant",
             "kSpecializedSemanticVariant",
@@ -850,9 +833,9 @@ function parseUnihanTag (codePoint, tag, value)
     // The value is valid if and only if each normalized subentry matches the field’s Syntax regular expression.
     if (tag in tags)
     {
-        if ("delimiter" in tags[tag])
+        if ("separator" in tags[tag])
         {
-            values = value.split (tags[tag]["delimiter"]);
+            values = value.split (tags[tag]["separator"]);
         }
         if ("regex" in tags[tag])
         {

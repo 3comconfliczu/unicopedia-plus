@@ -707,16 +707,21 @@ module.exports.start = function (context)
     }
     for (let group of emojiGroups)
     {
+        let groupString = "";
         let groupSample = { label: group.name };
         groupSample.items = [ ];
         for (let subgroup of group.subgroups)
         {
-            groupSample.items.push ({ label: subgroup.name, string: subgroup.characters.map (mapAllEmoji).join ("") });
+            let subGroupString = subgroup.characters.map (mapAllEmoji).join ("");
+            groupString += subGroupString;
+            groupSample.items.push ({ label: subgroup.name, string: subGroupString });
         }
         if (sortGroups)
         {
             groupSample.items.sort ((a, b) => a.label.localeCompare (b.label));
         }
+        groupSample.items.unshift (null);
+        groupSample.items.unshift ({ label: "All Group", string: groupString });
         groupSamples.push (groupSample);
     }
     if (sortGroups)
