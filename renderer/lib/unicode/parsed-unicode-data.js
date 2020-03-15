@@ -1,5 +1,5 @@
 //
-// https://www.unicode.org/versions/Unicode12.1.0/ch04.pdf
+// https://www.unicode.org/versions/Unicode13.0.0/ch04.pdf
 //
 /*
 Table 4-8. Name Derivation Rule Prefix Strings
@@ -7,14 +7,17 @@ Table 4-8. Name Derivation Rule Prefix Strings
 Range               Rule        Prefix String
 ----------------------------------------------------------------
 AC00..D7A3          NR1         “HANGUL SYLLABLE”
-3400..4DB5          NR2         “CJK UNIFIED IDEOGRAPH-”
-4E00..9FEA          NR2         “CJK UNIFIED IDEOGRAPH-”
-20000..2A6D6        NR2         “CJK UNIFIED IDEOGRAPH-”
+3400..4DBF          NR2         “CJK UNIFIED IDEOGRAPH-”
+4E00..9FFC          NR2         “CJK UNIFIED IDEOGRAPH-”
+20000..2A6DD        NR2         “CJK UNIFIED IDEOGRAPH-”
 2A700..2B734        NR2         “CJK UNIFIED IDEOGRAPH-”
 2B740..2B81D        NR2         “CJK UNIFIED IDEOGRAPH-”
 2B820..2CEA1        NR2         “CJK UNIFIED IDEOGRAPH-”
 2CEB0..2EBE0        NR2         “CJK UNIFIED IDEOGRAPH-”
-17000..187EC        NR2         “TANGUT IDEOGRAPH-”
+30000..3134A        NR2         “CJK UNIFIED IDEOGRAPH-”
+17000..187F7        NR2         “TANGUT IDEOGRAPH-”
+18D00..18D08        NR2         “TANGUT IDEOGRAPH-”
+18B00..18CD5        NR2         “KHITAN SMALL SCRIPT CHARACTER-”
 1B170..1B2FB        NR2         “NUSHU CHARACTER-”
 F900..FA6D*         NR2         “CJK COMPATIBILITY IDEOGRAPH-”
 FA70..FAD9          NR2         “CJK COMPATIBILITY IDEOGRAPH-”
@@ -65,8 +68,8 @@ for (let line of lines)
                 {
                     // "Hangul" in "UTR #15: Unicode Normalization Forms"
                     // https://www.unicode.org/reports/tr15/tr15-33.html#Hangul
-                    // "Conjoining Jamo Behavior" in "The Unicode Standard, Version 12.1 - ch03.pdf" p. 144
-                    // https://www.unicode.org/versions/Unicode12.1.0/ch03.pdf
+                    // "Conjoining Jamo Behavior" in "The Unicode Standard, Version 13.0 - ch03.pdf" p. 140
+                    // https://www.unicode.org/versions/Unicode13.0.0/ch03.pdf
                     let jamoInitials =
                     [
                         "G", "GG", "N", "D", "DD", "R", "M", "B", "BB",

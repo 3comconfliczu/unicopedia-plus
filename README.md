@@ -316,7 +316,7 @@ The following utilities are currently available:
 
 ### Match Character
 
-- The **Match Character** feature of the **Unihan Data Finder** utility displays a list of basic data (symbol, code point, age, ideograph status, block) of matching Unihan characters, including through regular expressions.
+- The **Match Character** feature of the **Unihan Data Finder** utility displays a list of basic data (symbol, code point, age, set, ideograph status, block) of matching Unihan characters, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Match Variants</kbd> toggle button to extend the search to characters whose *variants* match the query string.
 - Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.
@@ -363,7 +363,10 @@ The following utilities are currently available:
     - basic Unihan information: set (IICore or full), status (unified or compatibility ideograph), radical/strokes, definition, numeric value, variant characters.
 - Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.
-- It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Full Unihan Set</kbd> checkbox to perform the draw on the full set of 93,858 Unihan characters, or restrict it to the IICore set of 9,810 CJK unified ideographs in common usage.
+- It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
+    - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
+    - `Unihan Core (2020)`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
+    - `Full Unihan`: the full set of 93,858 Unihan characters.
 - The currently looked up character is displayed at a large scale, followed by its code point.
 - Click on <kbd>◀</kbd> or <kbd>▶</kbd> to step through five different CJK typefaces, among:
     - `JP`: Japanese
@@ -396,7 +399,10 @@ The following utilities are currently available:
 ## Unihan Radical-Strokes
 
 - The **Unihan Radical-Strokes** utility displays all the Unihan characters searched by KangXi radical and additional stroke count.
-- Use the <kbd>Full Unihan Set</kbd> checkbox to perform the search on the full set of 93,858 Unihan characters, or limit it to the IICore set of 9,810 CJK unified ideographs in common usage.
+- Use the <kbd>Set</kbd> drop-down menu to perform the search on a specified Unihan set:
+    - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
+    - `Unihan Core (2020)`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
+    - `Full Unihan`: the full set of 93,858 Unihan characters.
 - Use the <kbd>Extra Sources</kbd> checkbox to extend the search to all radical/strokes source tags, or use only the IRG-defined source tag common to all Unihan characters.
 - Use the <kbd>Radical</kbd> and <kbd>Strokes</kbd> drop-down menus to select the KangXi radical and the additional stroke count of the Unihan characters you are looking for, then click on the <kbd>Search</kbd> button.
 - If the number of additional strokes is negative, 0 is used instead. For example, the Unihan character 王 gets listed under 'Radical 96 ⽟ (Jade)' + '0 Stroke', although its additional stroke count is -1.
@@ -434,7 +440,7 @@ The following utilities are currently available:
     - `Yasuoka`: characters drawn from the "Variants table for Unicode" data file <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z">UniVariants.txt</a> provided by Prof. <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/">Kōichi Yasuoka</a>
 - Click the <kbd>Save...</kbd> button to save the current graph as a SVG file.
 - Notes:
-    - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, ideograph status.
+    - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, set, ideograph status.
     - The currently looked up Unihan character appears in a bolder circle; clicking on any other circled variant character lets you "navigate" through all the variants.
     - In order to avoid visual clutter, any relation between two Unihan characters obtained from the Yasuoka variants is not displayed if another "standard" one with the same orientation already exists.
 

@@ -1,6 +1,7 @@
 //
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
+const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
 //
@@ -71,6 +72,10 @@ module.exports.create = function (characters, regex, params)
         ageHeader.className = 'age-header';
         ageHeader.textContent = "Age";
         headerRow.appendChild (ageHeader);
+        let setHeader = document.createElement ('th');
+        setHeader.className = 'set-header';
+        setHeader.textContent = "Set";
+        headerRow.appendChild (setHeader);
         let statusHeader = document.createElement ('th');
         statusHeader.className = 'status-header';
         statusHeader.textContent = "Status";
@@ -84,6 +89,19 @@ module.exports.create = function (characters, regex, params)
         for (let character of characters)
         {
             let data = unicode.getCharacterBasicData (character);
+            let set = "Full Set";
+            let setTooltip = "Full Unihan";
+            let tags = unihanData.codePoints[data.codePoint];
+            if ("kIICore" in tags)
+            {
+                set = "IICore";
+                setTooltip = "International Ideographs Core";
+            }
+            else if ("kUnihanCore2020" in tags)
+            {
+                set = "UCore";
+                setTooltip = "Unihan Core (2020)";
+            }
             let dataRow = document.createElement ('tr');
             dataRow.className = 'data-row';
             if (regex && (!regex.test (character)))
@@ -114,6 +132,11 @@ module.exports.create = function (characters, regex, params)
             // ageData.appendChild (document.createTextNode (`(${data.ageDate.replace (" ", "\xA0")})`));
             ageData.textContent = `Unicode\xA0${data.age} (${data.ageDate.replace (" ", "\xA0")})`;
             dataRow.appendChild (ageData);
+            let setData = document.createElement ('td');
+            setData.className = 'set-data';
+            setData.textContent = set;
+            setData.title = setTooltip;
+            dataRow.appendChild (setData);
             let statusData = document.createElement ('td');
             statusData.className = 'status-data';
             statusData.textContent = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";

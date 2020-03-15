@@ -1,7 +1,7 @@
 //
 const unit = document.getElementById ('unihan-radical-strokes-unit');
 //
-const rsFullSetCheckbox = unit.querySelector ('.full-set-checkbox');
+const rsSetSelect = unit.querySelector ('.set-select');
 const rsExtraSourcesCheckbox = unit.querySelector ('.extra-sources-checkbox');
 const rsRadicalSelect = unit.querySelector ('.radical-select');
 const rsStrokesSelect = unit.querySelector ('.strokes-select');
@@ -30,6 +30,8 @@ module.exports.start = function (context)
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
     //
+    const regexp = require ('../../lib/unicode/regexp.js');
+    const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { fromRSValue } = require ('../../lib/unicode/get-rs-strings.js');
@@ -39,7 +41,7 @@ module.exports.start = function (context)
     //
     const defaultPrefs =
     {
-        rsFullSetCheckbox: false,
+        rsSetSelect: "",
         rsExtraSourcesCheckbox: false,
         rsRadicalSelect: "",
         rsStrokesSelect: "",
@@ -82,7 +84,11 @@ module.exports.start = function (context)
     //
     const rsDataTable = require ('./rs-data-table.js');
     //
-    rsFullSetCheckbox.checked = prefs.rsFullSetCheckbox;
+    rsSetSelect.value = prefs.rsSetSelect;
+    if (rsSetSelect.selectedIndex < 0) // -1: no element is selected
+    {
+        rsSetSelect.selectedIndex = 0;
+    }
     //
     rsExtraSourcesCheckbox.checked = prefs.rsExtraSourcesCheckbox;
     //
@@ -203,6 +209,30 @@ module.exports.start = function (context)
         return rsValues.join ("\n");
     }
     //
+    function getTooltip (character)
+    {
+        let data = unicode.getCharacterBasicData (character);
+        let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+        let set = "Full Unihan";
+        let tags = unihanData.codePoints[data.codePoint];
+        if ("kIICore" in tags)
+        {
+            set = "IICore";
+        }
+        else if ("kUnihanCore2020" in tags)
+        {
+            set = "Unihan Core (2020)";
+        }
+        let lines =
+        [
+            `Code Point: ${data.codePoint}`,
+            `Age: Unicode ${data.age} (${data.ageDate})`,
+            `Set: ${set}`,
+            `Status: ${status}`
+        ];
+        return lines.join ("\n");
+    }
+    //
     function findCharactersByRadicalStrokes (options)
     {
         let items = [ ];
@@ -211,8 +241,7 @@ module.exports.start = function (context)
             items.push ({ shortTitle: fromStrokes (strokes), longTitle: fromStrokes (strokes, true), characters: [ ] });
         }
         let codePoints = unihanData.codePoints;
-        let set = options.fullSet ? unihanData.fullSet : unihanData.coreSet;
-        for (let codePoint of set)
+        for (let codePoint of options.set)
         {
             let rsValues = [ ];
             let irgSourceValues = null;
@@ -272,7 +301,8 @@ module.exports.start = function (context)
                                 character.extraSource = extraSource;
                             }
                         }
-                        character.toolTip = getFullRSTooltip (codePoint);
+                        character.tooltip = getFullRSTooltip (codePoint);
+                        character.codeTooltip = getTooltip (character.symbol);
                         items[residualStrokes - options.minStrokes].characters.push (character);
                     }
                 }
@@ -296,9 +326,22 @@ module.exports.start = function (context)
         (event) =>
         {
             clearSearch (rsSearchData);
+            let set;
+            if (rsSetSelect.value === "IICore")
+            {
+                set = unihanData.coreSet;
+            }
+            else if (rsSetSelect.value === "UCore")
+            {
+                set = unihanData.core2020Set;
+            }
+            else if (rsSetSelect.value === "Full")
+            {
+                set = unihanData.fullSet;
+            }
             let findOptions =
             {
-                fullSet: rsFullSetCheckbox.checked,
+                set: set,
                 extraSources: rsExtraSourcesCheckbox.checked,
                 radical: parseInt (rsCurrentRadical),
                 minStrokes: (rsCurrentStrokes === '*') ? minStrokes : parseInt (rsCurrentStrokes),
@@ -380,7 +423,7 @@ module.exports.stop = function (context)
 {
     let prefs =
     {
-        rsFullSetCheckbox: rsFullSetCheckbox.checked,
+        rsSetSelect: rsSetSelect.value,
         rsExtraSourcesCheckbox: rsExtraSourcesCheckbox.checked,
         rsRadicalSelect: rsCurrentRadical,
         rsStrokesSelect: rsCurrentStrokes,

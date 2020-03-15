@@ -348,6 +348,7 @@
 #unihan-data-finder-unit .search-data .tag-header,
 #unihan-data-finder-unit .search-data .value-header,
 #unihan-data-finder-unit .search-data .age-header,
+#unihan-data-finder-unit .search-data .set-header,
 #unihan-data-finder-unit .search-data .status-header,
 #unihan-data-finder-unit .search-data .block-name-header
 {
@@ -380,6 +381,11 @@
 
 #unihan-data-finder-unit .search-data .age-header
 {
+}
+
+#unihan-data-finder-unit .search-data .set-header
+{
+    width: 5em;
 }
 
 #unihan-data-finder-unit .search-data .status-header
@@ -446,6 +452,7 @@
 }
 
 #unihan-data-finder-unit .search-data .age-data,
+#unihan-data-finder-unit .search-data .set-data,
 #unihan-data-finder-unit .search-data .status-data,
 #unihan-data-finder-unit .search-data .block-name-data
 {

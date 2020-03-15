@@ -2,9 +2,19 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.2.0
+
+- Replaced `Full Unihan Set` checkbox with `Set:` [ `IICore`, `Unihan Core (2020)`, `Full Unihan` ] drop-down menu in the **Unihan Inspector** and **Unihan Radical-Strokes** utilities.
+- Added separate code point tooltip to the **Unihan Radical-Strokes** utility.
+- Added Unihan set info in tooltip or table in the **Unihan Data Finder** and **Unihan Variants** utilities.
+- Updated samples for `Unassigned Characters` in the **Unicode Inspector** utility.
+- Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using `CLDR 36.1` annotations.
+- Updated reference links, instructions and screenshots.
+- Updated `Electron` to version `8.1.1`.
+
 ## 7.1.0
 
-- Added `All Group` menu item to all groups of the `Samples` menu in the **Emoji Data Finder** utility.
+- Added `All Group` menu item to all groups of the `Samples` menu in the **Filter Text** feature of the **Emoji Data Finder** utility.
 - Added age of emoji to the tooltip of all displayed emoji in the **Emoji Picture Book** utility.
 - Updated `Electron` to version `8.1.0`.
 

@@ -4,7 +4,7 @@ const unit = document.getElementById ('unihan-inspector-unit');
 const unihanInput = unit.querySelector ('.unihan-input');
 const lookupButton = unit.querySelector ('.lookup-button');
 const randomButton = unit.querySelector ('.random-button');
-const fullSetCheckbox = unit.querySelector ('.full-set-checkbox');
+const randomSetSelect = unit.querySelector ('.random-set-select');
 const infoContainer = unit.querySelector ('.info-container');
 //
 const instructions = unit.querySelector ('.instructions');
@@ -41,7 +41,7 @@ module.exports.start = function (context)
         unihanCharacter: "",
         typefaceLanguage: "",
         typefaceDefault: false,
-        fullSetCheckbox: false,
+        randomSetSelect: "",
         showCategories: false,
         instructions: true
     };
@@ -49,7 +49,11 @@ module.exports.start = function (context)
     //
     unihanHistory = prefs.unihanHistory;
     //
-    fullSetCheckbox.checked = prefs.fullSetCheckbox;
+    randomSetSelect.value = prefs.randomSetSelect;
+    if (randomSetSelect.selectedIndex < 0) // -1: no element is selected
+    {
+        randomSetSelect.selectedIndex = 0;
+    }
     //
     showCategories = prefs.showCategories;
     //
@@ -207,10 +211,10 @@ module.exports.start = function (context)
                     field.appendChild (document.createTextNode (": "));
                     let value = document.createElement ('span');
                     value.className = 'value';
-                    if (fieldItem.toolTip)
+                    if (fieldItem.tooltip)
                     {
                         value.textContent = fieldItem.value;
-                        value.title = fieldItem.toolTip;
+                        value.title = fieldItem.tooltip;
                     }
                     else
                     {
@@ -425,8 +429,8 @@ module.exports.start = function (context)
             [
                 { name: "Name", value: unicodeData.name },
                 { name: "Age", value: age },
-                { name: "Plane", value: unicodeData.planeName, toolTip: unicodeData.planeRange },
-                { name: "Block", value: unicodeData.blockName, toolTip: unicodeData.blockRange },
+                { name: "Plane", value: unicodeData.planeName, tooltip: unicodeData.planeRange },
+                { name: "Block", value: unicodeData.blockName, tooltip: unicodeData.blockRange },
                 { name: "Script", value: unicodeData.script },
                 { name: "Script Extensions", value: unicodeData.scriptExtensions },
                 { name: "General Category", value: unicodeData.category },
@@ -454,9 +458,9 @@ module.exports.start = function (context)
                     value.className = 'value';
                     let text = Array.isArray (unicodeField.value) ? unicodeField.value.join (", ") : unicodeField.value;
                     value.textContent = text;
-                    if (unicodeField.toolTip)
+                    if (unicodeField.tooltip)
                     {
-                        value.title = unicodeField.toolTip;
+                        value.title = unicodeField.tooltip;
                     }
                     field.appendChild (value);
                     unicodeInfo.appendChild (field);
@@ -467,21 +471,21 @@ module.exports.start = function (context)
             unihanInfo.className = 'unihan-info';
             if (tags)
             {
-                let coreSet;
-                let coreSetToolTip;
+                let set;
+                let setTooltip;
                 if ("kIICore" in tags)
                 {
-                    coreSet = "IICore (International Ideographs Core)";
-                    coreSetToolTip = getCoreSetTooltip (tags["kIICore"]);
+                    set = "IICore";
+                    setTooltip = getCoreSetTooltip (tags["kIICore"]);
                 }
                 else if ("kUnihanCore2020" in tags)
                 {
-                    coreSet = "Unihan Core (2020)";
-                    coreSetToolTip = getCoreSetTooltip (tags["kUnihanCore2020"]);
+                    set = "Unihan Core (2020)";
+                    setTooltip = getCoreSetTooltip (tags["kUnihanCore2020"]);
                 }
                 else
                 {
-                    coreSet = "Full Unihan";
+                    set = "Full Unihan";
                 }
                 let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
                 let rsValues = [ ];
@@ -551,7 +555,7 @@ module.exports.start = function (context)
                 let yasuoka = getYasuokaVariants (character).filter (variant => regexp.isUnihan (variant));
                 let unihanFields =
                 [
-                    { name: "Set", value: coreSet, toolTip: coreSetToolTip },
+                    { name: "Set", value: set, tooltip: setTooltip },
                     { name: "Status", value: status },
                     { name: "Radical/Strokes", value: rsValues, class: rsClasses },
                     { name: "Definition", value: definitionValue },
@@ -983,7 +987,20 @@ module.exports.start = function (context)
         'click',
         (event) =>
         {
-            let codePoint = randomElement (fullSetCheckbox.checked ? unihanData.fullSet : unihanData.coreSet);
+            let set;
+            if (randomSetSelect.value === "IICore")
+            {
+                set = unihanData.coreSet;
+            }
+            else if (randomSetSelect.value === "UCore")
+            {
+                set = unihanData.core2020Set;
+            }
+            else if (randomSetSelect.value === "Full")
+            {
+                set = unihanData.fullSet;
+            }
+            let codePoint = randomElement (set);
             updateUnihanData (String.fromCodePoint (parseInt (codePoint.replace ("U+", ""), 16)));
         }
     );
@@ -999,7 +1016,7 @@ module.exports.stop = function (context)
         unihanCharacter: currentUnihanCharacter,
         typefaceLanguage: currentTypefaceLanguage,
         typefaceDefault: currentTypefaceDefault,
-        fullSetCheckbox: fullSetCheckbox.checked,
+        randomSetSelect: randomSetSelect.value,
         showCategories: showCategories,
         instructions: instructions.open
     };

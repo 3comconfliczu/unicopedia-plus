@@ -50,6 +50,11 @@
     outline-color: var(--color-error);
 }
 
+#unihan-inspector-unit .random-button
+{
+    margin-right: 0.5em;
+}
+
 #unihan-inspector-unit .unihan-character:lang(ja)
 {
     font-family: "Sans CJK JP", "NotDef";
@@ -189,11 +194,6 @@
     font-weight: 600;
     width: 24px;
     padding: 4px 0;
-}
-
-#unihan-inspector-unit .random-button
-{
-    margin-right: 0.75em;
 }
 
 #unihan-inspector-unit .unicode-info,

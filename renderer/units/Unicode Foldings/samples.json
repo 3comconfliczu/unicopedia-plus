@@ -11,6 +11,7 @@
                 "label": "Small Letters",
                 "string": "abcdefghijklmnopqrstuvwxyz"
             },
+            null,
             {
                 "label": "Circled Capital Letters",
                 "string": "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ"
@@ -19,6 +20,7 @@
                 "label": "Circled Small Letters",
                 "string": "ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ"
             },
+            null,
             {
                 "label": "Fullwidth Capital Letters",
                 "string": "ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ"
@@ -27,6 +29,7 @@
                 "label": "Fullwidth Small Letters",
                 "string": "ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ"
             },
+            null,
             {
                 "label": "Composed Letters",
                 "string": "éçàÉÇÀ"
@@ -35,6 +38,7 @@
                 "label": "Decomposed Letters",
                 "string": "éçàÉÇÀ"
             },
+            null,
             {
                 "label": "Remarkable Foldings 1",
                 "string": "KkK Ssſ"
@@ -51,13 +55,14 @@
                 "label": "Remarkable Foldings 4",
                 "string": "ẞ Straße"
             },
-            {
-                "label": "Turkish Special Casing",
-                "string": "İstanbul istanbul Istanbul"
-            },
+            null,
             {
                 "label": "Lithuanian Special Casing",
                 "string": "i̇"
+            },
+            {
+                "label": "Turkish Special Casing",
+                "string": "İstanbul istanbul Istanbul"
             }
         ]
     },

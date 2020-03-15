@@ -327,11 +327,11 @@
             },
             {
                 "label": "No Block",
-                "string": "\uD880\uDC00\uDB40\uDC80\uDB40\uDDF0\uDB43\uDFFF\uDB44\uDC00"
+                "string": "\uDB40\uDC80\uDB40\uDDF0\uDB43\uDFFF\uDB44\uDC00"
             },
             {
                 "label": "No Plane",
-                "string": "\uD900\uDC00\uD940\uDC00\uD980\uDC00\uD9C0\uDC00\uDA00\uDC00\uDA40\uDC00\uDA80\uDC00\uDAC0\uDC00\uDB00\uDC00"
+                "string": "\uD8C0\uDC00\uD900\uDC00\uD940\uDC00\uD980\uDC00\uD9C0\uDC00\uDA00\uDC00\uDA40\uDC00\uDA80\uDC00\uDAC0\uDC00\uDB00\uDC00"
             },
             {
                 "label": "Non-Character",

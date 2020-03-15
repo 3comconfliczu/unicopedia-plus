@@ -7,7 +7,7 @@
             </span>
             <span class="option-group">
                 <button class="random-button" type="button">Random</button>
-                <label class="checkbox"><input class="full-set-checkbox" type="checkbox">&nbsp;Full Unihan Set</label>
+                <label>Set:&nbsp;<select class="random-set-select"><option value="IICore">IICore</option><option value="UCore">Unihan Core (2020)</option><option value="Full">Full Unihan</option></select></label>
             </span>
         </div>
         <div class="info-container"></div>
@@ -37,7 +37,14 @@
                 </li>
                 <li>Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.</li>
                 <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
-                <li>It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Full Unihan Set</kbd> checkbox to perform the draw on the full set of 93,858 Unihan characters, or restrict it to the IICore set of 9,810 CJK unified ideographs in common usage.</li>
+                <li>
+                    It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
+                    <ul>
+                        <li><code>IICore</code>: the IICore set of 9,810 CJK unified ideographs in common usage,</li>
+                        <li><code>Unihan Core (2020)</code>: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,</li>
+                        <li><code>Full Unihan</code>: the full set of 93,858 Unihan characters.</li>
+                    </ul>
+                </li>
                 <li>The currently looked up character is displayed at a large scale, followed by its code point.</li>
                 <li>Click on <kbd>◀</kbd> or <kbd>▶</kbd> to step through five different CJK typefaces, among:
                     <ul>

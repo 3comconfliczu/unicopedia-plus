@@ -152,7 +152,7 @@ module.exports.start = function (context)
                         { name: "JavaScript", value: data.javaScript },
                         { name: "ECMAScript 6", value: data.ecmaScript6 },
                         { name: "URL Escape", value: data.urlEncoding },
-                        // { name: "HTML Entity", value: data.decimalEntity, toolTip: data.namedEntity },
+                        // { name: "HTML Entity", value: data.decimalEntity, tooltip: data.namedEntity },
                         { name: "HTML Decimal", value: data.decimalEntity },
                         { name: "HTML Named", value: data.namedEntity },
                         null,
@@ -179,9 +179,9 @@ module.exports.start = function (context)
                             let value = document.createElement ('span');
                             value.className = 'value';
                             value.textContent = code.value.replace (/ /g, "\xA0");
-                            if (code.toolTip)
+                            if (code.tooltip)
                             {
-                                value.title = code.toolTip;
+                                value.title = code.tooltip;
                             }
                             field.appendChild (value);
                             cell.appendChild (field);
@@ -222,8 +222,8 @@ module.exports.start = function (context)
                         { name: "Abbreviation", value: data.abbreviation },
                         { name: "Correction", value: data.correction },
                         { name: "Age", value: age },
-                        { name: "Plane", value: data.planeName, toolTip: data.planeRange },
-                        { name: "Block", value: data.blockName, toolTip: data.blockRange },
+                        { name: "Plane", value: data.planeName, tooltip: data.planeRange },
+                        { name: "Block", value: data.blockName, tooltip: data.blockRange },
                         { name: "Script", value: data.script },
                         { name: "Script Extensions", value: data.scriptExtensions },
                         { name: "General Category", value: data.category },
@@ -265,9 +265,9 @@ module.exports.start = function (context)
                             let value = document.createElement ('span');
                             value.className = 'value';
                             value.textContent = Array.isArray (property.value) ? property.value.join (", ") : property.value;
-                            if (property.toolTip)
+                            if (property.tooltip)
                             {
-                                value.title = property.toolTip;
+                                value.title = property.tooltip;
                             }
                             field.appendChild (value);
                             cell.appendChild (field);

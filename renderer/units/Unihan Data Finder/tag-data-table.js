@@ -1,6 +1,7 @@
 //
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
+const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
 //
@@ -84,22 +85,40 @@ module.exports.create = function (characterInfos, params)
         //
         for (let characterInfo of characterInfos)
         {
-            let data = unicode.getCharacterBasicData (characterInfo.character);
+            let character = characterInfo.character;
+            let data = unicode.getCharacterBasicData (character);
             let dataRow = document.createElement ('tr');
             dataRow.className = 'data-row';
-            let status = regexp.isUnified (characterInfo.character) ? "Unified Ideograph" : "Compatibility Ideograph";
-            dataRow.title = `Age: Unicode ${data.age} (${data.ageDate})\nStatus: ${status}`;
+            let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+            let set = "Full Unihan";
+            let tags = unihanData.codePoints[data.codePoint];
+            if ("kIICore" in tags)
+            {
+                set = "IICore";
+            }
+            else if ("kUnihanCore2020" in tags)
+            {
+                set = "Unihan Core (2020)";
+            }
+            let lines =
+            [
+                `Code Point: ${data.codePoint}`,
+                `Age: Unicode ${data.age} (${data.ageDate})`,
+                `Set: ${set}`,
+                `Status: ${status}`
+            ];
+            dataRow.title = lines.join ("\n");
             let symbolData = document.createElement ('td');
             symbolData.className = 'symbol-data';
             if (deferredSymbols)
             {
                 symbolData.textContent = "\u3000";  // Ideographic space
-                symbolData.dataset.character = characterInfo.character;
+                symbolData.dataset.character = character;
                 params.observer.observe (symbolData);
             }
             else
             {
-                symbolData.textContent = characterInfo.character;
+                symbolData.textContent = character;
             }
             dataRow.appendChild (symbolData);
             let codePointData = document.createElement ('td');

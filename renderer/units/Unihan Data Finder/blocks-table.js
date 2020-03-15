@@ -30,6 +30,7 @@ module.exports.create = function (unihanBlocks)
     let fullSetHeader = document.createElement ('th');
     fullSetHeader.className = 'full-set-header';
     fullSetHeader.textContent = "Full\xA0Set";
+    fullSetHeader.title = "Full Unihan";
     headerRow.appendChild (fullSetHeader);
     blocksTable.appendChild (headerRow);
     let coreTotal = 0;

@@ -103,7 +103,7 @@ module.exports.create = function (title, items, params)
                 {
                     characterData.classList.add ('extra-source');
                 }
-                characterData.title = character.toolTip;
+                characterData.title = character.tooltip;
                 let symbol = document.createElement ('span');
                 symbol.className = 'symbol';
                 if (deferredSymbols)
@@ -119,8 +119,9 @@ module.exports.create = function (title, items, params)
                 }
                 characterData.appendChild (symbol);
                 let codePoint = document.createElement ('span');
-                codePoint.textContent = character.code;
                 codePoint.className = 'code-point';
+                codePoint.textContent = character.code;
+                codePoint.title = character.codeTooltip;
                 characterData.appendChild (codePoint );
                 charactersData.appendChild (characterData);
             }

@@ -96,7 +96,7 @@ module.exports.start = function (context)
     //
     let flagEmojiRegex =/^([🇦-🇿])([🇦-🇿])$/u;
     //
-    function getEmojiToolTip (emoji)
+    function getEmojiTooltip (emoji)
     {
         let emojiName = emojiList[emoji].name.toUpperCase ();
         let flagFound = emoji.match (flagEmojiRegex);
@@ -247,7 +247,7 @@ module.exports.start = function (context)
                             let span =  document.createElement ('span');
                             span.className = 'emoji';
                             span.textContent = emoji;
-                            span.title = getEmojiToolTip (emoji);
+                            span.title = getEmojiTooltip (emoji);
                             sheet.appendChild (span);
                         }
                         panel.appendChild (sheet);

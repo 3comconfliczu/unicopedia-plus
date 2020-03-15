@@ -56,7 +56,7 @@ let setName;
 switch (set)
 {
     case coreSet:
-        setName = "International Ideographs Core";
+        setName = "IICore";
         break;
     case core2020Set:
         setName = "Unihan Core (2020)";

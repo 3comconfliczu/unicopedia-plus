@@ -170,7 +170,24 @@ module.exports.start = function (context)
     {
         let data = unicode.getCharacterBasicData (character);
         let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
-        return `Code Point: ${data.codePoint}\nAge: Unicode ${data.age} (${data.ageDate})\nStatus: ${status}`;
+        let set = "Full Unihan";
+        let tags = unihanData.codePoints[data.codePoint];
+        if ("kIICore" in tags)
+        {
+            set = "IICore";
+        }
+        else if ("kUnihanCore2020" in tags)
+        {
+            set = "Unihan Core (2020)";
+        }
+        let lines =
+        [
+            `Code Point: ${data.codePoint}`,
+            `Age: Unicode ${data.age} (${data.ageDate})`,
+            `Set: ${set}`,
+            `Status: ${status}`
+        ];
+        return lines.join ("\n");
     }
     //
     let variantTags =

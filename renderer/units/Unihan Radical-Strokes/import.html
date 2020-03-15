@@ -1,15 +1,15 @@
 <section id="unihan-radical-strokes-unit">
     <div class="plain-panel">
         <div class="actions">
-            <div class="action-group rs-2-group">
+            <div class="action-group">
                 <span class="action">
-                    <label class="checkbox" title="If checked, the search is performed on the full Unihan set;&#10;if unchecked, it is limited to the IICore set of CJK unified ideographs in common usage"><input class="full-set-checkbox" type="checkbox">&nbsp;Full Unihan Set</label>
+                    <label>Set:&nbsp;<select class="set-select"><option value="IICore">IICore</option><option value="UCore">Unihan Core (2020)</option><option value="Full">Full Unihan</option></select></label>
                 </span>
                 <span class="action">
                     <label class="checkbox" title="If checked, the search uses all radical/strokes source tags;&#10;if unchecked, it only uses the IRG-defined source tag common to all Unihan characters"><input class="extra-sources-checkbox" type="checkbox">&nbsp;Extra Sources</label>
                 </span>
             </div>
-            <div class="action-group rs-group">
+            <div class="action-group">
                 <span class="action">
                     <label title="KangXi radical">Radical:&nbsp;<select class="radical-select"></select></label>
                     <label title="Additional stroke count">+&nbsp;Strokes:&nbsp;<select class="strokes-select"></select></label>
@@ -29,7 +29,14 @@
             <summary>Instructions</summary>
             <ul>
                 <li>The <strong>Unihan Radical-Strokes</strong> utility displays all the Unihan characters searched by KangXi radical and additional stroke count.</li>
-                <li>Use the <kbd>Full Unihan Set</kbd> checkbox to perform the search on the full set of 93,858 Unihan characters, or limit it to the IICore set of 9,810 CJK unified ideographs in common usage.</li>
+                <li>
+                    Use the <kbd>Set</kbd> drop-down menu to perform the search on a specified Unihan set:
+                    <ul>
+                        <li><code>IICore</code>: the IICore set of 9,810 CJK unified ideographs in common usage,</li>
+                        <li><code>Unihan Core (2020)</code>: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,</li>
+                        <li><code>Full Unihan</code>: the full set of 93,858 Unihan characters.</li>
+                    </ul>
+                </li>
                 <li>Use the <kbd>Extra Sources</kbd> checkbox to extend the search to all radical/strokes source tags, or use only the IRG-defined source tag common to all Unihan characters.</li>
                 <li>Use the <kbd>Radical</kbd> and <kbd>Strokes</kbd> drop-down menus to select the KangXi radical and the additional stroke count of the Unihan characters you are looking for, then click on the <kbd>Search</kbd> button.</li>
                 <li>If the number of additional strokes is negative, 0 is used instead. For example, the Unihan character 王 gets listed under 'Radical 96 ⽟ (Jade)' + '0 Stroke', although its additional stroke count is -1.</li>
