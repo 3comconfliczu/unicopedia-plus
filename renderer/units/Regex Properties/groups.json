@@ -485,6 +485,10 @@
                 "alias": "Cher"
             },
             {
+                "canonic": "Chorasmian",
+                "alias": "Chrs"
+            },
+            {
                 "canonic": "Common",
                 "alias": "Zyyy"
             },
@@ -511,6 +515,10 @@
             {
                 "canonic": "Devanagari",
                 "alias": "Deva"
+            },
+            {
+                "canonic": "Dives_Akuru",
+                "alias": "Diak"
             },
             {
                 "canonic": "Dogra",
@@ -635,6 +643,10 @@
             {
                 "canonic": "Kharoshthi",
                 "alias": "Khar"
+            },
+            {
+                "canonic": "Khitan_Small_Script",
+                "alias": "Kits"
             },
             {
                 "canonic": "Khmer",
@@ -991,6 +1003,10 @@
             {
                 "canonic": "Warang_Citi",
                 "alias": "Wara"
+            },
+            {
+                "canonic": "Yezidi",
+                "alias": "Yezi"
             },
             {
                 "canonic": "Yi",
@@ -1101,6 +1117,10 @@
                 "alias": "Cher"
             },
             {
+                "canonic": "Chorasmian",
+                "alias": "Chrs"
+            },
+            {
                 "canonic": "Common",
                 "alias": "Zyyy"
             },
@@ -1127,6 +1147,10 @@
             {
                 "canonic": "Devanagari",
                 "alias": "Deva"
+            },
+            {
+                "canonic": "Dives_Akuru",
+                "alias": "Diak"
             },
             {
                 "canonic": "Dogra",
@@ -1251,6 +1275,10 @@
             {
                 "canonic": "Kharoshthi",
                 "alias": "Khar"
+            },
+            {
+                "canonic": "Khitan_Small_Script",
+                "alias": "Kits"
             },
             {
                 "canonic": "Khmer",
@@ -1607,6 +1635,10 @@
             {
                 "canonic": "Warang_Citi",
                 "alias": "Wara"
+            },
+            {
+                "canonic": "Yezidi",
+                "alias": "Yezi"
             },
             {
                 "canonic": "Yi",

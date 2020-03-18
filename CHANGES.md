@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.3.0
+
+- Added support for `Unicode 13.0` regular expressions by temporarily installing up-to-date `regexpu-core` module.
+- Added `Chorasmian`, `Dives_Akuru`, `Khitan_Small_Script`, `Yezidi` to the list of supported scripts in the **Regex Properties** utility.
+
+**Warning**: until the `Electron` framework adds full support for `Unicode 13.0` (`ICU 66`), results for case folding and normalization are still partially unreliable (restricted to `Unicode 12.1`) in the **Unicode Foldings** and **Unicode Normalizer** utilities.
+
 ## 7.2.0
 
 - Replaced `Full Unihan Set` checkbox with `Set:` [ `IICore`, `Unihan Core (2020)`, `Full Unihan` ] drop-down menu in the **Unihan Inspector** and **Unihan Radical-Strokes** utilities.

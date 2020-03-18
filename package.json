@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "7.2.0",
+    "version": "7.3.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -36,6 +36,7 @@
         "emoji-test-list": "^13.0.0",
         "emoji-test-patterns": "^13.0.0",
         "grapheme-splitter": "^1.0.4",
+        "regexpu-core": "^4.7.0",
         "viz.js": "^2.1.2"
     },
     "devDependencies": {
