@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.4.0
+
+- Updated `Electron` to version `8.2.0`.
+
 ## 7.3.0
 
 - Added support for `Unicode 13.0` regular expressions by temporarily installing up-to-date `regexpu-core` module.

@@ -177,6 +177,10 @@
                 "string": "⅒ ⑩ ⑽ ⒑ ㋉ ㍢ ㏩"
             },
             {
+                "label": "Roman Numerals",
+                "string": "Henry Ⅳ"
+            },
+            {
                 "label": "Rotated Variants",
                 "string": "︷︸"
             },
