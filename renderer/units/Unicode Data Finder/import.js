@@ -806,7 +806,7 @@ module.exports.start = function (context)
     );
     //
     blockInstructions.open = prefs.blockInstructions;
-}
+};
 //
 module.exports.stop = function (context)
 {

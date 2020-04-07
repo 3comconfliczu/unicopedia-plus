@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "7.4.0",
+    "version": "7.4.1",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -40,7 +40,7 @@
         "viz.js": "^2.1.2"
     },
     "devDependencies": {
-        "electron": "^8.2.0",
+        "electron": "^8.2.1",
         "electron-packager": "^14.2.1"
     }
 }

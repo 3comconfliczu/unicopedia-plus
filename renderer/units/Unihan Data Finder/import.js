@@ -1042,7 +1042,7 @@ module.exports.start = function (context)
     let blocksTable = require ('./blocks-table.js');
     //
     gridBlocks.appendChild (blocksTable.create (unihanBlocks));
-}
+};
 //
 module.exports.stop = function (context)
 {
