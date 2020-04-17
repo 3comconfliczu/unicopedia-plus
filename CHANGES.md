@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 7.4.2
 
-- Added keyboard shortcut (`CommandOrControl+Enter`) to run script while focus is in code text area.
+- Added keyboard shortcut (`CommandOrControl+Enter`) to run script while focus is in the code text area in the `JavaScript Runner` utility.
 - Updated `Electron` to version `8.2.3`.
 
 ## 7.4.1
