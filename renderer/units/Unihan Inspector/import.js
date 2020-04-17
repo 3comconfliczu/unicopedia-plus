@@ -103,7 +103,7 @@ module.exports.start = function (context)
             if (match[1])
             {
                 codePoint = matched.toUpperCase ();
-                char = String.fromCodePoint (parseInt (codePoint.replace ("U+", "") , 16));
+                char = String.fromCodePoint (parseInt (codePoint.replace ("U+", ""), 16));
                 if (regexp.isUnihan (char) || regexp.isRadical (char))
                 {
                     clickables.push ({ type: 'code-point', matched, index, lastIndex, codePoint, char });

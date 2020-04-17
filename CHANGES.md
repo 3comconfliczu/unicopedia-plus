@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.4.2
+
+- Added keyboard shortcut (`CommandOrControl+Enter`) to run script while focus is in code text area.
+- Updated `Electron` to version `8.2.3`.
+
 ## 7.4.1
 
 - Fixed 1 low severity vulnerability.
