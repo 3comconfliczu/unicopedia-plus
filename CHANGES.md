@@ -2,9 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.4.3
+
+- Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using latest `CLDR 37.0` annotations.
+- Improved display of monospaced fonts on Linux by adding "DejaVu Sans Mono" to the font stack.
+- Updated Help menu.
+- Updated documentation.
+
 ## 7.4.2
 
-- Added keyboard shortcut (`CommandOrControl+Enter`) to run script while focus is in the code text area in the `JavaScript Runner` utility.
+- Added keyboard shortcut (`CommandOrControl+Enter`) to run script while focus is in the code text area in the **JavaScript Runner** utility.
 - Updated `Electron` to version `8.2.3`.
 
 ## 7.4.1

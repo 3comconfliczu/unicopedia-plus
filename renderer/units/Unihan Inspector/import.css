@@ -132,7 +132,7 @@
 #unihan-inspector-unit .unihan-card .unihan-code-point
 {
     display: inline-block;
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13.5px;
     font-weight: bold;
     margin-bottom: 1em;
@@ -199,7 +199,7 @@
 #unihan-inspector-unit .unicode-info,
 #unihan-inspector-unit .unihan-info
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13.5px;
     line-height: 1.25em;
     background: white;
@@ -297,7 +297,7 @@
 
 #unihan-inspector-unit .tags-data .tags-list
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13.5px;
     margin: 0.75em 0;
     user-select: text;

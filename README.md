@@ -2,7 +2,7 @@
 
 **Unicopedia Plus** is a developer-oriented set of Unicode, Unihan & emoji utilities wrapped into one single app, built with [Electron](https://electronjs.org).
 
-This app works on macOS, Linux and Windows operating systems.
+This desktop application works on macOS, Linux and Windows operating systems.
 
 ## Utilities
 
@@ -67,7 +67,7 @@ The following utilities are currently available:
 
 ## Regex Properties
 
-- The **Regex Properties** utility displays all the **Unicode 12.1** properties available for regular expressions, used in particular in this app by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
+- The **Regex Properties** utility displays all the **Unicode 12.1** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
 - These properties are suitable to build Unicode-aware regular expressions in JavaScript (ECMAScript 6) using the 'u' flag.
 - Unicode properties fall into four groups, which can be displayed individually using the <kbd>Category</kbd> drop-down menu:
     - **General Category** properties
@@ -450,7 +450,7 @@ The following utilities are currently available:
 
 ## Building
 
-You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this app.
+You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this application.
 
 ```bash
 git clone https://github.com/tonton-pixel/unicopedia-plus
@@ -461,7 +461,7 @@ npm start
 
 If you don't wish to clone, you can [download the source code](https://github.com/tonton-pixel/unicopedia-plus/archive/master.zip).
 
-Several scripts are also defined in the `package.json` file to build OS-specific bundles of the app, using the simple yet powerful [Electron Packager](https://github.com/electron-userland/electron-packager) Node module.\
+Several scripts are also defined in the `package.json` file to build OS-specific bundles of the application, using the simple yet powerful [Electron Packager](https://github.com/electron-userland/electron-packager) Node module.\
 For instance, running the following command will create a `Unicopedia Plus.app` version for macOS:
 
 ```bash

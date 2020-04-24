@@ -65,7 +65,7 @@
 
 #cjk-font-variants-unit .code-points-input
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13px;
     padding: 4px 6px;
 }

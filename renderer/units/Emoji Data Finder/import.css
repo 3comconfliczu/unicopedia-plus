@@ -141,7 +141,7 @@
     position: absolute;
     margin-top: 10px;
     margin-right: 2rem;
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 12px;
     white-space: pre-wrap;
     padding: 0.375em 0.75em;
@@ -314,7 +314,7 @@
 
 #emoji-data-finder-unit .emoji-table .codes
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     text-align: left;
     vertical-align: middle;
     font-size: 1em;

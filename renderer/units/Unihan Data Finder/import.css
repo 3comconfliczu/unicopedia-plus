@@ -185,7 +185,7 @@
     position: absolute;
     margin-top: 10px;
     margin-right: 2rem;
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 12px;
     white-space: pre-wrap;
     padding: 0.375em 0.75em;
@@ -311,7 +311,7 @@
 
 #unihan-data-finder-unit .pagination-bar .page-select
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-weight: bold;
     font-size: 14px;
     padding: 3px 2px 2px 6px;
@@ -422,7 +422,7 @@
 #unihan-data-finder-unit .search-data .tag-data,
 #unihan-data-finder-unit .search-data .value-data
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     text-align: left;
     font-size: 13px;
     padding: 0.25em 0.5em;
@@ -509,7 +509,7 @@
     padding: 0.5em 0.25em;
     line-height: 1em;
     font-size: 13px;
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
 }
 
 #unihan-data-finder-unit .view-by-grid .search-data th.empty-header,
@@ -731,7 +731,7 @@
 #unihan-data-finder-unit .unihan-blocks td.core-2020-total,
 #unihan-data-finder-unit .unihan-blocks td.full-total
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
 }
 
 #unihan-data-finder-unit .unihan-blocks td.core-total,

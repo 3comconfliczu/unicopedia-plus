@@ -135,7 +135,7 @@
     position: absolute;
     margin-top: 10px;
     margin-right: 2rem;
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 12px;
     white-space: pre-wrap;
     padding: 0.375em 0.75em;
@@ -271,7 +271,7 @@
 
 #unicode-data-finder-unit .pagination-bar .page-select
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-weight: bold;
     font-size: 14px;
     padding: 3px 2px 2px 6px;
@@ -381,7 +381,7 @@
 
 #unicode-data-finder-unit .search-data .code-point
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     text-align: left;
     line-height: 1em;
     vertical-align: middle;

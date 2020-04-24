@@ -123,7 +123,7 @@
 
 #unihan-variants-unit .linear-row.code-points
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 12px;
     font-weight: bold;
     height: 2em;

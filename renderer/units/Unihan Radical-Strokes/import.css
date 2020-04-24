@@ -205,7 +205,7 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .code-point
 {
-    font-family: Monaco, "Noto Mono", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     text-align: center;
     font-size: 12px;
     font-weight: bold;
