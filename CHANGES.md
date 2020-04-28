@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.4.4
+
+- Updated `Electron` to version `8.2.4`.
+
 ## 7.4.3
 
 - Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using latest `CLDR 37.0` annotations.
