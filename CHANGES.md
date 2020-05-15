@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.5.0
+
+- Improved security.
+- Updated `Electron` to version `8.3.0`.
+
 ## 7.4.4
 
 - Updated `Electron` to version `8.2.4`.
