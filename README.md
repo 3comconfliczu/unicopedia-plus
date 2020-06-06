@@ -1,6 +1,6 @@
 # <img src="icons/icon-256.png" width="64px" align="center" alt="Unicopedia Plus icon"> UNICOPEDIA PLUS
 
-**Unicopedia Plus** is a developer-oriented set of Unicode, Unihan & emoji utilities wrapped into one single app, built with [Electron](https://electronjs.org).
+**Unicopedia Plus** is a developer-oriented set of Unicode, Unihan & emoji utilities wrapped into one single app, built with [Electron](https://www.electronjs.org/).
 
 This desktop application works on macOS, Linux and Windows operating systems.
 
@@ -67,7 +67,7 @@ The following utilities are currently available:
 
 ## Regex Properties
 
-- The **Regex Properties** utility displays all the **Unicode 12.1** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
+- The **Regex Properties** utility displays all the **Unicode 13.0** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
 - These properties are suitable to build Unicode-aware regular expressions in JavaScript (ECMAScript 6) using the 'u' flag.
 - Unicode properties fall into four groups, which can be displayed individually using the <kbd>Category</kbd> drop-down menu:
     - **General Category** properties
@@ -450,21 +450,41 @@ The following utilities are currently available:
 
 ## Building
 
-You'll need [Node.js](https://nodejs.org) installed on your computer in order to build this application.
+You'll need [Node.js](https://nodejs.org/) (which comes with [npm](http://npmjs.com/)) installed on your computer in order to build this application.
+
+### Clone method
 
 ```bash
+# Clone the repository
 git clone https://github.com/tonton-pixel/unicopedia-plus
+# Go into the repository
 cd unicopedia-plus
+# Install dependencies
 npm install
+# Run the application
 npm start
 ```
 
-If you don't wish to clone, you can [download the source code](https://github.com/tonton-pixel/unicopedia-plus/archive/master.zip).
+**Note**: to use the clone method, the core tool [Git](https://git-scm.com/) must also be installed.
 
-Several scripts are also defined in the `package.json` file to build OS-specific bundles of the application, using the simple yet powerful [Electron Packager](https://github.com/electron-userland/electron-packager) Node module.\
-For instance, running the following command will create a `Unicopedia Plus.app` version for macOS:
+### Download method
+
+If you don't wish to clone, you can [download the source code](https://github.com/tonton-pixel/unicopedia-plus/archive/master.zip), unZip it, then directly run the following commands from a Terminal opened at the resulting `unicopedia-plus-master` folder location:
 
 ```bash
+# Install dependencies
+npm install
+# Run the application
+npm start
+```
+
+### Packaging
+
+Several scripts are also defined in the `package.json` file to build OS-specific bundles of the application, using the simple yet powerful [Electron Packager](https://github.com/electron-userland/electron-packager) Node module.\
+For instance, running the following command (once the dependencies are installed) will create a `Unicopedia Plus.app` version for macOS:
+
+```bash
+# Build macOS (Darwin) application
 npm run build-darwin
 ```
 
