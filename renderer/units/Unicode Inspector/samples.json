@@ -155,7 +155,7 @@
         [
             {
                 "label": "Rare Kana",
-                "string": "ゐゑゔヰヱヴヷヸヹヺ"
+                "string": "ゐゑゔ\nヰヱヴヷヸヹヺ"
             },
             {
                 "label": "Typographic Marks",
