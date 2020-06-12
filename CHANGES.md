@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.6.1
+
+- Fixed error when attempting to open user data or temporary directories from the Developer menu.
+
 ## 7.6.0
 
 - Defined platform-independent focus outline color for text areas.
