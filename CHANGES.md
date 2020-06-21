@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.7.0
+
+- Added more alternative notations to the list of recognized code point formats.
+- Added `HTML Hex` to the list of codes in the **Unicode Inspector** utility.
+- Updated `Electron` to version `9.0.4`.
+
 ## 7.6.1
 
 - Fixed error when attempting to open user data or temporary directories from the Developer menu.

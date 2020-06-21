@@ -477,6 +477,11 @@ function characterToUrlEncoding (character)
     return characterToUtf8 (character).map (code => `%${code}`).join ("");
 }
 //
+function characterToHexEntity (character)
+{
+    return `&#x${character.codePointAt (0).toString (16).toUpperCase ()};`;
+}
+//
 function characterToDecimalEntity (character)
 {
     return `&#${character.codePointAt (0)};`;
@@ -524,6 +529,7 @@ function getCharacterData (character)
         characterData.utf16 = characterToUtf16Code (character);
         characterData.utf8 = characterToUtf8Code (character);
         characterData.urlEncoding = characterToUrlEncoding (character);
+        characterData.hexEntity = characterToHexEntity (character);
         characterData.decimalEntity = characterToDecimalEntity (character);
         characterData.namedEntity = characterToNamedEntity (character);
         characterData.javaScript = characterToJavaScriptEscape (character);
@@ -716,11 +722,11 @@ function codePointsToCharacters (codePoints)
 {
     let characters = "";
     codePoints = codePoints.replace (/\b([0-9a-fA-F]{4,})\b/g, "U+$1");
-    const regex = /\\u([0-9a-fA-F]{4})|\\u\{([0-9a-fA-F]{1,})\}|U\+([0-9a-fA-F]{4,})|0x([0-9a-fA-F]{1,})/g;    // Global flag /g *must* be set!
+    const regex = /\\u([0-9a-fA-F]{4})|\\u\{([0-9a-fA-F]{1,})\}|U\+([0-9a-fA-F]{4,})|0x([0-9a-fA-F]{1,})|&#x([0-9a-fA-F]{1,});|\\x\{([0-9a-fA-F]{1,})\}/g;    // Global flag /g *must* be set!
     let code;
     while ((code = regex.exec (codePoints)))
     {
-        let index = parseInt (code[1] || code[2] || code[3] || code[4], 16);
+        let index = parseInt (code[1] || code[2] || code[3] || code[4] || code[5] || code[6], 16);
         if (index <= 0x10FFFF)
         {
             characters += String.fromCodePoint (index);
