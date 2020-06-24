@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 7.8.0
 
-- Added related Unihan characters to the **Unihan Inspector** utility.
+- Added a new field to the **Unihan Inspector** utility: `Related` Unihan characters.
 - Updated `Electron` to version `9.0.5`.
 
 ## 7.7.0
