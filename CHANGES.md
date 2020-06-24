@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.8.0
+
+- Added related Unihan characters to the **Unihan Inspector** utility.
+- Updated `Electron` to version `9.0.5`.
+
 ## 7.7.0
 
 - Added more alternative notations to the list of recognized code point formats.

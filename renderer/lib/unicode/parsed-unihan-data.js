@@ -899,6 +899,54 @@ const fullSet = Object.keys (codePoints).sort ((a, b) => parseInt (a.replace ("U
 const coreSet = fullSet.filter (key => ("kIICore" in codePoints[key]));
 const core2020Set = fullSet.filter (key => ("kUnihanCore2020" in codePoints[key]));
 //
+const regexp = require ('../../lib/unicode/regexp.js');
+//
+const codePointOrHanCharacterPattern = '\\b(U\\+[0-9a-fA-F]{4,5})\\b|(\\p{Script=Han})';
+const codePointOrHanCharacterRegex = regexp.build (codePointOrHanCharacterPattern, { useRegex: true, global: true });
+//
+const related = { };
+fullSet.forEach
+(
+    key =>
+    {
+        if ("kDefinition" in codePoints[key])
+        {
+            let keyCharacter = String.fromCodePoint (parseInt (key.replace ("U+", ""), 16));
+            let characters = [ ];
+            let definition = codePoints[key]["kDefinition"];
+            let matches = definition.matchAll (codePointOrHanCharacterRegex);
+            for (let match of matches)
+            {
+                let character;
+                if (match[1])
+                {
+                    character = String.fromCodePoint (parseInt (match[1].replace ("U+", ""), 16));
+                }
+                else if (match[2])
+                {
+                    character = match[2];
+                }
+                if (regexp.isUnihan (character))
+                {
+                    characters.push (character);
+                }
+            }
+            characters = [...new Set (characters)].sort (); // Remove duplicates and reorder by ascending code point value
+            for (let character of characters)
+            {
+                if (character !== keyCharacter)
+                {
+                    if (!(character in related))
+                    {
+                        related[character] = [ ];
+                    }
+                    related[character].push (keyCharacter);
+                }
+            }
+        }
+    }
+);
+//
 module.exports =
 {
     tags,
@@ -906,6 +954,7 @@ module.exports =
     codePoints,
     fullSet,
     coreSet,
-    core2020Set
+    core2020Set,
+    related
 };
 //

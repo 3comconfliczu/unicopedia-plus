@@ -13,6 +13,10 @@ function build (pattern, options)
     {
          flags += 'i';
     }
+    if (options.global)
+    {
+         flags += 'g';
+    }
     if (!options.useRegex)
     {
          pattern = Array.from (pattern, (char) => `\\u{${char.codePointAt (0).toString (16)}}`).join ('');

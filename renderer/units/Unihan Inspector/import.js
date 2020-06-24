@@ -539,6 +539,7 @@ module.exports.start = function (context)
                 rsValues = rsValues.map (rsValue => fromRSValue (rsValue).join (" +\xA0"));
                 //
                 let definitionValue = tags["kDefinition"];
+                let related = unihanData.related[character] || [ ];
                 let numericValue = numericValuesData[codePoint] || "";
                 let unified = [ ];
                 if (unicodeData.decomposition)
@@ -560,6 +561,8 @@ module.exports.start = function (context)
                     { name: "Radical/Strokes", value: rsValues, class: rsClasses },
                     { name: "Definition", value: definitionValue },
                     { name: "Numeric Value", value: numericValue },
+                    //
+                    { name: "Related", value: related.join (" ") },
                     //
                     { name: "Unified Variant", value: unified.join (" ") },
                     { name: "Compatibility Variants", value: compatibility.join (" ") },
