@@ -412,19 +412,6 @@ module.exports.start = function (context)
             let age = unicodeData.age && `Unicode ${unicodeData.age} (${unicodeData.ageDate})`;
             let standardizedVariation = unicodeData.standardizedVariation;
             standardizedVariation = standardizedVariation && standardizedVariation.replace (" ", "\xA0");
-            let numericType = "";
-            if (unicodeData.numeric)
-            {
-                numericType = "Numeric";
-                if (unicodeData.digit)
-                {
-                    numericType = "Digit";
-                    if (unicodeData.decimal)
-                    {
-                        numericType = "Decimal";
-                    }
-                }
-            }
             let unicodeFields =
             [
                 { name: "Name", value: unicodeData.name },
@@ -437,8 +424,7 @@ module.exports.start = function (context)
                 { name: "Extended Properties", value: unicodeData.extendedProperties },
                 { name: "Decomposition", value: unicodeData.decomposition },
                 { name: "Standardized Variation", value: standardizedVariation },
-                { name: "Equivalent Unified Ideograph", value: unicodeData.equivalentUnifiedIdeograph },
-                { name: numericType, value: unicodeData.numeric }
+                { name: "Equivalent Unified Ideograph", value: unicodeData.equivalentUnifiedIdeograph }
             ];
             //
             let unicodeInfo = document.createElement ('div');

@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.9.0
+
+- Added display of `System Info` dialog from the `Help` menu.
+- Updated instructions.
+
 ## 7.8.0
 
 - Added a new field to the **Unihan Inspector** utility: `Related` Unihan characters.
