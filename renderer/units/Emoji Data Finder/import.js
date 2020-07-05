@@ -665,7 +665,7 @@ module.exports.start = function (context)
     //
     samples.push (null);    // Separator
     //
-    let statusSample = { label: "Status Types" };
+    let statusSample = { label: "Status" };
     statusSample.items =
     [
         {
@@ -686,6 +686,24 @@ module.exports.start = function (context)
         }
     ];
     samples.push (statusSample);
+    //
+    samples.push (null);    // Separator
+    //
+    let ageSample = { label: "Age (Date)" };
+    ageSample.items = [ ];
+    let ageKeys = Object.keys (versionAges);
+    let dateKeys = Object.keys (versionDates);
+    for (let index = 0; index < ageKeys.length; index++)
+    {
+        ageSample.items.push
+        (
+            {
+                label: `${versionAges[ageKeys[index]]} (${versionDates[dateKeys[index]]})`,
+                string: Object.keys (emojiList).filter (emoji => emojiList[emoji].age === ageKeys[index]).join ("")
+            }
+        );
+    }
+    samples.push (ageSample);
     //
     samples.push (null);    // Separator
     //
@@ -735,6 +753,7 @@ module.exports.start = function (context)
         (sample) =>
         {
             textInputString.value = sample.string;
+            textInputString.scrollTop = 0;
             textInputString.dispatchEvent (new Event ('input'));
         }
     );

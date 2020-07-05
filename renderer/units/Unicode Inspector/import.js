@@ -52,6 +52,7 @@ module.exports.start = function (context)
         (sample) =>
         {
             charactersInput.value = sample.string;
+            charactersInput.scrollTop = 0;
             charactersInput.dispatchEvent (new Event ('input'));
         }
     );
@@ -86,6 +87,7 @@ module.exports.start = function (context)
                         text = text.substring (0, maxLength);
                     }
                     charactersInput.value = text;
+                    charactersInput.scrollTop = 0;
                     charactersInput.dispatchEvent (new Event ('input'));
                     defaultFolderPath = path.dirname (filePath);
                 }

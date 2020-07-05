@@ -60,7 +60,7 @@
     [
         {
             "name": "emoji-data.txt",
-            "href": "hhttps://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-data.txt"
+            "href": "https://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-data.txt"
         },
         {
             "name": "emoji-test.txt",
