@@ -672,6 +672,7 @@ module.exports.start = function (context)
             label: "All Emoji",
             string: Object.keys (emojiList).join ("")
         },
+        null,
         {
             label: "Component Emoji",
             string: Object.keys (emojiList).filter (emoji => emojiList[emoji].isComponent).join ("")

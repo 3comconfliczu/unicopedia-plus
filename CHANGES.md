@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.11.0
+
+- Improved user interface of the `Unihan Inspector` utility: switch automatically to the default system font when the looked up character cannot be properly rendered in the five CJK typefaces.
+- Updated `Electron` to version `9.1.0`.
+
 ## 7.10.0
 
 - Added samples of emoji listed by `Age (Date)` to the **Filter Text** feature of the **Emoji Data Finder** utility.

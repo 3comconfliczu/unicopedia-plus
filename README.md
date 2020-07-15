@@ -374,7 +374,7 @@ The following utilities are currently available:
     - `SC`: Simplified Chinese
     - `TC`: Traditional Chinese (Taiwan)
     - `HK`: Traditional Chinese (Hong Kong)
-- Double-click on the two-letter language code to toggle between these five CJK typefaces and the system default typeface.
+- If a character cannot be properly rendered in the five CJK typefaces, the system default typeface is automatically used instead.
 - Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories.
 - Variant characters, if any, are listed under several classes in the basic Unihan information panel:
     - `Unified Variant`: decomposition of the looked up character

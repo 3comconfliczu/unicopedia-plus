@@ -10,7 +10,6 @@ const infoContainer = unit.querySelector ('.info-container');
 const instructions = unit.querySelector ('.instructions');
 //
 let currentTypefaceLanguage;
-let currentTypefaceDefault;
 //
 const unihanHistorySize = 256;   // 0: unlimited
 //
@@ -40,7 +39,6 @@ module.exports.start = function (context)
         unihanHistory: [ ],
         unihanCharacter: "",
         typefaceLanguage: "",
-        typefaceDefault: false,
         randomSetSelect: "",
         showCategories: false,
         instructions: true
@@ -56,6 +54,23 @@ module.exports.start = function (context)
     }
     //
     showCategories = prefs.showCategories;
+    //
+    const defaultFontSize = 72;
+    //
+    const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Blank"`;
+    // const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Sans CJK MO", "Blank"`;
+    //
+    let canvas = document.createElement ('canvas');
+    canvas.width = defaultFontSize;
+    canvas.height = defaultFontSize;
+    let ctx = canvas.getContext ('2d');
+    ctx.font = cjkBlankFont;
+    //
+    function isProperlyRendered (string)
+    {
+        let witdh = Math.round (ctx.measureText (string).width);
+        return (witdh > 0) && (witdh <= ctx.canvas.width);
+    }
     //
     const languages =
     {
@@ -73,8 +88,6 @@ module.exports.start = function (context)
     {
         currentTypefaceLanguage = languageKeys[0];
     }
-    //
-    currentTypefaceDefault = prefs.typefaceDefault;
     //
     function getTooltip (character)
     {
@@ -341,14 +354,7 @@ module.exports.start = function (context)
             //
             function updateTypefaceWidget ()
             {
-                if (currentTypefaceDefault)
-                {
-                    typefaceWidget.classList.add ('default');
-                    unihanCharacter.lang = "";
-                    typefaceTag.textContent = "--";
-                    typefaceTag.title = "Default typeface";
-                }
-                else
+                if (isProperlyRendered (unihanCharacter.textContent))
                 {
                     typefaceWidget.classList.remove ('default');
                     unihanCharacter.lang = currentTypefaceLanguage;
@@ -356,16 +362,18 @@ module.exports.start = function (context)
                     typefaceTag.textContent = currentLanguage.label;
                     typefaceTag.title = currentLanguage.title;
                 }
-            }
-            updateTypefaceWidget ();
-            //
-            typefaceTag.addEventListener
-            (
-                'dblclick',
-                 event =>
+                else
                 {
-                    event.preventDefault ();
-                    currentTypefaceDefault = !currentTypefaceDefault;
+                    typefaceWidget.classList.add ('default');
+                    unihanCharacter.lang = "";
+                    typefaceTag.textContent = "--";
+                    typefaceTag.title = "Default typeface";
+                }
+            }
+            document.fonts.load (cjkBlankFont).then
+            (
+                () =>
+                {
                     updateTypefaceWidget ();
                 }
             );
@@ -1004,7 +1012,6 @@ module.exports.stop = function (context)
         unihanHistory: unihanHistory,
         unihanCharacter: currentUnihanCharacter,
         typefaceLanguage: currentTypefaceLanguage,
-        typefaceDefault: currentTypefaceDefault,
         randomSetSelect: randomSetSelect.value,
         showCategories: showCategories,
         instructions: instructions.open
