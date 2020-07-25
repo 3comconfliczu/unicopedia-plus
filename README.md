@@ -434,7 +434,7 @@ The following utilities are currently available:
     - `Shape`: characters listed under the *kZVariant* Unihan tag
     - `Simplified`: characters listed under the *kSimplifiedVariant* Unihan tag
     - `Specialized`: characters listed under the *kSpecializedSemanticVariant* Unihan tag
-    - `Spoofing Variants`: characters listed under the *kSpoofingVariant* Unihan tag
+    - `Spoofing`: characters listed under the *kSpoofingVariant* Unihan tag
     - `Traditional`: characters listed under the *kTraditionalVariant* Unihan tag
     - `Unified`: characters listed under the *kCompatibilityVariant* Unihan tag
     - `Yasuoka`: characters drawn from the "Variants table for Unicode" data file <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z">UniVariants.txt</a> provided by Prof. <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/">Kōichi Yasuoka</a>
