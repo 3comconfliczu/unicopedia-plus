@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 7.12.0
+
+- Switched to Unicode 13.0-aware `graphemesplit` module.
+- Updated global hot key.
+- Updated `Electron` to version `9.2.0`.
+
 ## 7.11.1
 
 - Added case folding samples to the **Unicode Foldings** utility: `Roman Numerals` and `Cherokee`.

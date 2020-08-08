@@ -444,9 +444,7 @@ module.exports.start = function (context)
         }
     }
     //
-    const GraphemeSplitter = require ('grapheme-splitter');
-    //
-    let splitter = new GraphemeSplitter ();
+    const graphemeSplit = require ('graphemesplit');
     //
     function isWideGrapheme (grapheme)
     {
@@ -468,7 +466,7 @@ module.exports.start = function (context)
     //
     function wideSplit (string)
     {
-        let wideCharacters = splitter.splitGraphemes (string).filter (isWideGrapheme);
+        let wideCharacters = graphemeSplit (string).filter (isWideGrapheme);
         return wideCharacters;
     }
     //
