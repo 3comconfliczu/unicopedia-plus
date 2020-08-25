@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.0.0
+
+- Updated `Electron` to version `10.0.0`: adds full support for `Unicode 13.0` (`ICU 67.1`), for regular expressions, case folding, and normalization.
+- Updated `Electron Packager` to version `15.1.0`.
+
 ## 7.12.0
 
 - Switched to Unicode 13.0-aware `graphemesplit` module.

@@ -1,6 +1,9 @@
 //
 // Temporary until Electron framework adds built-in support for Unicode 13.0
-let rewritePattern = require ('regexpu-core');
+// let rewritePattern = require ('regexpu-core');
+//
+// Support for Unicode 13.0 finally added in Electron 10.0.0 (2020-08-25)
+let rewritePattern = null;
 //
 function build (pattern, options)
 {
