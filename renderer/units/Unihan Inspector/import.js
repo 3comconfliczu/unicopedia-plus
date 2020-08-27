@@ -943,6 +943,7 @@ module.exports.start = function (context)
         unihanInput.dispatchEvent (new Event ('input'));
         displayData (character);
         unit.scrollTop = 0;
+        unit.scrollLeft = 0;
     }
     //
     lookupButton.addEventListener

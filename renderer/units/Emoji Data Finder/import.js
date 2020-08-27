@@ -755,6 +755,7 @@ module.exports.start = function (context)
         {
             textInputString.value = sample.string;
             textInputString.scrollTop = 0;
+            textInputString.scrollLeft = 0;
             textInputString.dispatchEvent (new Event ('input'));
         }
     );

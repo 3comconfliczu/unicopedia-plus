@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.0.1
+
+- Fixed issue introduced in `Electron 10.0.0`: on `Linux`, the app would unexpectedly crash when dismissing the `License` or `System Info` dialog window with the `Escape` key.
+- Fixed resetting multiline fields scroll to left as well as top.
+
 ## 8.0.0
 
 - Updated `Electron` to version `10.0.0`: adds full support for `Unicode 13.0` (`ICU 67.1`), for regular expressions, case folding, and normalization.
