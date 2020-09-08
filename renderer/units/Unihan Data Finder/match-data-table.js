@@ -62,7 +62,7 @@ module.exports.create = function (characters, regex, params)
         headerRow.className = 'header-row';
         let symbolHeader = document.createElement ('th');
         symbolHeader.className = 'symbol-header';
-        symbolHeader.textContent = "Symbol";
+        symbolHeader.textContent = "Char.";
         headerRow.appendChild (symbolHeader);
         let codePointHeader = document.createElement ('th');
         codePointHeader.className = 'code-point-header';

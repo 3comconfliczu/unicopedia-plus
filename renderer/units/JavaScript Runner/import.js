@@ -18,7 +18,7 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote } = require ('electron');
+    const { remote, shell } = require ('electron');
     const { getCurrentWebContents } = remote;
     const webContents = getCurrentWebContents ();
     //
@@ -207,7 +207,7 @@ module.exports.start = function (context)
                 }
                 else
                 {
-                    remote.shell.beep ();
+                    shell.beep ();
                 }
             }
             event.dataTransfer.clearData ();

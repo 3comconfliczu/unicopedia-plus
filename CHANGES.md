@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.1.0
+
+- Used proper terminology: `Character` instead of `Symbol` in the data table headers of the **Unicode Data Finder** and **Unihan Data Finder** utilities.
+- Updated `Electron` to version `10.1.1`.
+- Updated `Grapheme Split` to version `2.4.1`.
+
 ## 8.0.1
 
 - Fixed issue introduced in `Electron 10.0.0`: on `Linux`, the app would unexpectedly crash when dismissing the `License` or `System Info` dialog window with the `Escape` key.

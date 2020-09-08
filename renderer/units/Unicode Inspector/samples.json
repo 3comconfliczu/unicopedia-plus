@@ -237,11 +237,11 @@
             },
             {
                 "label": "Twelve Macrons",
-                "string": "\nā̄̄̄̄̄̄̄̄̄̄̄"
+                "string": "\na\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304"
             },
             {
                 "label": "Various Spaces",
-                "string": "           ​  　﻿"
+                "string": "           ​  　\uFEFF"
             }
         ]
     },
