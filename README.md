@@ -102,8 +102,8 @@ The following utilities are currently available:
 
 - The **Find by Name** feature of the **Emoji Data Finder** utility displays a list of basic data (symbol, short name, keywords, code points) of matching Unicode emoji searched by name or keyword, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
-- This feature deals with the 4,168 emoji defined in the **Emoji 13.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,295 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 864 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,590 emoji defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,512 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -117,8 +117,8 @@ The following utilities are currently available:
 
 - The **Match Sequence** feature of the **Emoji Data Finder** utility displays a list of basic data (symbol, short name, keywords, code points) of Unicode emoji matching a character sequence, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
-- This feature deals with the 4,168 emoji defined in the **Emoji 13.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,295 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 864 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,590 emoji defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,512 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -138,8 +138,8 @@ The following utilities are currently available:
     - `Discard Non-Emoji` [strip out non-emoji characters]
     - `Upgrade to RGI Emoji` [restore incomplete emoji to their **RGI** form]
     - `Remove Duplicate Emoji` [delete emoji duplicates]
-- This feature deals with the 4,168 emoji defined in the **Emoji 13.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,295 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 864 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,590 emoji defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,512 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -162,8 +162,8 @@ The following utilities are currently available:
     - **Symbols**
     - **Flags**
 - The size of all emoji pictures (from 32 to 128&nbsp;pixels) can be adjusted by moving the dedicated slider left and right.
-- The groups and subgroups of emoji are those defined in the **Emoji 13.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.0/emoji-test.txt) data file.
-- Only the 9 *component* emoji and the 3,295 *fully-qualified* (**RGI**) forms of the emoji are used unless they cannot be displayed properly, depending on the emoji support level of the operating system.
+- The groups and subgroups of emoji are those defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
+- Only the 9 *component* emoji and the 3,512 *fully-qualified* (**RGI**) forms of the emoji are used unless they cannot be displayed properly, depending on the emoji support level of the operating system.
 - Emoji failing to be represented as proper color pictures are purely and simply discarded.
 - Note: **RGI** stands for *Recommended for General Interchange*.
 

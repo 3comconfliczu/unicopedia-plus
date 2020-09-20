@@ -234,7 +234,8 @@ module.exports.start = function (context)
         "11.0": "Emoji 11.0",
         "12.0": "Emoji 12.0",
         "12.1": "Emoji 12.1",
-        "13.0": "Emoji 13.0"
+        "13.0": "Emoji 13.0",
+        "13.1": "Emoji 13.1"
     };
     //
     const versionDates =
@@ -249,7 +250,8 @@ module.exports.start = function (context)
         "11.0": "May 2018",
         "12.0": "March 2019",
         "12.1": "October 2019",
-        "13.0": "March 2020"
+        "13.0": "March 2020",
+        "13.1": "September 2020"
     };
     //
     function updateDataList (characters, emojiDataList)

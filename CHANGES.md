@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.2.0
+
+- Added support for `Emoji 13.1` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:
+    - Updated instructions/documentation.
+    - Updated emoji age and date informations.
+    - Updated `emoji-test-list`, `emoji-test-groups`, `emoji-test-patterns` NPM modules to their version `13.1.x`.
+- Restricted display of modal dialogs over main window only.
+- Updated `Electron` to version `10.1.2`.
+- Updated `Grapheme Split` to version `2.4.2`.
+
 ## 8.1.0
 
 - Used proper terminology: `Character` instead of `Symbol` in the data table headers of the **Unicode Data Finder** and **Unihan Data Finder** utilities.

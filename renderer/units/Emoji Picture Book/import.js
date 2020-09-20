@@ -91,7 +91,8 @@ module.exports.start = function (context)
         "11.0": "Emoji 11.0",
         "12.0": "Emoji 12.0",
         "12.1": "Emoji 12.1",
-        "13.0": "Emoji 13.0"
+        "13.0": "Emoji 13.0",
+        "13.1": "Emoji 13.1"
     };
     //
     let flagEmojiRegex =/^([🇦-🇿])([🇦-🇿])$/u;
