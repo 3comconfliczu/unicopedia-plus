@@ -44,6 +44,17 @@
     margin-left: 0.75em;
 }
 
+#cjk-font-variants-unit .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#cjk-font-variants-unit .count-number
+{
+    font-weight: bold;
+}
+
 #cjk-font-variants-unit .input-group
 {
     margin-bottom: 0.5em;
@@ -68,6 +79,25 @@
     font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13px;
     padding: 4px 6px;
+}
+
+#cjk-font-variants-unit .graphemes-group
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.75em;
+}
+
+#cjk-font-variants-unit .graphemes-info
+{
+    line-height: 1em;
+    width: 96px;
+}
+
+#cjk-font-variants-unit .graphemes-number
+{
+    font-weight: bold;
 }
 
 #cjk-font-variants-unit .cjk-data-base:lang(ja),

@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.3.0
+
+- Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using latest `CLDR 38.0` annotations.
+- Updated CLDR annotations-related sample scripts in the **JavaScript Runner** utility.
+- Added character count info to the **CJK Font Variants**, **Unicode Foldings**, **Unicode Inspector**, and **Unicode Normalizer** utilities.
+- Added `Load...` and `Save...` buttons to the **Filter Text** feature of the **Emoji Data Finder** utility.
+- Updated screenshots accordingly.
+- Updated `CJK Numbers` sample in the **Unicode Inspector** utility.
+- Updated `Electron` to version `10.1.3`.
+
 ## 8.2.0
 
 - Added support for `Emoji 13.1` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:

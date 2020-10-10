@@ -3,6 +3,7 @@ const unit = document.getElementById ('unicode-inspector-unit');
 //
 const charactersClear = unit.querySelector ('.characters-clear');
 const charactersSamples = unit.querySelector ('.characters-samples');
+const countNumber = unit.querySelector ('.count-number');
 const loadButton = unit.querySelector ('.load-button');
 const saveButton = unit.querySelector ('.save-button');
 const charactersInput = unit.querySelector ('.characters-input');
@@ -123,6 +124,7 @@ module.exports.start = function (context)
            charactersDataList.firstChild.remove ();
         }
         let dataList = unicode.getCharactersData (characters);
+        countNumber.textContent = dataList.length;
         if (dataList.length > 0)
         {
             let table = document.createElement ('table');

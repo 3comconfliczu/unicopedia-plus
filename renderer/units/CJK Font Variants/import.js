@@ -5,12 +5,14 @@ const unit = document.getElementById (unitId);
 //
 const clearButton = unit.querySelector ('.clear-button');
 const charactersSamples = unit.querySelector ('.characters-samples');
+const countNumber = unit.querySelector ('.count-number');
 const loadButton = unit.querySelector ('.load-button');
 const saveButton = unit.querySelector ('.save-button');
 const charactersInput = unit.querySelector ('.characters-input');
 const codePointsInput = unit.querySelector ('.code-points-input');
 const writingModeSelect = unit.querySelector ('.writing-mode-select');
 const eastAsianSelect = unit.querySelector ('.east-asian-select');
+const graphemesNumber = unit.querySelector ('.graphemes-number');
 const sheet = unit.querySelector ('.sheet');
 //
 const instructions = unit.querySelector ('.instructions');
@@ -505,8 +507,11 @@ module.exports.start = function (context)
         event =>
         {
             let characters = event.currentTarget.value;
+            countNumber.textContent = Array.from (characters).length;
             codePointsInput.value = unicode.charactersToCodePoints (characters, true);
-            createSheet (wideSplit (characters));
+            let wideCharacters = wideSplit (characters);
+            graphemesNumber.textContent = wideCharacters.length;
+            createSheet (wideCharacters);
         }
     );
     charactersInput.value = prefs.charactersInput;
@@ -524,8 +529,11 @@ module.exports.start = function (context)
         event =>
         {
             let characters = unicode.codePointsToCharacters (event.currentTarget.value);
+            countNumber.textContent = Array.from (characters).length;
             charactersInput.value = characters;
-            createSheet (wideSplit (characters));
+            let wideCharacters = wideSplit (characters);
+            graphemesNumber.textContent = wideCharacters.length;
+            createSheet (wideCharacters);
         }
     );
     codePointsInput.addEventListener

@@ -30,6 +30,17 @@
     margin-left: 0.75em;
 }
 
+#unicode-normalizer-unit .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#unicode-normalizer-unit .count-number
+{
+    font-weight: bold;
+}
+
 #unicode-normalizer-unit .input-group
 {
     margin-bottom: 0.5em;
@@ -70,11 +81,25 @@
     margin: 10px 0 4px 0;
 }
 
-#unicode-normalizer-unit table.form-data th
+#unicode-normalizer-unit table.form-data th.form-info
 {
-    text-align: left;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.333em;
     padding: 2px 6px;
+}
+
+#unicode-normalizer-unit table.form-data .form-count-info
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#unicode-normalizer-unit table.form-data .form-count-number
+{
+    font-weight: bold;
 }
 
 #unicode-normalizer-unit table.form-data td

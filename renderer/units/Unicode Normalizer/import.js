@@ -3,10 +3,12 @@ const unit = document.getElementById ('unicode-normalizer-unit');
 //
 const clearButton = unit.querySelector ('.clear-button');
 const charactersSamples = unit.querySelector ('.characters-samples');
+const countNumber = unit.querySelector ('.count-number');
 const loadButton = unit.querySelector ('.load-button');
 const saveButton = unit.querySelector ('.save-button');
 const charactersInput = unit.querySelector ('.characters-input');
 const codePointsInput = unit.querySelector ('.code-points-input');
+const formCountNumbers = unit.getElementsByClassName ('form-count-number');
 const charactersStrings = unit.getElementsByClassName ('characters-string');
 const codePointsStrings = unit.getElementsByClassName ('code-points-string');
 //
@@ -117,6 +119,7 @@ module.exports.start = function (context)
         event =>
         {
             let characters = event.currentTarget.value;
+            countNumber.textContent = Array.from (characters).length;
             codePointsInput.value = unicode.charactersToCodePoints (characters, true);
             for (let index = 0; index < charactersStrings.length; index++)
             {
@@ -124,6 +127,7 @@ module.exports.start = function (context)
                 let codePointsString = codePointsStrings[index];
                 charactersString.textContent = characters.normalize (charactersString.dataset.form);
                 codePointsString.textContent = unicode.charactersToCodePoints (charactersString.textContent);
+                formCountNumbers[index].textContent = Array.from (charactersString.textContent).length;
             }
         }
     );
@@ -136,6 +140,7 @@ module.exports.start = function (context)
         event =>
         {
             let characters = unicode.codePointsToCharacters (event.currentTarget.value);
+            countNumber.textContent = Array.from (characters).length;
             charactersInput.value = characters;
             for (let index = 0; index < charactersStrings.length; index++)
             {
@@ -143,6 +148,7 @@ module.exports.start = function (context)
                 let codePointsString = codePointsStrings[index];
                 charactersString.textContent = characters.normalize (charactersString.dataset.form);
                 codePointsString.textContent = unicode.charactersToCodePoints (charactersString.textContent);
+                formCountNumbers[index].textContent = Array.from (charactersString.textContent).length;
             }
         }
     );

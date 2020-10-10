@@ -30,6 +30,17 @@
     margin-left: 0.75em;
 }
 
+#unicode-foldings-unit .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#unicode-foldings-unit .count-number
+{
+    font-weight: bold;
+}
+
 #unicode-foldings-unit .input-group
 {
     margin-bottom: 0.5em;
@@ -70,11 +81,25 @@
     margin: 16px 0 4px 0;
 }
 
-#unicode-foldings-unit table.case-data th
+#unicode-foldings-unit table.case-data th.case-info
 {
-    text-align: left;
-    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 1.333em;
     padding: 4px 6px;
+}
+
+#unicode-foldings-unit table.case-data .case-count-info
+{
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#unicode-foldings-unit table.case-data .case-count-number
+{
+    font-weight: bold;
 }
 
 #unicode-foldings-unit table.case-data td

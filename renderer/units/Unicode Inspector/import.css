@@ -29,6 +29,17 @@
     margin-left: 0.75em;
 }
 
+#unicode-inspector-unit .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#unicode-inspector-unit .count-number
+{
+    font-weight: bold;
+}
+
 #unicode-inspector-unit .input-group
 {
     margin: 0.5em 0 1em 0;

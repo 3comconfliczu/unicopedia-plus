@@ -31,6 +31,8 @@ const sequenceRegexExamples = unit.querySelector ('.match-sequence .regex-exampl
 const textClearButton = unit.querySelector ('.filter-text .clear-button');
 const textEmojiSamples = unit.querySelector ('.filter-text .emoji-samples');
 const textFilterButton = unit.querySelector ('.filter-text .filter-button');
+const textLoadButton = unit.querySelector ('.filter-text .load-button');
+const textSaveButton = unit.querySelector ('.filter-text .save-button');
 const textInputString = unit.querySelector ('.filter-text .input-string');
 const textResultsButton = unit.querySelector ('.filter-text .results-button');
 const textHitCount = unit.querySelector ('.filter-text .hit-count');
@@ -128,7 +130,7 @@ module.exports.start = function (context)
     //
     const emojiCount = Object.keys (emojiList).length;
     //
-    const cldrAnnotations = require ('../../lib/unicode/get-cldr-annotations.js') ("en.xml");
+    const cldrAnnotations = require ('../../lib/unicode/get-cldr-annotations.js');
     //
     const emojiGroups = require ('emoji-test-groups');
     //
@@ -830,6 +832,53 @@ module.exports.start = function (context)
         (event) =>
         {
             pullDownMenus.popup (event.currentTarget, textFilterMenu);
+        }
+    );
+    //
+    defaultFolderPath = prefs.defaultFolderPath;
+    //
+    textLoadButton.addEventListener
+    (
+        'click',
+        event =>
+        {
+            fileDialogs.loadTextFile
+            (
+                "Load text file:",
+                [ { name: "Text (*.txt)", extensions: [ 'txt' ] } ],
+                defaultFolderPath,
+                'utf8',
+                (text, filePath) =>
+                {
+                    let maxLength = textInputString.maxLength;
+                    if ((maxLength > 0) && (text.length > maxLength))
+                    {
+                        text = text.substring (0, maxLength);
+                    }
+                    textInputString.value = text;
+                    textInputString.dispatchEvent (new Event ('input'));
+                    defaultFolderPath = path.dirname (filePath);
+                }
+            );
+        }
+    );
+    //
+    textSaveButton.addEventListener
+    (
+        'click',
+        event =>
+        {
+            fileDialogs.saveTextFile
+            (
+                "Save text file:",
+                [ { name: "Text (*.txt)", extensions: [ 'txt' ] } ],
+                defaultFolderPath,
+                (filePath) =>
+                {
+                    defaultFolderPath = path.dirname (filePath);
+                    return textInputString.value;
+                }
+            );
         }
     );
     //
