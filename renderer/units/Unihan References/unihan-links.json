@@ -416,19 +416,22 @@
     [
         {
             "lang": "ja",
-            "name": "IPAexフォント/IPAフォント | IPAフォントのダウンロードサイトです",
+            "name": "IPAexフォント/IPAフォント | IPAフォントのサイトです",
             "href": "https://ipafont.ipa.go.jp/"
-        },
-        {
-            "lang": "ja",
-            "name": "ダウンロード(Download) | IPAexフォント/IPAフォント",
-            "href": "https://ipafont.ipa.go.jp/node17"
         }
     ],
     [
         {
             "name": "Hanazono fonts",
             "href": "http://fonts.jp/hanazono/"
+        },
+        {
+            "name": "Releases · cjkvi/HanaMinAFDKO",
+            "href": "https://github.com/cjkvi/HanaMinAFDKO/releases"
+        },
+        {
+            "name": "BabelStone Fonts : BabelStone Han",
+            "href": "https://www.babelstone.co.uk/Fonts/Han.html"
         }
     ],
     [

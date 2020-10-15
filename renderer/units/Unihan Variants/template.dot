@@ -17,7 +17,7 @@
     ]
     edge
     [
-        fontname = "system-ui, sans-serif"
+        fontname = "Segoe UI, system-ui, sans-serif"
         fontsize = 10
         arrowsize = 0.75
     ]

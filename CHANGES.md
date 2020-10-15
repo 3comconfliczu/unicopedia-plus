@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.3.1
+
+- Forced proper Latin font `Segoe UI` as a substitute to `system-ui` on Windows: fixes [Issue #6](https://github.com/tonton-pixel/unicopedia-plus/issues/6).
+- Updated Unihan reference links.
+
 ## 8.3.0
 
 - Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using latest `CLDR 38.0` annotations.

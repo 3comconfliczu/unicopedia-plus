@@ -375,8 +375,8 @@ module.exports.start = function (context)
                 {
                     let codePoint = unicode.charactersToCodePoints (character);
                     let label = (codePointsCheckbox.checked) ?
-                        '<<FONT FACE="system-ui, sans-serif" POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE="Monaco, DejaVu Sans Mono, Noto Mono, monospace" POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>' :
-                        '<<FONT FACE="system-ui, sans-serif" POINT-SIZE="36">{{character}}</FONT>>'                        
+                        '<<FONT FACE="Segoe UI, system-ui, sans-serif" POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE="Monaco, DejaVu Sans Mono, Noto Mono, monospace" POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>' :
+                        '<<FONT FACE="Segoe UI, system-ui, sans-serif" POINT-SIZE="36">{{character}}</FONT>>'                        
                     let options =
                     [
                         { name: "tooltip", value: JSON.stringify (getTooltip (character)) },

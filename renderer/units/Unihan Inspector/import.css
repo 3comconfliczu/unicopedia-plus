@@ -297,7 +297,6 @@
 
 #unihan-inspector-unit .tags-data .tags-list
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     font-size: 13.5px;
     margin: 0.75em 0;
     user-select: text;
@@ -324,7 +323,6 @@
 #unihan-inspector-unit .tags-data .tags-list .value-header
 {
     text-align: left;
-    font-family: system-ui, sans-serif;
     font-size: 1em;
     font-weight: bold;
     line-height: 1em;
@@ -336,7 +334,6 @@
     background-color: white;
     color: var(--color-accent);
     text-align: left;
-    font-family: system-ui, sans-serif;
     font-size: 1em;
     font-weight: 600;
     line-height: 1.25em;
@@ -352,7 +349,7 @@
 #unihan-inspector-unit .tags-data .tags-list .tag,
 #unihan-inspector-unit .tags-data .tags-list .value
 {
-    font-size: 13.5px;
+    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
     background-color: white;
     text-align: left;
     line-height: 1.25em;
