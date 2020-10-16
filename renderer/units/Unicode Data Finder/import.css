@@ -366,7 +366,7 @@
 
 #unicode-data-finder-unit .search-data .symbol
 {
-    font-family: sans-serif;
+    font-family: inherit;
     text-align: center;
     vertical-align: middle;
     font-size: 36px;

@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.4.0
+
+- Fixed [Issue #7](https://github.com/tonton-pixel/unicopedia-plus/issues/7), by replacing all overriding `font-family: system-ui` CSS declarations with `font-family: inherit`.
+- Updated subscript and superscript digits samples in the **Unicode Inspector** utility.
+
 ## 8.3.1
 
 - Forced proper Latin font `Segoe UI` as a substitute to `system-ui` on Windows: fixes [Issue #6](https://github.com/tonton-pixel/unicopedia-plus/issues/6).
