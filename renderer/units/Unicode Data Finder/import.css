@@ -226,7 +226,7 @@
 
 #unicode-data-finder-unit .list-by-block .specimen
 {
-    font-size: inherit;
+    font-size: 1em;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;

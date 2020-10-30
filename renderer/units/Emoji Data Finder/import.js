@@ -44,7 +44,7 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote } = require ('electron');
+    const { clipboard, Menu, shell } = require ('electron').remote;
     //
     const path = require ('path');
     //
@@ -54,6 +54,7 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const emojiVersions = require ('../../lib/unicode/get-emoji-versions.js');
     //
     const defaultPrefs =
     {
@@ -216,46 +217,6 @@ module.exports.start = function (context)
         return emojiBySequence;
     }
     //
-    // https://www.unicode.org/emoji/charts/emoji-versions.html
-    // https://www.unicode.org/reports/tr51/
-    //
-    // There are three special values used for emoji characters before E1.0:
-    // E0.0: Emoji components that were defined before E1.0.
-    // E0.6: Emoji characters deriving from Japanese carriers that were incorporated in Unicode 6.0
-    // E0.7: Emoji characters deriving from the Wing/Webdings, which appeared in Unicode v7.0. Also includes those incorporated in ARIB that began to be treated as emoji in this time period.
-    //
-    const versionAges =
-    {
-        "0.6": "Unicode 6.0",
-        "0.7": "Unicode 7.0",
-        "1.0": "Emoji 1.0",
-        "2.0": "Emoji 2.0",
-        "3.0": "Emoji 3.0",
-        "4.0": "Emoji 4.0",
-        "5.0": "Emoji 5.0",
-        "11.0": "Emoji 11.0",
-        "12.0": "Emoji 12.0",
-        "12.1": "Emoji 12.1",
-        "13.0": "Emoji 13.0",
-        "13.1": "Emoji 13.1"
-    };
-    //
-    const versionDates =
-    {
-        "0.6": "October 2010",  // Unicode 6.0
-        "0.7": "June 2014",     // Unicode 7.0
-        "1.0": "June 2015",
-        "2.0": "November 2015",
-        "3.0": "June 2016",
-        "4.0": "November 2016",
-        "5.0": "June 2017",
-        "11.0": "May 2018",
-        "12.0": "March 2019",
-        "12.1": "October 2019",
-        "13.0": "March 2020",
-        "13.1": "September 2020"
-    };
-    //
     function updateDataList (characters, emojiDataList)
     {
         while (emojiDataList.firstChild)
@@ -298,9 +259,7 @@ module.exports.start = function (context)
             let [ groupIndex, subgroupIndex ] = emojiIndices[emojiList[character].toFullyQualified || character];
             let group = emojiGroups[groupIndex].name;
             let subgroup = emojiGroups[groupIndex].subgroups[subgroupIndex].name;
-            let emojiAge = emojiList[character].age;
-            let age = versionAges[emojiAge] || "Age Unknown";
-            let date = versionDates[emojiAge] || "Date Unknown";
+            let { age, date } = emojiVersions[emojiList[character].age];
             let status;
             if (emojiList[character].isComponent)
             {
@@ -437,13 +396,13 @@ module.exports.start = function (context)
             }
             else
             {
-                remote.shell.beep ();
+                shell.beep ();
             }
         }
     );
     //
     let nameResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -452,7 +411,7 @@ module.exports.start = function (context)
                 {
                     if (currentEmojiByName.length > 0)
                     {
-                        remote.clipboard.writeText (currentEmojiByName.join (""));
+                        clipboard.writeText (currentEmojiByName.join (""));
                     }
                 }
             },
@@ -598,13 +557,13 @@ module.exports.start = function (context)
             }
             else
             {
-                remote.shell.beep ();
+                shell.beep ();
             }
         }
     );
     //
     let sequenceResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -613,7 +572,7 @@ module.exports.start = function (context)
                 {
                     if (currentEmojiBySequence.length > 0)
                     {
-                        remote.clipboard.writeText (currentEmojiBySequence.join (""));
+                        clipboard.writeText (currentEmojiBySequence.join (""));
                     }
                 }
             },
@@ -696,15 +655,14 @@ module.exports.start = function (context)
     //
     let ageSample = { label: "Age (Date)" };
     ageSample.items = [ ];
-    let ageKeys = Object.keys (versionAges);
-    let dateKeys = Object.keys (versionDates);
-    for (let index = 0; index < ageKeys.length; index++)
+    for (let emojiVersion in emojiVersions)
     {
+        let { age, date } = emojiVersions[emojiVersion];
         ageSample.items.push
         (
             {
-                label: `${versionAges[ageKeys[index]]} (${versionDates[dateKeys[index]]})`,
-                string: Object.keys (emojiList).filter (emoji => emojiList[emoji].age === ageKeys[index]).join ("")
+                label: `${age} (${date})`,
+                string: Object.keys (emojiList).filter (emoji => emojiList[emoji].age === emojiVersion).join ("")
             }
         );
     }
@@ -774,7 +732,7 @@ module.exports.start = function (context)
     );
     //
     let textFilterMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -906,7 +864,7 @@ module.exports.start = function (context)
     textInputString.dispatchEvent (new Event ('input'));
     //
     let textResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -915,7 +873,7 @@ module.exports.start = function (context)
                 {
                     if (currentEmojiByText.length > 0)
                     {
-                        remote.clipboard.writeText (currentEmojiByText.join (""));
+                        clipboard.writeText (currentEmojiByText.join (""));
                     }
                 }
             },

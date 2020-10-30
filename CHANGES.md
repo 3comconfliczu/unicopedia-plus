@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.5.0
+
+- Cleaned up some code.
+- Updated CSS font family stacks.
+- Added version date to emoji tooltips in the **Emoji Picture Book** utility.
+- Added context menu to external reference links, allowing copy of URL to clipboard.
+- Updated `Get Radical Statistics` sample script in the **JavaScript Runner** utility.
+- Added missing CJK Extension G reference link to the **Unihan Reference** utility.
+- Updated `Electron` to version `10.1.5`.
+
 ## 8.4.0
 
 - Fixed [Issue #7](https://github.com/tonton-pixel/unicopedia-plus/issues/7), by replacing all overriding `font-family: system-ui` CSS declarations with `font-family: inherit`.

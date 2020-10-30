@@ -63,7 +63,7 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote } = require ('electron');
+    const { clipboard, Menu, shell } = require ('electron').remote;
     //
     const path = require ('path');
     //
@@ -380,13 +380,13 @@ module.exports.start = function (context)
             }
             else
             {
-                remote.shell.beep ();
+                shell.beep ();
             }
         }
     );
     //
     let tagResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -395,7 +395,7 @@ module.exports.start = function (context)
                 {
                     if (currentCharactersByTag.length > 0)
                     {
-                        remote.clipboard.writeText (currentCharactersByTag.join (""));
+                        clipboard.writeText (currentCharactersByTag.join (""));
                     }
                 }
             },
@@ -640,13 +640,13 @@ module.exports.start = function (context)
             }
             else
             {
-                remote.shell.beep ();
+                shell.beep ();
             }
         }
     );
     //
     let matchResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -655,7 +655,7 @@ module.exports.start = function (context)
                 {
                     if (currentCharactersByMatch.length > 0)
                     {
-                        remote.clipboard.writeText (currentCharactersByMatch.join (""));
+                        clipboard.writeText (currentCharactersByMatch.join (""));
                     }
                 }
             },
@@ -960,7 +960,7 @@ module.exports.start = function (context)
                 }
                 else
                 {
-                    remote.shell.beep ();
+                    shell.beep ();
                 }
             }
             else
@@ -1004,7 +1004,7 @@ module.exports.start = function (context)
     );
     //
     let gridResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -1013,7 +1013,7 @@ module.exports.start = function (context)
                 {
                     if (currentCharactersByGrid.length > 0)
                     {
-                        remote.clipboard.writeText (currentCharactersByGrid.join (""));
+                        clipboard.writeText (currentCharactersByGrid.join (""));
                     }
                 }
             },

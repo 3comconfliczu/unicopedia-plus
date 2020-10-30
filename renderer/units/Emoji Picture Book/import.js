@@ -17,8 +17,8 @@ module.exports.start = function (context)
     const defaultFontSize = 100; // 72, 80, 84, 96, 100
     const fontAdjustmentFactor = 1.25;  // Noto Color Emoji font is 25% larger
     //
-    const colorEmojiNotDefFont = `${defaultFontSize}px "Apple Color Emoji", "Noto Color Emoji", "Segoe Color Emoji", "NotDef"`;
-    const colorEmojiBlankFont = `${defaultFontSize}px "Apple Color Emoji", "Noto Color Emoji", "Segoe Color Emoji", "Blank"`;
+    const colorEmojiNotDefFont = `${defaultFontSize}px "Apple Color Emoji", "Noto Color Emoji", "Segoe Color Emoji", emoji, "NotDef"`;
+    const colorEmojiBlankFont = `${defaultFontSize}px "Apple Color Emoji", "Noto Color Emoji", "Segoe Color Emoji", emoji, "Blank"`;
     const fallbackFontFaces = `${defaultFontSize}px "NotDef", "Blank"`;
     //
     let canvas = document.createElement ('canvas');
@@ -71,29 +71,7 @@ module.exports.start = function (context)
         return isProper;
     }
     //
-    // https://www.unicode.org/emoji/charts/emoji-versions.html
-    // https://www.unicode.org/reports/tr51/
-    //
-    // There are three special values used for emoji characters before E1.0:
-    // E0.0: Emoji components that were defined before E1.0.
-    // E0.6: Emoji characters deriving from Japanese carriers that were incorporated in Unicode 6.0
-    // E0.7: Emoji characters deriving from the Wing/Webdings, which appeared in Unicode v7.0. Also includes those incorporated in ARIB that began to be treated as emoji in this time period.
-    //
-    const versionAges =
-    {
-        "0.6": "Unicode 6.0",
-        "0.7": "Unicode 7.0",
-        "1.0": "Emoji 1.0",
-        "2.0": "Emoji 2.0",
-        "3.0": "Emoji 3.0",
-        "4.0": "Emoji 4.0",
-        "5.0": "Emoji 5.0",
-        "11.0": "Emoji 11.0",
-        "12.0": "Emoji 12.0",
-        "12.1": "Emoji 12.1",
-        "13.0": "Emoji 13.0",
-        "13.1": "Emoji 13.1"
-    };
+    const emojiVersions = require ('../../lib/unicode/get-emoji-versions.js');
     //
     let flagEmojiRegex =/^([🇦-🇿])([🇦-🇿])$/u;
     //
@@ -116,14 +94,13 @@ module.exports.start = function (context)
                 emojiName += ` [${letters.join ("").toUpperCase ().replace (/^(..)(...)$/, "$1-$2")}]`;
             }
         }
-        let emojiAge = emojiList[emoji].age;
-        let age = versionAges[emojiAge] || "Age Unknown";
+        let { age, date } = emojiVersions[emojiList[emoji].age];
         let lines =
         [
             emojiName,
-            age.toUpperCase (),
             // U+034F COMBINING GRAPHEME JOINER
-            "<" + emojiList[emoji].code.replace (/\b([0-9a-fA-F]{4,})\b/g, "U\u034F\+$&").split (" ").join (", ") + ">"
+            "<" + emojiList[emoji].code.replace (/\b([0-9a-fA-F]{4,})\b/g, "U\u034F\+$&").split (" ").join (", ") + ">",
+            `${age} (${date})`
         ];
         return lines.join ("\n");
     }

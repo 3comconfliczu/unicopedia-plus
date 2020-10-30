@@ -185,6 +185,7 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .symbol
 {
+    font-family: inherit;
     font-size: 36px;
     text-align: center;
     line-height: 1em;

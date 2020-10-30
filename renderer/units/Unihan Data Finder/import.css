@@ -414,6 +414,7 @@
 #unihan-data-finder-unit .search-data .symbol-data
 {
     text-align: center;
+    font-family: inherit;
     font-size: 36px;
     padding: 0.5em 0;
 }
@@ -539,6 +540,7 @@
 
 #unihan-data-finder-unit .view-by-grid .search-data td.symbol-cell .symbol
 {
+    font-family: inherit;
     font-size: 24px;
     line-height: 1em;
 }

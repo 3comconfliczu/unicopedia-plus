@@ -1,7 +1,7 @@
 // Get Radical Statistics
 const { codePoints, coreSet, core2020Set, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
 const { fromRadical } = require ('./lib/unicode/get-rs-strings.js');
-const set = fullSet;    // coreSet, core2020Set, fullSet
+const sets = [ fullSet, core2020Set, coreSet ];
 const extraSources = false;
 const rsTags =
 [
@@ -10,63 +10,68 @@ const rsTags =
     "kRSAdobe_Japan1_6"
 ];
 //
-const radicals = [ ];
-for (let index = 0; index < 214; index++)
+for (let set of sets)
 {
-    radicals.push ({ index: index + 1, count: 0 });
-}
-for (let codePoint of set)
-{
-    for (let rsTag of rsTags)
+    const radicals = [ ];
+    for (let index = 0; index < 214; index++)
     {
-        if (extraSources || (rsTag === "kRSUnicode"))
+        radicals.push ({ index: index + 1, count: 0 });
+    }
+    for (let codePoint of set)
+    {
+        for (let rsTag of rsTags)
         {
-            let rsTagValues = codePoints[codePoint][rsTag];
-            if (rsTagValues)
+            if (extraSources || (rsTag === "kRSUnicode"))
             {
-                let rsValue;
-                if (!Array.isArray (rsTagValues))
+                let rsTagValues = codePoints[codePoint][rsTag];
+                if (rsTagValues)
                 {
-                    rsTagValues = [ rsTagValues ];
-                }
-                for (let rsTagValue of rsTagValues)
-                {
-                    if (rsTag === "kRSAdobe_Japan1_6")
+                    let rsValue;
+                    if (!Array.isArray (rsTagValues))
                     {
-                        let parsed = rsTagValue.match (/^[CV]\+[0-9]{1,5}\+([1-9][0-9]{0,2}\.[1-9][0-9]?\.[0-9]{1,2})$/);
-                        if (parsed)
+                        rsTagValues = [ rsTagValues ];
+                    }
+                    for (let rsTagValue of rsTagValues)
+                    {
+                        if (rsTag === "kRSAdobe_Japan1_6")
                         {
-                            let [ index, strokes, residual ] = parsed[1].split (".");
-                            rsValue = [ index, residual ].join (".");
+                            let parsed = rsTagValue.match (/^[CV]\+[0-9]{1,5}\+([1-9][0-9]{0,2}\.[1-9][0-9]?\.[0-9]{1,2})$/);
+                            if (parsed)
+                            {
+                                let [ index, strokes, residual ] = parsed[1].split (".");
+                                rsValue = [ index, residual ].join (".");
+                            }
                         }
+                        else
+                        {
+                            rsValue = rsTagValue;
+                        }
+                        let [ index, residual ] = rsValue.split (".");
+                        radicals[parseInt (index) - 1].count++;
                     }
-                    else
-                    {
-                        rsValue = rsTagValue;
-                    }
-                    let [ index, residual ] = rsValue.split (".");
-                    radicals[parseInt (index) - 1].count++;
                 }
             }
         }
     }
-}
-radicals.sort ((a, b) => a.count - b.count).reverse ();
-let setName;
-switch (set)
-{
-    case coreSet:
-        setName = "IICore";
-        break;
-    case core2020Set:
-        setName = "Unihan Core (2020)";
-        break;
-    case fullSet:
-        setName = "Full Unihan";
-        break;
-}
-$.writeln (`${setName} set${extraSources ? " + Extra sources" : ""}:`);
-for (let index = 0; index < radicals.length; index++)
-{
-    $.writeln (`${fromRadical (radicals[index].index, false, true)}: ${radicals[index].count} characters`);
+    radicals.sort ((a, b) => a.count - b.count).reverse ();
+    let setName;
+    switch (set)
+    {
+        case coreSet:
+            setName = "IICore";
+            break;
+        case core2020Set:
+            setName = "Unihan Core (2020)";
+            break;
+        case fullSet:
+            setName = "Full Unihan";
+            break;
+    }
+    $.writeln (`• ${setName} set${extraSources ? " + Extra sources" : ""}:`);
+    for (let index = 0; index < radicals.length; index++)
+    {
+        $.writeln (`${fromRadical (radicals[index].index, false, true)}: ${radicals[index].count} characters`);
+    }
+    $.writeln ("------------------------------------------------");
+    $.writeln ();
 }

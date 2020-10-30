@@ -23,7 +23,7 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote } = require ('electron');
+    const { clipboard, Menu } = require ('electron').remote;
     //
     const path = require ('path');
     //
@@ -367,7 +367,7 @@ module.exports.start = function (context)
     );
     //
     let rsResultsMenu =
-    remote.Menu.buildFromTemplate
+    Menu.buildFromTemplate
     (
         [
             {
@@ -376,7 +376,7 @@ module.exports.start = function (context)
                 {
                     if (currentCharactersByRadicalStrokes.length > 0)
                     {
-                        remote.clipboard.writeText (currentCharactersByRadicalStrokes.join (""));
+                        clipboard.writeText (currentCharactersByRadicalStrokes.join (""));
                     }
                 }
             },

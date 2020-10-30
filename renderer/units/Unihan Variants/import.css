@@ -66,6 +66,7 @@
 #unihan-variants-unit .linear-row
 {
     background-color: white;
+    font-family: inherit;
     font-size: 48px;
     line-height: 1em;
     vertical-align: middle;
