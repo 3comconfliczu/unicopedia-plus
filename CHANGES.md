@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.5.1
+
+- Allowed stripping out optional variation selector in validation of Unihan character in the **View by Grid** feature of the **Unihan Data Finder** utility and in the **Unihan Inspector** and **Unihan Variants** utilities.
+- Updated reference links to latest version of `IVD_Sequences.txt`.
+- Updated list of supported locales.
+
 ## 8.5.0
 
 - Cleaned up some code.
@@ -9,7 +15,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Added version date to emoji tooltips in the **Emoji Picture Book** utility.
 - Added context menu to external reference links, allowing copy of URL to clipboard.
 - Updated `Get Radical Statistics` sample script in the **JavaScript Runner** utility.
-- Added missing CJK Extension G reference link to the **Unihan Reference** utility.
+- Added missing CJK Extension G reference link to the **Unihan References** utility.
 - Updated `Electron` to version `10.1.5`.
 
 ## 8.4.0

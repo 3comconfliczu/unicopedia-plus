@@ -63,7 +63,7 @@ module.exports.start = function (context)
     //
     unihanHistory = prefs.unihanHistory;
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+)?([0-9a-fA-F]{4,5}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)\p{Variation_Selector}?|(?:[Uu]\+)?([0-9a-fA-F]{4,5}))\s*$/u;
     //
     function parseUnihanCharacter (inputString)
     {

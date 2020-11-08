@@ -1,3 +1,4 @@
+//
 // https://www.unicode.org/emoji/charts/emoji-versions.html
 // https://www.unicode.org/reports/tr51/
 //

@@ -113,6 +113,22 @@
     ],
     [
         {
+            "name": "StandardizedVariants.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt"
+        }
+    ],
+    [
+        {
+            "name": "IVD_Collections.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Collections.txt"
+        },
+        {
+            "name": "IVD_Sequences.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Sequences.txt"
+        }
+    ],
+    [
+        {
             "name": "Ideographic Variation Database",
             "href": "https://www.unicode.org/ivd/"
         },
@@ -199,6 +215,12 @@
         {
             "name": "BCP 47 - Tags for Identifying Languages",
             "href": "https://tools.ietf.org/html/bcp47"
+        }
+    ],
+    [
+        {
+            "name": "Language Subtag Registry — IANA",
+            "href": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
         }
     ],
     [
