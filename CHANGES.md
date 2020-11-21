@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.6.0
+
+- Used new built-in `Intl.Segmenter` for grapheme splitting in the **CJK Font Variants** utility.
+- Updated `Electron` to version `11.0.2`.
+
 ## 8.5.1
 
 - Allowed stripping out optional variation selector in validation of Unihan character in the **View by Grid** feature of the **Unihan Data Finder** utility and in the **Unihan Inspector** and **Unihan Variants** utilities.

@@ -446,7 +446,18 @@ module.exports.start = function (context)
         }
     }
     //
-    const graphemeSplit = require ('graphemesplit');
+    const segmenter = new Intl.Segmenter ();    // { granularity: 'grapheme' } by default
+    //
+    function graphemeSplit (string)
+    {
+        let graphemes = [ ];
+        let segments = segmenter.segment (string);
+        for (let { segment } of segments)
+        {
+            graphemes.push (segment);
+        }
+        return graphemes;
+    }
     //
     function isWideGrapheme (grapheme)
     {
