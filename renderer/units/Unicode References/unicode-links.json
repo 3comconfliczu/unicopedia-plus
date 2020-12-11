@@ -147,16 +147,6 @@
     ],
     [
         {
-            "name": "UAX #15: Unicode Normalization Forms",
-            "href": "https://www.unicode.org/reports/tr15/"
-        },
-        {
-            "name": "Normalization Charts",
-            "href": "https://www.unicode.org/charts/normalization/"
-        }
-    ],
-    [
-        {
             "name": "Script Charts",
             "href": "https://www.unicode.org/charts/script/"
         }
@@ -185,34 +175,12 @@
     ],
     [
         {
-            "name": "UAX #29: Unicode Text Segmentation",
-            "href": "https://www.unicode.org/reports/tr29/"
-        },
-        {
-            "name": "Grapheme Break Chart",
-            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakTest.html"
-        },
-        {
-            "name": "GraphemeBreakProperty.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakProperty.txt"
-        },
-        {
-            "name": "GraphemeBreakTest.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakTest.txt"
-        }
-    ],
-    [
-        {
             "name": "FAQ - Unicode Frequently Asked Questions",
             "href": "https://www.unicode.org/faq/"
         },
         {
             "name": "FAQ - Korean",
             "href": "https://www.unicode.org/faq/korean.html"
-        },
-        {
-            "name": "FAQ - Normalization",
-            "href": "https://www.unicode.org/faq/normalization.html"
         },
         {
             "name": "FAQ - Blocks and Ranges",
@@ -277,12 +245,6 @@
         {
             "name": "String.fromCodePoint() - JavaScript | MDN",
             "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCodePoint"
-        }
-    ],
-    [
-        {
-            "name": "String.prototype.normalize() - JavaScript | MDN",
-            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"
         }
     ],
     [

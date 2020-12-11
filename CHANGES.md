@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.7.0
+
+- Updated the `Noto Sans CJK` set of fonts to version `2.002`.
+- Added `Biangbiang Noodles` and `Taito (84 Strokes)` samples to the **CJK Font Variants** utility.
+- Updated reference links and screenshots accordingly.
+- Updated `Electron` to version `11.0.5`.
+- Updated `Electron Packager` to version `15.2.0`.
+
 ## 8.6.0
 
 - Used new built-in `Intl.Segmenter` for grapheme splitting in the **CJK Font Variants** utility.

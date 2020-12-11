@@ -13,6 +13,8 @@ const charactersStrings = unit.getElementsByClassName ('characters-string');
 const codePointsStrings = unit.getElementsByClassName ('code-points-string');
 //
 const instructions = unit.querySelector ('.instructions');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
 let defaultFolderPath;
 //
@@ -31,6 +33,7 @@ module.exports.start = function (context)
     {
         charactersInput: "",
         instructions: true,
+        references: false,
         defaultFolderPath: context.defaultFolderPath
     };
     let prefs = context.getPrefs (defaultPrefs);
@@ -162,6 +165,13 @@ module.exports.start = function (context)
     );
     //
     instructions.open = prefs.instructions;
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    const linksList = require ('../../lib/links-list.js');
+    //
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
@@ -170,6 +180,7 @@ module.exports.stop = function (context)
     {
         charactersInput: charactersInput.value,
         instructions: instructions.open,
+        references: references.open,
         defaultFolderPath: defaultFolderPath
     };
     context.setPrefs (prefs);

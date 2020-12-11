@@ -1,0 +1,24 @@
+[
+    [
+        {
+            "name": "UAX #15: Unicode Normalization Forms",
+            "href": "https://www.unicode.org/reports/tr15/"
+        },
+        {
+            "name": "FAQ - Normalization",
+            "href": "https://www.unicode.org/faq/normalization.html"
+        }
+    ],
+    [
+        {
+            "name": "Normalization Charts",
+            "href": "https://www.unicode.org/charts/normalization/"
+        }
+    ],
+    [
+        {
+            "name": "String.prototype.normalize() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"
+        }
+    ]
+]

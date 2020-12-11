@@ -15,6 +15,8 @@ const charactersStrings = unit.getElementsByClassName ('characters-string');
 const codePointsStrings = unit.getElementsByClassName ('code-points-string');
 //
 const instructions = unit.querySelector ('.instructions');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
 let defaultFolderPath;
 //
@@ -37,7 +39,7 @@ module.exports.start = function (context)
     //
     let option;
     option = document.createElement ('option');
-    option.textContent = `Default (${locales[defaultLocale] || defaultLocale})`;
+    option.textContent = `Default - ${locales[defaultLocale] || defaultLocale}`;
     option.value = "";
     option.title = `'${defaultLocale}'`;
     localeSelect.appendChild (option);
@@ -45,7 +47,8 @@ module.exports.start = function (context)
     option.textContent = "―";
     option.disabled = true;
     localeSelect.appendChild (option);
-    for (let locale in locales)
+    let sortedLocales = Object.keys (locales).sort ((a, b) => locales[a].localeCompare (locales[b]));
+    for (let locale of sortedLocales)
     {
         let option = document.createElement ('option');
         option.textContent = locales[locale];
@@ -60,6 +63,7 @@ module.exports.start = function (context)
         useLocaleCheckbox: false,
         localeSelect: "",
         instructions: true,
+        references: false,
         defaultFolderPath: context.defaultFolderPath
     };
     let prefs = context.getPrefs (defaultPrefs);
@@ -217,6 +221,13 @@ module.exports.start = function (context)
     );
     //
     instructions.open = prefs.instructions;
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    const linksList = require ('../../lib/links-list.js');
+    //
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
@@ -227,6 +238,7 @@ module.exports.stop = function (context)
         useLocaleCheckbox: useLocaleCheckbox.checked,
         localeSelect: localeSelect.value,
         instructions: instructions.open,
+        references: references.open,
         defaultFolderPath: defaultFolderPath
     };
     context.setPrefs (prefs);

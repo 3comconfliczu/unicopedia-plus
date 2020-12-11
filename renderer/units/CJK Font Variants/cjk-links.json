@@ -129,16 +129,16 @@
     ],
     [
         {
-            "name": "Ideographic Variation Database",
-            "href": "https://www.unicode.org/ivd/"
-        },
-        {
             "name": "UTS #37: Unicode Ideographic Variation Database",
             "href": "https://www.unicode.org/reports/tr37/"
         },
         {
-            "name": "GitHub - adobe-type-tools/Adobe-Japan1: The Adobe-Japan1-6 Character Collection",
-            "href": "https://github.com/adobe-type-tools/Adobe-Japan1/"
+            "name": "Ideographic Variation Database",
+            "href": "https://www.unicode.org/ivd/"
+        },
+        {
+            "name": "GitHub - adobe-type-tools/pancjkv-ivd-collection: PanCJKV IVD Collection (UNREGISTERED)",
+            "href": "https://github.com/adobe-type-tools/pancjkv-ivd-collection"
         }
     ],
     [
@@ -173,6 +173,10 @@
         {
             "name": "text-orientation - CSS: Cascading Style Sheets | MDN",
             "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"
+        },
+        {
+            "name": "font-variant-east-asian - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian"
         }
     ],
     [
@@ -259,16 +263,6 @@
         {
             "name": "Source Han Sans - SourceHanSansReadMe.pdf",
             "href": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/SourceHanSansReadMe.pdf"
-        },
-        {
-            "name": "Character ㌬(U+332C) is being mojibake · Issue #78 · adobe-fonts/source-han-sans · GitHub",
-            "href": "https://github.com/adobe-fonts/source-han-sans/issues/78"
-        }
-    ],
-    [
-        {
-            "name": "GitHub - adobe-type-tools/pancjkv-ivd-collection: PanCJKV IVD Collection (UNREGISTERED)",
-            "href": "https://github.com/adobe-type-tools/pancjkv-ivd-collection"
         }
     ],
     [
@@ -281,6 +275,12 @@
             "href": "https://blogs.adobe.com/CCJKType/2019/04/source-han-sans-2001.html"
         },
         {
+            "name": "Source Han Serif",
+            "href": "https://source.typekit.com/source-han-serif/"
+        }
+    ],
+    [
+        {
             "name": "Adobe-Japan1-7 Published!",
             "href": "https://blogs.adobe.com/CCJKType/2019/04/aj17-published.html"
         },
@@ -291,18 +291,26 @@
         {
             "name": "“Bahts is [not] parts”",
             "href": "https://blogs.adobe.com/CCJKType/2016/03/bahts-is-parts.html"
+        },
+        {
+            "name": "Character ㌬(U+332C) is being mojibake · Issue #78 · adobe-fonts/source-han-sans · GitHub",
+            "href": "https://github.com/adobe-fonts/source-han-sans/issues/78"
         }
     ],
     [
         {
-            "name": "Source Han Serif",
-            "href": "https://source.typekit.com/source-han-serif/"
+            "name": "GitHub - adobe-type-tools/Adobe-Japan1: The Adobe-Japan1-7 Character Collection",
+            "href": "https://github.com/adobe-type-tools/Adobe-Japan1/"
         }
     ],
     [
         {
-            "name": "font-variant-east-asian - CSS: Cascading Style Sheets | MDN",
-            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian"
+            "name": "Biangbiang noodles - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Biangbiang_noodles"
+        },
+        {
+            "name": "Taito (kanji) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Taito_(kanji)"
         }
     ]
 ]

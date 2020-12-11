@@ -136,6 +136,14 @@
                 "string": "龍󠄀龍󠄁龍󠄂"
             },
             {
+                "label": "Fishy",
+                "string": "𩵋󠄀𩵋󠄁"
+            },
+            {
+                "label": "Hemp",
+                "string": "麻󠄀麻󠄁"
+            },
+            {
                 "label": "Joyful",
                 "string": "㐂󠄀㐂󠄁㐂󠄂"
             },
@@ -146,6 +154,14 @@
             {
                 "label": "Quick",
                 "string": "迅󠄀迅󠄁迅󠄂"
+            },
+            {
+                "label": "Sound",
+                "string": "音󠄀音󠄁"
+            },
+            {
+                "label": "Unicorn",
+                "string": "麟󠄀麟󠄁麟󠄂"
             }
         ]
     },
@@ -192,6 +208,10 @@
             {
                 "label": "Square Katakana",
                 "string": "㌀・アパート"
+            },
+            {
+                "label": "Taito (84 Strokes)",
+                "string": "𱁬"
             }
         ]
     },
@@ -228,7 +248,11 @@
         "items":
         [
             {
-                "label": "Doors",
+                "label": "Biangbiang Noodles",
+                "string": "𰻝𰻞"
+            },
+            {
+                "label": "Door Shapes",
                 "string": "⼾戶户戸"
             },
             {
