@@ -1,23 +1,26 @@
 //
 const unit = document.getElementById ('unihan-radical-strokes-unit');
 //
-const rsSetSelect = unit.querySelector ('.set-select');
-const rsExtraSourcesCheckbox = unit.querySelector ('.extra-sources-checkbox');
-const rsRadicalSelect = unit.querySelector ('.radical-select');
-const rsStrokesSelect = unit.querySelector ('.strokes-select');
-const rsSearchButton = unit.querySelector ('.search-button');
-const rsResultsButton = unit.querySelector ('.results-button');
-const rsHitCount = unit.querySelector ('.hit-count');
-const rsTotalCount = unit.querySelector ('.total-count');
-const rsSearchData = unit.querySelector ('.search-data');
-const rsInstructions = unit.querySelector ('.instructions');
-const rsRadicalList = unit.querySelector ('.radical-list');
-const rsRadicals = unit.querySelector ('.radicals');
+const setSelect = unit.querySelector ('.set-select');
+const extraSourcesCheckbox = unit.querySelector ('.extra-sources-checkbox');
+const radicalSelect = unit.querySelector ('.radical-select');
+const strokesSelect = unit.querySelector ('.strokes-select');
+const searchButton = unit.querySelector ('.search-button');
+const resultsButton = unit.querySelector ('.results-button');
+const hitCount = unit.querySelector ('.hit-count');
+const totalCount = unit.querySelector ('.total-count');
+const searchData = unit.querySelector ('.search-data');
 //
-const rsParams = { };
+const instructions = unit.querySelector ('.instructions');
+const radicalList = unit.querySelector ('.radical-list');
+const radicals = unit.querySelector ('.radicals');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
-let rsCurrentRadical;
-let rsCurrentStrokes;
+const params = { };
+//
+let currentRadical;
+let currentStrokes;
 //
 let defaultFolderPath;
 //
@@ -29,6 +32,7 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
@@ -41,13 +45,14 @@ module.exports.start = function (context)
     //
     const defaultPrefs =
     {
-        rsSetSelect: "",
-        rsExtraSourcesCheckbox: false,
-        rsRadicalSelect: "",
-        rsStrokesSelect: "",
-        rsCompactLayout: false,
-        rsInstructions: true,
-        rsRadicalList: false,
+        setSelect: "",
+        extraSourcesCheckbox: false,
+        radicalSelect: "",
+        strokesSelect: "",
+        compactLayout: false,
+        instructions: true,
+        radicalList: false,
+        references: false,
         //
         defaultFolderPath: context.defaultFolderPath
     };
@@ -78,22 +83,22 @@ module.exports.start = function (context)
         }
     }
     //
-    rsParams.compactLayout = prefs.rsCompactLayout;
-    rsParams.observer = null;
-    rsParams.root = unit;
+    params.compactLayout = prefs.compactLayout;
+    params.observer = null;
+    params.root = unit;
     //
     const rsDataTable = require ('./rs-data-table.js');
     //
-    rsSetSelect.value = prefs.rsSetSelect;
-    if (rsSetSelect.selectedIndex < 0) // -1: no element is selected
+    setSelect.value = prefs.setSelect;
+    if (setSelect.selectedIndex < 0) // -1: no element is selected
     {
-        rsSetSelect.selectedIndex = 0;
+        setSelect.selectedIndex = 0;
     }
     //
-    rsExtraSourcesCheckbox.checked = prefs.rsExtraSourcesCheckbox;
+    extraSourcesCheckbox.checked = prefs.extraSourcesCheckbox;
     //
-    rsCurrentRadical = prefs.rsRadicalSelect;
-    rsCurrentStrokes = prefs.rsStrokesSelect;
+    currentRadical = prefs.radicalSelect;
+    currentStrokes = prefs.strokesSelect;
     //
     let lastStrokes = 0;
     let optionGroup = null;
@@ -105,7 +110,7 @@ module.exports.start = function (context)
             {
                 if (optionGroup)
                 {
-                    rsRadicalSelect.appendChild (optionGroup);
+                    radicalSelect.appendChild (optionGroup);
                 }
                 optionGroup = document.createElement ('optgroup');
                 optionGroup.label = `◎\xA0\xA0${fromRadicalStrokes (radical.strokes, true).replace (" ", "\u2002")}`;
@@ -117,16 +122,16 @@ module.exports.start = function (context)
             optionGroup.appendChild (option);
         }
     );
-    rsRadicalSelect.appendChild (optionGroup);
+    radicalSelect.appendChild (optionGroup);
     //
-    rsRadicalSelect.value = rsCurrentRadical;
-    if (rsRadicalSelect.selectedIndex < 0) // -1: no element is selected
+    radicalSelect.value = currentRadical;
+    if (radicalSelect.selectedIndex < 0) // -1: no element is selected
     {
-        rsRadicalSelect.selectedIndex = 0;
+        radicalSelect.selectedIndex = 0;
     }
-    rsCurrentRadical = rsRadicalSelect.value;
+    currentRadical = radicalSelect.value;
     //
-    rsRadicalSelect.addEventListener ('input', event => { rsCurrentRadical = event.currentTarget.value; });
+    radicalSelect.addEventListener ('input', event => { currentRadical = event.currentTarget.value; });
     //
     const minStrokes = 0;
     const maxStrokes = 76;  // 𱁬 U+3106C kRSUnicode 173.76
@@ -134,26 +139,26 @@ module.exports.start = function (context)
     let allOption = document.createElement ('option');
     allOption.textContent = "All";
     allOption.value = '*';
-    rsStrokesSelect.appendChild (allOption);
+    strokesSelect.appendChild (allOption);
     let separatorOption = document.createElement ('option');
     separatorOption.textContent = "\u2015";   // Horizontal bar
     separatorOption.disabled = true;
-    rsStrokesSelect.appendChild (separatorOption);
+    strokesSelect.appendChild (separatorOption);
     for (let strokesIndex = minStrokes; strokesIndex <= maxStrokes; strokesIndex++)
     {
         let option = document.createElement ('option');
         option.textContent = strokesIndex;
-        rsStrokesSelect.appendChild (option);
+        strokesSelect.appendChild (option);
     }
     //
-    rsStrokesSelect.value = rsCurrentStrokes;
-    if (rsStrokesSelect.selectedIndex < 0) // -1: no element is selected
+    strokesSelect.value = currentStrokes;
+    if (strokesSelect.selectedIndex < 0) // -1: no element is selected
     {
-        rsStrokesSelect.selectedIndex = 0;
+        strokesSelect.selectedIndex = 0;
     }
-    rsCurrentStrokes = rsStrokesSelect.value;
+    currentStrokes = strokesSelect.value;
     //
-    rsStrokesSelect.addEventListener ('input', event => { rsCurrentStrokes = event.currentTarget.value; });
+    strokesSelect.addEventListener ('input', event => { currentStrokes = event.currentTarget.value; });
     //
     const rsTags =
     [
@@ -311,41 +316,41 @@ module.exports.start = function (context)
         return items;
     }
     //
-    function updateRadicalStrokesResults (hitCount, totalCount)
+    function updateRadicalStrokesResults (hit, total)
     {
-        rsHitCount.textContent = hitCount;
-        rsTotalCount.textContent = totalCount;
-        rsResultsButton.disabled = (hitCount <= 0);
+        hitCount.textContent = hit;
+        totalCount.textContent = total;
+        resultsButton.disabled = (hit <= 0);
     }
     //
     let currentCharactersByRadicalStrokes = [ ];
     //
-    rsSearchButton.addEventListener
+    searchButton.addEventListener
     (
         'click',
         (event) =>
         {
-            clearSearch (rsSearchData);
+            clearSearch (searchData);
             let set;
-            if (rsSetSelect.value === "IICore")
+            if (setSelect.value === "IICore")
             {
                 set = unihanData.coreSet;
             }
-            else if (rsSetSelect.value === "UCore")
+            else if (setSelect.value === "UCore")
             {
                 set = unihanData.core2020Set;
             }
-            else if (rsSetSelect.value === "Full")
+            else if (setSelect.value === "Full")
             {
                 set = unihanData.fullSet;
             }
             let findOptions =
             {
                 set: set,
-                extraSources: rsExtraSourcesCheckbox.checked,
-                radical: parseInt (rsCurrentRadical),
-                minStrokes: (rsCurrentStrokes === '*') ? minStrokes : parseInt (rsCurrentStrokes),
-                maxStrokes: (rsCurrentStrokes === '*') ? maxStrokes : parseInt (rsCurrentStrokes)
+                extraSources: extraSourcesCheckbox.checked,
+                radical: parseInt (currentRadical),
+                minStrokes: (currentStrokes === '*') ? minStrokes : parseInt (currentStrokes),
+                maxStrokes: (currentStrokes === '*') ? maxStrokes : parseInt (currentStrokes)
             };
             let characters = [ ];
             let items = findCharactersByRadicalStrokes (findOptions);
@@ -360,8 +365,8 @@ module.exports.start = function (context)
             updateRadicalStrokesResults (currentCharactersByRadicalStrokes.length, unihanCount);
             if (characters.length > 0)
             {
-                let title = fromRadical (rsRadicalSelect.selectedIndex + 1, false, true).replace (/^(\S+)\s(\S+)\s(\S+)\s/u, "$1\u2002$2\u2002$3\u2002");
-                rsSearchData.appendChild (rsDataTable.create (title, items, rsParams));
+                let title = fromRadical (radicalSelect.selectedIndex + 1, false, true).replace (/^(\S+)\s(\S+)\s(\S+)\s/u, "$1\u2002$2\u2002$3\u2002");
+                searchData.appendChild (rsDataTable.create (title, items, params));
             }
         }
     );
@@ -392,7 +397,7 @@ module.exports.start = function (context)
                 label: "Clear Results",
                 click: () => 
                 {
-                    clearSearch (rsSearchData);
+                    clearSearch (searchData);
                     currentCharactersByRadicalStrokes = [ ];
                     updateRadicalStrokesResults (currentCharactersByRadicalStrokes.length, unihanCount);
                 }
@@ -400,7 +405,7 @@ module.exports.start = function (context)
         ]
     );
     //
-    rsResultsButton.addEventListener
+    resultsButton.addEventListener
     (
         'click',
         (event) =>
@@ -411,25 +416,31 @@ module.exports.start = function (context)
     //
     updateRadicalStrokesResults (currentCharactersByRadicalStrokes.length, unihanCount);
     //
-    rsInstructions.open = prefs.rsInstructions;
-    rsRadicalList.open = prefs.rsRadicalList;
+    instructions.open = prefs.instructions;
+    radicalList.open = prefs.radicalList;
     //
     let radicalsTable = require ('./radicals-table.js');
     //
-    rsRadicals.appendChild (radicalsTable.create (kangxiRadicals));
+    radicals.appendChild (radicalsTable.create (kangxiRadicals));
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
 {
     let prefs =
     {
-        rsSetSelect: rsSetSelect.value,
-        rsExtraSourcesCheckbox: rsExtraSourcesCheckbox.checked,
-        rsRadicalSelect: rsCurrentRadical,
-        rsStrokesSelect: rsCurrentStrokes,
-        rsCompactLayout: rsParams.compactLayout,
-        rsInstructions: rsInstructions.open,
-        rsRadicalList: rsRadicalList.open,
+        setSelect: setSelect.value,
+        extraSourcesCheckbox: extraSourcesCheckbox.checked,
+        radicalSelect: currentRadical,
+        strokesSelect: currentStrokes,
+        compactLayout: params.compactLayout,
+        instructions: instructions.open,
+        radicalList: radicalList.open,
+        references: references.open,
         //
         defaultFolderPath: defaultFolderPath
     };

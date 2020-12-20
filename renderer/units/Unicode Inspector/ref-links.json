@@ -1,0 +1,40 @@
+[
+    [
+        {
+            "name": "Universal Coded Character Set - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Universal_Coded_Character_Set"
+        },
+        {
+            "name": "Universal Character Set characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Universal_Character_Set_characters"
+        },
+        {
+            "name": "List of Unicode characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_Unicode_characters"
+        }
+    ],
+    [
+         {
+            "name": "UAX #44: Unicode Character Database",
+            "href": "https://www.unicode.org/reports/tr44/"
+        }
+    ],
+    [
+        {
+            "name": "FAQ - Character Properties, Case Mappings and Names",
+            "href": "https://www.unicode.org/faq/casemap_charprop.html"
+        }
+    ],
+    [
+        {
+            "name": "Unicode Utilities: Character Property Index",
+            "href": "https://util.unicode.org/UnicodeJsps/properties.jsp"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - Codepoints/awesome-codepoints: Awesome Code Points",
+            "href": "https://github.com/Codepoints/awesome-codepoints/"
+        }
+    ]
+]

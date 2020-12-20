@@ -11,26 +11,28 @@ const codePointsInput = unit.querySelector ('.code-points-input');
 const charactersData = unit.querySelector ('.characters-data');
 //
 const instructions = unit.querySelector ('.instructions');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
 let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const sampleMenus = require ('../../lib/sample-menus.js');
-    //
     const path = require ('path');
     //
+    const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const sampleMenus = require ('../../lib/sample-menus.js');
     const fileDialogs = require ('../../lib/file-dialogs.js');
+    const linksList = require ('../../lib/links-list.js');
     //
     const unicode = require ('../../lib/unicode/unicode.js');
-    //
     const numericValuesData = require ('../../lib/unicode/parsed-numeric-values-data.js');
     //
     const defaultPrefs =
     {
         charactersInput: "",
         instructions: true,
+        references: false,
         defaultFolderPath: context.defaultFolderPath
     };
     let prefs = context.getPrefs (defaultPrefs);
@@ -332,6 +334,11 @@ module.exports.start = function (context)
     );
     //
     instructions.open = prefs.instructions;
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
@@ -340,6 +347,7 @@ module.exports.stop = function (context)
     {
         charactersInput: charactersInput.value,
         instructions: instructions.open,
+        references: references.open,
         defaultFolderPath: defaultFolderPath
     };
     context.setPrefs (prefs);

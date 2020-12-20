@@ -93,22 +93,6 @@
     ],
     [
         {
-            "name": "Country/Region Names - CLDR - Unicode Common Locale Data Repository",
-            "href": "http://cldr.unicode.org/translation/country-names"
-        },
-        {
-            "name": "Characters Names and Keywords (Emoji) - CLDR - Unicode Common Locale Data Repository",
-            "href": "http://cldr.unicode.org/translation/short-names-and-keywords"
-        }
-    ],
-    [
-        {
-            "name": "UTS #35: Unicode LDML: General - 14 Annotations and Labels",
-            "href": "https://www.unicode.org/repos/cldr/trunk/specs/ldml/tr35-general.html#Annotations"
-        }
-    ],
-    [
-        {
             "name": "📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍",
             "href": "https://emojipedia.org/"
         }

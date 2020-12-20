@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.8.0
+
+- Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using `CLDR 38.1` annotations.
+- Reorganized Unicode and Unihan reference links, moved to specific utilities where appropriate.
+- Updated `Electron` to version `11.1.0`.
+
 ## 8.7.0
 
 - Updated the `Noto Sans CJK` set of fonts to version `2.002`.

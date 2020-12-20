@@ -1,0 +1,28 @@
+[
+    [
+        {
+            "name": "Variant Chinese character - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Variant_Chinese_character"
+        },
+        {
+            "name": "Z-variant - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Z-variant"
+        },
+        {
+            "name": "z-variant - Wiktionary",
+            "href": "https://en.wiktionary.org/wiki/z-variant"
+        }
+    ],
+    [
+        {
+            "name": "UAX #38: Unicode Han Database (Unihan)",
+            "href": "https://www.unicode.org/reports/tr38/"
+        }
+    ],
+    [
+        {
+            "name": "Unihan Ad Hoc Report on Variant Changes - 19186-unihan-ad-hoc-rept.pdf",
+            "href": "https://www.unicode.org/L2/L2019/19186-unihan-ad-hoc-rept.pdf"
+        }
+    ]
+]

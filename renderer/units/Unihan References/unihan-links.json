@@ -13,14 +13,6 @@
             "href": "https://en.wikipedia.org/wiki/Han_unification"
         },
         {
-            "name": "Variant Chinese character - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Variant_Chinese_character"
-        },
-        {
-            "name": "Z-variant - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Z-variant"
-        },
-        {
             "name": "Ambiguities in Chinese character simplification - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Ambiguities_in_Chinese_character_simplification"
         },
@@ -45,84 +37,12 @@
     ],
     [
         {
-            "name": "CJK Unified Ideographs - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs"
-        },
-        {
-            "name": "CJK Unified Ideographs (Unicode block) - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_(Unicode_block)"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension A - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_A"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension B - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_B"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension C - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_C"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension D - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_D"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension E - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_E"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension F - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_F"
-        },
-        {
-            "name": "CJK Unified Ideographs Extension G - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_G"
-        },
-        {
-            "name": "CJK Compatibility Ideographs - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs"
-        },
-        {
-            "name": "CJK Compatibility Ideographs Supplement - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Compatibility_Ideographs_Supplement"
-        }
-    ],
-    [
-        {
-            "name": "Radical (Chinese characters) - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Radical_(Chinese_characters)"
-        },
-        {
-            "name": "List of radicals in Unicode - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/List_of_radicals_in_Unicode"
-        },
-        {
-            "name": "Kangxi radical - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Kangxi_radical"
-        },
-        {
-            "name": "CJK Radicals Supplement - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/CJK_Radicals_Supplement"
-        }
-    ],
-    [
-        {
             "name": "Chinese dictionary - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Chinese_dictionary"
         },
         {
-            "name": "Kangxi Dictionary - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Kangxi_Dictionary"
-        },
-        {
             "name": "Japanese dictionary - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Japanese_dictionary"
-        },
-        {
-            "name": "Dai Kan-Wa Jiten - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Dai_Kan-Wa_Jiten"
         }
     ],
     [
@@ -139,14 +59,8 @@
     ],
     [
         {
-            "name": "z-variant - Wiktionary",
-            "href": "https://en.wiktionary.org/wiki/z-variant"
-        }
-    ],
-    [
-        {
-            "name": "Unihan Ad Hoc Report on Variant Changes - 19186-unihan-ad-hoc-rept.pdf",
-            "href": "https://www.unicode.org/L2/L2019/19186-unihan-ad-hoc-rept.pdf"
+            "name": "UAX #41: Common References for UAXs",
+            "href": "https://www.unicode.org/reports/tr41/"
         }
     ],
     [
@@ -165,58 +79,6 @@
         {
             "name": "FAQ - Fonts and Keyboards",
             "href": "https://www.unicode.org/faq/font_keyboard.html"
-        }
-    ],
-    [
-        {
-            "name": "Guide to Han Radical-Stroke Index - rs.pdf",
-            "href": "https://www.unicode.org/charts/rs.pdf"
-        },
-        {
-            "name": "IICore Radical-Stroke Index - IICoreRSIndex.pdf",
-            "href": "https://www.unicode.org/versions/IICoreRSIndex.pdf"
-        },
-        {
-            "name": "Full Han Radical-Stroke Index - RSIndex.pdf",
-            "href": "https://www.unicode.org/Public/11.0.0/charts/RSIndex.pdf"
-        }
-    ],
-    [
-        {
-            "name": "IRG N2118 (Allowing negative residual strokes in all six kRS* properties of the Unihan Database) for IRG #45; L2/15-317R - 15317r-irg-n2118-neg-res-strokes.pdf",
-            "href": "https://www.unicode.org/L2/L2015/15317r-irg-n2118-neg-res-strokes.pdf"
-        }
-    ],
-    [
-        {
-            "name": "UAX #38: Unicode Han Database (Unihan)",
-            "href": "https://www.unicode.org/reports/tr38/"
-        }
-    ],
-    [
-        {
-            "name": "Unihan Database Lookup",
-            "href": "https://www.unicode.org/charts/unihan.html"
-        },
-        {
-            "name": "Unihan Database Search Page",
-            "href": "https://www.unicode.org/charts/unihansearch.html"
-        }
-    ],
-    [
-        {
-            "name": "Unihan Radical-Stroke Index",
-            "href": "https://www.unicode.org/charts/unihanrsindex.html"
-        },
-        {
-            "name": "Unihan Grid Index",
-            "href": "https://www.unicode.org/charts/unihangridindex.html"
-        }
-    ],
-    [
-        {
-            "name": "Unihan.zip",
-            "href": "https://www.unicode.org/Public/UNIDATA/Unihan.zip"
         }
     ],
     [
@@ -283,12 +145,6 @@
     ],
     [
         {
-            "name": "The Secret Life of Unicode - The Secret Life of Unicode.pdf",
-            "href": "https://www.btetrud.com/Lima/The%20Secret%20Life%20of%20Unicode.pdf"
-        }
-    ],
-    [
-        {
             "name": "Handwritten kanji search at sljfaq.org",
             "href": "https://kanji.sljfaq.org/"
         },
@@ -315,18 +171,6 @@
         {
             "name": "Chinese Text Project Dictionary",
             "href": "https://ctext.org/dictionary.pl?if=en"
-        }
-    ],
-    [
-        {
-            "lang": "zh-Hant",
-            "name": "教育部異體字字典 - Dictionary of Chinese Character Variants",
-            "href": "http://dict2.variants.moe.edu.tw/"
-        },
-        {
-            "lang": "zh-Hant",
-            "name": "教育部《異體字字典》字形檢索 - Search by Character Shape",
-            "href": "http://dict2.variants.moe.edu.tw/suo.htm"
         }
     ],
     [
@@ -447,6 +291,35 @@
             "lang": "ja",
             "name": "グループ:品字様 - GlyphWiki",
             "href": "http://glyphwiki.org/wiki/Group:%E5%93%81%E5%AD%97%E6%A7%98"
+        }
+    ],
+    [
+        {
+            "name": "UAX #45: U-source Ideographs",
+            "href": "https://www.unicode.org/reports/tr45/"
+        },
+        {
+            "name": "U-Source Ideographs Glyph Table - USourceGlyphs.pdf",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceGlyphs.pdf"
+        },
+        {
+            "name": "U-Source Ideographs Radical-Stroke Chart - USourceRSChart.pdf",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceRSChart.pdf"
+        },
+        {
+            "name": "U-Source Ideographs Data File - USourceData.txt",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceData.txt"
+        }
+    ],
+    [
+        {
+            "name": "A Spectre is Haunting Unicode (Ghost Characters)",
+            "href": "https://www.dampfkraft.com/ghost-characters.html"
+        },
+        {
+            "lang": "ja",
+            "name": "幽霊文字 ‐ 通信用語の基礎知識",
+            "href": "https://www.wdic.org/w/WDIC/%E5%B9%BD%E9%9C%8A%E6%96%87%E5%AD%97"
         }
     ]
 ]

@@ -11,6 +11,8 @@ const links = unit.querySelector ('.links');
 //
 module.exports.start = function (context)
 {
+    const linksList = require ('../../lib/links-list.js');
+    //
     const defaultPrefs =
     {
         categorySelect: "",
@@ -159,8 +161,6 @@ module.exports.start = function (context)
     references.open = prefs.references;
     //
     const emojiLinks = require ('./regex-links.json');
-    const linksList = require ('../../lib/links-list.js');
-    //
     linksList (links, emojiLinks);
 };
 //

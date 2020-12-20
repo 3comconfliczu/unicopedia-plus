@@ -87,6 +87,7 @@ else
                         show: false,
                         webPreferences:
                         {
+                            contextIsolation: false,
                             devTools: false
                         }
                     }
@@ -173,6 +174,7 @@ else
                         show: false,
                         webPreferences:
                         {
+                            contextIsolation: false,
                             devTools: false
                         }
                     }
@@ -448,6 +450,7 @@ else
                 show: !settings.window.deferredShow,
                 webPreferences:
                 {
+                    contextIsolation: false,
                     nodeIntegration: true,
                     enableRemoteModule: true,
                     spellcheck: false,

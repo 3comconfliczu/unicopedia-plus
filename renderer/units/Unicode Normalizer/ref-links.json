@@ -1,8 +1,18 @@
 [
     [
         {
+            "name": "Unicode equivalence - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Unicode_equivalence"
+        }
+    ],
+    [
+        {
             "name": "UAX #15: Unicode Normalization Forms",
             "href": "https://www.unicode.org/reports/tr15/"
+        },
+        {
+            "name": "Normalization Charts",
+            "href": "https://www.unicode.org/charts/normalization/"
         },
         {
             "name": "FAQ - Normalization",
@@ -11,8 +21,8 @@
     ],
     [
         {
-            "name": "Normalization Charts",
-            "href": "https://www.unicode.org/charts/normalization/"
+            "name": "NFC FAQ - Macchiato",
+            "href": "http://www.macchiato.com/unicode/nfc-faq"
         }
     ],
     [

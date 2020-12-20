@@ -1,0 +1,24 @@
+[
+    [
+        {
+            "name": "UTR #23: The Unicode Character Property Model",
+            "href": "https://www.unicode.org/reports/tr23/"
+        },
+        {
+            "name": "UAX #24: Unicode Script Property",
+            "href": "https://www.unicode.org/reports/tr24/"
+        }
+    ],
+    [
+        {
+            "name": "FAQ - Character Properties, Case Mappings and Names",
+            "href": "https://www.unicode.org/faq/casemap_charprop.html"
+        }
+    ],
+    [
+        {
+            "name": "Unicode Utilities: Character Property Index",
+            "href": "https://util.unicode.org/UnicodeJsps/properties.jsp"
+        }
+    ]
+]

@@ -1,0 +1,74 @@
+[
+    [
+        {
+            "name": "Radical (Chinese characters) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Radical_(Chinese_characters)"
+        },
+        {
+            "name": "List of radicals in Unicode - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_radicals_in_Unicode"
+        },
+        {
+            "name": "Kangxi radical - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Kangxi_radical"
+        },
+        {
+            "name": "CJK Radicals Supplement - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/CJK_Radicals_Supplement"
+        },
+        {
+            "name": "Kangxi Dictionary - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Kangxi_Dictionary"
+        },
+        {
+            "name": "Dai Kan-Wa Jiten - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Dai_Kan-Wa_Jiten"
+        }
+    ],
+    [
+        {
+            "name": "List of kanji radicals by stroke count - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_kanji_radicals_by_stroke_count"
+        },
+        {
+            "name": "List of kanji radicals by frequency - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_kanji_radicals_by_frequency"
+        }
+    ],
+    [
+        {
+            "name": "UAX #38: Unicode Han Database (Unihan)",
+            "href": "https://www.unicode.org/reports/tr38/"
+        }
+    ],
+    [
+        {
+            "name": "Unihan Radical-Stroke Index",
+            "href": "https://www.unicode.org/charts/unihanrsindex.html"
+        }
+    ],
+    [
+        {
+            "name": "Proposal to allow negative residual strokes in kRS* (radical/stroke) fields of Unihan - 15317-neg-res-strokes.pdf",
+            "href": "https://www.unicode.org/L2/L2015/15317-neg-res-strokes.pdf"
+        }
+    ],
+    [
+        {
+            "name": "Guide to Han Radical-Stroke Index - rs.pdf",
+            "href": "https://www.unicode.org/charts/rs.pdf"
+        },
+        {
+            "name": "IICore Radical-Stroke Index - IICoreRSIndex.pdf",
+            "href": "https://www.unicode.org/versions/IICoreRSIndex.pdf"
+        },
+        {
+            "name": "UnihanCore2020 Radical-Stroke Chart - UnihanCore2020RSIndex.pdf",
+            "href": "http://www.unicode.org/versions/UnihanCore2020RSIndex.pdf"
+        },
+        {
+            "name": "Full Han Radical-Stroke Index - RSIndex.pdf",
+            "href": "https://www.unicode.org/Public/13.0.0/charts/RSIndex.pdf"
+        }
+    ]
+]

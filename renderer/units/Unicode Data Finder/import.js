@@ -16,6 +16,8 @@ const nameTotalCount = unit.querySelector ('.find-by-name .total-count');
 const nameSearchData = unit.querySelector ('.find-by-name .search-data');
 const nameInstructions = unit.querySelector ('.find-by-name .instructions');
 const nameRegexExamples = unit.querySelector ('.find-by-name .regex-examples');
+const nameReferences = unit.querySelector ('.find-by-name .references');
+const nameLinks = unit.querySelector ('.find-by-name .links');
 //
 const nameParams = { };
 //
@@ -31,6 +33,8 @@ const matchTotalCount = unit.querySelector ('.match-character .total-count');
 const matchSearchData = unit.querySelector ('.match-character .search-data');
 const matchInstructions = unit.querySelector ('.match-character .instructions');
 const matchRegexExamples = unit.querySelector ('.match-character .regex-examples');
+const matchReferences = unit.querySelector ('.match-character .references');
+const matchLinks = unit.querySelector ('.match-character .links');
 //
 const matchParams = { };
 //
@@ -43,6 +47,8 @@ const blockHitCount = unit.querySelector ('.list-by-block .hit-count');
 const blockTotalCount = unit.querySelector ('.list-by-block .total-count');
 const blockSearchData = unit.querySelector ('.list-by-block .search-data');
 const blockInstructions = unit.querySelector ('.list-by-block .instructions');
+const blockReferences = unit.querySelector ('.list-by-block .references');
+const blockLinks = unit.querySelector ('.list-by-block .links');
 //
 const blockParams = { };
 //
@@ -62,6 +68,7 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
@@ -78,6 +85,7 @@ module.exports.start = function (context)
         namePageSize: 8,
         nameInstructions: true,
         nameRegexExamples: false,
+        nameReferences: false,
         //
         matchSearchString: "",
         matchDecomposition: false,
@@ -86,12 +94,14 @@ module.exports.start = function (context)
         matchPageSize: 8,
         matchInstructions: true,
         matchRegexExamples: false,
+        matchReferences: false,
         //
         blockSelectBlockRange: "",
         blockSpecimenHistory: [ ],
         blockPageSize: 8,
         blockPageIndex: 0,
         blockInstructions: true,
+        blockReferences: false,
         //
         defaultFolderPath: context.defaultFolderPath
     };
@@ -325,6 +335,11 @@ module.exports.start = function (context)
     nameInstructions.open = prefs.nameInstructions;
     nameRegexExamples.open = prefs.nameRegexExamples;
     //
+    nameReferences.open = prefs.nameReferences;
+    //
+    const nameRefLinks = require ('./name-ref-links.json');
+    linksList (nameLinks, nameRefLinks);
+    //
     matchParams.pageSize = prefs.matchPageSize;
     matchParams.observer = null;
     matchParams.root = unit;
@@ -497,6 +512,11 @@ module.exports.start = function (context)
     //
     matchInstructions.open = prefs.matchInstructions;
     matchRegexExamples.open = prefs.matchRegexExamples;
+    //
+    matchReferences.open = prefs.matchReferences;
+    //
+    const matchRefLinks = require ('./match-ref-links.json');
+    linksList (matchLinks, matchRefLinks);
     //
     blockSpecimenHistory = prefs.blockSpecimenHistory;
     //
@@ -806,6 +826,11 @@ module.exports.start = function (context)
     );
     //
     blockInstructions.open = prefs.blockInstructions;
+    //
+    blockReferences.open = prefs.blockReferences;
+    //
+    const blockRefLinks = require ('./block-ref-links.json');
+    linksList (blockLinks, blockRefLinks);
 };
 //
 module.exports.stop = function (context)
@@ -834,6 +859,7 @@ module.exports.stop = function (context)
         namePageSize: nameParams.pageSize,
         nameInstructions: nameInstructions.open,
         nameRegexExamples: nameRegexExamples.open,
+        nameReferences: nameReferences.open,
         //
         matchSearchString: matchSearchString.value,
         matchDecomposition: matchDecomposition.checked,
@@ -842,12 +868,14 @@ module.exports.stop = function (context)
         matchPageSize: matchParams.pageSize,
         matchInstructions: matchInstructions.open,
         matchRegexExamples: matchRegexExamples.open,
+        matchReferences: matchReferences.open,
         //
         blockSelectBlockRange: blockSelectBlockRange.value,
         blockSpecimenHistory: blockSpecimenHistory,
         blockPageSize: blockParams.pageSize,
         blockPageIndex: blockParams.pageIndex,
         blockInstructions: blockInstructions.open,
+        blockReferences: blockReferences.open,
         //
         defaultFolderPath: defaultFolderPath
     };

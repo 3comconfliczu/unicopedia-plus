@@ -9,10 +9,6 @@
             "href": "https://en.wikipedia.org/wiki/Plane_(Unicode)"
         },
         {
-            "name": "Unicode block - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Unicode_block"
-        },
-        {
             "name": "Unicode input - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Unicode_input"
         },
@@ -39,24 +35,6 @@
         {
             "name": "Variant form (Unicode) - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Variant_form_(Unicode)"
-        },
-        {
-            "name": "Universal Coded Character Set - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Universal_Coded_Character_Set"
-        },
-        {
-            "name": "Universal Character Set characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Universal_Character_Set_characters"
-        },
-        {
-            "name": "List of Unicode characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/List_of_Unicode_characters"
-        }
-    ],
-    [
-        {
-            "name": "Unicode equivalence - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Unicode_equivalence"
         }
     ],
     [
@@ -117,20 +95,6 @@
     ],
     [
          {
-            "name": "UAX #44: Unicode Character Database",
-            "href": "https://www.unicode.org/reports/tr44/"
-        },
-        {
-            "name": "UnicodeData.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/UnicodeData.txt"
-        },
-        {
-            "name": "Blocks.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/Blocks.txt"
-        }
-    ],
-    [
-         {
             "name": "UAX #34: Unicode Named Character Sequences",
             "href": "https://www.unicode.org/reports/tr34/"
         },
@@ -147,6 +111,10 @@
     ],
     [
         {
+            "name": "Code Charts",
+            "href": "https://www.unicode.org/charts/"
+        },
+        {
             "name": "Script Charts",
             "href": "https://www.unicode.org/charts/script/"
         }
@@ -159,22 +127,6 @@
     ],
     [
         {
-            "name": "UTN #27: Known anomalies in Unicode Character Names",
-            "href": "https://www.unicode.org/notes/tn27/"
-        }
-    ],
-    [
-        {
-            "name": "UCD: Unicode NamesList File Format",
-            "href": "https://www.unicode.org/Public/UNIDATA/NamesList.html"
-        },
-        {
-            "name": "NamesList.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/NamesList.txt"
-        }
-    ],
-    [
-        {
             "name": "FAQ - Unicode Frequently Asked Questions",
             "href": "https://www.unicode.org/faq/"
         },
@@ -183,26 +135,12 @@
             "href": "https://www.unicode.org/faq/korean.html"
         },
         {
-            "name": "FAQ - Blocks and Ranges",
-            "href": "https://www.unicode.org/faq/blocks_ranges.html"
-        },
-        {
             "name": "FAQ - Variation Sequences",
             "href": "https://www.unicode.org/faq/vs.html"
         },
         {
             "name": "FAQ - Characters and Combining Marks",
             "href": "https://www.unicode.org/faq/char_combmark.html"
-        },
-        {
-            "name": "FAQ - Character Properties, Case Mappings and Names",
-            "href": "https://www.unicode.org/faq/casemap_charprop.html"
-        }
-    ],
-    [
-        {
-            "name": "Unicode Utilities: Character Property Index",
-            "href": "https://util.unicode.org/UnicodeJsps/properties.jsp"
         }
     ],
     [
@@ -215,10 +153,6 @@
         {
             "name": "Globalization Gotchas - Macchiato",
             "href": "http://www.macchiato.com/unicode/globalization-gotchas"
-        },
-        {
-            "name": "NFC FAQ - Macchiato",
-            "href": "http://www.macchiato.com/unicode/nfc-faq"
         }
     ],
     [

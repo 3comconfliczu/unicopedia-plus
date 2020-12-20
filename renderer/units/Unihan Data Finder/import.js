@@ -18,6 +18,8 @@ const tagTotalCount = unit.querySelector ('.find-by-tag-value .total-count');
 const tagSearchData = unit.querySelector ('.find-by-tag-value .search-data');
 const tagInstructions = unit.querySelector ('.find-by-tag-value .instructions');
 const tagRegexExamples = unit.querySelector ('.find-by-tag-value .regex-examples');
+const tagReferences = unit.querySelector ('.find-by-tag-value .references');
+const tagLinks = unit.querySelector ('.find-by-tag-value .links');
 //
 const tagParams = { };
 //
@@ -36,6 +38,8 @@ const matchTotalCount = unit.querySelector ('.match-character .total-count');
 const matchSearchData = unit.querySelector ('.match-character .search-data');
 const matchInstructions = unit.querySelector ('.match-character .instructions');
 const matchRegexExamples = unit.querySelector ('.match-character .regex-examples');
+const matchReferences = unit.querySelector ('.match-character .references');
+const matchLinks = unit.querySelector ('.match-character .links');
 //
 const matchParams = { };
 //
@@ -50,6 +54,8 @@ const gridSearchData = unit.querySelector ('.view-by-grid .search-data');
 const gridInstructions = unit.querySelector ('.view-by-grid .instructions');
 const gridUnihanBlocks = unit.querySelector ('.view-by-grid .unihan-blocks');
 const gridBlocks = unit.querySelector ('.view-by-grid .blocks');
+const gridReferences = unit.querySelector ('.view-by-grid .references');
+const gridLinks = unit.querySelector ('.view-by-grid .links');
 //
 const gridParams = { };
 //
@@ -69,6 +75,7 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
@@ -87,6 +94,7 @@ module.exports.start = function (context)
         tagPageSize: 8,
         tagInstructions: true,
         tagRegexExamples: false,
+        tagReferences: false,
         //
         matchSearchString: "",
         matchVariants: false,
@@ -95,6 +103,7 @@ module.exports.start = function (context)
         matchPageSize: 8,
         matchInstructions: true,
         matchRegexExamples: false,
+        matchReferences: false,
         //
         gridSelectBlockRange: "4E00-9FFF",  // CJK Unified Ideographs
         gridSpecimenHistory: [ ],
@@ -102,6 +111,7 @@ module.exports.start = function (context)
         gridPageIndex: 0,
         gridInstructions: true,
         gridUnihanBlocks: false,
+        gridReferences: false,
         //
         defaultFolderPath: context.defaultFolderPath
     };
@@ -433,6 +443,11 @@ module.exports.start = function (context)
     tagInstructions.open = prefs.tagInstructions;
     tagRegexExamples.open = prefs.tagRegexExamples;
     //
+    tagReferences.open = prefs.tagReferences;
+    //
+    const tagRefLinks = require ('./tag-ref-links.json');
+    linksList (tagLinks, tagRefLinks);
+    //
     const matchDataTable = require ('./match-data-table.js');
     //
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
@@ -692,6 +707,11 @@ module.exports.start = function (context)
     //
     matchInstructions.open = prefs.matchInstructions;
     matchRegexExamples.open = prefs.matchRegexExamples;
+    //
+    matchReferences.open = prefs.matchReferences;
+    //
+    const matchRefLinks = require ('./match-ref-links.json');
+    linksList (matchLinks, matchRefLinks);
     //
     const gridDataTable = require ('./grid-data-table.js');
     //
@@ -1042,6 +1062,11 @@ module.exports.start = function (context)
     let blocksTable = require ('./blocks-table.js');
     //
     gridBlocks.appendChild (blocksTable.create (unihanBlocks));
+    //
+    gridReferences.open = prefs.gridReferences;
+    //
+    const gridRefLinks = require ('./grid-ref-links.json');
+    linksList (gridLinks, gridRefLinks);
 };
 //
 module.exports.stop = function (context)
@@ -1072,6 +1097,7 @@ module.exports.stop = function (context)
         tagPageSize: tagParams.pageSize,
         tagInstructions: tagInstructions.open,
         tagRegexExamples: tagRegexExamples.open,
+        tagReferences: tagReferences.open,
         //
         matchSearchString: matchSearchString.value,
         matchVariants: matchVariants.checked,
@@ -1080,6 +1106,7 @@ module.exports.stop = function (context)
         matchPageSize: matchParams.pageSize,
         matchInstructions: matchInstructions.open,
         matchRegexExamples: matchRegexExamples.open,
+        matchReferences: tagReferences.open,
         //
         gridSelectBlockRange: gridSelectBlockRange.value,
         gridSpecimenHistory: gridSpecimenHistory,
@@ -1087,6 +1114,7 @@ module.exports.stop = function (context)
         gridPageIndex: gridParams.pageIndex,
         gridInstructions: gridInstructions.open,
         gridUnihanBlocks: gridUnihanBlocks.open,
+        gridReferences: gridReferences.open,
         //
         defaultFolderPath: defaultFolderPath
     };

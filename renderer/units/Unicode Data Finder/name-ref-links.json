@@ -1,0 +1,28 @@
+[
+    [
+        {
+            "name": "Character Name Index",
+            "href": "https://www.unicode.org/charts/charindex.html"
+        },
+        {
+            "name": "UCD: Unicode NamesList File Format",
+            "href": "https://www.unicode.org/Public/UNIDATA/NamesList.html"
+        },
+        {
+            "name": "NamesList.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/NamesList.txt"
+        }
+    ],
+    [
+        {
+            "name": "FAQ - Character Properties, Case Mappings and Names",
+            "href": "https://www.unicode.org/faq/casemap_charprop.html"
+        }
+    ],
+    [
+        {
+            "name": "UTN #27: Known anomalies in Unicode Character Names",
+            "href": "https://www.unicode.org/notes/tn27/"
+        }
+    ]
+]

@@ -8,6 +8,8 @@ const randomSetSelect = unit.querySelector ('.random-set-select');
 const infoContainer = unit.querySelector ('.info-container');
 //
 const instructions = unit.querySelector ('.instructions');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
 let currentTypefaceLanguage;
 //
@@ -25,6 +27,8 @@ module.exports.start = function (context)
 {
     const { remote } = require ('electron');
     //
+    const linksList = require ('../../lib/links-list.js');
+    //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
@@ -41,7 +45,8 @@ module.exports.start = function (context)
         typefaceLanguage: "",
         randomSetSelect: "",
         showCategories: false,
-        instructions: true
+        instructions: true,
+        references: false
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
@@ -1004,6 +1009,11 @@ module.exports.start = function (context)
     );
     //
     instructions.open = prefs.instructions;
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
@@ -1015,7 +1025,8 @@ module.exports.stop = function (context)
         typefaceLanguage: currentTypefaceLanguage,
         randomSetSelect: randomSetSelect.value,
         showCategories: showCategories,
-        instructions: instructions.open
+        instructions: instructions.open,
+        references: references.open
     };
     context.setPrefs (prefs);
 };

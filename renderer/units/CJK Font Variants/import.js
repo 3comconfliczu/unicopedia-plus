@@ -23,12 +23,13 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const sampleMenus = require ('../../lib/sample-menus.js');
-    //
     const path = require ('path');
     //
+    const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const sampleMenus = require ('../../lib/sample-menus.js');
     const fileDialogs = require ('../../lib/file-dialogs.js');
+    const linksList = require ('../../lib/links-list.js');
+    //
     const unicode = require ('../../lib/unicode/unicode.js');
     //
     const defaultPrefs =
@@ -561,8 +562,6 @@ module.exports.start = function (context)
     references.open = prefs.references;
     //
     const cjkLinks = require ('./cjk-links.json');
-    const linksList = require ('../../lib/links-list.js');
-    //
     linksList (links, cjkLinks);
 };
 //

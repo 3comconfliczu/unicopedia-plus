@@ -14,6 +14,8 @@ const saveSVGButton = unit.querySelector ('.save-svg-button');
 const graphContainer = unit.querySelector ('.graph-container');
 //
 const instructions = unit.querySelector ('.instructions');
+const references = unit.querySelector ('.references');
+const links = unit.querySelector ('.links');
 //
 const unihanHistorySize = 256;   // 0: unlimited
 //
@@ -33,6 +35,7 @@ module.exports.start = function (context)
     const path = require ('path');
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
+    const linksList = require ('../../lib/links-list.js');
     //
     // https://github.com/mdaines/viz.js/wiki/Usage
     // https://github.com/mdaines/viz.js/wiki/Caveats
@@ -57,7 +60,8 @@ module.exports.start = function (context)
         detailedRelationsCheckbox: false,
         codePointsCheckbox: false,
         defaultFolderPath: context.defaultFolderPath,
-        instructions: true
+        instructions: true,
+        references: false
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
@@ -578,6 +582,11 @@ module.exports.start = function (context)
     );
     //
     instructions.open = prefs.instructions;
+    //
+    references.open = prefs.references;
+    //
+    const refLinks = require ('./ref-links.json');
+    linksList (links, refLinks);
 };
 //
 module.exports.stop = function (context)
@@ -590,7 +599,8 @@ module.exports.stop = function (context)
         detailedRelationsCheckbox: detailedRelationsCheckbox.checked,
         codePointsCheckbox: codePointsCheckbox.checked,
         defaultFolderPath: defaultFolderPath,
-        instructions: instructions.open
+        instructions: instructions.open,
+        references: references.open
     };
     context.setPrefs (prefs);
 };

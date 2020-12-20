@@ -25,17 +25,16 @@ module.exports.start = function (context)
     const { app } = require ('electron').remote;
     let defaultLocale = app.getLocale ();
     //
-    const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const sampleMenus = require ('../../lib/sample-menus.js');
-    const { toCase } = require ('../../lib/foldings.js');
-    //
     const path = require ('path');
     //
+    const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const sampleMenus = require ('../../lib/sample-menus.js');
     const fileDialogs = require ('../../lib/file-dialogs.js');
+    const linksList = require ('../../lib/links-list.js');
+    const locales = require ('../../lib/locales.js');
+    const { toCase } = require ('../../lib/foldings.js');
     //
     const unicode = require ('../../lib/unicode/unicode.js');
-    //
-    const locales = require ('../../lib/locales.js');
     //
     let option;
     option = document.createElement ('option');
@@ -225,8 +224,6 @@ module.exports.start = function (context)
     references.open = prefs.references;
     //
     const refLinks = require ('./ref-links.json');
-    const linksList = require ('../../lib/links-list.js');
-    //
     linksList (links, refLinks);
 };
 //
