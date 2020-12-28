@@ -1,0 +1,4 @@
+{
+    "category": "Unicode",
+    "description": "Segment a text string into graphemes, words, or sentences"
+}

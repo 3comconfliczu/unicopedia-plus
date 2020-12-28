@@ -93,18 +93,24 @@
     ],
     [
         {
-            "name": "📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍",
-            "href": "https://emojipedia.org/"
-        }
-    ],
-    [
-        {
             "name": "Unicode: Behind the Curtain",
             "href": "https://blog.emojipedia.org/unicode-behind-the-curtain/"
         },
         {
             "name": "How the Appetite for Emojis Complicates the Effort to Standardize the World’s Alphabets - The New York Times",
             "href": "https://www.nytimes.com/2017/10/18/magazine/how-the-appetite-for-emojis-complicates-the-effort-to-standardize-the-worlds-alphabets.html"
+        }
+    ],
+    [
+        {
+            "name": "📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍",
+            "href": "https://emojipedia.org/"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - twitter/twemoji: Emoji for everyone",
+            "href": "https://github.com/twitter/twemoji"
         }
     ]
 ]

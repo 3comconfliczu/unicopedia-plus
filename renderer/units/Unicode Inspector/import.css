@@ -52,7 +52,7 @@
     line-height: 48px;
     resize: vertical;
     overflow-y: scroll;
-    min-height: calc(1px + 48px + 48px + 1px);
+    min-height: calc(1px + 2*48px + 1px);
     overscroll-behavior: contain;
     padding: 0 0.2em;
     width: 100%;
@@ -66,7 +66,7 @@
     line-height: 20px;
     resize: vertical;
     overflow-y: scroll;
-    min-height: calc(1px + 2px + 20px + 20px + 2px + 1px);
+    min-height: calc(1px + 2px + 2*20px + 2px + 1px);
     overscroll-behavior: contain;
     padding: 2px 0.5em;
     width: 100%;

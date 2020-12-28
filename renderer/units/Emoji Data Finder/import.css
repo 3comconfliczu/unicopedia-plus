@@ -203,7 +203,7 @@
     line-height: 48px;
     resize: vertical;
     overflow-y: scroll;
-    min-height: calc(1px + 48px + 48px + 1px);
+    min-height: calc(1px + 2*48px + 1px);
     overscroll-behavior: contain;
 }
 

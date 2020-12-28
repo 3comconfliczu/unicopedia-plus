@@ -1,0 +1,62 @@
+[
+    [
+        {
+            "name": "UAX #29: Unicode Text Segmentation",
+            "href": "https://www.unicode.org/reports/tr29/"
+        }
+    ],
+    [
+        {
+            "name": "Grapheme Break Chart",
+            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakTest.html"
+        },
+        {
+            "name": "GraphemeBreakProperty.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakProperty.txt"
+        },
+        {
+            "name": "GraphemeBreakTest.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/auxiliary/GraphemeBreakTest.txt"
+        }
+    ],
+    [
+        {
+            "name": "ICU Demonstration - ICU Segments",
+            "href": "https://icu4c-demos.unicode.org/icu-bin/icusegments"
+        }
+    ],
+    [
+        {
+            "name": "Intl.Segmenter Proposal",
+            "href": "https://tc39.es/proposal-intl-segmenter/"
+        },
+        {
+            "name": "GitHub - tc39/proposal-intl-segmenter: Unicode text segmentation for ECMAScript",
+            "href": "https://github.com/tc39/proposal-intl-segmenter"
+        }
+    ],
+    [
+        {
+            "name": "Intl.Segmenter - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter"
+        },
+        {
+            "name": "Intl.Segmenter.prototype.segment() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/segment"
+        },
+        {
+            "name": "Intl.Segmenter.supportedLocalesOf() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/supportedLocalesOf"
+        },
+        {
+            "name": "Intl.Segmenter.prototype.resolvedOptions() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter/resolvedOptions"
+        }
+    ],
+    [
+        {
+            "name": "Intl.getCanonicalLocales() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/getCanonicalLocales"
+        }
+    ]
+]

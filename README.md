@@ -25,6 +25,7 @@ The following utilities are currently available:
 - **Unicode Inspector**
 - **Unicode Normalizer**
 - **Unicode References**
+- **Unicode Segmenter**
 - **Unihan Data Finder**
     - **Find by Tag Value**
     - **Match Character**
@@ -100,7 +101,7 @@ The following utilities are currently available:
 
 ### Find by Name
 
-- The **Find by Name** feature of the **Emoji Data Finder** utility displays a list of basic data (symbol, short name, keywords, code points) of matching Unicode emoji searched by name or keyword, including through regular expressions.
+- The **Find by Name** feature of the **Emoji Data Finder** utility displays a list of basic data (emoji, short name, keywords, code points) of matching Unicode emoji searched by name or keyword, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
 - This feature deals with the 4,590 emoji defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
 - The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,512 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
@@ -115,7 +116,7 @@ The following utilities are currently available:
 
 ### Match Sequence
 
-- The **Match Sequence** feature of the **Emoji Data Finder** utility displays a list of basic data (symbol, short name, keywords, code points) of Unicode emoji matching a character sequence, including through regular expressions.
+- The **Match Sequence** feature of the **Emoji Data Finder** utility displays a list of basic data (emoji, short name, keywords, code points) of Unicode emoji matching a character sequence, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
 - This feature deals with the 4,590 emoji defined in the **Emoji 13.1** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/13.1/emoji-test.txt) data file.
 - The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,512 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
@@ -130,8 +131,8 @@ The following utilities are currently available:
 
 ### Filter Text
 
-- The **Filter Text** feature of the **Emoji Data Finder** utility displays in real time a list of basic data (symbol, short name, keywords, code points) of all the Unicode emoji contained in a text string.
-- Text can by directly typed or pasted from the clipboard into the main input field.
+- The **Filter Text** feature of the **Emoji Data Finder** utility displays in real time a list of basic data (emoji, short name, keywords, code points) of all the Unicode emoji contained in a text string.
+- Text can by directly typed, or pasted from the clipboard into the main input field.
 - It is also possible to input predefined sets of emoji selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
 - As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
 - Use the <kbd>Filter&nbsp;▾</kbd> pop-up menu to perform an action among:
@@ -179,7 +180,7 @@ The following utilities are currently available:
 
 ### Find by Name
 
-- The **Find by Name** feature of the **Unicode Data Finder** utility displays a list of basic data (symbol, code point, name/aliases, block) of matching Unicode characters searched by name or alias, including through regular expressions.
+- The **Find by Name** feature of the **Unicode Data Finder** utility displays a list of basic data (character, code point, name/aliases, block) of matching Unicode characters searched by name or alias, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - It is possible to choose how many characters are shown one page at a time.
 - When available, name aliases are displayed (in italics and smaller typeface) after the unique and immutable Unicode name. A correction alias is indicated by a leading reference mark `※`.
@@ -195,7 +196,7 @@ The following utilities are currently available:
 
 ### Match Character
 
-- The **Match Character** feature of the **Unicode Data Finder** utility displays a list of basic data (symbol, code point, name/aliases, block) of Unicode characters matching a character, including through regular expressions.
+- The **Match Character** feature of the **Unicode Data Finder** utility displays a list of basic data (character, code point, name/aliases, block) of Unicode characters matching a character, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Match Decomposition</kbd> toggle button to extend the search to characters whose *decomposition mapping* matches the query string.
 - It is possible to choose how many characters are shown one page at a time.
@@ -210,7 +211,7 @@ The following utilities are currently available:
 
 ### List by Block
 
-- The **List by Block** feature of the **Unicode Data Finder** utility displays in real time a list of basic data (symbol, code point, name/aliases, block) of Unicode characters belonging to the same block range.
+- The **List by Block** feature of the **Unicode Data Finder** utility displays in real time a list of basic data (character, code point, name/aliases, block) of Unicode characters belonging to the same block range.
 - It is possible to choose how many characters are shown one page at a time.
 - A block can be selected either by <kbd>Block Range</kbd> or by <kbd>Block Name</kbd>, as defined in the [Blocks.txt](https://www.unicode.org/Public/UNIDATA/Blocks.txt) data file.
 - It is also possible to directly enter a code point (or character) in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the code point, scroll its basic data into view, and highlight its hexadecimal code value.
@@ -288,11 +289,22 @@ The following utilities are currently available:
 
 <img src="screenshots/unicode-references.png" width="1080px" alt="Unicode References screenshot">
 
+## Unicode Segmenter
+
+- The **Unicode Segmenter** utility performs in real time the segmentation of a text string into a visual list of graphemes, words, or sentences, making use of the JavaScript [Intl.Segmenter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Segmenter) API, as specified in the [UAX #29: Unicode Text Segmentation](https://www.unicode.org/reports/tr29/).
+- Text can by directly typed, or pasted from the clipboard into the main input field.
+- It is also possible to input predefined text strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
+- As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
+- Choose the appropriate segmentation granularity from the <kbd>Granularity</kbd> drop-down menu, among: <code>Grapheme</code>, <code>Word</code>, or <code>Sentence</code>.
+- If required, choose a specific locale from the <kbd>Locale</kbd> drop-down menu: boundary types are actually locale-dependent.
+
+<img src="screenshots/unicode-segmenter.png" width="1080px" alt="Unicode Segmenter screenshot">
+
 ## Unihan Data Finder
 
 ### Find by Tag Value
 
-- The **Find by Tag Value** feature of the **Unihan Data Finder** utility displays a list of basic data (symbol, code point, Unihan tag, value, block) of matching Unihan characters searched by tag value, including through regular expressions.
+- The **Find by Tag Value** feature of the **Unihan Data Finder** utility displays a list of basic data (character, code point, Unihan tag, value, block) of matching Unihan characters searched by tag value, including through regular expressions.
 - Use the <kbd>Unihan Tag</kbd> drop-down menu to select the tag you wish to search value by.
 - Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
@@ -316,7 +328,7 @@ The following utilities are currently available:
 
 ### Match Character
 
-- The **Match Character** feature of the **Unihan Data Finder** utility displays a list of basic data (symbol, code point, age, set, ideograph status, block) of matching Unihan characters, including through regular expressions.
+- The **Match Character** feature of the **Unihan Data Finder** utility displays a list of basic data (character, code point, age, set, ideograph status, block) of matching Unihan characters, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Match Variants</kbd> toggle button to extend the search to characters whose *variants* match the query string.
 - Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.
@@ -496,4 +508,4 @@ npm run build-darwin
 
 The MIT License (MIT).
 
-Copyright © 2018-2020 Michel Mariani.
+Copyright © 2018-2021 Michel Mariani.

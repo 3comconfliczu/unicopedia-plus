@@ -1,0 +1,294 @@
+[
+    {
+        "label": "Bengali Test Data",
+        "items":
+        [
+            {
+                "label": "Bengali 1",
+                "string": "ব্যক্তিত্বের"
+            },
+            {
+                "label": "Bengali 2",
+                "string": "আত্মবিশ্বাস"
+            }
+        ]
+    },
+    {
+        "label": "Devanagari Test Data",
+        "items":
+        [
+            {
+                "label": "Devanagari 1",
+                "string": "संदिग्ध"
+            },
+            {
+                "label": "Devanagari 2",
+                "string": "सुरक्षा"
+            }
+        ]
+    },
+    {
+        "label": "Gujarati Test Data",
+        "items":
+        [
+            {
+                "label": "Gujarati 1",
+                "string": "અંગ્રેજી"
+            },
+            {
+                "label": "Gujarati 2",
+                "string": "શબ્દકોશ"
+            }
+        ]
+    },
+    {
+        "label": "Malayalam Test Data",
+        "items":
+        [
+            {
+                "label": "Malayalam 1",
+                "string": "സ്ഥാനമൊഴിയുക"
+            },
+            {
+                "label": "Malayalam 2",
+                "string": "വ്യക്തി"
+            }
+        ]
+    },
+    {
+        "label": "Odia Test Data",
+        "items":
+        [
+            {
+                "label": "Odia 1",
+                "string": "ଅସ୍ବରାନ୍ତ"
+            },
+            {
+                "label": "Odia 2",
+                "string": "ଅକର୍ମଣ୍ୟତା"
+            }
+        ]
+    },
+    {
+        "label": "Telugu Test Data",
+        "items":
+        [
+            {
+                "label": "Telugu 1",
+                "string": "అదృశ్యం"
+            },
+            {
+                "label": "Telugu 2",
+                "string": "ఉద్యోగాలు"
+            }
+        ]
+    },
+    {
+        "label": "Japanese",
+        "items":
+        [
+            {
+                "label": "Haiku 1",
+                "string": "古池や\n蛙飛び込む\n水の音"
+            },
+            {
+                "label": "Haiku 2",
+                "string": "静けさや\n岩に染み入る\n蝉の声"
+            },
+            {
+                "label": "Haiku 3",
+                "string": "柿食えば\n鐘が鳴るなり\n法隆寺"
+            },
+            {
+                "label": "Snow Country",
+                "string": "国境の長いトンネルを抜けると、雪国であった。夜の底が白くなった。信号所に汽車が止まった。"
+            }
+        ]
+    },
+    {
+        "label": "ICU Samples",
+        "items":
+        [
+            {
+                "label": "English",
+                "string": "Of these, and also his commission, it pleased him to let the Governor here take a copy. He gave them notice of his arrival by letter, but before they could visit him, he went eastward with the ship he came in; but a storm got up, and as they lacked a good pilot to harbour them there, they bore up for this harbour. He and his men were kindly entertained here, and stayed fourteen days. In the meantime Mr. Weston arrived with his small ship, which he had now recovered. Captain Gorges, who in- formed the Governor here that one purpose of his going east was to meet with Mr. Weston, took this opportunity to call him to account for some abuses he had to lay to his charge. Whereupon he called Weston before him and some other of his assistants, with the Governor of this place; and charged him first with the ill carriage of his men in Massachusetts, by which means the peace of the country had been disturbed, and he himself and the people he had brought over to settle there were much prejudiced. To this Mr. Weston easily answered, that what had been done, was in his absence, and might have befallen anyone; he left them sufficiently provided, and supposed they would be well governed; for any error committed he had sufficiently smarted. This particular charge was passed by. The second charge was of a wrong done towards his father, Sir Ferdinand Gorges, and to the State.  \n\n(William Bradford, public domain. http://catalog.hathitrust.org/Record/008651224 )"
+            }
+        ]
+    },
+    {
+        "label": "Combined Symbols",
+        "items":
+        [
+            {
+                "label": "Combinations",
+                "string": "*️⃣\n👁‍🗨"
+            },
+            {
+                "label": "Skin Tone Modifiers",
+                "string": "🏻🏼🏽🏾🏿\n👳🏻👳🏼👳🏽👳🏾👳🏿"
+            }
+        ]
+    },
+    {
+        "label": "Digits & Numbers",
+        "items":
+        [
+            {
+                "label": "Digits & Numbers 1",
+                "string": "1½⅟１𝍠𝟏𝟙𝟣𝟭𝟷"
+            },
+            {
+                "label": "Digits & Numbers 2",
+                "string": "¹₁①⑴⒈⓵⓿❶➀➊🄂"
+            },
+            {
+                "label": "Digits & Numbers 3",
+                "string": "⑩⑽⒑⓫⓾❿➉➓🄌"
+            }
+        ]
+    },
+    {
+        "label": "Emoji Country Flags",
+        "items":
+        [
+            {
+                "label": "Macroregion Flags",
+                "string": "🇪🇺🇺🇳"
+            },
+            {
+                "label": "National Flags",
+                "string": "🇨🇦🇫🇷🇬🇧🇯🇵🇺🇸"
+            },
+            {
+                "label": "Subdivision Flags",
+                "string": "🏴󠁧󠁢󠁥󠁮󠁧󠁿🏴󠁧󠁢󠁳󠁣󠁴󠁿🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+            }
+        ]
+    },
+    {
+        "label": "Hiragana & Katakana",
+        "items":
+        [
+            {
+                "label": "Decomposed Hiragana",
+                "string": "ひらがな"
+            },
+            {
+                "label": "Decomposed Katakana",
+                "string": "ピカドン"
+            },
+            {
+                "label": "Rare Kana",
+                "string": "ゐゑゔ\nヰヱヴヷヸヹヺ"
+            },
+            {
+                "label": "Typographic Marks",
+                "string": "゛゜ゝゞ゠・ーヽヾ･ｰ"
+            }
+        ]
+    },
+    {
+        "label": "Miscellaneous",
+        "items":
+        [
+            {
+                "label": "Arabic Ligature",
+                "string": "﷽"
+            },
+            {
+                "label": "Arabic Shaping",
+                "string": "ه ههه"
+            },
+            {
+                "label": "Ascending Blocks",
+                "string": "AaĀā❤愛爱애💜"
+            },
+            {
+                "label": "Chess Pieces",
+                "string": "♔♕♖♗♘♙\n♚♛♜♝♞♟"
+            },
+            {
+                "label": "Counting Rods",
+                "string": "𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱"
+            },
+            {
+                "label": "Hindi Word for Unicode",
+                "string": "यूनिकोड"
+            },
+            {
+                "label": "iOS Killer Character",
+                "string": "జ్ఞ‌ా"
+            },
+            {
+                "label": "Japanese Era Names",
+                "string": "㋿㍻㍼㍽㍾"
+            },
+            {
+                "label": "Musical Symbols",
+                "string": "𝄞𝄡𝄢"
+            },
+            {
+                "label": "Ornaments",
+                "string": "༺﴾※﴿༻"
+            },
+            {
+                "label": "Playing Card Suits",
+                "string": "♠♥♣♦\n♤♡♧♢"
+            },
+            {
+                "label": "Rounded Symbols",
+                "string": "🉠🉡🉢🉣🉤🉥"
+            },
+            {
+                "label": "Various Spaces",
+                "string": "           ​  　\uFEFF"
+            }
+        ]
+    },
+    {
+        "label": "Multi-Person Groupings",
+        "items":
+        [
+            {
+                "label": "Couple",
+                "string": "💑⬌👩‍❤️‍👨"
+            },
+            {
+                "label": "Family",
+                "string": "👪⬌👨‍👩‍👦"
+            },
+            {
+                "label": "Kiss",
+                "string": "💏⬌👩‍❤️‍💋‍👨"
+            }
+        ]
+    },
+    {
+        "label": "Presentation Sequences",
+        "items":
+        [
+            {
+                "label": "Variation Selectors 1",
+                "string": "☎︎☎️♻︎♻️❤︎❤️"
+            },
+            {
+                "label": "Variation Selectors 2",
+                "string": "ℹ︎ℹ️♨︎♨️✒︎✒️"
+            }
+        ]
+    },
+    {
+        "label": "Roman Numerals",
+        "items":
+        [
+            {
+                "label": "Capital Roman Numerals",
+                "string": "ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ"
+            },
+            {
+                "label": "Small Roman Numerals",
+                "string": "ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ"
+            }
+        ]
+    }
+]

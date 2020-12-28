@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.9.0
+
+- Added new **Unicode Segmenter** utility.
+- Updated `Electron` to version `11.1.1`.
+
 ## 8.8.0
 
 - Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using `CLDR 38.1` annotations.
