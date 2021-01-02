@@ -1,6 +1,6 @@
 [
     {
-        "label": "Bengali Test Data",
+        "label": "CLDR Test Data",
         "items":
         [
             {
@@ -10,13 +10,8 @@
             {
                 "label": "Bengali 2",
                 "string": "আত্মবিশ্বাস"
-            }
-        ]
-    },
-    {
-        "label": "Devanagari Test Data",
-        "items":
-        [
+            },
+            null,
             {
                 "label": "Devanagari 1",
                 "string": "संदिग्ध"
@@ -24,13 +19,8 @@
             {
                 "label": "Devanagari 2",
                 "string": "सुरक्षा"
-            }
-        ]
-    },
-    {
-        "label": "Gujarati Test Data",
-        "items":
-        [
+            },
+            null,
             {
                 "label": "Gujarati 1",
                 "string": "અંગ્રેજી"
@@ -38,13 +28,8 @@
             {
                 "label": "Gujarati 2",
                 "string": "શબ્દકોશ"
-            }
-        ]
-    },
-    {
-        "label": "Malayalam Test Data",
-        "items":
-        [
+            },
+            null,
             {
                 "label": "Malayalam 1",
                 "string": "സ്ഥാനമൊഴിയുക"
@@ -52,13 +37,8 @@
             {
                 "label": "Malayalam 2",
                 "string": "വ്യക്തി"
-            }
-        ]
-    },
-    {
-        "label": "Odia Test Data",
-        "items":
-        [
+            },
+            null,
             {
                 "label": "Odia 1",
                 "string": "ଅସ୍ବରାନ୍ତ"
@@ -66,13 +46,8 @@
             {
                 "label": "Odia 2",
                 "string": "ଅକର୍ମଣ୍ୟତା"
-            }
-        ]
-    },
-    {
-        "label": "Telugu Test Data",
-        "items":
-        [
+            },
+            null,
             {
                 "label": "Telugu 1",
                 "string": "అదృశ్యం"
@@ -84,39 +59,7 @@
         ]
     },
     {
-        "label": "Japanese",
-        "items":
-        [
-            {
-                "label": "Haiku 1",
-                "string": "古池や\n蛙飛び込む\n水の音"
-            },
-            {
-                "label": "Haiku 2",
-                "string": "静けさや\n岩に染み入る\n蝉の声"
-            },
-            {
-                "label": "Haiku 3",
-                "string": "柿食えば\n鐘が鳴るなり\n法隆寺"
-            },
-            {
-                "label": "Snow Country",
-                "string": "国境の長いトンネルを抜けると、雪国であった。夜の底が白くなった。信号所に汽車が止まった。"
-            }
-        ]
-    },
-    {
-        "label": "ICU Samples",
-        "items":
-        [
-            {
-                "label": "English",
-                "string": "Of these, and also his commission, it pleased him to let the Governor here take a copy. He gave them notice of his arrival by letter, but before they could visit him, he went eastward with the ship he came in; but a storm got up, and as they lacked a good pilot to harbour them there, they bore up for this harbour. He and his men were kindly entertained here, and stayed fourteen days. In the meantime Mr. Weston arrived with his small ship, which he had now recovered. Captain Gorges, who in- formed the Governor here that one purpose of his going east was to meet with Mr. Weston, took this opportunity to call him to account for some abuses he had to lay to his charge. Whereupon he called Weston before him and some other of his assistants, with the Governor of this place; and charged him first with the ill carriage of his men in Massachusetts, by which means the peace of the country had been disturbed, and he himself and the people he had brought over to settle there were much prejudiced. To this Mr. Weston easily answered, that what had been done, was in his absence, and might have befallen anyone; he left them sufficiently provided, and supposed they would be well governed; for any error committed he had sufficiently smarted. This particular charge was passed by. The second charge was of a wrong done towards his father, Sir Ferdinand Gorges, and to the State.  \n\n(William Bradford, public domain. http://catalog.hathitrust.org/Record/008651224 )"
-            }
-        ]
-    },
-    {
-        "label": "Combined Symbols",
+        "label": "Emoji",
         "items":
         [
             {
@@ -124,33 +67,18 @@
                 "string": "*️⃣\n👁‍🗨"
             },
             {
+                "label": "Multi-Person Groupings",
+                "string": "💑⬌👩‍❤️‍👨\n👪⬌👨‍👩‍👦\n💏⬌👩‍❤️‍💋‍👨"
+            },
+            {
+                "label": "Presentation Sequences",
+                "string": "ℹ︎ℹ️☎︎☎️♨︎♨️♻︎♻️✒︎✒️❤︎❤️"
+            },
+            {
                 "label": "Skin Tone Modifiers",
                 "string": "🏻🏼🏽🏾🏿\n👳🏻👳🏼👳🏽👳🏾👳🏿"
-            }
-        ]
-    },
-    {
-        "label": "Digits & Numbers",
-        "items":
-        [
-            {
-                "label": "Digits & Numbers 1",
-                "string": "1½⅟１𝍠𝟏𝟙𝟣𝟭𝟷"
             },
-            {
-                "label": "Digits & Numbers 2",
-                "string": "¹₁①⑴⒈⓵⓿❶➀➊🄂"
-            },
-            {
-                "label": "Digits & Numbers 3",
-                "string": "⑩⑽⒑⓫⓾❿➉➓🄌"
-            }
-        ]
-    },
-    {
-        "label": "Emoji Country Flags",
-        "items":
-        [
+            null,
             {
                 "label": "Macroregion Flags",
                 "string": "🇪🇺🇺🇳"
@@ -166,24 +94,62 @@
         ]
     },
     {
-        "label": "Hiragana & Katakana",
+        "label": "English",
         "items":
         [
             {
-                "label": "Decomposed Hiragana",
-                "string": "ひらがな"
+                "label": "ICU Segments Demo",
+                "string": "Of these, and also his commission, it pleased him to let the Governor here take a copy. He gave them notice of his arrival by letter, but before they could visit him, he went eastward with the ship he came in; but a storm got up, and as they lacked a good pilot to harbour them there, they bore up for this harbour. He and his men were kindly entertained here, and stayed fourteen days. In the meantime Mr. Weston arrived with his small ship, which he had now recovered. Captain Gorges, who in- formed the Governor here that one purpose of his going east was to meet with Mr. Weston, took this opportunity to call him to account for some abuses he had to lay to his charge. Whereupon he called Weston before him and some other of his assistants, with the Governor of this place; and charged him first with the ill carriage of his men in Massachusetts, by which means the peace of the country had been disturbed, and he himself and the people he had brought over to settle there were much prejudiced. To this Mr. Weston easily answered, that what had been done, was in his absence, and might have befallen anyone; he left them sufficiently provided, and supposed they would be well governed; for any error committed he had sufficiently smarted. This particular charge was passed by. The second charge was of a wrong done towards his father, Sir Ferdinand Gorges, and to the State.  \n\n(William Bradford, public domain. http://catalog.hathitrust.org/Record/008651224 )"
             },
             {
-                "label": "Decomposed Katakana",
-                "string": "ピカドン"
+                "label": "Jabberwocky",
+                "string": "’Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe;\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n\n“Beware the Jabberwock, my son!\nThe jaws that bite, the claws that catch!\nBeware the Jubjub bird, and shun\nThe frumious Bandersnatch!”\n\nHe took his vorpal sword in hand:\nLong time the manxome foe he sought—\nSo rested he by the Tumtum tree,\nAnd stood awhile in thought.\n\nAnd as in uffish thought he stood,\nThe Jabberwock, with eyes of flame,\nCame whiffling through the tulgey wood,\nAnd burbled as it came!\n\nOne, two! One, two! And through and through\nThe vorpal blade went snicker-snack!\nHe left it dead, and with its head\nHe went galumphing back.\n\n“And hast thou slain the Jabberwock?\nCome to my arms, my beamish boy!\nO frabjous day! Callooh! Callay!”\nHe chortled in his joy.\n\n’Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe;\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n\n— Lewis Carroll —"
+            }
+        ]
+    },
+    {
+        "label": "Japanese",
+        "items":
+        [
+            {
+                "label": "Era Names",
+                "string": "㋿㍻㍼㍽㍾"
+            },
+            null,
+            {
+                "label": "Haiku 1",
+                "string": "古池や\n蛙飛び込む\n水の音"
             },
             {
-                "label": "Rare Kana",
-                "string": "ゐゑゔ\nヰヱヴヷヸヹヺ"
+                "label": "Haiku 2",
+                "string": "静けさや\n岩に染み入る\n蝉の声"
             },
             {
-                "label": "Typographic Marks",
-                "string": "゛゜ゝゞ゠・ーヽヾ･ｰ"
+                "label": "Haiku 3",
+                "string": "柿食えば\n鐘が鳴るなり\n法隆寺"
+            },
+            null,
+            {
+                "label": "I Am a Cat",
+                "string": "吾輩は猫である。名前はまだ無い。\nどこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。"
+            },
+            {
+                "label": "Snow Country",
+                "string": "国境の長いトンネルを抜けると、雪国であった。夜の底が白くなった。信号所に汽車が止まった。"
+            }
+        ]
+    },
+    {
+        "label": "Korean",
+        "items":
+        [
+            {
+                "label": "Composed Hangul Syllables",
+                "string": "한글"
+            },
+            {
+                "label": "Decomposed Hangul Syllables",
+                "string": "한글"
             }
         ]
     },
@@ -208,20 +174,12 @@
                 "string": "♔♕♖♗♘♙\n♚♛♜♝♞♟"
             },
             {
-                "label": "Counting Rods",
-                "string": "𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱"
-            },
-            {
                 "label": "Hindi Word for Unicode",
                 "string": "यूनिकोड"
             },
             {
                 "label": "iOS Killer Character",
                 "string": "జ్ఞ‌ా"
-            },
-            {
-                "label": "Japanese Era Names",
-                "string": "㋿㍻㍼㍽㍾"
             },
             {
                 "label": "Musical Symbols",
@@ -246,41 +204,22 @@
         ]
     },
     {
-        "label": "Multi-Person Groupings",
+        "label": "Numerals",
         "items":
         [
             {
-                "label": "Couple",
-                "string": "💑⬌👩‍❤️‍👨"
+                "label": "Digits & Numbers 1",
+                "string": "1½⅟１𝍠𝟏𝟙𝟣𝟭𝟷"
             },
             {
-                "label": "Family",
-                "string": "👪⬌👨‍👩‍👦"
+                "label": "Digits & Numbers 2",
+                "string": "¹₁①⑴⒈⓵⓿❶➀➊🄂"
             },
             {
-                "label": "Kiss",
-                "string": "💏⬌👩‍❤️‍💋‍👨"
-            }
-        ]
-    },
-    {
-        "label": "Presentation Sequences",
-        "items":
-        [
-            {
-                "label": "Variation Selectors 1",
-                "string": "☎︎☎️♻︎♻️❤︎❤️"
+                "label": "Digits & Numbers 3",
+                "string": "⑩⑽⒑⓫⓾❿➉➓🄌"
             },
-            {
-                "label": "Variation Selectors 2",
-                "string": "ℹ︎ℹ️♨︎♨️✒︎✒️"
-            }
-        ]
-    },
-    {
-        "label": "Roman Numerals",
-        "items":
-        [
+            null,
             {
                 "label": "Capital Roman Numerals",
                 "string": "ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫⅬⅭⅮⅯ"
@@ -288,6 +227,33 @@
             {
                 "label": "Small Roman Numerals",
                 "string": "ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ"
+            },
+            null,
+            {
+                "label": "Counting Rods",
+                "string": "𝍠𝍡𝍢𝍣𝍤𝍥𝍦𝍧𝍨𝍩𝍪𝍫𝍬𝍭𝍮𝍯𝍰𝍱"
+            }
+        ]
+    },
+    {
+        "label": "Word Segmentation Issues",
+        "items":
+        [
+            {
+                "label": "Han + Variation Selector-1",
+                "string": "漢︀"
+            },
+            {
+                "label": "Han + Variation Selector-18",
+                "string": "劍󠄁"
+            },
+            {
+                "label": "Decomposed Hiragana",
+                "string": "でんぽう"
+            },
+            {
+                "label": "Decomposed Katakana",
+                "string": "ピカドン"
             }
         ]
     }

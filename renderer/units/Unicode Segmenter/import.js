@@ -145,7 +145,7 @@ module.exports.start = function (context)
     //
     function updateSegmenter ()
     {
-        segmenter = new Intl.Segmenter (localeSelect.value || undefined, { granularity: granularitySelect.value });
+        segmenter = new Intl.Segmenter (localeSelect.value || [ ], { granularity: granularitySelect.value });
     }
     //
     granularitySelect.value = prefs.granularitySelect;
@@ -191,6 +191,8 @@ module.exports.start = function (context)
         return segmentList;
     }
     //
+    const maxTooltipCount = 24;
+    //
     function updateSegmentData (text)
     {
         while (segmentData.firstChild)
@@ -213,14 +215,15 @@ module.exports.start = function (context)
                 }
                 span.textContent = segment.segment;
                 let characters = Array.from (segment.segment);
-                if (granularitySelect.value === 'sentence')
+                let count = characters.length;
+                span.title = `Count: ${count}`;
+                span.title += "\n";
+                span.title += "────\n";
+                span.title += characters.splice (0, maxTooltipCount).map ((char) => `${unicode.characterToCodePoint (char)}\t${char}`).join ("\n");
+                if (count > maxTooltipCount)
                 {
-                    span.title = `Count: ${characters.length}`;
-                }
-                else
-                {
-                    // span.title = characters.map ((char) => `${unicode.characterToCodePoint (char)}\t${char}\t${unicode.getCharacterBasicData (char).name.replace (/\s/g, "\xA0")}`).join ("\n");
-                    span.title = characters.map ((char) => `${unicode.characterToCodePoint (char)}\t${char}`).join ("\n");
+                    span.title += "\n";
+                    span.title += `[...${count - maxTooltipCount} more]`;
                 }
                 segmentList.appendChild (span);
             }

@@ -15,6 +15,12 @@
     ],
     [
          {
+            "name": "UAX #14: Unicode Line Breaking Algorithm",
+            "href": "https://unicode.org/reports/tr14/"
+        }
+    ],
+    [
+         {
             "name": "UAX #44: Unicode Character Database",
             "href": "https://www.unicode.org/reports/tr44/"
         }

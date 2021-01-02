@@ -1,6 +1,12 @@
 [
     [
         {
+            "name": "Text segmentation - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Text_segmentation"
+        }
+    ],
+    [
+        {
             "name": "UAX #29: Unicode Text Segmentation",
             "href": "https://www.unicode.org/reports/tr29/"
         }

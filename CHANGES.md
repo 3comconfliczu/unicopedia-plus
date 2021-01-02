@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.9.1
+
+- Updated samples in the **Unicode Segmenter** utility; added specific word segmentation issues, as reported in [Issue #9](https://github.com/tonton-pixel/unicopedia-plus/issues/9).
+- Improved segment tootips: count and list of first 24 characters are systematically displayed for each segmentation granularity.
+
 ## 8.9.0
 
 - Added new **Unicode Segmenter** utility.
