@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "8.9.1",
+    "version": "8.9.2",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -19,12 +19,15 @@
         "desktop",
         "electron",
         "emoji",
+        "ids",
         "ivd",
         "japanese",
         "javascript",
         "korean",
         "modular",
+        "normalization",
         "regex",
+        "segmentation",
         "unicode",
         "unihan",
         "utility"

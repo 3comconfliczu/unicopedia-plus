@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.9.2
+
+- Fixed wrapping overflow of very long words in the **Unicode Segmenter** utility.
+
 ## 8.9.1
 
 - Updated samples in the **Unicode Segmenter** utility; added specific word segmentation issues, as reported in [Issue #9](https://github.com/tonton-pixel/unicopedia-plus/issues/9).
