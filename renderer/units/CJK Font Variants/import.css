@@ -70,13 +70,14 @@
 
 #cjk-font-variants-unit .characters-input
 {
+    font-family: var(--sans-serif-family);
     font-size: 16px;
     padding: 2px 6px;
 }
 
 #cjk-font-variants-unit .code-points-input
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 13px;
     padding: 4px 6px;
 }

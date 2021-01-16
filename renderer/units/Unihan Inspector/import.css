@@ -35,11 +35,12 @@
 
 #unihan-inspector-unit .unihan-input
 {
+    font-family: var(--sans-serif-family);
     font-size: 16px;
+    padding: 2px 6px;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
-    padding: 0.2em 0.3em;
     width: 7.5em;
     margin-right: 0.5em;
 }
@@ -55,36 +56,6 @@
     margin-right: 0.5em;
 }
 
-#unihan-inspector-unit .unihan-character:lang(ja)
-{
-    font-family: "Sans CJK JP", "NotDef";
-}
-
-#unihan-inspector-unit .unihan-character:lang(ko)
-{
-    font-family: "Sans CJK KR", "NotDef";
-}
-
-#unihan-inspector-unit .unihan-character:lang(zh-Hans)
-{
-    font-family: "Sans CJK SC", "NotDef";
-}
-
-#unihan-inspector-unit .unihan-character:lang(zh-Hant-TW)
-{
-    font-family: "Sans CJK TC", "NotDef";
-}
-
-#unihan-inspector-unit .unihan-character:lang(zh-Hant-HK)
-{
-    font-family: "Sans CJK HK", "NotDef";
-}
-/*
-#unihan-inspector-unit .unihan-character:lang(zh-Hant-MO)
-{
-    font-family: "Sans CJK MO", "NotDef";
-}
-*/
 #unihan-inspector-unit .character-data
 {
     display: flex;
@@ -123,16 +94,47 @@
 #unihan-inspector-unit .unihan-card .unihan-character
 {
     display: inline-block;
+    font-family: var(--unihan-family);
     font-size: 72px;
     line-height: 1em;
     width: 1.5em;
     height: 1.5em;
 }
 
+#unihan-inspector-unit .unihan-card .unihan-character:lang(ja)
+{
+    font-family: "Sans CJK JP", "NotDef";
+}
+
+#unihan-inspector-unit .unihan-card .unihan-character:lang(ko)
+{
+    font-family: "Sans CJK KR", "NotDef";
+}
+
+#unihan-inspector-unit .unihan-card .unihan-character:lang(zh-Hans)
+{
+    font-family: "Sans CJK SC", "NotDef";
+}
+
+#unihan-inspector-unit .unihan-card .unihan-character:lang(zh-Hant-TW)
+{
+    font-family: "Sans CJK TC", "NotDef";
+}
+
+#unihan-inspector-unit .unihan-card .unihan-character:lang(zh-Hant-HK)
+{
+    font-family: "Sans CJK HK", "NotDef";
+}
+/*
+#unihan-inspector-unit .unihan-card .unihan-character:lang(zh-Hant-MO)
+{
+    font-family: "Sans CJK MO", "NotDef";
+}
+*/
 #unihan-inspector-unit .unihan-card .unihan-code-point
 {
     display: inline-block;
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 13.5px;
     font-weight: bold;
     margin-bottom: 1em;
@@ -199,7 +201,7 @@
 #unihan-inspector-unit .unicode-info,
 #unihan-inspector-unit .unihan-info
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 13.5px;
     line-height: 1.25em;
     background: white;
@@ -349,7 +351,7 @@
 #unihan-inspector-unit .tags-data .tags-list .tag,
 #unihan-inspector-unit .tags-data .tags-list .value
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     background-color: white;
     text-align: left;
     line-height: 1.25em;

@@ -17,7 +17,7 @@
     ]
     edge
     [
-        fontname = "Segoe UI, system-ui, sans-serif"
+        fontname = {{fontname}}
         fontsize = 10
         arrowsize = 0.75
     ]

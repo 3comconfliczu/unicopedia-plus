@@ -525,9 +525,9 @@ function getCharacterData (character)
     let characterData = { };
     if (!(/^[\uD800-\uDFFF]$/.test (character))) // Or /^\p{Surrogate}$/ (isolated/lone surrogate)
     {
-        characterData.utf32 = characterToUtf32Code (character);
-        characterData.utf16 = characterToUtf16Code (character);
-        characterData.utf8 = characterToUtf8Code (character);
+        characterData.utf32 = `<${characterToUtf32Code (character)}>`;
+        characterData.utf16 = `<${characterToUtf16Code (character)}>`;
+        characterData.utf8 = `<${characterToUtf8Code (character)}>`;
         characterData.urlEncoding = characterToUrlEncoding (character);
         characterData.hexEntity = characterToHexEntity (character);
         characterData.decimalEntity = characterToDecimalEntity (character);

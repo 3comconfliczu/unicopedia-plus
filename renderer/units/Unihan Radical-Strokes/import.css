@@ -185,7 +185,7 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .symbol
 {
-    font-family: inherit;
+    font-family: var(--unihan-family);
     font-size: 36px;
     text-align: center;
     line-height: 1em;
@@ -206,7 +206,7 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .code-point
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     text-align: center;
     font-size: 12px;
     font-weight: bold;

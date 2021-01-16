@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.10.0
+
+- Used common CSS variables for font stacks.
+- Updated and expanded font stacks: fixed locale-related issues ([Issue #7](https://github.com/tonton-pixel/unicopedia-plus/issues/7)).
+- Improved layout of characters and font consistency in the **Unihan Variants** utility.
+- Expanded Unicode and Unihan reference links.
+- Used recommended code units sequence format, i.e., between angle brackets, for UTF-8, UTF-16, UTF-32 in the **Unicode Inspector** utility.
+
 ## 8.9.2
 
 - Fixed wrapping overflow of very long words in the **Unicode Segmenter** utility.

@@ -401,7 +401,7 @@ The following utilities are currently available:
 - Notes:
     - The top Radical/Strokes fields are displaying data obtained from the only informative IRG Source: *kRSUnicode*, while the bottom ones (in grayed-out style, if any) make use of the provisional sources: *kRSKangXi* and *kRSAdobe_Japan1_6*.
     - IICore (*International Ideographs Core*) represents a set of 9,810 important Unihan characters in everyday use throughout East Asia; it has been developed by the IRG.
-    - IRG stands for *Ideographic Rapporteur Group*, a committee advising the Unicode Consortium about Asian language characters.
+    - IRG stands for *Ideographic Research Group*, formerly called *Ideographic Rapporteur Group*, a committee advising the Unicode Consortium about Asian language characters.
     - Radicals do *not* belong to the Unihan character set; they are allowed to be looked up here merely as a convenience, since they are closely related, and because their appearance is similar, or even identical, to their equivalent unified ideograph.
 
 <img src="screenshots/unihan-inspector.png" width="1080px" alt="Unihan Inspector screenshot">

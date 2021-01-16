@@ -43,14 +43,14 @@
     ],
     [
         {
-            "name": "Unihan Radical-Stroke Index",
-            "href": "https://www.unicode.org/charts/unihanrsindex.html"
+            "name": "Proposal to allow negative residual strokes in kRS* (radical/stroke) fields of Unihan - 15317-neg-res-strokes.pdf",
+            "href": "https://www.unicode.org/L2/L2015/15317-neg-res-strokes.pdf"
         }
     ],
     [
         {
-            "name": "Proposal to allow negative residual strokes in kRS* (radical/stroke) fields of Unihan - 15317-neg-res-strokes.pdf",
-            "href": "https://www.unicode.org/L2/L2015/15317-neg-res-strokes.pdf"
+            "name": "Unihan Radical-Stroke Index",
+            "href": "https://www.unicode.org/charts/unihanrsindex.html"
         }
     ],
     [

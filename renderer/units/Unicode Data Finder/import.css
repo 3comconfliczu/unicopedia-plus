@@ -98,12 +98,12 @@
 
 #unicode-data-finder-unit .search-string
 {
-    width: 100%;
-    font-size: 1em;
+    font-family: var(--sans-serif-family);
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
+    width: 100%;
 }
 
 #unicode-data-finder-unit .search-string.error
@@ -135,7 +135,7 @@
     position: absolute;
     margin-top: 10px;
     margin-right: 2rem;
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 12px;
     white-space: pre-wrap;
     padding: 0.375em 0.75em;
@@ -226,7 +226,7 @@
 
 #unicode-data-finder-unit .list-by-block .specimen
 {
-    font-size: 1em;
+    font-family: var(--sans-serif-family);
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
@@ -271,7 +271,7 @@
 
 #unicode-data-finder-unit .pagination-bar .page-select
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-weight: bold;
     font-size: 14px;
     padding: 3px 2px 2px 6px;
@@ -366,7 +366,7 @@
 
 #unicode-data-finder-unit .search-data .symbol
 {
-    font-family: inherit;
+    font-family: var(--sans-serif-family);
     text-align: center;
     vertical-align: middle;
     font-size: 36px;
@@ -381,7 +381,7 @@
 
 #unicode-data-finder-unit .search-data .code-point
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     text-align: left;
     line-height: 1em;
     vertical-align: middle;

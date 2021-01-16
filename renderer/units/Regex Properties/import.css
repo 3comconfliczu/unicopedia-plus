@@ -70,7 +70,7 @@
 
 #regex-properties-unit .property-list td
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 13px;
     user-select: text;
     cursor: text;

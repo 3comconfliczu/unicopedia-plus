@@ -282,6 +282,18 @@ module.exports.start = function (context)
     let parser = new DOMParser ();
     let serializer = new XMLSerializer ();
     //
+    function getFontFamily (fontFamily)
+    {
+        return getComputedStyle (document.body).getPropertyValue (fontFamily).replaceAll ("\"", "").trim ();
+    }
+    function getFontFamilyString (fontFamily)
+    {
+        return JSON.stringify (getFontFamily (fontFamily));
+    }
+    const unihanFamilyString = getFontFamilyString ('--unihan-family');
+    const monospaceFamilyString = getFontFamilyString ('--monospace-family');
+    const systemUIFamilyString = getFontFamilyString ('--system-ui-family');
+    //
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
@@ -299,6 +311,12 @@ module.exports.start = function (context)
                     text.setAttribute ('x', cx);
                 }
             }
+            if (texts.length === 1)
+            {
+                let text = texts[0];
+                let y = parseFloat (text.getAttribute ('y'));
+                text.setAttribute ('y', y + 2); // Empirical adjustment
+           }
         }
         return serializer.serializeToString (doc);
     }
@@ -379,8 +397,8 @@ module.exports.start = function (context)
                 {
                     let codePoint = unicode.charactersToCodePoints (character);
                     let label = (codePointsCheckbox.checked) ?
-                        '<<FONT FACE="Segoe UI, system-ui, sans-serif" POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE="Monaco, DejaVu Sans Mono, Noto Mono, monospace" POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>' :
-                        '<<FONT FACE="Segoe UI, system-ui, sans-serif" POINT-SIZE="36">{{character}}</FONT>>'                        
+                        `<<FONT FACE=${unihanFamilyString} POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE=${monospaceFamilyString} POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>` :
+                        `<<FONT FACE=${unihanFamilyString} POINT-SIZE="36">{{character}}</FONT>>`
                     let options =
                     [
                         { name: "tooltip", value: JSON.stringify (getTooltip (character)) },
@@ -460,6 +478,7 @@ module.exports.start = function (context)
                     .replace ('{{graph}}', detailedRelationsCheckbox.checked ? 'digraph' : 'graph')
                     .replace ('{{rankdir}}', detailedRelationsCheckbox.checked ? 'LR' : 'TB')
                     .replace ('{{comment}}', JSON.stringify (`${character} ${codePoint} | ${context.name} | ${context.app}`))
+                    .replace ('{{fontname}}', systemUIFamilyString)
                     .replace ('{{data}}', data);
                 // console.log (dotString);
                 viz.renderString (dotString, { engine: 'dot', format: 'svg' })

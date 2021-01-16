@@ -27,8 +27,8 @@
     ],
     [
         {
-            "name": "Ideographic Rapporteur Group - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Ideographic_Rapporteur_Group"
+            "name": "Ideographic Research Group - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Ideographic_Research_Group"
         },
         {
             "name": "International Ideographs Core - Wikipedia",
@@ -47,27 +47,15 @@
     ],
     [
         {
-            "lang": "ja",
-            "name": "理義字 - Wikipedia",
-            "href": "https://ja.wikipedia.org/wiki/%E7%90%86%E7%BE%A9%E5%AD%97"
-        },
-        {
-            "lang": "zh",
-            "name": "疊字 - 维基百科，自由的百科全书",
-            "href": "https://zh.wikipedia.org/wiki/%E7%96%8A%E5%AD%97"
-        }
-    ],
-    [
-        {
-            "name": "UAX #41: Common References for UAXs",
-            "href": "https://www.unicode.org/reports/tr41/"
-        }
-    ],
-    [
-        {
             "name": "The Unicode Standard, Version 13.0 - Chapter 18: East Asia - ch18.pdf",
             "href": "https://www.unicode.org/versions/Unicode13.0.0/ch18.pdf"
         },
+        {
+            "name": "The Unicode Standard, Version 13.0 - Han Unification History - appE.pdf",
+            "href": "https://www.unicode.org/versions/Unicode13.0.0/appE.pdf"
+        }
+    ],
+    [
         {
             "name": "UTN #26: On the Encoding of Latin, Greek, Cyrillic, and Han",
             "href": "https://www.unicode.org/notes/tn26/"
@@ -135,6 +123,12 @@
         {
             "name": "UniHan Variation: Issues and Solutions - IUC23-a345.pdf",
             "href": "http://linguistics.berkeley.edu/~rscook/pdf/IUC23-a345.pdf"
+        }
+    ],
+    [
+        {
+            "name": "BabelStone Blog : The Secret Life of Variation Selectors",
+            "href": "https://www.babelstone.co.uk/Blog/2007/06/secret-life-of-variation-selectors.html"
         }
     ],
     [
@@ -291,6 +285,18 @@
             "lang": "ja",
             "name": "グループ:品字様 - GlyphWiki",
             "href": "http://glyphwiki.org/wiki/Group:%E5%93%81%E5%AD%97%E6%A7%98"
+        }
+    ],
+    [
+        {
+            "lang": "ja",
+            "name": "理義字 - Wikipedia",
+            "href": "https://ja.wikipedia.org/wiki/%E7%90%86%E7%BE%A9%E5%AD%97"
+        },
+        {
+            "lang": "zh",
+            "name": "疊字 - 维基百科，自由的百科全书",
+            "href": "https://zh.wikipedia.org/wiki/%E7%96%8A%E5%AD%97"
         }
     ],
     [

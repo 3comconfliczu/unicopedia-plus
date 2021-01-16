@@ -142,18 +142,19 @@
 
 #unihan-data-finder-unit .search-string
 {
-    width: 100%;
-    font-size: 1em;
+    font-family: var(--sans-serif-family);
+    font-size: 15px;
+    padding: 3px 6px;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
-    padding: 0.25em 0.5em;
+    width: 100%;
 }
 
 #unihan-data-finder-unit .match-character .search-string
 {
     font-size: 16px;
-    padding: 3px 7px;
+    padding: 2px 6px;
 }
 
 #unihan-data-finder-unit .search-string.error
@@ -185,7 +186,7 @@
     position: absolute;
     margin-top: 10px;
     margin-right: 2rem;
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 12px;
     white-space: pre-wrap;
     padding: 0.375em 0.75em;
@@ -311,7 +312,7 @@
 
 #unihan-data-finder-unit .pagination-bar .page-select
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-weight: bold;
     font-size: 14px;
     padding: 3px 2px 2px 6px;
@@ -414,7 +415,7 @@
 #unihan-data-finder-unit .search-data .symbol-data
 {
     text-align: center;
-    font-family: inherit;
+    font-family: var(--unihan-family);
     font-size: 36px;
     padding: 0.5em 0;
 }
@@ -423,7 +424,7 @@
 #unihan-data-finder-unit .search-data .tag-data,
 #unihan-data-finder-unit .search-data .value-data
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     text-align: left;
     font-size: 13px;
     padding: 0.25em 0.5em;
@@ -474,11 +475,12 @@
 
 #unihan-data-finder-unit .view-by-grid .specimen
 {
+    font-family: var(--sans-serif-family);
     font-size: 16px;
+    padding: 2px 6px;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
-    padding: 2px 4px;
     width: 7.5em;
     margin: 0 0.5em 0 1.25em;
     line-height: 1.2em;
@@ -510,7 +512,7 @@
     padding: 0.5em 0.25em;
     line-height: 1em;
     font-size: 13px;
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
 }
 
 #unihan-data-finder-unit .view-by-grid .search-data th.empty-header,
@@ -540,7 +542,7 @@
 
 #unihan-data-finder-unit .view-by-grid .search-data td.symbol-cell .symbol
 {
-    font-family: inherit;
+    font-family: var(--unihan-family);
     font-size: 24px;
     line-height: 1em;
 }
@@ -733,7 +735,7 @@
 #unihan-data-finder-unit .unihan-blocks td.core-2020-total,
 #unihan-data-finder-unit .unihan-blocks td.full-total
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
 }
 
 #unihan-data-finder-unit .unihan-blocks td.core-total,

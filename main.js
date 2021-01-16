@@ -453,11 +453,7 @@ else
                     contextIsolation: false,
                     nodeIntegration: true,
                     enableRemoteModule: true,
-                    spellcheck: false,
-                    defaultFontFamily:
-                    {
-                        standard: "Arial"   // Instead of "Times New Roman" by default
-                    }
+                    spellcheck: false
                 }
             }
         );

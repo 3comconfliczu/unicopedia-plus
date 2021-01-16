@@ -56,7 +56,7 @@
 
 #unicode-normalizer-unit .characters-input
 {
-    font-family: inherit;
+    font-family: var(--sans-serif-family);
     font-size: 24px;
     padding: 2px 5px;
     tab-size: 4;
@@ -65,7 +65,7 @@
 
 #unicode-normalizer-unit .code-points-input
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 14px;
     padding: 4px 5px;
 }
@@ -114,7 +114,7 @@
 
 #unicode-normalizer-unit table.form-data td.characters-string
 {
-    font-family: inherit;
+    font-family: var(--sans-serif-family);
     font-size: 24px;
     line-height: 1.333em;
     tab-size: 4;
@@ -126,7 +126,7 @@
 
 #unicode-normalizer-unit table.form-data td.code-points-string
 {
-    font-family: Monaco, "DejaVu Sans Mono", "Noto Mono", monospace;
+    font-family: var(--monospace-family);
     font-size: 14px;
     line-height: 1.333em;
     padding: 4px 6px;
