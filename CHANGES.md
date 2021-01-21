@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.10.1
+
+- Updated font stacks: improved display of letters with diacritics on Windows.
+- Updated `Electron` to version `11.2.0`.
+
 ## 8.10.0
 
 - Used common CSS variables for font stacks.
