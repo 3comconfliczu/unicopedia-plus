@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.11.0
+
+- Added Japanese variants (Shinjitai and Kyūjitai) to the **Unihan Inspector** and **Unihan Variants** utilities, as well as the **Match Character** feature of the **Unihan Data Finder** utility.
+- Improved layout of graph nodes in the **Unihan Variants** utility.
+- Added CJK Unusual samples to the **Unicode Inspector** utility.
+- Updated samples in the **Unicode Foldings** utility.
+- Updated `Electron` to version `11.2.1`.
+
 ## 8.10.1
 
 - Updated font stacks: improved display of letters with diacritics on Windows.

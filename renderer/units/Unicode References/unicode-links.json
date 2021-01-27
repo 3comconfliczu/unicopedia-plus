@@ -309,6 +309,12 @@
     ],
     [
         {
+            "name": "Number Format Tester",
+            "href": "https://st.unicode.org/cldr-apps/numbers.jsp"
+        }
+    ],
+    [
+        {
             "name": "Globalization Gotchas - Macchiato",
             "href": "http://www.macchiato.com/unicode/globalization-gotchas"
         }

@@ -50,6 +50,7 @@ module.exports.start = function (context)
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
+    const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     //
     const defaultPrefs =
@@ -206,8 +207,13 @@ module.exports.start = function (context)
         //
         'kSpoofingVariant',
         //
-        'kZVariant'
+        'kZVariant',
+        //
+        'kShinjitaiVariant',
+        'kKyujitaiVariant'
     ];
+    //
+    const autoCompatibility = false;
     //
     function getVariantRelations (character)
     {
@@ -215,7 +221,7 @@ module.exports.start = function (context)
         for (let codePoint of unihanData.fullSet)
         {
             let setCharacter = String.fromCodePoint (parseInt (codePoint.replace ("U+", ""), 16));
-            let codePointData = unihanData.codePoints[codePoint];
+            let codePointData = { ...unihanData.codePoints[codePoint], ...japaneseVariants[codePoint] };
             for (let variantTag of variantTags)
             {
                 if (variantTag in codePointData)
@@ -232,10 +238,18 @@ module.exports.start = function (context)
                         if (setCharacter === character)
                         {
                             relations.push ({ to: variantCharacter, tag: variantTag });
+                            if (autoCompatibility && (variantTag === 'kCompatibilityVariant'))
+                            {
+                                relations.push ({ from: variantCharacter, tag: 'kUnifiedVariant' });
+                            }
                         }
                         else if (character === variantCharacter)
                         {
                             relations.push ({ from: setCharacter, tag: variantTag });
+                            if (autoCompatibility && (variantTag === 'kCompatibilityVariant'))
+                            {
+                                relations.push ({ to: setCharacter, tag: 'kUnifiedVariant' });
+                            }
                         }
                     }
                 }
@@ -267,11 +281,14 @@ module.exports.start = function (context)
     let shortLabels =
     {
         'kCompatibilityVariant': " Unified ",
+        'kKyujitaiVariant': " Kyūjitai ",
         'kSemanticVariant': " Semantic ",
+        'kShinjitaiVariant': " Shinjitai ",
         'kSimplifiedVariant': " Simplified ",
         'kSpecializedSemanticVariant': " Specialized ",
         'kSpoofingVariant': " Spoofing ",
         'kTraditionalVariant': " Traditional ",
+        'kUnifiedVariant': " Compat. ",
         'kYasuokaVariant': " Yasuoka ",
         'kZVariant': " Shape "
     };
@@ -416,6 +433,20 @@ module.exports.start = function (context)
                     return optionsArray.join (", ");
                 }
                 let data = "";
+                if (detailedRelationsCheckbox.checked)
+                {
+                    let compatibilityVariants = variants.filter (variant => (variant !== character) && (!regexp.isUnified (variant)));
+                    if (compatibilityVariants.length > 0)
+                    {
+                        data += `    { rank = same; ${compatibilityVariants.join ('; ')} }\n`;
+                    }
+                    data += `    { rank = same; ${character} }\n`;
+                    let unifiedVariants = variants.filter (variant => (variant !== character) && regexp.isUnified (variant));
+                    if (unifiedVariants.length > 0)
+                    {
+                        data += `    { rank = same; ${unifiedVariants.join ('; ')} }\n`;
+                    }
+                }
                 data += `    "${character}" [ ${getOptionsString (character, true)} ]`;
                 data += variants.map (variant => `\n    "${variant}" [ ${getOptionsString (variant)} ]`).join ("");
                 if (detailedRelationsCheckbox.checked)
@@ -486,7 +517,7 @@ module.exports.start = function (context)
                 (
                     result =>
                     {
-                        svgResult = postProcessSVG (result); // Hack to fix incorrect horizontal centering of text in circle!
+                        svgResult = postProcessSVG (result); // Hack to fix incorrect centering of text in circle!
                         graphContainer.innerHTML = svgResult;
                         saveSVGButton.disabled = false;
                     }

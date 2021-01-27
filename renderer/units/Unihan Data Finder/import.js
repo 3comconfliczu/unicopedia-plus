@@ -450,6 +450,7 @@ module.exports.start = function (context)
     //
     const matchDataTable = require ('./match-data-table.js');
     //
+    const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     //
     matchParams.pageSize = prefs.matchPageSize;
@@ -544,7 +545,7 @@ module.exports.start = function (context)
     function getVariants (codePoint)
     {
         let variantCodePoints = [ ];
-        let codePointData = unihanData.codePoints[codePoint];
+        let codePointData = { ...unihanData.codePoints[codePoint], ...japaneseVariants[codePoint] };
         // Unicode Variants
         for (let variantTag of variantTags)
         {

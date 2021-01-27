@@ -34,6 +34,7 @@ module.exports.start = function (context)
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const numericValuesData = require ('../../lib/unicode/parsed-numeric-values-data.js');
     const compatibilityVariants = require ('../../lib/unicode/get-cjk-compatibility-variants.js');
+    const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { fromRSValue } = require ('../../lib/unicode/get-rs-strings.js');
@@ -288,16 +289,36 @@ module.exports.start = function (context)
                 let variants = [ ];
                 let codePoint = unicode.characterToCodePoint (character);
                 let tags = unihanData.codePoints[codePoint];
-                if (variantTag in tags)
+                if (tags && (variantTag in tags))
                 {
                     let variantArray = tags[variantTag];
                     if (!Array.isArray (variantArray))
                     {
-                        variantArray = [ variantArray]
+                        variantArray = [ variantArray ];
                     }
                     for (let variant of variantArray)
                     {
                         variant = variant.split ("<")[0];
+                        variants.push (String.fromCodePoint (parseInt (variant.replace ("U+", ""), 16)));
+                    }
+                }
+                return variants;
+            }
+            //
+            function getJapaneseVariants (character, variantTag)
+            {
+                let variants = [ ];
+                let codePoint = unicode.characterToCodePoint (character);
+                let tags = japaneseVariants[codePoint];
+                if (tags && (variantTag in tags))
+                {
+                    let variantArray = tags[variantTag];
+                    if (!Array.isArray (variantArray))
+                    {
+                        variantArray = [ variantArray ];
+                    }
+                    for (let variant of variantArray)
+                    {
                         variants.push (String.fromCodePoint (parseInt (variant.replace ("U+", ""), 16)));
                     }
                 }
@@ -552,6 +573,8 @@ module.exports.start = function (context)
                 let specialized = getVariants (character, 'kSpecializedSemanticVariant');
                 let spoofing = getVariants (character, 'kSpoofingVariant');
                 let shape = getVariants (character, 'kZVariant');
+                let shinjitai = getJapaneseVariants (character, 'kShinjitaiVariant');
+                let kyujitai = getJapaneseVariants (character, 'kKyujitaiVariant');
                 let yasuoka = getYasuokaVariants (character).filter (variant => regexp.isUnihan (variant));
                 let unihanFields =
                 [
@@ -575,6 +598,9 @@ module.exports.start = function (context)
                     { name: "Spoofing Variants", value: spoofing.join (" ") },
                     //
                     { name: "Shape (Z-) Variants", value: shape.join (" ") },
+                    //
+                    { name: "Shinjitai Variants", value: shinjitai.join (" ") },
+                    { name: "Kyūjitai Variants", value: kyujitai.join (" ") },
                     //
                     { name: "Yasuoka Variants", value: yasuoka.join (" ") }
                 ];

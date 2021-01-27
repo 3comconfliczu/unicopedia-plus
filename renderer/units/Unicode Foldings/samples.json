@@ -13,6 +13,24 @@
             },
             null,
             {
+                "label": "Capital Ligatures",
+                "string": "ĲŒ"
+            },
+            {
+                "label": "Small Ligatures",
+                "string": "ĳœ"
+            },
+            null,
+            {
+                "label": "Turned Capital",
+                "string": "Ⅎ"
+            },
+            {
+                "label": "Turned Small",
+                "string": "ⅎ"
+            },
+            null,
+            {
                 "label": "Circled Capital Letters",
                 "string": "ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ"
             },
@@ -37,8 +55,7 @@
             {
                 "label": "Small Roman Numerals",
                 "string": "ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻⅼⅽⅾⅿ"
-            }
-            ,
+            },
             null,
             {
                 "label": "Composed Letters",
@@ -51,11 +68,11 @@
             null,
             {
                 "label": "Remarkable Foldings 1",
-                "string": "KkK Ssſ"
+                "string": "KkK ÅåÅ ΩωΩ"
             },
             {
                 "label": "Remarkable Foldings 2",
-                "string": "Ṡṡẛ ÅåÅ"
+                "string": "Ssſ Ṡṡẛ"
             },
             {
                 "label": "Remarkable Foldings 3",
@@ -102,6 +119,11 @@
             {
                 "label": "Small Letters",
                 "string": "աբգդեզէըթժիլխծկհձղճմյնշոչպջռսվտրցւփքօֆ"
+            },
+            null,
+            {
+                "label": "Small Ligatures",
+                "string": "և ﬓ ﬔ ﬕ ﬖ ﬗ"
             }
         ]
     },
@@ -144,6 +166,15 @@
             {
                 "label": "Small Letters",
                 "string": "абвгдежзийклмнопрстуфхцчшщъыьэюя"
+            },
+            null,
+            {
+                "label": "Capital Ligatures",
+                "string": "ҤҴӔ"
+            },
+            {
+                "label": "Small Ligatures",
+                "string": "ҥҵӕ"
             }
         ]
     },

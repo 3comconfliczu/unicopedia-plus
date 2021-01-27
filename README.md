@@ -397,6 +397,8 @@ The following utilities are currently available:
     - `Shape (Z-) Variants` characters listed under the *kZVariant* Unihan tag
     - `Simplified Variants`: characters listed under the *kSimplifiedVariant* Unihan tag
     - `Traditional Variants`: characters listed under the *kTraditionalVariant* Unihan tag
+    - `Shinjitai Variants`: Japanese simplified character variants (新字体)
+    - `Kyūjitai Variants`: Japanese traditional character variants (旧字体)
     - `Yasuoka Variants`: characters drawn from the "Variants table for Unicode" data file <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z">UniVariants.txt</a> provided by Prof. <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/">Kōichi Yasuoka</a>
 - Notes:
     - The top Radical/Strokes fields are displaying data obtained from the only informative IRG Source: *kRSUnicode*, while the bottom ones (in grayed-out style, if any) make use of the provisional sources: *kRSKangXi* and *kRSAdobe_Japan1_6*.
@@ -442,8 +444,10 @@ The following utilities are currently available:
 - Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
 - Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
 - The different variant relations are indicated using the following labels:
+    - `Kyūjitai`: Japanese traditional character variants (旧字体)
     - `Semantic`: characters listed under the *kSemanticVariant* Unihan tag
     - `Shape`: characters listed under the *kZVariant* Unihan tag
+    - `Shinjitai`: Japanese simplified character variants (新字体)
     - `Simplified`: characters listed under the *kSimplifiedVariant* Unihan tag
     - `Specialized`: characters listed under the *kSpecializedSemanticVariant* Unihan tag
     - `Spoofing`: characters listed under the *kSpoofingVariant* Unihan tag
