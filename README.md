@@ -444,6 +444,7 @@ The following utilities are currently available:
 - Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
 - Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
 - The different variant relations are indicated using the following labels:
+    - `Compat.`: reverse link of `Unified`
     - `Kyūjitai`: Japanese traditional character variants (旧字体)
     - `Semantic`: characters listed under the *kSemanticVariant* Unihan tag
     - `Shape`: characters listed under the *kZVariant* Unihan tag

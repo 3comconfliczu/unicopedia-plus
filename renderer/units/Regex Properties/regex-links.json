@@ -123,6 +123,10 @@
         {
             "name": "String.prototype.replace() - JavaScript | MDN",
             "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace"
+        },
+        {
+            "name": "String.prototype.replaceAll() - JavaScript | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"
         }
     ]
 ]

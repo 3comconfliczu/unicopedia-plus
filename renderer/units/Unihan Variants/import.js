@@ -171,10 +171,15 @@ module.exports.start = function (context)
         }
     );
     //
+    function isCompatibility (character)
+    {
+        return regexp.isUnihan (character) && (!regexp.isUnified (character));
+    }
+    //
     function getTooltip (character)
     {
         let data = unicode.getCharacterBasicData (character);
-        let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+        let status = isCompatibility (character) ? "Compatibility Ideograph" : "Unified Ideograph";
         let set = "Full Unihan";
         let tags = unihanData.codePoints[data.codePoint];
         if ("kIICore" in tags)
@@ -213,7 +218,7 @@ module.exports.start = function (context)
         'kKyujitaiVariant'
     ];
     //
-    const autoCompatibility = false;
+    const autoCompatibility = true;
     //
     function getVariantRelations (character)
     {
@@ -435,13 +440,13 @@ module.exports.start = function (context)
                 let data = "";
                 if (detailedRelationsCheckbox.checked)
                 {
-                    let compatibilityVariants = variants.filter (variant => (variant !== character) && (!regexp.isUnified (variant)));
+                    let compatibilityVariants = variants.filter (variant => (variant !== character) && isCompatibility (variant));
                     if (compatibilityVariants.length > 0)
                     {
                         data += `    { rank = same; ${compatibilityVariants.join ('; ')} }\n`;
                     }
                     data += `    { rank = same; ${character} }\n`;
-                    let unifiedVariants = variants.filter (variant => (variant !== character) && regexp.isUnified (variant));
+                    let unifiedVariants = variants.filter (variant => (variant !== character) && (!isCompatibility (variant)));
                     if (unifiedVariants.length > 0)
                     {
                         data += `    { rank = same; ${unifiedVariants.join ('; ')} }\n`;

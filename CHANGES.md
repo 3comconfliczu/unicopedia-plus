@@ -2,9 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.12.0
+
+- Added new Unihan sample script `Detect Unihan Asymmetric Variants` to the **JavaScript Runner** utility.
+- Added *Compat.* relation (reverse link of *Unified*) to the **Unihan Variants** utility.
+
 ## 8.11.0
 
-- Added Japanese variants (Shinjitai and Kyūjitai) to the **Unihan Inspector** and **Unihan Variants** utilities, as well as the **Match Character** feature of the **Unihan Data Finder** utility.
+- Added Japanese variants (*Shinjitai* and *Kyūjitai*) to the **Unihan Inspector** and **Unihan Variants** utilities, as well as the **Match Character** feature of the **Unihan Data Finder** utility.
 - Improved layout of graph nodes in the **Unihan Variants** utility.
 - Added CJK Unusual samples to the **Unicode Inspector** utility.
 - Updated samples in the **Unicode Foldings** utility.
