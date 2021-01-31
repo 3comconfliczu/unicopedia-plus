@@ -164,7 +164,7 @@
     min-width: 0;
 }
 
-#unihan-variants-unit .graph-container svg g.node:first-of-type a
+#unihan-variants-unit .graph-container svg g.no-link a
 {
     cursor: default;
 }

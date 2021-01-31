@@ -427,6 +427,10 @@ module.exports.start = function (context)
                         { name: "style", value: isLookedUp && "bold" },
                         { name: "label", value: label.replace ("{{character}}", character).replace ("{{codepoint}}", codePoint.replace ("U+", "")) }
                     ];
+                    if (isLookedUp)
+                    {
+                        options.unshift ({  name: "class", value: JSON.stringify ("no-link") });
+                    }
                     let optionsArray = [ ];
                     for (let option of options)
                     {
