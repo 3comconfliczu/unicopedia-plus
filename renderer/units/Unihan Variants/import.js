@@ -50,6 +50,7 @@ module.exports.start = function (context)
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
+    const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
     const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     //
@@ -180,6 +181,7 @@ module.exports.start = function (context)
     {
         let data = unicode.getCharacterBasicData (character);
         let status = isCompatibility (character) ? "Compatibility Ideograph" : "Unified Ideograph";
+        let source = isCompatibility (character) ? getCompatibilitySource (character) : "";
         let set = "Full Unihan";
         let tags = unihanData.codePoints[data.codePoint];
         if ("kIICore" in tags)
@@ -197,6 +199,10 @@ module.exports.start = function (context)
             `Set: ${set}`,
             `Status: ${status}`
         ];
+        if (source)
+        {
+            lines.push (`Source: ${source}`);
+        }
         return lines.join ("\n");
     }
     //

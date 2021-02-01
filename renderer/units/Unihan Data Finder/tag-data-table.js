@@ -2,6 +2,7 @@
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
+const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
 //
@@ -90,6 +91,7 @@ module.exports.create = function (characterInfos, params)
             let dataRow = document.createElement ('tr');
             dataRow.className = 'data-row';
             let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+            let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
             let set = "Full Unihan";
             let tags = unihanData.codePoints[data.codePoint];
             if ("kIICore" in tags)
@@ -107,6 +109,10 @@ module.exports.create = function (characterInfos, params)
                 `Set: ${set}`,
                 `Status: ${status}`
             ];
+            if (source)
+            {
+                lines.push (`Source: ${source}`);
+            }
             dataRow.title = lines.join ("\n");
             let symbolData = document.createElement ('td');
             symbolData.className = 'symbol-data';

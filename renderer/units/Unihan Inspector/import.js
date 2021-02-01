@@ -34,6 +34,7 @@ module.exports.start = function (context)
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const numericValuesData = require ('../../lib/unicode/parsed-numeric-values-data.js');
     const compatibilityVariants = require ('../../lib/unicode/get-cjk-compatibility-variants.js');
+    const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
     const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
@@ -508,6 +509,7 @@ module.exports.start = function (context)
                     set = "Full Unihan";
                 }
                 let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+                let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
                 let rsValues = [ ];
                 let rsClasses = [ ];
                 let rsIRGCount = 0;
@@ -580,6 +582,7 @@ module.exports.start = function (context)
                 [
                     { name: "Set", value: set, tooltip: setTooltip },
                     { name: "Status", value: status },
+                    { name: "Source", value: source },
                     { name: "Radical/Strokes", value: rsValues, class: rsClasses },
                     { name: "Definition", value: definitionValue },
                     { name: "Numeric Value", value: numericValue },

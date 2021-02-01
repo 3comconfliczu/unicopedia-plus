@@ -40,6 +40,7 @@ module.exports.start = function (context)
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { fromRSValue } = require ('../../lib/unicode/get-rs-strings.js');
     const { fromRadical, fromStrokes, fromRadicalStrokes } = require ('../../lib/unicode/get-rs-strings.js');
+    const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
     //
     let unihanCount = unihanData.fullSet.length;
     //
@@ -218,6 +219,7 @@ module.exports.start = function (context)
     {
         let data = unicode.getCharacterBasicData (character);
         let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+        let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
         let set = "Full Unihan";
         let tags = unihanData.codePoints[data.codePoint];
         if ("kIICore" in tags)
@@ -235,6 +237,10 @@ module.exports.start = function (context)
             `Set: ${set}`,
             `Status: ${status}`
         ];
+        if (source)
+        {
+            lines.push (`Source: ${source}`);
+        }
         return lines.join ("\n");
     }
     //

@@ -2,6 +2,7 @@
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
 const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
+const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
 //
 const deferredSymbols = (process.platform === 'darwin');
 //
@@ -140,6 +141,10 @@ module.exports.create = function (characters, regex, params)
             let statusData = document.createElement ('td');
             statusData.className = 'status-data';
             statusData.textContent = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+            if (!regexp.isUnified (character))
+            {
+                statusData.title = `Source: ${getCompatibilitySource (character)}`;
+            }
             dataRow.appendChild (statusData);
             let blockNameData = document.createElement ('td');
             blockNameData.className = 'block-name-data';
