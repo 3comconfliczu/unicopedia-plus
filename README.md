@@ -372,7 +372,7 @@ The following utilities are currently available:
 - Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the list of Unihan tags.
 - In addition, the utility provides, for each Unihan character:
     - basic Unicode information: name, age, plane, block, script, script extensions, general category, extended properties, decomposition, standardized variation, equivalent unified ideograph;
-    - basic Unihan information: set (*IICore*, *Unihan Core 2020*, *Full Unihan*), status (*unified* or *compatibility* ideograph), radical/strokes, definition, numeric value, related characters, variant characters.
+    - basic Unihan information: set (*IICore*, *Unihan Core 2020*, *Full Unihan*), status (*unified* or *compatibility* ideograph), compatibility source, radical/strokes, definition, numeric value, related characters, variant characters.
 - Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.
 - It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
@@ -457,7 +457,7 @@ The following utilities are currently available:
     - `Yasuoka`: characters drawn from the "Variants table for Unicode" data file <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z">UniVariants.txt</a> provided by Prof. <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/">Kōichi Yasuoka</a>
 - Click the <kbd>Save...</kbd> button to save the current graph as a SVG file.
 - Notes:
-    - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, set, ideograph status.
+    - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, set, ideograph status, compatibility source.
     - The currently looked up Unihan character appears in a bolder circle; clicking on any other circled variant character lets you "navigate" through all the variants.
     - In order to avoid visual clutter, any relation between two Unihan characters obtained from the Yasuoka variants is not displayed if another "standard" one with the same orientation already exists.
 

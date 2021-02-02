@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 8.13.0
+
+- Fixed cursor for currently looked up character in the **Unihan Variants** utility.
+- Added compatibility character source info to the **Unihan Data Finder**, **Unihan Inspector**, **Unihan Radical-Strokes**, and **Unihan Variants** utilities.
+- Focused characters input field automatically on clicking `Clear` button in the **CJK Font Variants**, **Unicode Foldings**, **Unicode Inspector**, and **Unicode Normalizer** utilities.
+
 ## 8.12.0
 
 - Added new Unihan sample script `Detect Unihan Asymmetric Variants` to the **JavaScript Runner** utility.

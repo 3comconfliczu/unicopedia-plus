@@ -74,6 +74,7 @@ module.exports.start = function (context)
         {
             charactersInput.value = "";
             charactersInput.dispatchEvent (new Event ('input'));
+            charactersInput.focus ();
         }
     );
     //
