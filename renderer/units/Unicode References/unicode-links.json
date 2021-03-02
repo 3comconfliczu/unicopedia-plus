@@ -89,6 +89,12 @@
     ],
     [
         {
+            "name": "GitHub - googlefonts/noto-fonts: Noto fonts, except for CJK and emoji",
+            "href": "https://github.com/googlefonts/noto-fonts"
+        }
+    ],
+    [
+        {
             "name": "Roadmaps to Unicode",
             "href": "https://www.unicode.org/roadmaps/"
         }

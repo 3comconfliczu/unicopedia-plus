@@ -1,0 +1,185 @@
+[
+    [
+        {
+            "name": "Chinese character description languages - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Chinese_character_description_languages"
+        }
+    ],
+    [
+        {
+            "name": "Ideographic Description Characters (Unicode block) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Ideographic_Description_Characters_(Unicode_block)"
+        }
+    ],
+    [
+        {
+            "name": "The Unicode Standard, Version 13.0 - East Asia - ch18.pdf",
+            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch18.pdf"
+        }
+    ],
+    [
+        {
+            "name": "Proposal of 4 IDCs - 18012-irgn2273-four-new-idcs.pdf",
+            "href": "https://www.unicode.org/L2/L2018/18012-irgn2273-four-new-idcs.pdf"
+        },
+        {
+            "name": "WG2 N4241: Information in support of N4234 (L2/12-087) to demonstrate extensive use of PUA in common IDS data (L2/12-093) - 12093-n4241.pdf",
+            "href": "https://www.unicode.org/L2/L2012/12093-n4241.pdf"
+        },
+        {
+            "name": "Proposed Changes to ISO/IEC 10646 Annex I Ideographic description characters",
+            "href": "https://www.unicode.org/L2/L2012/12087-ids.html"
+        },
+        {
+            "name": "Extensions to Ideographic Description Sequences, take 2",
+            "href": "https://www.unicode.org/L2/L2012/12081-ids.html"
+        },
+        {
+            "name": "Extensions to Ideographic Description Sequences",
+            "href": "https://www.unicode.org/L2/L2011/11449-ext-ids.txt"
+        },
+        {
+            "name": "Proposal to redefine the scope of Ideographic Description Sequences and to encode four additional Ideographic Description Characters (WG2 N3643) - 09171-n3643-ideo-desc.pdf",
+            "href": "https://www.unicode.org/L2/L2009/09171-n3643-ideo-desc.pdf"
+        }
+    ],
+    [
+        {
+            "name": "CJK Supplementary Components for IDS Use - IRGN2225.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg48/IRGN2225.pdf"
+        },
+        {
+            "name": "Feedback on IRGN2225 “CJK Supplementary Components for IDS Use” - IRGN2225-AndrewWest-feedback.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg49/IRGN2225-AndrewWest-feedback.pdf"
+        }
+    ],
+    [
+        {
+            "name": "Request for IDS Data - 15313-irg-n2117-ids.pdf",
+            "href": "https://www.unicode.org/L2/L2015/15313-irg-n2117-ids.pdf"
+        }
+    ],
+    [
+        {
+            "name": "The Hong Kong Glyph Specifications for ISO 10646's Ideographic Characters - W02-1209.pdf",
+            "href": "https://www.aclweb.org/anthology/W02-1209.pdf"
+        }
+    ],
+    [
+        {
+            "name": "CHaracter Information Service Environment",
+            "href": "http://www.chise.org/ids/"
+        },
+        {
+            "name": "CHISE IDS Find",
+            "href": "http://www.chise.org/ids-find/"
+        },
+        {
+            "lang": "ja",
+            "name": "CHISE IDS 漢字検索の使い方",
+            "href": "http://www.shuiren.org/chuden/toyoshi/syoseki/chise_ids.html"
+        }
+    ],
+    [
+        {
+            "name": "Stroke (CJK character) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Stroke_(CJK_character)"
+        },
+        {
+            "name": "Eight Principles of Yong - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Eight_Principles_of_Yong"
+        }
+    ],
+    [
+        {
+            "name": "The Unicode Standard, Version 13.0 - Documentation of CJK Strokes - appF.pdf",
+            "href": "https://www.unicode.org/versions/Unicode13.0.0/appF.pdf"
+        }
+    ],
+    [
+        {
+            "name": "IDS + OpenType: Pseudo-encoding Unencoded Glyphs",
+            "href": "https://ccjktype.fonts.adobe.com/2014/03/ids-opentype.html"
+        }
+    ],
+    [
+        {
+            "name": "Request to clarify some IDS issues - IRGN2413_IDS_issues.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg53/IRGN2413_IDS_issues.pdf"
+        },
+        {
+            "name": "IRG Principles and Procedures (IRG PnP) Version 11 - IRGN2310SC2N4611WG2N4979IRGPnP11.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg50/IRGN2310SC2N4611WG2N4979IRGPnP11.pdf"
+        }
+    ],
+    [
+        {
+            "name": "A Structural Query System for Han Characters - 25.2.4_Skala.pdf",
+            "href": "http://www.colips.org/journals/volume25/25.2.4_Skala.pdf"
+        },
+        {
+            "name": "Tsukurimashou - A Japanese-language font meta-family - tb108skala.pdf",
+            "href": "https://tug.org/TUGboat/tb34-3/tb108skala.pdf"
+        },
+        {
+            "name": "Bit-Vector Search Filtering with Application to a Kanji Dictionary - Bit_Vector_Search_Filtering_with_Application.pdf",
+            "href": "https://pure.itu.dk/portal/files/82451832/Bit_Vector_Search_Filtering_with_Application.pdf"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - hfhchan/ids: Ideographic Description Sequences",
+            "href": "https://github.com/hfhchan/ids"
+        },
+        {
+            "name": "GitHub - cjkvi/cjkvi-ids: IDS data for CJK Unified Ideographs",
+            "href": "https://github.com/cjkvi/cjkvi-ids"
+        },
+        {
+            "name": "GitHub - chise/ids",
+            "href": "https://github.com/chise/ids"
+        }
+    ],
+    [
+        {
+            "name": "BabelStone : CJK : CJK Strokes",
+            "href": "https://www.babelstone.co.uk/CJK/CJKStroke.html"
+        }
+    ],
+    [
+        {
+            "name": "BabelStone Fonts : BabelStone Han",
+            "href": "https://www.babelstone.co.uk/Fonts/Han.html"
+        },
+        {
+            "name": "BabelStone Fonts : BabelStone Han PUA",
+            "href": "https://www.babelstone.co.uk/Fonts/PUA.html"
+        }
+    ],
+    [
+        {
+            "name": "Ideographic Description Sequences: some thoughts - Ansuz - mskala's home page",
+            "href": "https://ansuz.sooke.bc.ca/entry/228"
+        }
+    ],
+    [
+        {
+            "name": "Common operator notation - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Common_operator_notation"
+        },
+        {
+            "name": "Operator-precedence grammar - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Operator-precedence_grammar"
+        },
+        {
+            "name": "Binary expression tree - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Binary_expression_tree"
+        }
+    ],
+    [
+        {
+            "name": "Infix, Postfix and Prefix",
+            "href": "http://www.cs.man.ac.uk/~pjj/cs212/fix.html"
+        }
+    ]
+]

@@ -27,6 +27,10 @@
     ],
     [
         {
+            "name": "Unicode Utilities: Breaks (Segmentation)",
+            "href": "https://util.unicode.org/UnicodeJsps/breaks.jsp"
+        },
+        {
             "name": "ICU Demonstration - ICU Segments",
             "href": "https://icu4c-demos.unicode.org/icu-bin/icusegments"
         }

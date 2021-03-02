@@ -1,0 +1,23 @@
+# Ideographic Description Sequences (IDS) for CJK Unified Ideographs
+# URL: https://babelstone.co.uk/CJK/IDS.TXT
+# Maintained by: Andrew West (魏安) <babelstone@gmail.com>
+# Date: 2021-02-23
+# Unicode Version: 13.0 (92,856 entries)
+#
+# Syntax issues:
+#
+# Missing leading ^
+U+38CA	㣊	^⿱攵彡$(K)	⿱夂彡$(Z)
+#
+# Missing trailing $
+U+22A57	𢩗	^⿰𡰥⿱户户$(G)	^⿰𡰥⿱戶戶(Z)
+#
+# Not a valid comment (should start with *)
+U+22B33	𢬳	^⿰扌秃$(G)	^⿰扌禿$(T)	(V?)
+#
+# Extraneous tabulation
+U+2A941	𪥁	^⿱大乛$(K)		^⿱大𠃍$(Z)
+#
+# Missing both leading ^ and trailing $
+U+2E49B	𮒛	^⿱艹𠅀$(J)	⿱蓻云(X)
+#

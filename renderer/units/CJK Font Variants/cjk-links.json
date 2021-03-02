@@ -5,75 +5,15 @@
             "href": "https://en.wikipedia.org/wiki/CJK_characters"
         },
         {
-            "name": "Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Chinese_characters"
-        },
-        {
-            "name": "Chinese character classification - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Chinese_character_classification"
-        },
-        {
-            "name": "Han unification - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Han_unification"
-        },
-        {
-            "name": "Variant Chinese character - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Variant_Chinese_character"
-        },
-        {
             "name": "Variant form (Unicode) - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Variant_form_(Unicode)"
         }
     ],
     [
         {
-            "name": "Written Chinese - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Written_Chinese"
+            "name": "Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Chinese_characters"
         },
-        {
-            "name": "Traditional Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Traditional_Chinese_characters"
-        },
-        {
-            "name": "Simplified Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Simplified_Chinese_characters"
-        },
-        {
-            "name": "Chinese Character Simplification Scheme - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Chinese_Character_Simplification_Scheme"
-        },
-        {
-            "name": "Second round of simplified Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Second_round_of_simplified_Chinese_characters"
-        },
-        {
-            "name": "Standard Form of National Characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Standard_Form_of_National_Characters"
-        },
-        {
-            "name": "Singapore Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Singapore_Chinese_characters"
-        },
-        {
-            "name": "Debate on traditional and simplified Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Debate_on_traditional_and_simplified_Chinese_characters"
-        },
-        {
-            "name": "Differences between Shinjitai and Simplified characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Differences_between_Shinjitai_and_Simplified_characters"
-        }
-    ],
-    [
-        {
-            "name": "Shinjitai - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Shinjitai"
-        },
-        {
-            "name": "Kyūjitai - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Ky%C5%ABjitai"
-        }
-    ],
-    [
         {
             "name": "Kanji - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Kanji"
@@ -81,24 +21,6 @@
         {
             "name": "Hanja - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Hanja"
-        }
-    ],
-    [
-        {
-            "name": "List of CJK fonts - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/List_of_CJK_fonts"
-        },
-        {
-            "name": "Source Han Sans - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Source_Han_Sans"
-        },
-        {
-            "name": "Source Han Serif - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Source_Han_Serif"
-        },
-        {
-            "name": "Noto fonts - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Noto_fonts"
         }
     ],
     [
@@ -239,6 +161,24 @@
     ],
     [
         {
+            "name": "List of CJK fonts - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_CJK_fonts"
+        },
+        {
+            "name": "Source Han Sans - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Source_Han_Sans"
+        },
+        {
+            "name": "Source Han Serif - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Source_Han_Serif"
+        },
+        {
+            "name": "Noto fonts - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Noto_fonts"
+        }
+    ],
+    [
+        {
             "name": "Guidelines for Using Noto – Google Noto Fonts",
             "href": "https://www.google.com/get/noto/help/guidelines/"
         },
@@ -277,12 +217,12 @@
     ],
     [
         {
-            "name": "CJK Type Blog | CJK Fonts, Character Sets & Encodings. All CJK. #AllOfTheTime.",
-            "href": "https://blogs.adobe.com/CCJKType/"
+            "name": "CJK Type Blog | CJK Fonts, Character Sets & Encodings.",
+            "href": "https://ccjktype.fonts.adobe.com/"
         },
         {
             "name": "Source Han Sans Version 2.001",
-            "href": "https://blogs.adobe.com/CCJKType/2019/04/source-han-sans-2001.html"
+            "href": "https://ccjktype.fonts.adobe.com/2019/04/source-han-sans-2001.html"
         },
         {
             "name": "Source Han Serif",
@@ -292,15 +232,15 @@
     [
         {
             "name": "Adobe-Japan1-7 Published!",
-            "href": "https://blogs.adobe.com/CCJKType/2019/04/aj17-published.html"
+            "href": "https://ccjktype.fonts.adobe.com/2019/04/aj17-published.html"
         },
         {
             "name": "A Brief History of Japan’s Era Name Ligatures",
-            "href": "https://blogs.adobe.com/CCJKType/2019/03/era-name-ligature-history.html"
+            "href": "https://ccjktype.fonts.adobe.com/2019/03/era-name-ligature-history.html"
         },
         {
             "name": "“Bahts is [not] parts”",
-            "href": "https://blogs.adobe.com/CCJKType/2016/03/bahts-is-parts.html"
+            "href": "https://ccjktype.fonts.adobe.com/2016/03/bahts-is-parts.html"
         },
         {
             "name": "Character ㌬(U+332C) is being mojibake · Issue #78 · adobe-fonts/source-han-sans · GitHub",

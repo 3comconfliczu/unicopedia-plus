@@ -26,6 +26,9 @@ The following utilities are currently available:
 - **Unicode Normalizer**
 - **Unicode References**
 - **Unicode Segmenter**
+- **Unihan Components**
+    - **Lookup IDS**
+    - **Match IDS**
 - **Unihan Data Finder**
     - **Find by Tag Value**
     - **Match Character**
@@ -295,10 +298,47 @@ The following utilities are currently available:
 - Text can by directly typed, or pasted from the clipboard into the main input field.
 - It is also possible to input predefined text strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
 - As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
-- Choose the appropriate segmentation granularity from the <kbd>Granularity</kbd> drop-down menu, among: <code>Grapheme</code>, <code>Word</code>, or <code>Sentence</code>.
+- Choose the appropriate segmentation granularity from the <kbd>Granularity</kbd> drop-down menu, among: `Grapheme`, `Word`, or `Sentence`.
 - If required, choose a specific locale from the <kbd>Locale</kbd> drop-down menu: boundary types are actually locale-dependent.
 
 <img src="screenshots/unicode-segmenter.png" width="1080px" alt="Unicode Segmenter screenshot">
+
+## Unihan Components
+
+### Lookup IDS
+
+- The **Lookup IDS** feature of the **Unihan Components** utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the IDS.
+- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.
+- IDS are provided for the set of 92,856 Unihan characters (excluding CJK *compatibility* ideographs) defined in **Unicode 13.0**.
+- Notes:
+    - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+    - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+        - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
+        - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+
+<img src="screenshots/unihan-components-lookup-ids.png" width="1080px" alt="Unihan Components - Lookup IDS screenshot">
+
+### Match IDS
+
+- The **Match IDS** feature of the **Unihan Components** utility displays a list of IDS-matching Unihan characters, including through regular expressions. It makes use of the IDS (Ideographic Description Sequences) defined in the [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist))
+- After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
+- Click on the <kbd>Nested Match</kbd> toggle button to extend the search to IDS-nested characters whose *IDS* match the query string.
+- It is possible to choose how many characters are shown one page at a time.
+- The search is performed on the set of 92,856 Unihan characters (excluding CJK *compatibility* ideographs) defined in **Unicode 13.0**.
+- The results may include the searched component itself when it happens to be a proper Unihan character too.
+- Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
+    - `Copy Results` [copy the results as string to the clipboard]
+    - `Save Results..` [save the results as string to a text file]
+    - `Clear Results` [clear the current list of results]
+- Various examples of regular expressions are provided for quick copy-and-paste.
+- Notes:
+    - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+    - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+        - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
+        - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+
+<img src="screenshots/unihan-components-match-ids.png" width="1080px" alt="Unihan Components - Match IDS screenshot">
 
 ## Unihan Data Finder
 

@@ -10,7 +10,6 @@
 {
     display: flex;
     justify-content: center;
-    /* text-align: center; */
     white-space: nowrap;
     margin: -2em 0 1.5em 0;
 }
@@ -99,6 +98,7 @@
 #unicode-data-finder-unit .search-string
 {
     font-family: var(--sans-serif-family);
+    font-size: 14px;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
@@ -227,6 +227,7 @@
 #unicode-data-finder-unit .list-by-block .specimen
 {
     font-family: var(--sans-serif-family);
+    font-size: 14px;
     background: white;
     border: 1px solid var(--color-border);
     border-radius: 0.25em;

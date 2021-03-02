@@ -1,12 +1,7 @@
 //
-const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
-const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
-const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
 //
-const deferredSymbols = (process.platform === 'darwin');
-//
-module.exports.create = function (characters, regex, params)
+module.exports.create = function (characters, params)
 {
     function updateDataPage (dataPage)
     {
@@ -31,137 +26,18 @@ module.exports.create = function (characters, regex, params)
         {
             dataPage.firstChild.remove ();
         }
-        if (deferredSymbols)
-        {
-            params.observer = new IntersectionObserver
-            (
-                (entries, observer) =>
-                {
-                    entries.forEach
-                    (
-                        entry =>
-                        {
-                            if (entry.isIntersecting)
-                            {
-                                let symbol = entry.target;
-                                if (symbol.textContent !== symbol.dataset.character)
-                                {
-                                    symbol.textContent = symbol.dataset.character;
-                                    observer.unobserve (symbol);
-                                }
-                            }
-                        }
-                    );
-                },
-                { root: params.root, rootMargin: '100% 0%' }
-            );
-        }
-        let table = document.createElement ('table');
-        table.className = 'data-table';
         //
-        let headerRow = document.createElement ('tr');
-        headerRow.className = 'header-row';
-        let symbolHeader = document.createElement ('th');
-        symbolHeader.className = 'symbol-header';
-        symbolHeader.textContent = "Char.";
-        headerRow.appendChild (symbolHeader);
-        let codePointHeader = document.createElement ('th');
-        codePointHeader.className = 'code-point-header';
-        codePointHeader.textContent = "Code\xA0Point";
-        headerRow.appendChild (codePointHeader);
-        let ageHeader = document.createElement ('th');
-        ageHeader.className = 'age-header';
-        ageHeader.textContent = "Age";
-        headerRow.appendChild (ageHeader);
-        let setHeader = document.createElement ('th');
-        setHeader.className = 'set-header';
-        setHeader.textContent = "Set";
-        headerRow.appendChild (setHeader);
-        let statusHeader = document.createElement ('th');
-        statusHeader.className = 'status-header';
-        statusHeader.textContent = "Status";
-        headerRow.appendChild (statusHeader);
-        let blockNameHeader = document.createElement ('th');
-        blockNameHeader.className = 'block-name-header';
-        blockNameHeader.textContent = "Block";
-        headerRow.appendChild (blockNameHeader);
-        table.appendChild (headerRow);
-        //
+        let dataWrapper = document.createElement ('div');
+        dataWrapper.className = 'data-wrapper';
         for (let character of characters)
         {
-            let data = unicode.getCharacterBasicData (character);
-            let set = "Full Set";
-            let setTooltip = "Full Unihan";
-            let tags = unihanData.codePoints[data.codePoint];
-            if ("kIICore" in tags)
-            {
-                set = "IICore";
-                setTooltip = "International Ideographs Core";
-            }
-            else if ("kUnihanCore2020" in tags)
-            {
-                set = "U-Core";
-                setTooltip = "Unihan Core (2020)";
-            }
-            let dataRow = document.createElement ('tr');
-            dataRow.className = 'data-row';
-            if (regex && (!regex.test (character)))
-            {
-                dataRow.classList.add ('variant');
-            }
-            let symbolData = document.createElement ('td');
-            symbolData.className = 'symbol-data';
-            if (deferredSymbols)
-            {
-                symbolData.textContent = "\xA0";
-                symbolData.dataset.character = data.character;
-                params.observer.observe (symbolData);
-            }
-            else
-            {
-                symbolData.textContent = data.character;
-            }
-            dataRow.appendChild (symbolData);
-            let codePointData = document.createElement ('td');
-            codePointData.className = 'code-point-data';
-            codePointData.textContent = data.codePoint;
-            dataRow.appendChild (codePointData);
-            let ageData = document.createElement ('td');
-            ageData.className = 'age-data';
-            // ageData.appendChild (document.createTextNode (`Unicode\xA0${data.age}`));
-            // ageData.appendChild (document.createElement ('br'));
-            // ageData.appendChild (document.createTextNode (`(${data.ageDate.replace (" ", "\xA0")})`));
-            ageData.textContent = `Unicode\xA0${data.age} (${data.ageDate.replace (" ", "\xA0")})`;
-            dataRow.appendChild (ageData);
-            let setData = document.createElement ('td');
-            setData.className = 'set-data';
-            setData.textContent = set;
-            setData.title = setTooltip;
-            dataRow.appendChild (setData);
-            let statusData = document.createElement ('td');
-            statusData.className = 'status-data';
-            statusData.textContent = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
-            if (!regexp.isUnified (character))
-            {
-                statusData.title = `Source: ${getCompatibilitySource (character)}`;
-            }
-            dataRow.appendChild (statusData);
-            let blockNameData = document.createElement ('td');
-            blockNameData.className = 'block-name-data';
-            if (data.blockName)
-            {
-                blockNameData.title = data.blockRange;
-                blockNameData.innerHTML = data.blockName.replace (/ (.)$/, "\u00A0$1").replace (/(\b\w+-\w\b)/g, '<span style="white-space: nowrap;">$1</span>');
-            }
-            else
-            {
-                blockNameData.textContent = "<none>";   // "<no block>"
-            }
-            dataRow.appendChild (blockNameData);
-            table.appendChild (dataRow);
+            let symbol = document.createElement ('span');
+            symbol.className = 'symbol';
+            symbol.title = `Code Point:\xA0${unicode.characterToCodePoint (character)}`;
+            symbol.textContent = character;
+            dataWrapper.appendChild (symbol);
         }
-        //
-        dataPage.appendChild (table);
+        dataPage.appendChild (dataWrapper);
     }
     //
     let pages;
@@ -294,7 +170,7 @@ module.exports.create = function (characters, regex, params)
     //
     paginationBar.appendChild (pageInfoGroup);
     //
-    const pageSizes = [ 4, 8, 16, 32, 64, 128, 256, 512, 1024 ];
+    const pageSizes = [ 16, 32, 64, 128, 256, 512, 1024 ];
     //
     let pageSizeGroup = document.createElement ('div');
     pageSizeGroup.className = 'pagination-group';

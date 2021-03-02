@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.0.0
+
+- Added new experimental **Unihan Components** utility, made up of two features: **Lookup IDS** and **Match IDS**.
+- Added new Unihan sample script `Write IDS Data to File.js` to the **JavaScript Runner** utility.
+- Reorganized and fixed Unihan reference links.
+- Updated `Electron` to version `12.0.0`.
+
 ## 8.13.0
 
 - Fixed cursor for currently looked up character in the **Unihan Variants** utility.

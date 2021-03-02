@@ -1,0 +1,137 @@
+<section id="unihan-components-unit">
+    <div class="plain-panel">
+        <div class="tab-bar">
+            <label class="tab-label"><input class="tab-radio" type="radio"><span>Lookup IDS</span></label>
+            <label class="tab-label"><input class="tab-radio" type="radio"><span>Match IDS</span></label>
+        </div>
+        <div class="tab-panes">
+            <div class="tab-pane lookup-ids">
+                <div class="interface">
+                    <span class="option-group">
+                        <input class="unihan-input" type="search" maxlength="64" title="Unihan character or code point" placeholder="Unihan...">
+                        <button class="lookup-button" type="button">Lookup</button>
+                    </span>
+                </div>
+                <div class="ids-container"></div>
+            </div>
+            <div class="tab-pane match-ids">
+                <div class="actions">
+                    <span class="action-group search-group">
+                        <span class="action search-wrap">
+                            <input class="search-string" type="search" maxlength="256" placeholder="Character sequence...">
+                            <span class="search-message"></span>
+                        </span>
+                        <span class="action">
+                            <label title="Nested Match"><input class="nested-match icon-checkbox" type="checkbox"><svg><use href="/images/search.svg#nested-match-icon"></use></svg></label>
+                        </span>
+                        <span class="action">|</span>
+                        <span class="action">
+                            <label title="Case Sensitive (disabled)"><input class="case-sensitive icon-checkbox" type="checkbox" disabled><svg><use href="/images/search.svg#case-sensitive-icon"></use></svg></label>
+                        </span>
+                        <span class="action">
+                            <label title="Whole Word (disabled)"><input class="whole-word icon-checkbox" type="checkbox" disabled><svg><use href="/images/search.svg#whole-word-icon"></use></svg></label>
+                        </span>
+                        <span class="action">
+                            <label title="Regular Expression"><input class="use-regex icon-checkbox" type="checkbox"><svg><use href="/images/search.svg#use-regex-icon"></use></svg></label>
+                        </span>
+                        <span class="action">
+                            <button class="search-button" type="button">Search</button>
+                        </span>
+                    </span>
+                </div>
+                <div class="results">
+                    <button class="pull-down-menu results-button" type="button" title="Results"><svg class="gear"><use href="/images/actions.svg#gear"></use></svg></button><span class="results-string">Unihan characters:&nbsp;<span class="hit-count"></span>&nbsp;/&nbsp;<span class="total-count"></span></span>
+                </div>
+                <div class="search-data"></div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-infos">
+        <div class="tab-info lookup-ids">
+            <div class="accent-panel">
+                <details class="instructions">
+                    <summary>Instructions</summary>
+                    <ul>
+                        <li>The <strong>Lookup IDS</strong> feature of the <strong>Unihan Components</strong> utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available <a title="https://babelstone.co.uk/CJK/IDS.TXT" href="https://babelstone.co.uk/CJK/IDS.TXT">IDS.TXT</a> data file, maintained by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                        <li>Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the IDS.</li>
+                        <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
+                        <li>IDS are provided for the set of 92,856 Unihan characters (excluding CJK <em>compatibility</em> ideographs) defined in <strong>Unicode 13.0</strong>.</li>
+                        <li>Notes:
+                            <ul>
+                                <li>Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font <a title="https://www.babelstone.co.uk/Fonts/PUA.html" href="https://www.babelstone.co.uk/Fonts/PUA.html">BabelStone Han PUA</a>, created by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                                <li>For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+                                    <ul>
+                                        <li><a title="https://www.babelstone.co.uk/Fonts/Han.html" href="https://www.babelstone.co.uk/Fonts/Han.html">BabelStone Han</a> (<code>BabelStoneHan.ttf</code>)</li>
+                                        <li><a title="https://github.com/cjkvi/HanaMinAFDKO/releases" href="https://github.com/cjkvi/HanaMinAFDKO/releases">Hanazono Mincho</a> (<code>HanaMinA.otf</code>, <code>HanaMinB.otf</code>, <code>HanaMinC.otf</code>)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+                <details class="references">
+                    <summary>References</summary>
+                    <div class="links"></div>
+                </details>
+            </div>
+        </div>
+        <div class="tab-info match-ids">
+            <div class="accent-panel">
+                <details class="instructions">
+                    <summary>Instructions</summary>
+                    <ul>
+                        <li>The <strong>Match IDS</strong> feature of the <strong>Unihan Components</strong> utility displays a list of IDS-matching Unihan characters, including through regular expressions. It makes use of the IDS (Ideographic Description Sequences) defined in the <a title="https://babelstone.co.uk/CJK/IDS.TXT" href="https://babelstone.co.uk/CJK/IDS.TXT">IDS.TXT</a> data file, maintained by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                        <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
+                        <li>Click on the <kbd><svg style="width: 15px; height: 15px; vertical-align: text-bottom; stroke: var(--color);"><use href="/images/search.svg#nested-match-icon"></use></svg></kbd> (<em>Nested Match</em>) toggle button to extend the search to IDS-nested characters whose <em>IDS</em> match the query string.</li>
+                        <li>It is possible to choose how many characters are shown one page at a time.</li>
+                        <li>The search is performed on the set of 92,856 Unihan characters (excluding CJK <em>compatibility</em> ideographs) defined in <strong>Unicode 13.0</strong>.</li>
+                        <li>The results may include the searched component itself when it happens to be a proper Unihan character too.</li>
+                        <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
+                            <ul>
+                                <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
+                                <li><code>Save Results..</code> [save the results as string to a text file]</li>
+                                <li><code>Clear Results</code> [clear the current list of results]</li>
+                            </ul>
+                        </li>
+                        <li>Various examples of regular expressions are provided for quick copy-and-paste.</li>
+                        <li>Notes:
+                            <ul>
+                                <li>Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font <a title="https://www.babelstone.co.uk/Fonts/PUA.html" href="https://www.babelstone.co.uk/Fonts/PUA.html">BabelStone Han PUA</a>, created by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                                <li>For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+                                    <ul>
+                                        <li><a title="https://www.babelstone.co.uk/Fonts/Han.html" href="https://www.babelstone.co.uk/Fonts/Han.html">BabelStone Han</a> (<code>BabelStoneHan.ttf</code>)</li>
+                                        <li><a title="https://github.com/cjkvi/HanaMinAFDKO/releases" href="https://github.com/cjkvi/HanaMinAFDKO/releases">Hanazono Mincho</a> (<code>HanaMinA.otf</code>, <code>HanaMinB.otf</code>, <code>HanaMinC.otf</code>)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+                <details class="regex-examples">
+                    <summary>Regex Examples</summary>
+                    <ul>
+                        <li>Unihan characters whose IDS contains one component belonging to the four seasons set:<br><code class="select-all">[春夏秋冬]</code></li>
+                        <li>Unihan characters whose IDS contains either the 爲 component or its variant 為:<br><code class="select-all">爲|為</code></li>
+                        <li>Unihan characters whose IDS contains the 或 component twice:<br><code class="select-all">或.*或</code></li>
+                        <li>Unihan characters whose IDS contains two 幺 components surrounding another component:<br><code class="select-all">幺.幺</code></li>
+                        <li>Unihan characters whose IDS contains the 疒 component in first position:<br><code class="select-all">^⿸疒</code></li>
+                        <li>Unihan characters whose IDS contains the 疒 component, but not in first position:<br><code class="select-all">.⿸疒</code></li>
+                        <li>Unihan characters whose IDS contains the 至 component surrounded by another component from upper left:<br><code class="select-all">⿸.至</code></li>
+                        <li>Unihan characters whose IDS contains three components in a row, each one being either 女 or 男:<br><code class="select-all">⿲[女男]{3}</code></li>
+                        <li>Unihan characters whose IDS is exactly the same for two of them (duplicates):<br><code class="select-all">^⿺走斗$</code></li>
+                        <li>Unihan characters whose IDS is made of two identical ideographic components in a row:<br><code class="select-all">^⿰(\p{Unified_Ideograph})\1$</code> or <code class="select-all">^⿰(\p{Ideo})\1$</code></li>
+                        <li>Unihan characters whose IDS contains a CJK radical, i.e, a character whose code point belongs to the <code>CJK Radicals Supplement</code> block:<br><code class="select-all">[\u2E80-\u2EF3]</code> or <code class="select-all">[⺀-⻳]</code></li>
+                        <li>Unihan characters whose IDS contains a CJK stroke, i.e, a character whose code point belongs to the <code>CJK Strokes</code> block:<br><code class="select-all">[\u31C0-\u31E3]</code> or <code class="select-all">[㇀-㇣]</code></li>
+                        <li>Unihan characters whose IDS contains an unencoded component, i.e, a character whose code point belongs to the <code>Private User Area</code> (PUA) block:<br><code class="select-all">[\uE000-\uF8FF]</code></li>
+                        <li>Unihan characters whose IDS is made of 17 or more characters:<br><code class="select-all">^.{17}</code> or <code class="select-all">^.{17,}$</code></li>
+                        <li>Unihan characters whose IDS contains four IDC operators in a row:<br><code class="select-all">[⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻]{4}</code> or <code class="select-all">[⿰-⿻]{4}</code></li>
+                    </ul>
+                </details>
+                <details class="references">
+                    <summary>References</summary>
+                    <div class="links"></div>
+                </details>
+            </div>
+        </div>
+    </div>
+</section>

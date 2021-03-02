@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "8.13.0",
+    "version": "9.0.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -13,24 +13,25 @@
     },
     "keywords": [
         "application",
+        "code-points",
         "characters",
         "chinese",
         "cjk",
-        "desktop",
+        "components",
         "electron",
         "emoji",
         "ids",
         "ivd",
         "japanese",
         "javascript",
+        "kangxi-radicals",
         "korean",
-        "modular",
         "normalization",
         "regex",
         "segmentation",
+        "stroke-count",
         "unicode",
-        "unihan",
-        "utility"
+        "unihan"
     ],
     "author": {
         "name": "Michel Mariani",
@@ -43,11 +44,10 @@
         "emoji-test-groups": "^13.1.0",
         "emoji-test-list": "^13.1.0",
         "emoji-test-patterns": "^13.1.1",
-        "regexpu-core": "^4.7.1",
         "viz.js": "^2.1.2"
     },
     "devDependencies": {
-        "electron": "^11.2.1",
+        "electron": "^12.0.0",
         "electron-packager": "^15.2.0"
     }
 }

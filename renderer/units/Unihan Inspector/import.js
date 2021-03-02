@@ -1024,7 +1024,7 @@ module.exports.start = function (context)
             {
                 set = unihanData.coreSet;
             }
-            else if (randomSetSelect.value === "UCore")
+            else if (randomSetSelect.value === "U-Core")
             {
                 set = unihanData.core2020Set;
             }

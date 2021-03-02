@@ -49,6 +49,13 @@
     ],
     [
         {
+            "lang": "ja",
+            "name": "CJK互換漢字 - Wikipedia",
+            "href": "https://ja.wikipedia.org/wiki/CJK%E4%BA%92%E6%8F%9B%E6%BC%A2%E5%AD%97"
+        }
+    ],
+    [
+        {
             "name": "UAX #38: Unicode Han Database (Unihan)",
             "href": "https://www.unicode.org/reports/tr38/"
         }

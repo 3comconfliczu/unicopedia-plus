@@ -1,28 +1,22 @@
 [
     [
         {
-            "name": "Chinese characters - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Chinese_characters"
-        },
-        {
-            "name": "Chinese family of scripts - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Chinese_family_of_scripts"
-        },
-        {
             "name": "Han unification - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Han_unification"
+        }
+    ],
+    [
+        {
+            "name": "Written Chinese - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Written_Chinese"
         },
         {
-            "name": "Ambiguities in Chinese character simplification - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Ambiguities_in_Chinese_character_simplification"
+            "name": "Chinese character classification - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Chinese_character_classification"
         },
         {
             "name": "Chinese numerals - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/Chinese_numerals"
-        },
-        {
-            "name": "Four-Corner Method - Wikipedia",
-            "href": "https://en.wikipedia.org/wiki/Four-Corner_Method"
         }
     ],
     [
@@ -51,8 +45,30 @@
             "href": "https://www.unicode.org/versions/Unicode13.0.0/ch18.pdf"
         },
         {
+            "name": "The Unicode Standard, Version 13.0 - About the Code Charts - ch24.pdf",
+            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch24.pdf"
+        },
+        {
             "name": "The Unicode Standard, Version 13.0 - Han Unification History - appE.pdf",
             "href": "https://www.unicode.org/versions/Unicode13.0.0/appE.pdf"
+        }
+    ],
+    [
+        {
+            "name": "UAX #45: U-source Ideographs",
+            "href": "https://www.unicode.org/reports/tr45/"
+        },
+        {
+            "name": "U-Source Ideographs Glyph Table - USourceGlyphs.pdf",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceGlyphs.pdf"
+        },
+        {
+            "name": "U-Source Ideographs Radical-Stroke Chart - USourceRSChart.pdf",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceRSChart.pdf"
+        },
+        {
+            "name": "U-Source Ideographs Data File - USourceData.txt",
+            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceData.txt"
         }
     ],
     [
@@ -71,6 +87,12 @@
     ],
     [
         {
+            "name": "New Ideographs in Unicode 3.0 and Beyond - IUC15Han.pdf",
+            "href": "https://mirror.informatimago.com/next/developer.apple.com/fonts/WhitePapers/IUC15Han.pdf"
+        }
+    ],
+    [
+        {
             "name": "Character Tables by Koichi Yasuoka",
             "href": "http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/CJK.html"
         },
@@ -81,28 +103,52 @@
     ],
     [
         {
+            "name": "Exploring IICore—Part 1",
+            "href": "https://ccjktype.fonts.adobe.com/2018/02/exploring-iicore-part-1.html"
+        },
+        {
+            "name": "Exploring IICore—Part 2",
+            "href": "https://ccjktype.fonts.adobe.com/2018/02/exploring-iicore-part-2.html"
+        },
+        {
+            "name": "Exploring IICore—Part 3",
+            "href": "https://ccjktype.fonts.adobe.com/2018/02/exploring-iicore-part-3.html"
+        },
+        {
+            "name": "Exploring IICore—Part 4",
+            "href": "https://ccjktype.fonts.adobe.com/2018/02/exploring-iicore-part-4.html"
+        },
+        {
+            "name": "Exploring IICore—Part 5",
+            "href": "https://ccjktype.fonts.adobe.com/2018/02/exploring-iicore-part-5.html"
+        }
+    ],
+    [
+        {
+            "name": "Unihan & Moji Jōhō Kiban Project: The Tip of the Iceberg",
+            "href": "https://ccjktype.fonts.adobe.com/2018/01/unihan-mj-iceberg.html"
+        }
+    ],
+    [
+        {
             "name": "CJK Compatibility Ideographs",
-            "href": "https://blogs.adobe.com/CCJKType/2012/03/cjk-compatibility-ideographs.html"
+            "href": "https://ccjktype.fonts.adobe.com/2012/03/cjk-compatibility-ideographs.html"
         },
         {
             "name": "Standardized Variants—Part 1",
-            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants.html"
+            "href": "https://ccjktype.fonts.adobe.com/2012/12/standardized-variants.html"
         },
         {
             "name": "Standardized Variants—Part 2",
-            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants-2.html"
+            "href": "https://ccjktype.fonts.adobe.com/2012/12/standardized-variants-2.html"
         },
         {
             "name": "Standardized Variants—Part 3",
-            "href": "https://blogs.adobe.com/CCJKType/2012/12/standardized-variants-3.html"
+            "href": "https://ccjktype.fonts.adobe.com/2012/12/standardized-variants-3.html"
         },
         {
             "name": "Standardized Variants—Part 4",
-            "href": "https://blogs.adobe.com/CCJKType/2013/09/standardized-variants-4.html"
-        },
-        {
-            "name": "Unicode Version 11.0 CJK Unified Ideographs & CJK Compatibility Ideographs (Version 2018-06-05) - ideographs-unicode-11.pdf",
-            "href": "https://blogs.adobe.com/CCJKType/files/2018/06/ideographs-unicode-11.pdf"
+            "href": "https://ccjktype.fonts.adobe.com/2013/09/standardized-variants-4.html"
         }
     ],
     [
@@ -139,12 +185,18 @@
     ],
     [
         {
-            "name": "Handwritten kanji search at sljfaq.org",
-            "href": "https://kanji.sljfaq.org/"
-        },
+            "name": "Four-Corner Method - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Four-Corner_Method"
+        }
+    ],
+    [
         {
             "name": "Four-corner kanji search at sljfaq.org",
             "href": "https://kanji.sljfaq.org/four.html"
+        },
+        {
+            "name": "Handwritten kanji search at sljfaq.org",
+            "href": "https://kanji.sljfaq.org/"
         }
     ],
     [
@@ -263,8 +315,8 @@
     [
         {
             "lang": "ja",
-            "name": "IPAexフォント/IPAフォント | IPAフォントのサイトです",
-            "href": "https://ipafont.ipa.go.jp/"
+            "name": "IPAexフォントおよびIPAフォントについて | 一般社団法人 文字情報技術促進協議会",
+            "href": "https://moji.or.jp/ipafont/"
         }
     ],
     [
@@ -302,24 +354,6 @@
             "lang": "zh",
             "name": "疊字 - 维基百科，自由的百科全书",
             "href": "https://zh.wikipedia.org/wiki/%E7%96%8A%E5%AD%97"
-        }
-    ],
-    [
-        {
-            "name": "UAX #45: U-source Ideographs",
-            "href": "https://www.unicode.org/reports/tr45/"
-        },
-        {
-            "name": "U-Source Ideographs Glyph Table - USourceGlyphs.pdf",
-            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceGlyphs.pdf"
-        },
-        {
-            "name": "U-Source Ideographs Radical-Stroke Chart - USourceRSChart.pdf",
-            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceRSChart.pdf"
-        },
-        {
-            "name": "U-Source Ideographs Data File - USourceData.txt",
-            "href": "https://www.unicode.org/Public/UCD/latest/ucd/USourceData.txt"
         }
     ],
     [

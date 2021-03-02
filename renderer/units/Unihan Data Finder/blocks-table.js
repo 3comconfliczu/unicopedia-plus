@@ -24,7 +24,7 @@ module.exports.create = function (unihanBlocks)
     headerRow.appendChild (coreSetHeader);
     let core2020SetHeader = document.createElement ('th');
     core2020SetHeader.className = 'core-2020-set-header';
-    core2020SetHeader.textContent = "UCore";
+    core2020SetHeader.textContent = "U-Core";
     core2020SetHeader.title = "Unihan Core (2020)";
     headerRow.appendChild (core2020SetHeader);
     let fullSetHeader = document.createElement ('th');

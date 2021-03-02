@@ -29,7 +29,6 @@ let tagShowCategories;
 const matchSearchString = unit.querySelector ('.match-character .search-string');
 const matchSearchMessage = unit.querySelector ('.match-character .search-message');
 const matchVariants = unit.querySelector ('.match-character .match-variants');
-const matchCaseSensitive = unit.querySelector ('.match-character .case-sensitive');
 const matchUseRegex = unit.querySelector ('.match-character .use-regex');
 const matchSearchButton = unit.querySelector ('.match-character .search-button');
 const matchResultsButton = unit.querySelector ('.match-character .results-button');
@@ -98,7 +97,6 @@ module.exports.start = function (context)
         //
         matchSearchString: "",
         matchVariants: false,
-        matchCaseSensitive: false,
         matchUseRegex: false,
         matchPageSize: 8,
         matchInstructions: true,
@@ -459,7 +457,6 @@ module.exports.start = function (context)
     //
     matchVariants.checked = prefs.matchVariants;
     //
-    matchCaseSensitive.checked = prefs.matchCaseSensitive;
     matchUseRegex.checked = prefs.matchUseRegex;
     //
     matchSearchString.addEventListener
@@ -508,7 +505,7 @@ module.exports.start = function (context)
             {
                 try
                 {
-                    regexp.build (event.currentTarget.value, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                    regexp.build (event.currentTarget.value, { useRegex: matchUseRegex.checked });
                 }
                 catch (e)
                 {
@@ -636,7 +633,7 @@ module.exports.start = function (context)
                     let regex = null;
                     try
                     {
-                        regex = regexp.build (searchString, { caseSensitive: matchCaseSensitive.checked, useRegex: matchUseRegex.checked });
+                        regex = regexp.build (searchString, { useRegex: matchUseRegex.checked });
                     }
                     catch (e)
                     {
@@ -1102,7 +1099,6 @@ module.exports.stop = function (context)
         //
         matchSearchString: matchSearchString.value,
         matchVariants: matchVariants.checked,
-        matchCaseSensitive: matchCaseSensitive.checked,
         matchUseRegex: matchUseRegex.checked,
         matchPageSize: matchParams.pageSize,
         matchInstructions: matchInstructions.open,

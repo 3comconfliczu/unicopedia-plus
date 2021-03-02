@@ -15,6 +15,56 @@
     ],
     [
         {
+            "name": "Traditional Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Traditional_Chinese_characters"
+        },
+        {
+            "name": "Simplified Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Simplified_Chinese_characters"
+        },
+        {
+            "name": "Chinese Character Simplification Scheme - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Chinese_Character_Simplification_Scheme"
+        },
+        {
+            "name": "Second round of simplified Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Second_round_of_simplified_Chinese_characters"
+        },
+        {
+            "name": "Standard Form of National Characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Standard_Form_of_National_Characters"
+        },
+        {
+            "name": "Singapore Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Singapore_Chinese_characters"
+        },
+        {
+            "name": "Debate on traditional and simplified Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Debate_on_traditional_and_simplified_Chinese_characters"
+        }
+    ],
+    [
+        {
+            "name": "Ambiguities in Chinese character simplification - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Ambiguities_in_Chinese_character_simplification"
+        }
+    ],
+    [
+        {
+            "name": "Shinjitai - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Shinjitai"
+        },
+        {
+            "name": "Kyūjitai - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Ky%C5%ABjitai"
+        },
+        {
+            "name": "Differences between Shinjitai and Simplified characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Differences_between_Shinjitai_and_Simplified_characters"
+        }
+    ],
+    [
+        {
             "name": "UAX #38: Unicode Han Database (Unihan)",
             "href": "https://www.unicode.org/reports/tr38/"
         }

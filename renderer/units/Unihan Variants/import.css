@@ -37,6 +37,7 @@
 {
     font-family: var(--sans-serif-family);
     font-size: 16px;
+    line-height: 1.333em;
     padding: 2px 6px;
     background: white;
     border: 1px solid var(--color-border);
@@ -126,7 +127,7 @@
 
 #unihan-variants-unit .linear-variants
 {
-    letter-spacing: 6px;
+    letter-spacing: 4px;
 }
 
 #unihan-variants-unit .linear-row.code-points

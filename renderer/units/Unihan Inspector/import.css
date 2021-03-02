@@ -37,6 +37,7 @@
 {
     font-family: var(--sans-serif-family);
     font-size: 16px;
+    line-height: 1.333em;
     padding: 2px 6px;
     background: white;
     border: 1px solid var(--color-border);
