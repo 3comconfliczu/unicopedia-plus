@@ -8,7 +8,7 @@ This desktop application works on macOS, Linux and Windows operating systems.
 
 - New **Unihan Components** utility, made up of two features: **Lookup IDS** and **Match IDS**.
 
-<img src="https://repository-images.githubusercontent.com/145571198/8dc53f80-7b70-11eb-8309-f9b728547952" alt="Unicopedia Plus social preview">
+    <img src="https://repository-images.githubusercontent.com/145571198/8dc53f80-7b70-11eb-8309-f9b728547952" alt="Unicopedia Plus social preview">
 
 ## Utilities
 
