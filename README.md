@@ -34,7 +34,6 @@ The following utilities are currently available:
 - **Unicode Segmenter**
 - **Unihan Components**
     - **Lookup IDS**
-    - **Parse IDS**
     - **Match IDS**
 - **Unihan Data Finder**
     - **Find by Tag Value**
@@ -325,20 +324,6 @@ The following utilities are currently available:
         - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
 
 <img src="screenshots/unihan-components-lookup-ids.png" width="1080px" alt="Unihan Components - Lookup IDS screenshot">
-
-### Parse IDS
-
-- The **Parse IDS** feature of the **Unihan Components** utility displays the parsing graph of any syntactically valid IDS (Ideographic Description Sequence).
-- The IDS string can by directly typed, or pasted from the clipboard into the main input field.
-- It is also possible to input predefined IDS strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
-- As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
-- Notes:
-    - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
-    - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
-        - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
-        - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
-
-<img src="screenshots/unihan-components-parse-ids.png" width="1080px" alt="Unihan Components - Parse IDS screenshot">
 
 ### Match IDS
 
