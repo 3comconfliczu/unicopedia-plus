@@ -8,7 +8,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Used dimmed style effect for nested-matching characters displayed in the **Match IDS** feature of the **Unihan Components** utility.
 - Fixed issue in the **Match IDS** feature of the **Unihan Components** utility, where some characters would not be nested-matched by mistake in specific cases.
 - Updated `IDS.TXT` data file and `BabelStoneHanPUA.woff2` font file.
-- Improved styling of <code> and <kbd> tags.
+- Improved styling of `<code>` and `<kbd>` tags.
 - Added `Confirm Quit` dialog.
 
 ## 9.0.0
