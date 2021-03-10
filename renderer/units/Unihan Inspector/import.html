@@ -2,12 +2,13 @@
     <div class="plain-panel">
         <div class="interface">
             <span class="option-group">
+                <button class="pull-down-menu history-button" type="button" title="History"><svg class="history"><use href="/images/actions.svg#history"></use></svg></button>
                 <input class="unihan-input" type="search" maxlength="64" title="Unihan character or code point" placeholder="Unihan...">
                 <button class="lookup-button" type="button">Lookup</button>
             </span>
             <span class="option-group">
                 <button class="random-button" type="button">Random</button>
-                <label>Set:&nbsp;<select class="random-set-select"><option value="IICore">IICore</option><option value="U-Core">Unihan Core (2020)</option><option value="Full">Full Unihan</option></select></label>
+                <label>Set:&nbsp;<select class="random-set-select"><option value="IICore">IICore</option><option value="U-Core">Unihan Core</option><option value="Full">Full Unihan</option></select></label>
             </span>
         </div>
         <div class="info-container"></div>
@@ -36,12 +37,12 @@
                     </ul>
                 </li>
                 <li>Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.</li>
-                <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
+                <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.</li>
                 <li>
                     It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
                     <ul>
                         <li><code>IICore</code>: the IICore set of 9,810 CJK unified ideographs in common usage,</li>
-                        <li><code>Unihan Core (2020)</code>: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,</li>
+                        <li><code>Unihan Core</code>: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,</li>
                         <li><code>Full Unihan</code>: the full set of 93,858 Unihan characters.</li>
                     </ul>
                 </li>

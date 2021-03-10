@@ -60,8 +60,7 @@
     line-height: 1em;
 }
 
-#unihan-radical-strokes-unit .results .results-string .hit-count,
-#unihan-radical-strokes-unit .view-by-grid .results .results-string .total-count
+#unihan-radical-strokes-unit .results .results-string .hit-count
 {
     font-weight: bold;
 }
@@ -201,7 +200,7 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data.extra-source .symbol
 {
-    color: gray;
+    color: var(--color-dimmed);
 }
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .code-point

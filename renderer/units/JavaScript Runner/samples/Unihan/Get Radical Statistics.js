@@ -61,7 +61,7 @@ for (let set of sets)
             setName = "IICore";
             break;
         case core2020Set:
-            setName = "Unihan Core (2020)";
+            setName = "Unihan Core";
             break;
         case fullSet:
             setName = "Full Unihan";

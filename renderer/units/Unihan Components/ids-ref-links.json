@@ -45,12 +45,24 @@
     ],
     [
         {
-            "name": "CJK Supplementary Components for IDS Use - IRGN2225.pdf",
-            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg48/IRGN2225.pdf"
+            "name": "Request to clarify some IDS issues - IRGN2413_IDS_issues.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg53/IRGN2413_IDS_issues.pdf"
+        },
+        {
+            "name": "IRG Principles and Procedures (IRG PnP) Version 11 - IRGN2310SC2N4611WG2N4979IRGPnP11.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg50/IRGN2310SC2N4611WG2N4979IRGPnP11.pdf"
         },
         {
             "name": "Feedback on IRGN2225 “CJK Supplementary Components for IDS Use” - IRGN2225-AndrewWest-feedback.pdf",
             "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg49/IRGN2225-AndrewWest-feedback.pdf"
+        },
+        {
+            "name": "CJK Supplementary Components for IDS Use - IRGN2225.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg48/IRGN2225.pdf"
+        },
+        {
+            "name": "Proposal to Extend CJK Radicals Supplement for better IDS Coverage - IRGN2204.pdf",
+            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg48/IRGN2204.pdf"
         }
     ],
     [
@@ -100,16 +112,6 @@
         {
             "name": "IDS + OpenType: Pseudo-encoding Unencoded Glyphs",
             "href": "https://ccjktype.fonts.adobe.com/2014/03/ids-opentype.html"
-        }
-    ],
-    [
-        {
-            "name": "Request to clarify some IDS issues - IRGN2413_IDS_issues.pdf",
-            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg53/IRGN2413_IDS_issues.pdf"
-        },
-        {
-            "name": "IRG Principles and Procedures (IRG PnP) Version 11 - IRGN2310SC2N4611WG2N4979IRGPnP11.pdf",
-            "href": "https://appsrv.cse.cuhk.edu.hk/~irg/irg/irg50/IRGN2310SC2N4611WG2N4979IRGPnP11.pdf"
         }
     ],
     [
@@ -180,6 +182,40 @@
         {
             "name": "Infix, Postfix and Prefix",
             "href": "http://www.cs.man.ac.uk/~pjj/cs212/fix.html"
+        }
+    ],
+    [
+        {
+            "name": "Shuowen Jiezi - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Shuowen_Jiezi"
+        },
+        {
+            "name": "List of Shuowen Jiezi radicals - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_Shuowen_Jiezi_radicals"
+        },
+        {
+            "name": "Shuowenjiezi.com - Radicals",
+            "href": "http://www.shuowenjiezi.com/radicaux.php"
+        }
+    ],
+    [
+        {
+            "name": "HanziCraft - Productive Chinese Character Component List",
+            "href": "https://hanzicraft.com/lists/productive-components"
+        }
+    ],
+    [
+        {
+            "name": "800 Most Common Chinese Character Components | 一步一个脚印 - Blog of Carl Gene Fordham",
+            "href": "http://carlgene.com/blog/2015/11/800-most-common-chinese-character-components/"
+        },
+        {
+            "name": "800_Most_Common_Chinese_Character_Components_Traditional_Chinese_carlgene.pdf",
+            "href": "http://www.carlgene.com/800_Most_Common_Chinese_Character_Components_Traditional_Chinese_carlgene.pdf"
+        },
+        {
+            "name": "800_Most_Common_Chinese_Character_Components_Simplified_Chinese_carlgene.pdf",
+            "href": "http://www.carlgene.com/800_Most_Common_Chinese_Character_Components_Simplified_Chinese_carlgene.pdf"
         }
     ]
 ]

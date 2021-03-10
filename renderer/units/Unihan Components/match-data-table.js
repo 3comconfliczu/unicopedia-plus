@@ -1,7 +1,7 @@
 //
 const unicode = require ('../../lib/unicode/unicode.js');
 //
-module.exports.create = function (characters, params)
+module.exports.create = function (items, params)
 {
     function updateDataPage (dataPage)
     {
@@ -21,7 +21,7 @@ module.exports.create = function (characters, params)
         lastPageButton.disabled = (params.pageIndex === (pages.length - 1));
         lastPageButton.title = `Last page: ${pages.length}`;
         //
-        let characters = pages[params.pageIndex];
+        let items = pages[params.pageIndex];
         while (dataPage.firstChild)
         {
             dataPage.firstChild.remove ();
@@ -29,12 +29,16 @@ module.exports.create = function (characters, params)
         //
         let dataWrapper = document.createElement ('div');
         dataWrapper.className = 'data-wrapper';
-        for (let character of characters)
+        for (let item of items)
         {
             let symbol = document.createElement ('span');
             symbol.className = 'symbol';
-            symbol.title = `Code Point:\xA0${unicode.characterToCodePoint (character)}`;
-            symbol.textContent = character;
+            if (item.nested)
+            {
+                symbol.classList.add ('nested');
+            }
+            symbol.title = `Code Point:\xA0${unicode.characterToCodePoint (item.character)}`;
+            symbol.textContent = item.character;
             dataWrapper.appendChild (symbol);
         }
         dataPage.appendChild (dataWrapper);
@@ -202,9 +206,9 @@ module.exports.create = function (characters, params)
     function paginate ()
     {
         pages = [ ];
-        for (let startIndex = 0; startIndex < characters.length; startIndex += params.pageSize)
+        for (let startIndex = 0; startIndex < items.length; startIndex += params.pageSize)
         {
-            pages.push (characters.slice (startIndex, startIndex + params.pageSize));
+            pages.push (items.slice (startIndex, startIndex + params.pageSize));
         }
         let pageCount = pages.length;
         pageSelect.min = 1;
@@ -231,7 +235,7 @@ module.exports.create = function (characters, params)
     let dataPage = document.createElement ('div');
     dataTable.appendChild (dataPage);
     //
-    if (( 0 > params.pageIndex) || (params.pageIndex > Math.trunc ((characters.length - 1) / params.pageSize)))
+    if (( 0 > params.pageIndex) || (params.pageIndex > Math.trunc ((items.length - 1) / params.pageSize)))
     {
         params.pageIndex = 0;
     }

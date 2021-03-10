@@ -5,14 +5,15 @@ const tabs = unit.querySelectorAll ('.tab-bar .tab-radio');
 const tabPanes = unit.querySelectorAll ('.tab-panes .tab-pane');
 const tabInfos = unit.querySelectorAll ('.tab-infos .tab-info');
 //
-const lookupUnihanInput = unit.querySelector ('.unihan-input');
-const lookupLookupButton = unit.querySelector ('.lookup-button');
-const lookupIdsContainer = unit.querySelector ('.ids-container');
+const lookupHistoryButton = unit.querySelector ('.lookup-ids .history-button');
+const lookupUnihanInput = unit.querySelector ('.lookup-ids .unihan-input');
+const lookupLookupButton = unit.querySelector ('.lookup-ids .lookup-button');
+const lookupIdsContainer = unit.querySelector ('.lookup-ids .ids-container');
 const lookupInstructions = unit.querySelector ('.lookup-ids .instructions');
 const lookupReferences = unit.querySelector ('.lookup-ids .references');
 const lookupLinks = unit.querySelector ('.lookup-ids .links');
 //
-const lookupUnihanHistorySize = 256;   // 0: unlimited
+const lookupUnihanHistorySize = 128;   // 0: unlimited
 //
 let lookupUnihanHistory = [ ];
 let lookupUnihanHistoryIndex = -1;
@@ -40,8 +41,8 @@ let matchDefaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote, shell, webFrame } = require ('electron');
-    const { clipboard, BrowserWindow, getCurrentWebContents, getCurrentWindow, Menu } = remote;
+    const { clipboard, remote, shell, webFrame } = require ('electron');
+    const { BrowserWindow, getCurrentWebContents, getCurrentWindow, Menu } = remote;
     //
     const mainWindow = getCurrentWindow ();
     const webContents = getCurrentWebContents ();
@@ -50,18 +51,17 @@ module.exports.start = function (context)
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
-    const sampleMenus = require ('../../lib/sample-menus.js');
     const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
-    const idsData = require ('../../lib/unicode/parsed-ids-data.js');
+    const { codePoints, unencodedCharacters } = require ('../../lib/unicode/parsed-ids-data.js');
     //
     const idsRefLinks = require ('./ids-ref-links.json');
     //
     const ids = require ('./ids.js');
     //
-    let unihanCount = Object.keys (idsData).length;  // No CJK compatibility ideographs
+    let unihanCount = Object.keys (codePoints).length;  // No CJK compatibility ideographs
     //
     const defaultPrefs =
     {
@@ -174,6 +174,10 @@ module.exports.start = function (context)
                 symbol.className = 'symbol';
                 let data = unicode.getCharacterBasicData (IDScharacter);
                 symbol.title = `${data.codePoint}\xA0${data.name}`;
+                if (IDScharacter in unencodedCharacters)
+                {
+                    symbol.title += `\n(${unencodedCharacters[IDScharacter]})`;
+                }
                 symbol.textContent = IDScharacter;
                 idsCharacters.appendChild (symbol);
             }
@@ -231,7 +235,7 @@ module.exports.start = function (context)
             lookupUnihanHistoryIndex = -1;
             lookupUnihanHistorySave = null;
             //
-            let data = idsData[unicode.characterToCodePoint (unihanCharacter)];
+            let data = codePoints[unicode.characterToCodePoint (unihanCharacter)];
             if (data)
             {
                 for (let sequence of data.sequences)
@@ -265,7 +269,7 @@ module.exports.start = function (context)
         }
         return character;
     }
-    // 
+    //
     lookupUnihanInput.addEventListener
     (
         'input',
@@ -348,6 +352,7 @@ module.exports.start = function (context)
     function updateUnihanData (character)
     {
         lookupUnihanInput.value = "";
+        lookupUnihanInput.blur ();
         lookupUnihanInput.dispatchEvent (new Event ('input'));
         displayData (character);
         unit.scrollTop = 0;
@@ -377,6 +382,41 @@ module.exports.start = function (context)
                 lookupUnihanHistorySave = null;
                 updateUnihanData ("");
             }
+        }
+    );
+    //
+    function insertUnihanCharacter (menuItem)
+    {
+        lookupUnihanInput.value = menuItem.id;
+        lookupUnihanInput.dispatchEvent (new Event ('input'));
+        lookupLookupButton.click ();
+    };
+    lookupHistoryButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            let historyMenuTemplate = [ ];
+            if (lookupUnihanHistory.length > 0)
+            {
+                for (let unihan of lookupUnihanHistory)
+                {
+                    historyMenuTemplate.push
+                    (
+                        {
+                            label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
+                            id: unihan,
+                            click: insertUnihanCharacter
+                        }
+                    );
+                }
+            }
+            else
+            {
+                historyMenuTemplate.push ({ label: "(no history yet)", enabled: false });
+            }
+            let historyContextualMenu = Menu.buildFromTemplate (historyMenuTemplate);
+            pullDownMenus.popup (event.currentTarget, historyContextualMenu);
         }
     );
     //
@@ -482,9 +522,7 @@ module.exports.start = function (context)
         (event) => matchSearchString.dispatchEvent (new Event ('input'))
     );
     //
-    let characterCheckedList;
-    //
-    function testMatchCharacter (character, regex, nestedMatch)
+    function testMatchCharacter (character, regex, characterCheckedList, nestedMatch)
     {
         let result = false;
         if (character in characterCheckedList)
@@ -501,7 +539,7 @@ module.exports.start = function (context)
             else
             {
                 let codePoint = unicode.characterToCodePoint (character);
-                let data = idsData[codePoint];
+                let data = codePoints[codePoint];
                 for (let sequence of data.sequences)
                 {
                     if (regex.test (sequence.ids))
@@ -522,7 +560,7 @@ module.exports.start = function (context)
                                 {
                                     if (nestedCharacter !== character)
                                     {
-                                        result = testMatchCharacter (nestedCharacter, regex, nestedMatch);
+                                        result = testMatchCharacter (nestedCharacter, regex, characterCheckedList, nestedMatch);
                                         if (result)
                                         {
                                             characterCheckedList[character] = true;
@@ -533,6 +571,10 @@ module.exports.start = function (context)
                                 }
                             }
                         }
+                        if (result)
+                        {
+                            break;
+                        }
                     }
                 }
             }
@@ -542,17 +584,32 @@ module.exports.start = function (context)
     //
     function findCharactersByMatch (regex, nestedMatch)
     {
-        characterCheckedList = { };
-        characterArray = [ ];
-        for (let codePoint in idsData)
+        let itemArray = [ ];
+        let characterCheckedList = { };
+        for (let codePoint in codePoints)
         {
             let character = unicode.codePointsToCharacters (codePoint);
-            if (testMatchCharacter (character, regex, nestedMatch))
+            if (testMatchCharacter (character, regex, characterCheckedList))
             {
-                characterArray.push (character);
+                itemArray.push ({ character, nested: false });
             }
         }
-        return characterArray.sort ((a, b) => a.codePointAt (0) - b.codePointAt (0));
+        if (nestedMatch)
+        {
+            let nestedCharacterCheckedList = { };
+            for (let codePoint in codePoints)
+            {
+                let character = unicode.codePointsToCharacters (codePoint);
+                if (!(characterCheckedList[character]))
+                {
+                    if (testMatchCharacter (character, regex, nestedCharacterCheckedList, nestedMatch))
+                    {
+                        itemArray.push ({ character, nested: true });
+                    }
+                }
+            }
+        }
+        return itemArray.sort ((a, b) => a.character.codePointAt (0) - b.character.codePointAt (0));
     }
     //
     function updateMatchResults (hitCount, totalCount)
@@ -585,12 +642,18 @@ module.exports.start = function (context)
                     if (regex)
                     {
                         clearSearch (matchSearchData);
-                        currentCharactersByMatch = findCharactersByMatch (regex, matchNestedMatch.checked);
+                        let characters = [ ];
+                        let items = findCharactersByMatch (regex, matchNestedMatch.checked);
+                        for (let item of items)
+                        {
+                            characters.push (item.character);
+                        };
+                        currentCharactersByMatch = characters;
                         updateMatchResults (currentCharactersByMatch.length, unihanCount);
                         if (currentCharactersByMatch.length > 0)
                         {
                             matchParams.pageIndex = 0;
-                            matchSearchData.appendChild (matchDataTable.create (currentCharactersByMatch, matchParams));
+                            matchSearchData.appendChild (matchDataTable.create (items, matchParams));
                         }
                     }
                 }

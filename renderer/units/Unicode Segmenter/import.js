@@ -19,7 +19,9 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { app } = require ('electron').remote;
+    const { remote } = require ('electron');
+    const { app } = remote;
+    //
     let defaultLocale = app.getLocale ();
     //
     const path = require ('path');

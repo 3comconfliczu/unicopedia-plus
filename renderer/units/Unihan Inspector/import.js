@@ -1,6 +1,7 @@
 //
 const unit = document.getElementById ('unihan-inspector-unit');
 //
+const historyButton = unit.querySelector ('.history-button');
 const unihanInput = unit.querySelector ('.unihan-input');
 const lookupButton = unit.querySelector ('.lookup-button');
 const randomButton = unit.querySelector ('.random-button');
@@ -13,7 +14,7 @@ const links = unit.querySelector ('.links');
 //
 let currentTypefaceLanguage;
 //
-const unihanHistorySize = 256;   // 0: unlimited
+const unihanHistorySize = 128;   // 0: unlimited
 //
 let unihanHistory = [ ];
 let unihanHistoryIndex = -1;
@@ -25,8 +26,10 @@ let showCategories;
 //
 module.exports.start = function (context)
 {
-    const { remote } = require ('electron');
+    const { remote, shell } = require ('electron');
+    const { Menu } = remote;
     //
+    const pullDownMenus = require ('../../lib/pull-down-menus.js');
     const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
@@ -891,7 +894,7 @@ module.exports.start = function (context)
         }
         return character;
     }
-    // 
+    //
     unihanInput.addEventListener
     (
         'input',
@@ -974,6 +977,7 @@ module.exports.start = function (context)
     function updateUnihanData (character)
     {
         unihanInput.value = "";
+        unihanInput.blur ();
         unihanInput.dispatchEvent (new Event ('input'));
         displayData (character);
         unit.scrollTop = 0;
@@ -994,7 +998,7 @@ module.exports.start = function (context)
                 }
                 else
                 {
-                    remote.shell.beep ();
+                    shell.beep ();
                 }
             }
             else
@@ -1003,6 +1007,41 @@ module.exports.start = function (context)
                 unihanHistorySave = null;
                 updateUnihanData ("");
             }
+        }
+    );
+    //
+    function insertUnihanCharacter (menuItem)
+    {
+        unihanInput.value = menuItem.id;
+        unihanInput.dispatchEvent (new Event ('input'));
+        lookupButton.click ();
+    };
+    historyButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            let historyMenuTemplate = [ ];
+            if (unihanHistory.length > 0)
+            {
+                for (let unihan of unihanHistory)
+                {
+                    historyMenuTemplate.push
+                    (
+                        {
+                            label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
+                            id: unihan,
+                            click: insertUnihanCharacter
+                        }
+                    );
+                }
+            }
+            else
+            {
+                historyMenuTemplate.push ({ label: "(no history yet)", enabled: false });
+            }
+            let historyContextualMenu = Menu.buildFromTemplate (historyMenuTemplate);
+            pullDownMenus.popup (event.currentTarget, historyContextualMenu);
         }
     );
     //

@@ -38,10 +38,11 @@ const matchLinks = unit.querySelector ('.match-character .links');
 //
 const matchParams = { };
 //
+const blockSelectBlockName = unit.querySelector ('.list-by-block .select-block-name');
+const blockSelectBlockRange = unit.querySelector ('.list-by-block .select-block-range');
+const blockSpecimenHistoryButton = unit.querySelector ('.list-by-block .history-button');
 const blockSpecimen = unit.querySelector ('.list-by-block .specimen');
 const blockGoButton = unit.querySelector ('.list-by-block .go-button');
-const blockSelectBlockRange = unit.querySelector ('.list-by-block .select-block-range');
-const blockSelectBlockName = unit.querySelector ('.list-by-block .select-block-name');
 const blockResultsButton = unit.querySelector ('.list-by-block .results-button');
 const blockHitCount = unit.querySelector ('.list-by-block .hit-count');
 const blockTotalCount = unit.querySelector ('.list-by-block .total-count');
@@ -52,7 +53,7 @@ const blockLinks = unit.querySelector ('.list-by-block .links');
 //
 const blockParams = { };
 //
-const blockSpecimenHistorySize = 256;   // 0: unlimited
+const blockSpecimenHistorySize = 128;   // 0: unlimited
 //
 let blockSpecimenHistory = [ ];
 let blockSpecimenHistoryIndex = -1;
@@ -62,7 +63,8 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { clipboard, Menu, shell } = require ('electron').remote;
+    const { clipboard, remote, shell } = require ('electron');
+    const { Menu } = remote;
     //
     const path = require ('path');
     //
@@ -638,7 +640,7 @@ module.exports.start = function (context)
         }
         return character;
     }
-    // 
+    //
     blockSpecimen.addEventListener
     (
         'input',
@@ -743,6 +745,8 @@ module.exports.start = function (context)
                     blockSpecimenHistoryIndex = -1;
                     blockSpecimenHistorySave = null;
                     blockSpecimen.value = "";
+                    blockSpecimen.classList.remove ('invalid');
+                    blockSpecimen.blur ();
                     blockSelectBlockRange.value = blockKey;
                     blockSelectBlockName.value = blockKey;
                     displayRangeTable (blockKey, character);
@@ -758,6 +762,57 @@ module.exports.start = function (context)
                 blockSpecimenHistorySave = null;
                 displayRangeTable (blockSelectBlockRange.value);
             }
+        }
+    );
+    //
+    function insertSpecimen (menuItem)
+    {
+        blockSpecimen.value = menuItem.label;
+        blockSpecimen.dispatchEvent (new Event ('input'));
+        blockGoButton.click ();
+    };
+    //
+    function getToolTip (specimen)
+    {
+        let toolTip;
+        let data = unicode.getCharacterBasicData (unicode.codePointsToCharacters (specimen));
+        if (data.name)
+        {
+            toolTip = (data.name === "<control>") ? data.alias : data.name;
+        }
+        else
+        {
+            toolTip = "<unassigned>";
+        }
+        return toolTip;
+    }
+    //
+    blockSpecimenHistoryButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            let historyMenuTemplate = [ ];
+            if (blockSpecimenHistory.length > 0)
+            {
+                for (let specimen of blockSpecimenHistory)
+                {
+                    historyMenuTemplate.push
+                    (
+                        {
+                            label: specimen,
+                            toolTip: getToolTip (specimen),
+                            click: insertSpecimen
+                        }
+                    );
+                }
+            }
+            else
+            {
+                historyMenuTemplate.push ({ label: "(no history yet)", enabled: false });
+            }
+            let historyContextualMenu = Menu.buildFromTemplate (historyMenuTemplate);
+            pullDownMenus.popup (event.currentTarget, historyContextualMenu);
         }
     );
     //

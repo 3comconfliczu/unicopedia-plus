@@ -7,10 +7,9 @@
         <div class="tab-panes">
             <div class="tab-pane lookup-ids">
                 <div class="interface">
-                    <span class="option-group">
-                        <input class="unihan-input" type="search" maxlength="64" title="Unihan character or code point" placeholder="Unihan...">
-                        <button class="lookup-button" type="button">Lookup</button>
-                    </span>
+                    <button class="pull-down-menu history-button" type="button" title="History"><svg class="history"><use href="/images/actions.svg#history"></use></svg></button>
+                    <input class="unihan-input" type="search" maxlength="64" title="Unihan character or code point" placeholder="Unihan...">
+                    <button class="lookup-button" type="button">Lookup</button>
                 </div>
                 <div class="ids-container"></div>
             </div>
@@ -54,7 +53,7 @@
                     <ul>
                         <li>The <strong>Lookup IDS</strong> feature of the <strong>Unihan Components</strong> utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available <a title="https://babelstone.co.uk/CJK/IDS.TXT" href="https://babelstone.co.uk/CJK/IDS.TXT">IDS.TXT</a> data file, maintained by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
                         <li>Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the IDS.</li>
-                        <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field.</li>
+                        <li>Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.</li>
                         <li>IDS are provided for the set of 92,856 Unihan characters (excluding CJK <em>compatibility</em> ideographs) defined in <strong>Unicode 13.0</strong>.</li>
                         <li>Notes:
                             <ul>
@@ -117,14 +116,15 @@
                         <li>Unihan characters whose IDS contains the 疒 component in first position:<br><code class="select-all">^⿸疒</code></li>
                         <li>Unihan characters whose IDS contains the 疒 component, but not in first position:<br><code class="select-all">.⿸疒</code></li>
                         <li>Unihan characters whose IDS contains the 至 component surrounded by another component from upper left:<br><code class="select-all">⿸.至</code></li>
-                        <li>Unihan characters whose IDS contains three components in a row, each one being either 女 or 男:<br><code class="select-all">⿲[女男]{3}</code></li>
+                        <li>Unihan characters whose IDS contains three components in a row, each component being either 女 or 男:<br><code class="select-all">⿲[女男]{3}</code></li>
                         <li>Unihan characters whose IDS is exactly the same for two of them (duplicates):<br><code class="select-all">^⿺走斗$</code></li>
-                        <li>Unihan characters whose IDS is made of two identical ideographic components in a row:<br><code class="select-all">^⿰(\p{Unified_Ideograph})\1$</code> or <code class="select-all">^⿰(\p{Ideo})\1$</code></li>
                         <li>Unihan characters whose IDS contains a CJK radical, i.e, a character whose code point belongs to the <code>CJK Radicals Supplement</code> block:<br><code class="select-all">[\u2E80-\u2EF3]</code> or <code class="select-all">[⺀-⻳]</code></li>
                         <li>Unihan characters whose IDS contains a CJK stroke, i.e, a character whose code point belongs to the <code>CJK Strokes</code> block:<br><code class="select-all">[\u31C0-\u31E3]</code> or <code class="select-all">[㇀-㇣]</code></li>
                         <li>Unihan characters whose IDS contains an unencoded component, i.e, a character whose code point belongs to the <code>Private User Area</code> (PUA) block:<br><code class="select-all">[\uE000-\uF8FF]</code></li>
                         <li>Unihan characters whose IDS is made of 17 or more characters:<br><code class="select-all">^.{17}</code> or <code class="select-all">^.{17,}$</code></li>
                         <li>Unihan characters whose IDS contains four IDC operators in a row:<br><code class="select-all">[⿰⿱⿲⿳⿴⿵⿶⿷⿸⿹⿺⿻]{4}</code> or <code class="select-all">[⿰-⿻]{4}</code></li>
+                        <li>Unihan characters whose IDS is made of two identical ideographic components in a row:<br><code class="select-all">^⿰(\p{Unified_Ideograph})\1$</code> or <code class="select-all">^⿰(\p{Ideo})\1$</code></li>
+                        <li>Unihan characters whose IDS contains one trinary operator followed by two binary operators:<br><code class="select-all">\p{IDS_Trinary_Operator}\p{IDS_Binary_Operator}{2}</code> or <code class="select-all">\p{IDST}\p{IDSB}{2}</code></li>
                     </ul>
                 </details>
                 <details class="references">

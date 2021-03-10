@@ -20,6 +20,7 @@ module.exports.start = function (context)
 {
     const { remote, shell } = require ('electron');
     const { getCurrentWebContents } = remote;
+    //
     const webContents = getCurrentWebContents ();
     //
     const fs = require ('fs');

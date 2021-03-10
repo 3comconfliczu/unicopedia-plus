@@ -224,6 +224,21 @@
     margin-bottom: 0.5em;
 }
 
+#unicode-data-finder-unit .list-by-block .history-button
+{
+    padding: 1px 6px;
+    margin: 0 0.5em 0 1.5em;
+    user-select: none;
+}
+
+#unicode-data-finder-unit .list-by-block .history-button svg.history
+{
+    width: 18px;
+    height: 18px;
+    vertical-align: text-bottom;
+    margin-right: -0.25em;
+}
+
 #unicode-data-finder-unit .list-by-block .specimen
 {
     font-family: var(--sans-serif-family);
@@ -233,7 +248,7 @@
     border-radius: 0.25em;
     padding: 0.2em 0.3em;
     width: 7.5em;
-    margin: 0 0.25em 0 1.25em;
+    margin: 0 0.25em 0 0;
     line-height: 1.2em;
 }
 

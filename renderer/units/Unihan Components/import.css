@@ -81,6 +81,26 @@
     margin: 1em 0 -0.25em 0;
 }
 
+#unihan-components-unit .lookup-ids .history-button
+{
+    padding: 1px 6px;
+    margin-right: 0.5em;
+    user-select: none;
+}
+
+#unihan-components-unit .lookup-ids .history-button::after
+{
+    top: -2px;
+}
+
+#unihan-components-unit .lookup-ids .history-button svg.history
+{
+    width: 21px;
+    height: 21px;
+    vertical-align: text-bottom;
+    margin-right: -0.25em;
+}
+
 #unihan-components-unit .lookup-ids .unihan-input
 {
     font-family: var(--sans-serif-family);
@@ -91,7 +111,7 @@
     border: 1px solid var(--color-border);
     border-radius: 0.25em;
     width: 7.5em;
-    margin-right: 0.5em;
+    margin: 0 0.5em 0 0.25em;
 }
 
 #unihan-components-unit .lookup-ids .unihan-input.invalid
@@ -209,7 +229,7 @@
 #unihan-components-unit .match-ids .search-string
 {
     font-family: ASCII, var(--ids-family);
-    font-size: 16px;
+    font-size: 18px;
     letter-spacing: 1px;
     padding: 2px 6px;
     line-height: 1.25em;
@@ -340,8 +360,7 @@
     line-height: 1em;
 }
 
-#unihan-components-unit .match-ids .results .results-string .hit-count,
-#unihan-components-unit .match-ids .results .results-string .total-count
+#unihan-components-unit .match-ids .results .results-string .hit-count
 {
     font-weight: bold;
 }
@@ -424,6 +443,11 @@
     font-size: 48px;
     line-height: 1em;
     padding: 4px;
+}
+
+#unihan-components-unit .search-data .data-wrapper .symbol.nested
+{
+    color: var(--color-dimmed);
 }
 
 #unihan-components-unit .plain-panel

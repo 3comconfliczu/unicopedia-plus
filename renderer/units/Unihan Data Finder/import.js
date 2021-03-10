@@ -42,6 +42,7 @@ const matchLinks = unit.querySelector ('.match-character .links');
 //
 const matchParams = { };
 //
+const gridSpecimenHistoryButton = unit.querySelector ('.view-by-grid .history-button');
 const gridSpecimen = unit.querySelector ('.view-by-grid .specimen');
 const gridGoButton = unit.querySelector ('.view-by-grid .go-button');
 const gridSelectBlockRange = unit.querySelector ('.view-by-grid .select-block-range');
@@ -58,7 +59,7 @@ const gridLinks = unit.querySelector ('.view-by-grid .links');
 //
 const gridParams = { };
 //
-const gridSpecimenHistorySize = 256;   // 0: unlimited
+const gridSpecimenHistorySize = 128;   // 0: unlimited
 //
 let gridSpecimenHistory = [ ];
 let gridSpecimenHistoryIndex = -1;
@@ -68,7 +69,8 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { clipboard, Menu, shell } = require ('electron').remote;
+    const { clipboard, remote, shell } = require ('electron');
+    const { Menu } = remote;
     //
     const path = require ('path');
     //
@@ -77,6 +79,7 @@ module.exports.start = function (context)
     const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
+    const unicode = require ('../../lib/unicode/unicode.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     //
     let unihanCount = unihanData.fullSet.length;
@@ -856,7 +859,7 @@ module.exports.start = function (context)
         }
         return character;
     }
-    // 
+    //
     gridSpecimen.addEventListener
     (
         'input',
@@ -935,7 +938,6 @@ module.exports.start = function (context)
             }
         }
     );
-    //
     gridGoButton.addEventListener
     (
         'click',
@@ -971,6 +973,8 @@ module.exports.start = function (context)
                         gridSpecimenHistoryIndex = -1;
                         gridSpecimenHistorySave = null;
                         gridSpecimen.value = "";
+                        gridSpecimen.classList.remove ('invalid');
+                        gridSpecimen.blur ();
                         gridSelectBlockRange.value = blockKey;
                         gridSelectBlockName.value = blockKey;
                         displayRangeTable (blockKey, character);
@@ -987,6 +991,42 @@ module.exports.start = function (context)
                 gridSpecimenHistorySave = null;
                 displayRangeTable (gridSelectBlockRange.value);
             }
+        }
+    );
+    //
+    function insertSpecimen (menuItem)
+    {
+        gridSpecimen.value = menuItem.id;
+        gridSpecimen.dispatchEvent (new Event ('input'));
+        gridGoButton.click ();
+    };
+    //
+    gridSpecimenHistoryButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            let historyMenuTemplate = [ ];
+            if (gridSpecimenHistory.length > 0)
+            {
+                for (let specimen of gridSpecimenHistory)
+                {
+                    historyMenuTemplate.push
+                    (
+                        {
+                            label: `${specimen}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (specimen)}`,
+                            id: specimen,
+                            click: insertSpecimen
+                        }
+                    );
+                }
+            }
+            else
+            {
+                historyMenuTemplate.push ({ label: "(no history yet)", enabled: false });
+            }
+            let historyContextualMenu = Menu.buildFromTemplate (historyMenuTemplate);
+            pullDownMenus.popup (event.currentTarget, historyContextualMenu);
         }
     );
     //

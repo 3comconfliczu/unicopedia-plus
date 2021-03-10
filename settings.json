@@ -40,5 +40,6 @@
         "label": "Latest Releases",
         "URL": "https://github.com/tonton-pixel/unicopedia-plus/releases"
     },
-    "defaultFolder": "documents"
+    "defaultFolder": "documents",
+    "confirmQuit": true
 }

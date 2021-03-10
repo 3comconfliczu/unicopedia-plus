@@ -33,6 +33,26 @@
     margin-left: 1.5em;
 }
 
+#unihan-variants-unit .history-button
+{
+    padding: 1px 6px;
+    margin-right: 0.75em;
+    user-select: none;
+}
+
+#unihan-variants-unit .history-button::after
+{
+    top: -2px;
+}
+
+#unihan-variants-unit .history-button svg.history
+{
+    width: 21px;
+    height: 21px;
+    vertical-align: text-bottom;
+    margin-right: -0.25em;
+}
+
 #unihan-variants-unit .unihan-input
 {
     font-family: var(--sans-serif-family);

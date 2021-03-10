@@ -67,5 +67,12 @@ for (let line of lines)
     }
 }
 //
-module.exports = codePoints;
+let unencodedCharacters = { };
+//
+for (let value of Object.values (unencoded))
+{
+    unencodedCharacters[value.character] = value.comment;
+}
+//
+module.exports = { codePoints, unencodedCharacters };
 //
