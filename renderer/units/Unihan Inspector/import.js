@@ -1031,6 +1031,7 @@ module.exports.start = function (context)
                         {
                             label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
                             id: unihan,
+                            toolTip: unicode.getCharacterBasicData (unihan).name,
                             click: insertUnihanCharacter
                         }
                     );

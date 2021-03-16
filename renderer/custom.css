@@ -48,6 +48,21 @@
     src: url("blank-font/AdobeBlank2.otf") format("opentype");
 }
 
+@font-face
+{
+    font-family: "ASCII";
+    src: local("Segoe UI Mono"), local(Monaco), local(Menlo), local("DejaVu Sans Mono"), local("Liberation Mono"), local("Noto Mono"), local("Ubuntu Mono");
+    /* src: local("Segoe UI"), local(Arial), local(Geneva), local(Verdana), local(Tahoma), local("DejaVu Sans"), local("Liberation Sans"), local("Noto Sans"), local("Ubuntu"); */
+    font-weight: bold;
+    unicode-range: U+00-7F;
+}
+
+@font-face
+{
+    font-family: "BabelStone Han PUA";
+    src: url("ids-fonts/BabelStoneHanPUA.woff2");
+}
+
 :root
 {
     --color:           hsl(0, 0%, 22%);
@@ -71,4 +86,5 @@
     --sans-serif-emoji-family: "Segoe UI", Arial, Geneva, Verdana, Tahoma, "DejaVu Sans", "Liberation Sans", "Noto Sans", Ubuntu, sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", emoji;
     --emoji-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", emoji;
     --unihan-family: sans-serif;
+    --ids-family: "BabelStone Han PUA", "BabelStone Han", "Hanazono Mincho A", "Hanazono Mincho B", "Hanazono Mincho C", serif;
 }

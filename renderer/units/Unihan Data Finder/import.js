@@ -1016,6 +1016,7 @@ module.exports.start = function (context)
                         {
                             label: `${specimen}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (specimen)}`,
                             id: specimen,
+                            toolTip: unicode.getCharacterBasicData (specimen).name,
                             click: insertSpecimen
                         }
                     );

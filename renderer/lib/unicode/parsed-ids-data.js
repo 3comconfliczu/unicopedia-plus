@@ -48,7 +48,7 @@ for (let line of lines)
                 }
                 else
                 {
-                    let found = string.match (/\^?(.*)\$(?:\((.*)\))?/u);
+                    let found = string.match (/^\^(.*)\$(?:\((.*)\))?$/u);
                     if (found)
                     {
                         sequences.push
@@ -58,6 +58,10 @@ for (let line of lines)
                                 source: found[2]
                             }
                         );
+                    }
+                    else
+                    {
+                        console.log ("Unrecognized format:", codePoint, character, string);
                     }
                 }
             }

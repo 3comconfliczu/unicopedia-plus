@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.2.0
+
+- Added **Parse IDS** feature to the **Unihan Components** utility to visualize (and validate) graph trees of custom IDS.
+- Updated emoji shortnames and keywords in the **Emoji Data Finder** utility, using `CLDR 39.0` annotations.
+- Updated `Electron` to version `12.0.1`.
+
 ## 9.1.0
 
 - Added history pop-up menus for specimens and looked up characters to the **Unicode Data Finder**, **Unihan Components**, **Unihan Data Finder**, **Unihan Inspector**, and **Unihan Variants** utilities.

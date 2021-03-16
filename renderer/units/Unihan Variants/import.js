@@ -328,7 +328,7 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
-        let ellipses = doc.documentElement.querySelectorAll ('ellipse');
+        let ellipses = doc.documentElement.querySelectorAll ('.node ellipse');
         for (let ellipse of ellipses)
         {
             let cx = ellipse.getAttribute ('cx');
@@ -350,6 +350,33 @@ module.exports.start = function (context)
            }
         }
         return serializer.serializeToString (doc);
+    }
+    //
+    function getOptionsString (character, isLookedUp)
+    {
+        let codePoint = unicode.charactersToCodePoints (character);
+        let label = (codePointsCheckbox.checked) ?
+            `<<FONT FACE=${unihanFamilyString} POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE=${monospaceFamilyString} POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>` :
+            `<<FONT FACE=${unihanFamilyString} POINT-SIZE="36">{{character}}</FONT>>`
+        let options =
+        [
+            { name: "tooltip", value: JSON.stringify (getTooltip (character)) },
+            { name: "style", value: isLookedUp && "bold" },
+            { name: "label", value: label.replace ("{{character}}", character).replace ("{{codepoint}}", codePoint.replace ("U+", "")) }
+        ];
+        if (isLookedUp)
+        {
+            options.unshift ({  name: "class", value: JSON.stringify ("no-link") });
+        }
+        let optionsArray = [ ];
+        for (let option of options)
+        {
+            if (option.value)
+            {
+                optionsArray.push (`${option.name} = ${option.value}`);
+            }
+        }
+        return optionsArray.join (", ");
     }
     //
     function displayData (character)
@@ -424,32 +451,6 @@ module.exports.start = function (context)
             }
             try
             {
-                function getOptionsString (character, isLookedUp)
-                {
-                    let codePoint = unicode.charactersToCodePoints (character);
-                    let label = (codePointsCheckbox.checked) ?
-                        `<<FONT FACE=${unihanFamilyString} POINT-SIZE="33">{{character}}</FONT><BR/><FONT FACE=${monospaceFamilyString} POINT-SIZE="9"><B>{{codepoint}}</B></FONT>>` :
-                        `<<FONT FACE=${unihanFamilyString} POINT-SIZE="36">{{character}}</FONT>>`
-                    let options =
-                    [
-                        { name: "tooltip", value: JSON.stringify (getTooltip (character)) },
-                        { name: "style", value: isLookedUp && "bold" },
-                        { name: "label", value: label.replace ("{{character}}", character).replace ("{{codepoint}}", codePoint.replace ("U+", "")) }
-                    ];
-                    if (isLookedUp)
-                    {
-                        options.unshift ({  name: "class", value: JSON.stringify ("no-link") });
-                    }
-                    let optionsArray = [ ];
-                    for (let option of options)
-                    {
-                        if (option.value)
-                        {
-                            optionsArray.push (`${option.name} = ${option.value}`);
-                        }
-                    }
-                    return optionsArray.join (", ");
-                }
                 let data = "";
                 if (detailedRelationsCheckbox.checked)
                 {
@@ -620,6 +621,7 @@ module.exports.start = function (context)
                         {
                             label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
                             id: unihan,
+                            toolTip: unicode.getCharacterBasicData (unihan).name,
                             click: insertUnihanCharacter
                         }
                     );

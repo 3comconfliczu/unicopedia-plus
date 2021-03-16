@@ -21,6 +21,19 @@ let lookupUnihanHistorySave = null;
 //
 let currentLookupUnihanCharacter;
 //
+const parseClearButton = unit.querySelector ('.parse-ids .clear-button');
+const parseSamplesButton = unit.querySelector ('.parse-ids .samples-button');
+const parseLoadButton = unit.querySelector ('.parse-ids .load-button');
+const parseSaveButton = unit.querySelector ('.parse-ids .save-button');
+const parseIdsCharacters = unit.querySelector ('.parse-ids .characters-input');
+const parseDisplayModeSelect = unit.querySelector ('.parse-ids .display-mode-select');
+const parseGraphContainer = unit.querySelector ('.parse-ids .graph-container');
+const parseInstructions = unit.querySelector ('.parse-ids .instructions');
+const parseReferences = unit.querySelector ('.parse-ids .references');
+const parseLinks = unit.querySelector ('.parse-ids .links');
+//
+let parseDefaultFolderPath;
+//
 const matchSearchString = unit.querySelector ('.match-ids .search-string');
 const matchSearchMessage = unit.querySelector ('.match-ids .search-message');
 const matchNestedMatch = unit.querySelector ('.match-ids .nested-match');
@@ -47,10 +60,12 @@ module.exports.start = function (context)
     const mainWindow = getCurrentWindow ();
     const webContents = getCurrentWebContents ();
     //
+    const fs = require ('fs');
     const path = require ('path');
     //
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
+    const sampleMenus = require ('../../lib/sample-menus.js');
     const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
@@ -72,6 +87,12 @@ module.exports.start = function (context)
         lookupInstructions: true,
         lookupReferences: false,
         //
+        parseIdsCharacters: "",
+        parseDisplayModeSelect: "",
+        parseInstructions: true,
+        parseReferences: false,
+        parseDefaultFolderPath: context.defaultFolderPath,
+        //
         matchSearchString: "",
         matchNestedMatch: false,
         matchUseRegex: false,
@@ -83,7 +104,7 @@ module.exports.start = function (context)
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
-    let insertIDC = (menuItem) => { webContents.insertText (menuItem.id); };
+    let insertOperator = (menuItem) => { webContents.insertText (menuItem.id); };
     //
     let insertMenuTemplate =
     [
@@ -95,15 +116,15 @@ module.exports.start = function (context)
         }
     ];
     let operatorsSubmenu = insertMenuTemplate[0].submenu;
-    for (let idc in ids.idcCharacters)
+    for (let operator in ids.operators)
     {
-        let idcData = ids.idcCharacters[idc];
+        let idcData = ids.operators[operator];
         operatorsSubmenu.push
         (
             {
-                label: `${idc}\xA0\xA0<${unicode.characterToCodePoint (idc)}>\xA0${idcData.name}`,
-                id: idc,
-                click: insertIDC
+                label: `${operator}\xA0\xA0<${unicode.characterToCodePoint (operator)}>\xA0${idcData.name}`,
+                id: operator,
+                click: insertOperator
             }
         );
     }
@@ -149,6 +170,18 @@ module.exports.start = function (context)
         }
     }
     //
+    function getTooltip (character)
+    {
+        let tooltip;
+        let data = unicode.getCharacterBasicData (character);
+        tooltip = `${data.codePoint}\xA0${data.name}`;
+        if (character in unencodedCharacters)
+        {
+            tooltip += `\n(${unencodedCharacters[character]})`;
+        }
+        return tooltip;
+    }
+    //
     function createIDSTable (unihanCharacter, IDSCharacters, IDSSource)
     {
         let table = document.createElement ('table');
@@ -172,12 +205,7 @@ module.exports.start = function (context)
             {
                 let symbol = document.createElement ('span');
                 symbol.className = 'symbol';
-                let data = unicode.getCharacterBasicData (IDScharacter);
-                symbol.title = `${data.codePoint}\xA0${data.name}`;
-                if (IDScharacter in unencodedCharacters)
-                {
-                    symbol.title += `\n(${unencodedCharacters[IDScharacter]})`;
-                }
+                symbol.title = getTooltip (IDScharacter);
                 symbol.textContent = IDScharacter;
                 idsCharacters.appendChild (symbol);
             }
@@ -213,7 +241,7 @@ module.exports.start = function (context)
     //
     lookupUnihanHistory = prefs.lookupUnihanHistory;
     //
-    function displayData (unihanCharacter)
+    function displayLookupData (unihanCharacter)
     {
         while (lookupIdsContainer.firstChild)
         {
@@ -349,12 +377,12 @@ module.exports.start = function (context)
         }
     );
     //
-    function updateUnihanData (character)
+    function updateLookupUnihanData (character)
     {
         lookupUnihanInput.value = "";
         lookupUnihanInput.blur ();
         lookupUnihanInput.dispatchEvent (new Event ('input'));
-        displayData (character);
+        displayLookupData (character);
         unit.scrollTop = 0;
         unit.scrollLeft = 0;
     }
@@ -369,7 +397,7 @@ module.exports.start = function (context)
                 let character = parseUnihanCharacter (lookupUnihanInput.value);
                 if (character)
                 {
-                    updateUnihanData (character);
+                    updateLookupUnihanData (character);
                 }
                 else
                 {
@@ -380,7 +408,7 @@ module.exports.start = function (context)
             {
                 lookupUnihanHistoryIndex = -1;
                 lookupUnihanHistorySave = null;
-                updateUnihanData ("");
+                updateLookupUnihanData ("");
             }
         }
     );
@@ -406,6 +434,7 @@ module.exports.start = function (context)
                         {
                             label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
                             id: unihan,
+                            toolTip: unicode.getCharacterBasicData (unihan).name,
                             click: insertUnihanCharacter
                         }
                     );
@@ -421,13 +450,244 @@ module.exports.start = function (context)
     );
     //
     currentLookupUnihanCharacter = prefs.lookupUnihanCharacter;
-    updateUnihanData (currentLookupUnihanCharacter);
+    updateLookupUnihanData (currentLookupUnihanCharacter);
     //
     lookupInstructions.open = prefs.lookupInstructions;
     //
     lookupReferences.open = prefs.lookupReferences;
     //
     linksList (lookupLinks, idsRefLinks);
+    //
+    parseDefaultFolderPath = prefs.parseDefaultFolderPath;
+    //
+    parseClearButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            parseIdsCharacters.value = "";
+            parseIdsCharacters.focus ();
+            parseIdsCharacters.dispatchEvent (new Event ('input'));
+        }
+    );
+    //
+    const parseSamples = require ('./parse-samples.json');
+    //
+    let parseTextMenu = sampleMenus.makeMenu
+    (
+        parseSamples,
+        (sample) =>
+        {
+            parseIdsCharacters.value = sample.string;
+            parseIdsCharacters.dispatchEvent (new Event ('input'));
+        }
+    );
+    //
+    parseSamplesButton.addEventListener
+    (
+        'click',
+        event =>
+        {
+            pullDownMenus.popup (event.currentTarget, parseTextMenu);
+        }
+    );
+    //
+    parseLoadButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            fileDialogs.loadTextFile
+            (
+                "Load text file:",
+                [ { name: "Text (*.txt)", extensions: [ 'txt' ] } ],
+                parseDefaultFolderPath,
+                'utf8',
+                (text, filePath) =>
+                {
+                    parseIdsCharacters.value = text;
+                    parseIdsCharacters.dispatchEvent (new Event ('input'));
+                    parseDefaultFolderPath = path.dirname (filePath);
+                }
+            );
+        }
+    );
+    //
+    parseSaveButton.addEventListener
+    (
+        'click',
+        (event) =>
+        {
+            fileDialogs.saveTextFile
+            (
+                "Save text file:",
+                [ { name: "Text (*.txt)", extensions: [ 'txt' ] } ],
+                parseDefaultFolderPath,
+                (filePath) =>
+                {
+                    parseDefaultFolderPath = path.dirname (filePath);
+                    return parseIdsCharacters.value;
+                }
+            );
+        }
+    );
+    //
+    parseDisplayModeSelect.value = prefs.parseDisplayModeSelect;
+    if (parseDisplayModeSelect.selectedIndex < 0) // -1: no element is selected
+    {
+        parseDisplayModeSelect.selectedIndex = 0;
+    }
+    parseDisplayModeSelect.addEventListener
+    (
+        'input',
+        event =>
+        {
+            parseIdsCharacters.dispatchEvent (new Event ('input'));
+        }
+    );
+    //
+    // https://github.com/mdaines/viz.js/wiki/Usage
+    // https://github.com/mdaines/viz.js/wiki/Caveats
+    //
+    const Viz = require ('viz.js');
+    const { Module, render } = require ('viz.js/full.render.js');
+    //
+    let viz = new Viz ({ Module, render });
+    //
+    const dotTemplate = fs.readFileSync (path.join (__dirname, 'template.dot'), { encoding: 'utf8' });
+    //
+    function getFontFamily (fontFamily)
+    {
+        return getComputedStyle (document.body).getPropertyValue (fontFamily).replaceAll ("\"", "").trim ();
+    }
+    function getFontFamilyString (fontFamily)
+    {
+        return JSON.stringify (getFontFamily (fontFamily));
+    }
+    const idsFamilyString = getFontFamilyString ('--ids-family');
+    //
+    function postProcessSVG (svg)
+    {
+        let doc = parser.parseFromString (svg, 'text/xml');
+        let polygons = doc.documentElement.querySelectorAll ('.node polygon');
+        for (let polygon of polygons)
+        {
+            let texts = polygon.parentNode.querySelectorAll ('text');
+            if (texts.length === 1)
+            {
+                let text = texts[0];
+                let y = parseFloat (text.getAttribute ('y'));
+                text.setAttribute ('y', y + 2); // Empirical adjustment
+           }
+        }
+        return serializer.serializeToString (doc);
+    }
+    //
+    let parser = new DOMParser ();
+    let serializer = new XMLSerializer ();
+    //
+    function treeToGraphData (tree)
+    {
+        // console.log (require ('../../lib/json2.js').stringify (tree, null, 4));
+        let data = "";
+        let nodeIndex = 0;
+        function walkTree (tree)
+        {
+            if ((typeof tree === 'string') && (Array.from (tree).length === 1))
+            {
+                data += `    n${nodeIndex++} [ label = "${tree}", fillcolor = "#F7F7F7", tooltip = ${JSON.stringify (getTooltip (tree))} ]\n`;
+            }
+            else if (typeof tree === 'object')
+            {
+                if (tree === null)
+                {
+                    data += `    n${nodeIndex++} [ style = invis ]\n`;
+                }
+                else
+                {
+                    if ('operator' in tree)
+                    {
+                        let currentNodeIndex = nodeIndex;
+                        data += `    n${nodeIndex++} [ label = "${tree.operator}", tooltip = ${JSON.stringify (getTooltip (tree.operator))} ]\n`;
+                        for (let index = 0; index < tree.operands.length; index++)
+                        {
+                            data += `    n${currentNodeIndex} -> n${nodeIndex}\n`;
+                            walkTree (tree.operands[index]);
+                        }
+                    }
+                }
+            }
+        }
+        walkTree (tree);
+        return data;
+    }
+    //
+    function displayParseData (idsString)
+    {
+        dotString = "";
+        svgResult = "";
+        while (parseGraphContainer.firstChild)
+        {
+            parseGraphContainer.firstChild.remove ();
+        }
+        if (idsString)
+        {
+            try
+            {
+                let data = treeToGraphData (ids.getTree (idsString));
+                dotString =
+                    dotTemplate
+                    .replace ('{{rankdir}}', parseDisplayModeSelect.value)
+                    .replace ('{{fontname}}', idsFamilyString)
+                    .replace ('{{data}}', data);
+                // console.log (dotString);
+                viz.renderString (dotString, { engine: 'dot', format: 'svg' })
+                .then
+                (
+                    result =>
+                    {
+                        svgResult = postProcessSVG (result); // Hack to fix incorrect centering of text in polygon!
+                        parseGraphContainer.innerHTML = svgResult;
+                    }
+                );
+            }
+            catch (e)
+            {
+            }
+        }
+    }
+    //
+    parseIdsCharacters.addEventListener
+    (
+        'input',
+        (event) =>
+        {
+            displayParseData (event.currentTarget.value);
+        }
+    );
+    //
+    parseIdsCharacters.value = prefs.parseIdsCharacters;
+    parseIdsCharacters.dispatchEvent (new Event ('input'));
+    //
+    parseIdsCharacters.addEventListener
+    (
+        'contextmenu',
+        (event) =>
+        {
+            if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
+            {
+                event.preventDefault ();
+                let factor = webFrame.getZoomFactor ();
+                insertContextualMenu.popup ({ window: mainWindow, x: Math.round (event.x * factor), y: Math.round (event.y * factor) });
+            }
+        }
+    );
+    //
+    parseInstructions.open = prefs.parseInstructions;
+    //
+    parseReferences.open = prefs.parseReferences;
+    //
+    linksList (parseLinks, idsRefLinks);
     //
     matchDefaultFolderPath = prefs.matchDefaultFolderPath;
     //
@@ -757,6 +1017,12 @@ module.exports.stop = function (context)
         lookupUnihanCharacter: currentLookupUnihanCharacter,
         lookupInstructions: lookupInstructions.open,
         lookupReferences: lookupReferences.open,
+        //
+        parseIdsCharacters: parseIdsCharacters.value,
+        parseDisplayModeSelect: parseDisplayModeSelect.value,
+        parseInstructions: parseInstructions.open,
+        parseReferences: parseReferences.open,
+        parseDefaultFolderPath: parseDefaultFolderPath,
         //
         matchSearchString: matchSearchString.value,
         matchNestedMatch: matchNestedMatch.checked,
