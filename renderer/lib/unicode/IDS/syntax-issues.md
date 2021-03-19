@@ -16,7 +16,7 @@
 # Missing leading ^
 U+38CA	㣊	^⿱攵彡$(K)	⿱夂彡$(Z)
 # should be:
-U+38CA	㣊	^⿱攵彡$(K)	⿱^夂彡$(Z)
+U+38CA	㣊	^⿱攵彡$(K)	^⿱夂彡$(Z)
 ```
 
 ```
