@@ -4,9 +4,8 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 9.3.0
 
-- Added error visual hints for invalid IDS sequences (invalid components, expected components, excess components).
+- Added character count info and error visual hints for invalid IDS sequences (invalid components, expected components, excess components) to the **Parse IDS** feature of the **Unihan Components** utility.
 - Added Unihan sample script `Detect Non Well-Formed IDS.js` to the **JavaScript Runner** utility.
-- Added character count info to the **Parse IDS** feature of the **Unihan Components** utility.
 - Updated all screenshots.
 
 ## 9.2.0
