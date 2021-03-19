@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1em 0 -0.25em 0;
+    margin: 1em 0 -0.5em 0;
 }
 
 #unihan-components-unit .lookup-ids .history-button
@@ -110,7 +110,7 @@
 
 #unihan-components-unit .lookup-ids .ids-container .wrapper
 {
-    margin-top: 1.5em;
+    margin: 1.5em 0 0 0;
     background: none;
     border: none;
 }
@@ -209,14 +209,39 @@
 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 1em 0 -0.25em 0;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#unihan-components-unit .parse-ids .interface .error-message
+{
+    border: 1px dotted var(--color-error);
+    background-color: white;
+    padding: 0 5px;
+    color: var(--color-error);
+}
+
+#unihan-components-unit .parse-ids .interface .error-message .excess-characters
+{
+    font-family: var(--ids-family);
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 #unihan-components-unit .parse-ids .option + .option
 {
     margin-left: 0.75em;
+}
+
+#unihan-components-unit .parse-ids .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#unihan-components-unit .parse-ids .count-number
+{
+    font-weight: bold;
 }
 
 #unihan-components-unit .parse-ids .characters-input
@@ -236,7 +261,7 @@
     margin: 1em 0 0.25em 0;
 }
 
-#unihan-components-unit .graph-rendering
+#unihan-components-unit .parse-ids .graph-rendering
 {
     display: flex;
     justify-content: center;
@@ -248,15 +273,15 @@
     background-color: white;
     border: 1px solid var(--color-border);
     overflow-x: scroll;
-    margin: 0.5em 0;
+    margin: 0.5em 0 0 0;
 }
 
-#unihan-components-unit .graph-container
+#unihan-components-unit .parse-ids .graph-container
 {
     min-width: 0;
 }
 
-#unihan-components-unit .graph-container svg g.no-link a
+#unihan-components-unit .parse-ids .graph-container svg g a
 {
     cursor: default;
 }
@@ -512,7 +537,7 @@
 
 #unihan-components-unit .plain-panel
 {
-    padding-bottom: 1.75em;
+    padding-bottom: 2em;
     overflow-x: visible;
 }
 

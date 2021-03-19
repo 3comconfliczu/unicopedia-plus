@@ -328,6 +328,7 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
+        // Fix incorrect centering of text in circles
         let ellipses = doc.documentElement.querySelectorAll ('.node ellipse');
         for (let ellipse of ellipses)
         {
@@ -347,7 +348,13 @@ module.exports.start = function (context)
                 let text = texts[0];
                 let y = parseFloat (text.getAttribute ('y'));
                 text.setAttribute ('y', y + 2); // Empirical adjustment
-           }
+            }
+        }
+        // Remove edge tooltips
+        let edgeTooltips = doc.documentElement.querySelectorAll ('.edge title');
+        for (let edgeTooltip of edgeTooltips)
+        {
+            edgeTooltip.remove ();
         }
         return serializer.serializeToString (doc);
     }
@@ -536,7 +543,7 @@ module.exports.start = function (context)
                 (
                     result =>
                     {
-                        svgResult = postProcessSVG (result); // Hack to fix incorrect centering of text in circle!
+                        svgResult = postProcessSVG (result);
                         graphContainer.innerHTML = svgResult;
                         saveSVGButton.disabled = false;
                     }

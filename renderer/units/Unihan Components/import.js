@@ -23,10 +23,13 @@ let currentLookupUnihanCharacter;
 //
 const parseClearButton = unit.querySelector ('.parse-ids .clear-button');
 const parseSamplesButton = unit.querySelector ('.parse-ids .samples-button');
+const parseCountNumber = unit.querySelector ('.parse-ids .count-number');
 const parseLoadButton = unit.querySelector ('.parse-ids .load-button');
 const parseSaveButton = unit.querySelector ('.parse-ids .save-button');
 const parseIdsCharacters = unit.querySelector ('.parse-ids .characters-input');
 const parseDisplayModeSelect = unit.querySelector ('.parse-ids .display-mode-select');
+const parseErrorMessage = unit.querySelector ('.parse-ids .error-message');
+const parseExcessCharacters = unit.querySelector ('.parse-ids .excess-characters');
 const parseGraphContainer = unit.querySelector ('.parse-ids .graph-container');
 const parseInstructions = unit.querySelector ('.parse-ids .instructions');
 const parseReferences = unit.querySelector ('.parse-ids .references');
@@ -71,10 +74,9 @@ module.exports.start = function (context)
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
     const { codePoints, unencodedCharacters } = require ('../../lib/unicode/parsed-ids-data.js');
+    const ids = require ('../../lib/unicode/ids.js');
     //
     const idsRefLinks = require ('./ids-ref-links.json');
-    //
-    const ids = require ('./ids.js');
     //
     let unihanCount = Object.keys (codePoints).length;  // No CJK compatibility ideographs
     //
@@ -170,14 +172,18 @@ module.exports.start = function (context)
         }
     }
     //
-    function getTooltip (character)
+    function getTooltip (character, isInvalid)
     {
         let tooltip;
         let data = unicode.getCharacterBasicData (character);
-        tooltip = `${data.codePoint}\xA0${data.name}`;
+        tooltip = `<${data.codePoint}>\xA0${(data.name === "<control>") ? data.alias : data.name}`;
         if (character in unencodedCharacters)
         {
             tooltip += `\n(${unencodedCharacters[character]})`;
+        }
+        else if (isInvalid)
+        {
+            tooltip += `\n(not a valid component)`;
         }
         return tooltip;
     }
@@ -569,6 +575,7 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
+        // Fix incorrect centering of text in polygon
         let polygons = doc.documentElement.querySelectorAll ('.node polygon');
         for (let polygon of polygons)
         {
@@ -579,6 +586,12 @@ module.exports.start = function (context)
                 let y = parseFloat (text.getAttribute ('y'));
                 text.setAttribute ('y', y + 2); // Empirical adjustment
            }
+        }
+        // Remove edge tooltips
+        let edgeTooltips = doc.documentElement.querySelectorAll ('.edge title');
+        for (let edgeTooltip of edgeTooltips)
+        {
+            edgeTooltip.remove ();
         }
         return serializer.serializeToString (doc);
     }
@@ -595,7 +608,14 @@ module.exports.start = function (context)
         {
             if ((typeof tree === 'string') && (Array.from (tree).length === 1))
             {
-                data += `    n${nodeIndex++} [ label = "${tree}", fillcolor = "#F7F7F7", tooltip = ${JSON.stringify (getTooltip (tree))} ]\n`;
+                if (ids.isValidOperand (tree))
+                {
+                    data += `    n${nodeIndex++} [ label = "${tree}", fillcolor = "#F7F7F7", tooltip = ${JSON.stringify (getTooltip (tree))} ]\n`;
+                }
+                else
+                {
+                    data += `    n${nodeIndex++} [ label = "${tree}", color = "#CC0000", fontcolor = "#CC0000", style = dashed, tooltip = ${JSON.stringify (getTooltip (tree, true))} ]\n`;
+                }
             }
             else if (typeof tree === 'object')
             {
@@ -611,7 +631,14 @@ module.exports.start = function (context)
                         data += `    n${nodeIndex++} [ label = "${tree.operator}", tooltip = ${JSON.stringify (getTooltip (tree.operator))} ]\n`;
                         for (let index = 0; index < tree.operands.length; index++)
                         {
-                            data += `    n${currentNodeIndex} -> n${nodeIndex}\n`;
+                            if (tree.operands[index])
+                            {
+                                data += `    n${currentNodeIndex} -> n${nodeIndex}\n`;
+                            }
+                            else
+                            {
+                                data += `    n${currentNodeIndex} -> n${nodeIndex} [ color = "#CC0000" ]\n`;
+                            }
                             walkTree (tree.operands[index]);
                         }
                     }
@@ -624,6 +651,7 @@ module.exports.start = function (context)
     //
     function displayParseData (idsString)
     {
+        parseErrorMessage.hidden = true;
         dotString = "";
         svgResult = "";
         while (parseGraphContainer.firstChild)
@@ -632,21 +660,27 @@ module.exports.start = function (context)
         }
         if (idsString)
         {
+            let delta = ids.compare (idsString);
+            if (delta > 0)
+            {
+                parseExcessCharacters.textContent = [...idsString].slice (-delta).join ("");
+                parseErrorMessage.hidden = false;
+            }
+            let data = treeToGraphData (ids.getTree (idsString));
+            dotString =
+                dotTemplate
+                .replace ('{{rankdir}}', parseDisplayModeSelect.value)
+                .replace ('{{fontname}}', idsFamilyString)
+                .replace ('{{data}}', data);
+            // console.log (dotString);
             try
             {
-                let data = treeToGraphData (ids.getTree (idsString));
-                dotString =
-                    dotTemplate
-                    .replace ('{{rankdir}}', parseDisplayModeSelect.value)
-                    .replace ('{{fontname}}', idsFamilyString)
-                    .replace ('{{data}}', data);
-                // console.log (dotString);
                 viz.renderString (dotString, { engine: 'dot', format: 'svg' })
                 .then
                 (
                     result =>
                     {
-                        svgResult = postProcessSVG (result); // Hack to fix incorrect centering of text in polygon!
+                        svgResult = postProcessSVG (result);
                         parseGraphContainer.innerHTML = svgResult;
                     }
                 );
@@ -662,7 +696,9 @@ module.exports.start = function (context)
         'input',
         (event) =>
         {
-            displayParseData (event.currentTarget.value);
+            let idsCharacters = event.currentTarget.value;
+            parseCountNumber.textContent = Array.from (idsCharacters).length;
+            displayParseData (idsCharacters);
         }
     );
     //

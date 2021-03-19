@@ -66,6 +66,23 @@ const operators =
 //
 const regexp = require ('../../lib/unicode/regexp.js');
 //
+function isValidOperand (token)
+{
+    let isValid = 
+    (
+        (token === '？') // Fullwidth question mark, indicating an unrepresentable component
+        ||
+        (regexp.isUnihan (token) && regexp.isUnified (token))   // CJK Unified Ideographs
+        ||
+        (/[\u2E80-\u2EF3]/.test (token))    // CJK Radicals Supplement
+        ||
+        (/[\u31C0-\u31E3]/.test (token))    // CJK Strokes
+        ||
+        (/[\uE000-\uF8FF]/.test (token))    // Private Use Area
+    );
+    return isValid;
+}
+//
 function getTree (idsString)
 {
     let idsArray = Array.from (idsString);
@@ -86,23 +103,7 @@ function getTree (idsString)
                     result.operands[index] = parseToken ();
                 }
             }
-            else if (token === '？') // Fullwidth question mark, indicating an unrepresentable component
-            {
-                result = token;
-            }
-            else if (regexp.isUnihan (token) && regexp.isUnified (token))   // CJK Unified Ideographs
-            {
-                result = token;
-            }
-            else if (/[\u2E80-\u2EF3]/.test (token))    // CJK Radicals Supplement
-            {
-                result = token;
-            }
-            else if (/[\u31C0-\u31E3]/.test (token))    // CJK Strokes
-            {
-                result = token;
-            }
-            else if (/[\uE000-\uF8FF]/.test (token))    // Private Use Area
+            else
             {
                 result = token;
             }
@@ -112,5 +113,36 @@ function getTree (idsString)
     return parseToken ();
 };
 //
-module.exports = { operators, getTree }
+function compare (idsString)
+{
+    let idsArray = Array.from (idsString);
+    let idsIndex = 0;
+    function parseToken ()
+    {
+        let result = null;
+        let token = idsArray[idsIndex++];
+        if (token)
+        {
+            if (token in operators)
+            {
+                result = { };
+                result.operator = token;
+                result.operands = [ ];
+                for (let index = 0; index < operators[token].arity; index++)
+                {
+                    result.operands[index] = parseToken ();
+                }
+            }
+            else
+            {
+                result = token;
+            }
+        }
+        return result;
+    }
+    parseToken ();
+    return idsArray.length - idsIndex;
+};
+//
+module.exports = { operators, isValidOperand, getTree, compare }
 //

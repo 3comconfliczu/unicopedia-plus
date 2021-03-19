@@ -1,7 +1,7 @@
 ﻿# Ideographic Description Sequences (IDS) for CJK Unified Ideographs
 # URL: https://babelstone.co.uk/CJK/IDS.TXT
 # Maintained by: Andrew West (魏安) <babelstone@gmail.com>
-# Date: 2021-03-15
+# Date: 2021-03-17
 # Unicode Version: 13.0 (92,856 entries)
 #
 # Notes
@@ -30472,7 +30472,7 @@ U+20AB1	𠪱	^⿸厤？$(G)	^⿸厤心-㇒$(X)
 U+20AB2	𠪲	^⿸厂勤$(G)
 U+20AB3	𠪳	^⿸厂⿱？⿴𦥑？$(T)
 U+20AB4	𠪴	^⿸厂楚$(H)
-U+20AB5	𠪵	^⿸厂⿱龷重$(T)
+U+20AB5	𠪵	^厂⿱龷重$(T)
 U+20AB6	𠪶	^⿸厂⿱死豆$(G)
 U+20AB7	𠪷	^⿸厂暈$(G)
 U+20AB8	𠪸	^⿸厂葉$(V)
@@ -42051,7 +42051,7 @@ U+237EC	𣟬	^⿰木䦨$(T)
 U+237ED	𣟭	^⿰木駡$(V)
 U+237EE	𣟮	^⿰柔𡕩$(V)
 U+237EF	𣟯	^⿰木蹇$(GT)
-U+237F0	𣟰	^⿵輿木$(GT)
+U+237F0	𣟰	^⿱輿木$(GT)
 U+237F1	𣟱	^⿰木𦏜$(G)
 U+237F2	𣟲	^⿰木鮮$(GT)
 U+237F3	𣟳	^⿰木還$(GT)
@@ -75054,7 +75054,7 @@ U+2B902	𫤂	^⿰亻興$(G)
 U+2B903	𫤃	^⿰亻壁$(T)
 U+2B904	𫤄	^⿰使推$(V)
 U+2B905	𫤅	^⿱㑛孫$(G)
-U+2B906	𫤆	^⿰⿳⿵𠆢一米口𠬶$(G)
+U+2B906	𫤆	^⿰⿳⿱⿵𠆢一米口𠬶$(G)
 U+2B907	𫤇	^⿰亻還$(T)
 U+2B908	𫤈	^⿱俗退$(V)
 U+2B909	𫤉	^⿰傾呂$(V)	^⿰傾吕$(Z)

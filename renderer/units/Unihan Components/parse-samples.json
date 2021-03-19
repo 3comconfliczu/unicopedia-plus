@@ -108,6 +108,24 @@
         ]
     },
     {
+        "label": "Invalid Sequences",
+        "items":
+        [
+            {
+                "label": "Invalid Component (Katakana)",
+                "string": "⿰イ韋"
+            },
+            {
+                "label": "Expected Component",
+                "string": "⿰⿳⿱⿵𠆢一米口𠬶"
+            },
+            {
+                "label": "Excess Components",
+                "string": "⿰虫圭⿱土土"
+            }
+        ]
+    },
+    {
         "label": "Mirrored Components",
         "items":
         [

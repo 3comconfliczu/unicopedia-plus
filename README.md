@@ -328,10 +328,11 @@ The following utilities are currently available:
 
 ### Parse IDS
 
-- The **Parse IDS** feature of the **Unihan Components** utility displays the parsing graph of any syntactically valid IDS (Ideographic Description Sequence).
+- The **Parse IDS** feature of the **Unihan Components** utility displays the parsing graph of any well-formed IDS (Ideographic Description Sequence).
 - The IDS string can by directly typed, or pasted from the clipboard into the main input field.
 - It is also possible to input predefined IDS strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
 - As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
+- The IDS graph can be displayed either vertically or horizontally. Use the <kbd>Display Mode</kbd> drop-down menu to toggle between the two modes.
 - Notes:
     - Only *prefix* operators are supported, not *infix* ones (such as `+` and `-`).
     - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
@@ -343,7 +344,7 @@ The following utilities are currently available:
 
 ### Match IDS
 
-- The **Match IDS** feature of the **Unihan Components** utility displays a list of IDS-matching Unihan characters, including through regular expressions. It makes use of the IDS (Ideographic Description Sequences) defined in the [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist))
+- The **Match IDS** feature of the **Unihan Components** utility displays a list of IDS-matching Unihan characters, including through regular expressions. It makes use of the IDS (Ideographic Description Sequences) defined in the [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Nested Match</kbd> toggle button to extend the search to IDS-nested characters whose *IDS* match the query string.
 - It is possible to choose how many characters are shown one page at a time.
