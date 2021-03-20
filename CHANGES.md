@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.3.1
+
+- Updated `IDS.TXT` data file: fixes all non well-formed IDS.
+
 ## 9.3.0
 
 - Added character count info and error visual hints for invalid IDS sequences (invalid components, expected components, excess components) to the **Parse IDS** feature of the **Unihan Components** utility.
