@@ -350,11 +350,11 @@ module.exports.start = function (context)
                 text.setAttribute ('y', y + 2); // Empirical adjustment
             }
         }
-        // Remove edge tooltips
-        let edgeTooltips = doc.documentElement.querySelectorAll ('.edge title');
-        for (let edgeTooltip of edgeTooltips)
+        // Remove unwanted tooltips
+        let tooltips = doc.documentElement.querySelectorAll ('.edge title, .node title');
+        for (let tooltip of tooltips)
         {
-            edgeTooltip.remove ();
+            tooltip.remove ();
         }
         return serializer.serializeToString (doc);
     }

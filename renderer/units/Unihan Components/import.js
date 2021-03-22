@@ -587,11 +587,11 @@ module.exports.start = function (context)
                 text.setAttribute ('y', y + 2); // Empirical adjustment
            }
         }
-        // Remove edge tooltips
-        let edgeTooltips = doc.documentElement.querySelectorAll ('.edge title');
-        for (let edgeTooltip of edgeTooltips)
+        // Remove unwanted tooltips
+        let tooltips = doc.documentElement.querySelectorAll ('.edge title, .node title');
+        for (let tooltip of tooltips)
         {
-            edgeTooltip.remove ();
+            tooltip.remove ();
         }
         return serializer.serializeToString (doc);
     }
@@ -610,11 +610,11 @@ module.exports.start = function (context)
             {
                 if (ids.isValidOperand (tree))
                 {
-                    data += `    n${nodeIndex++} [ label = "${tree}", fillcolor = "#F7F7F7", tooltip = ${JSON.stringify (getTooltip (tree))} ]\n`;
+                    data += `    n${nodeIndex++} [ label = ${JSON.stringify (tree)}, fillcolor = "#F7F7F7", tooltip = ${JSON.stringify (getTooltip (tree))} ]\n`;
                 }
                 else
                 {
-                    data += `    n${nodeIndex++} [ label = "${tree}", color = "#CC0000", fontcolor = "#CC0000", style = dashed, tooltip = ${JSON.stringify (getTooltip (tree, true))} ]\n`;
+                    data += `    n${nodeIndex++} [ label = ${JSON.stringify (tree)}, color = "#CC0000", fontcolor = "#CC0000", style = dashed, tooltip = ${JSON.stringify (getTooltip (tree, true))} ]\n`;
                 }
             }
             else if (typeof tree === 'object')
