@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.3.2
+
+- Removed all unwanted tooltips in generated SVG in the **Unihan Variants** utility, and in the **Parse IDS** feature of the **Unihan Components** utility.
+- Sanitized IDS string in the **Parse IDS** feature of the **Unihan Components** utility.
+- Updated `BabelStoneHanPUA.woff2` font file.
+
 ## 9.3.1
 
 - Updated `IDS.TXT` data file: fixes all non well-formed IDS.
