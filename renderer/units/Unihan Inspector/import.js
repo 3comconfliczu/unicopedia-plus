@@ -3,7 +3,7 @@ const unit = document.getElementById ('unihan-inspector-unit');
 //
 const historyButton = unit.querySelector ('.history-button');
 const unihanInput = unit.querySelector ('.unihan-input');
-const lookupButton = unit.querySelector ('.lookup-button');
+const lookUpButton = unit.querySelector ('.look-up-button');
 const randomButton = unit.querySelector ('.random-button');
 const randomSetSelect = unit.querySelector ('.random-set-select');
 const infoContainer = unit.querySelector ('.info-container');
@@ -918,7 +918,7 @@ module.exports.start = function (context)
             if (event.key === 'Enter')
             {
                 event.preventDefault ();
-                lookupButton.click ();
+                lookUpButton.click ();
             }
         }
     );
@@ -984,7 +984,7 @@ module.exports.start = function (context)
         unit.scrollLeft = 0;
     }
     //
-    lookupButton.addEventListener
+    lookUpButton.addEventListener
     (
         'click',
         (event) =>
@@ -1014,7 +1014,7 @@ module.exports.start = function (context)
     {
         unihanInput.value = menuItem.id;
         unihanInput.dispatchEvent (new Event ('input'));
-        lookupButton.click ();
+        lookUpButton.click ();
     };
     historyButton.addEventListener
     (

@@ -218,9 +218,9 @@
 
 #unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data.extra-source .code-point
 {
-    color: gray;
+    color: var(--color-dimmed);
     background-color: white;
-    border: 1px dotted gray;
+    border: 1px dotted var(--color-dimmed);
 }
 
 #unihan-radical-strokes-unit .radicals-table

@@ -6,7 +6,7 @@ This desktop application works on macOS, Linux and Windows operating systems.
 
 ## What's New?
 
-- New **Unihan Components** utility, made up of three features: **Lookup IDS**, **Parse IDS**, and **Match IDS**.
+- New **Unihan Components** utility, made up of three features: **Look Up IDS**, **Parse IDS**, and **Match IDS**.
 
     <img src="screenshots/UP-social-preview.png" alt="Unicopedia Plus social preview">
 
@@ -33,7 +33,7 @@ The following utilities are currently available:
 - **Unicode References**
 - **Unicode Segmenter**
 - **Unihan Components**
-    - **Lookup IDS**
+    - **Look Up IDS**
     - **Parse IDS**
     - **Match IDS**
 - **Unihan Data Finder**
@@ -312,10 +312,10 @@ The following utilities are currently available:
 
 ## Unihan Components
 
-### Lookup IDS
+### Look Up IDS
 
-- The **Lookup IDS** feature of the **Unihan Components** utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
-- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the IDS.
+- The **Look Up IDS** feature of the **Unihan Components** utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the IDS.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
 - IDS are provided for the set of 92,856 Unihan characters (excluding CJK *compatibility* ideographs) defined in **Unicode 13.0**.
 - Notes:
@@ -324,7 +324,7 @@ The following utilities are currently available:
         - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
         - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
 
-<img src="screenshots/unihan-components-lookup-ids.png" width="1080px" alt="Unihan Components - Lookup IDS screenshot">
+<img src="screenshots/unihan-components-lookup-ids.png" width="1080px" alt="Unihan Components - Look Up IDS screenshot">
 
 ### Parse IDS
 
@@ -432,13 +432,13 @@ The following utilities are currently available:
     - *Unihan_RadicalStrokeCounts.txt*
     - *Unihan_Readings.txt*
     - *Unihan_Variants.txt*
-- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the list of Unihan tags.
+- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the list of Unihan tags.
 - In addition, the utility provides, for each Unihan character:
     - basic Unicode information: name, age, plane, block, script, script extensions, general category, extended properties, decomposition, standardized variation, equivalent unified ideograph;
     - basic Unihan information: set (*IICore*, *Unihan Core*, *Full Unihan*), status (*unified* or *compatibility* ideograph), compatibility source, radical/strokes, definition, numeric value, related characters, variant characters.
 - Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
-- It is also possible to lookup a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
+- It is also possible to look up a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
     - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
     - `Unihan Core`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
     - `Full Unihan`: the full set of 93,858 Unihan characters.
@@ -501,7 +501,7 @@ The following utilities are currently available:
 ## Unihan Variants
 
 - The **Unihan Variants** utility displays all the variants of a given Unihan character.
-- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Lookup</kbd> button to display the variants.
+- Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the variants.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
 - Click the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.
 - Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.

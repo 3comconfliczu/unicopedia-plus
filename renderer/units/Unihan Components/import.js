@@ -5,21 +5,21 @@ const tabs = unit.querySelectorAll ('.tab-bar .tab-radio');
 const tabPanes = unit.querySelectorAll ('.tab-panes .tab-pane');
 const tabInfos = unit.querySelectorAll ('.tab-infos .tab-info');
 //
-const lookupHistoryButton = unit.querySelector ('.lookup-ids .history-button');
-const lookupUnihanInput = unit.querySelector ('.lookup-ids .unihan-input');
-const lookupLookupButton = unit.querySelector ('.lookup-ids .lookup-button');
-const lookupIdsContainer = unit.querySelector ('.lookup-ids .ids-container');
-const lookupInstructions = unit.querySelector ('.lookup-ids .instructions');
-const lookupReferences = unit.querySelector ('.lookup-ids .references');
-const lookupLinks = unit.querySelector ('.lookup-ids .links');
+const lookUpHistoryButton = unit.querySelector ('.look-up-ids .history-button');
+const lookUpUnihanInput = unit.querySelector ('.look-up-ids .unihan-input');
+const lookUpLookUpButton = unit.querySelector ('.look-up-ids .look-up-button');
+const lookUpIdsContainer = unit.querySelector ('.look-up-ids .ids-container');
+const lookUpInstructions = unit.querySelector ('.look-up-ids .instructions');
+const lookUpReferences = unit.querySelector ('.look-up-ids .references');
+const lookUpLinks = unit.querySelector ('.look-up-ids .links');
 //
-const lookupUnihanHistorySize = 128;   // 0: unlimited
+const lookUpUnihanHistorySize = 128;   // 0: unlimited
 //
-let lookupUnihanHistory = [ ];
-let lookupUnihanHistoryIndex = -1;
-let lookupUnihanHistorySave = null;
+let lookUpUnihanHistory = [ ];
+let lookUpUnihanHistoryIndex = -1;
+let lookUpUnihanHistorySave = null;
 //
-let currentLookupUnihanCharacter;
+let currentLookUpUnihanCharacter;
 //
 const parseClearButton = unit.querySelector ('.parse-ids .clear-button');
 const parseSamplesButton = unit.querySelector ('.parse-ids .samples-button');
@@ -245,36 +245,36 @@ module.exports.start = function (context)
         return table;
     }
     //
-    lookupUnihanHistory = prefs.lookupUnihanHistory;
+    lookUpUnihanHistory = prefs.lookupUnihanHistory;
     //
-    function displayLookupData (unihanCharacter)
+    function displayLookUpData (unihanCharacter)
     {
-        while (lookupIdsContainer.firstChild)
+        while (lookUpIdsContainer.firstChild)
         {
-            lookupIdsContainer.firstChild.remove ();
+            lookUpIdsContainer.firstChild.remove ();
         }
-        currentLookupUnihanCharacter = unihanCharacter;
+        currentLookUpUnihanCharacter = unihanCharacter;
         if (unihanCharacter)
         {
-            let indexOfUnihanCharacter = lookupUnihanHistory.indexOf (unihanCharacter);
+            let indexOfUnihanCharacter = lookUpUnihanHistory.indexOf (unihanCharacter);
             if (indexOfUnihanCharacter !== -1)
             {
-                lookupUnihanHistory.splice (indexOfUnihanCharacter, 1);
+                lookUpUnihanHistory.splice (indexOfUnihanCharacter, 1);
             }
-            lookupUnihanHistory.unshift (unihanCharacter);
-            if ((lookupUnihanHistorySize > 0) && (lookupUnihanHistory.length > lookupUnihanHistorySize))
+            lookUpUnihanHistory.unshift (unihanCharacter);
+            if ((lookUpUnihanHistorySize > 0) && (lookUpUnihanHistory.length > lookUpUnihanHistorySize))
             {
-                lookupUnihanHistory.pop ();
+                lookUpUnihanHistory.pop ();
             }
-            lookupUnihanHistoryIndex = -1;
-            lookupUnihanHistorySave = null;
+            lookUpUnihanHistoryIndex = -1;
+            lookUpUnihanHistorySave = null;
             //
             let data = codePoints[unicode.characterToCodePoint (unihanCharacter)];
             if (data)
             {
                 for (let sequence of data.sequences)
                 {
-                    lookupIdsContainer.appendChild (createIDSTable (unihanCharacter, sequence.ids, sequence.source));
+                    lookUpIdsContainer.appendChild (createIDSTable (unihanCharacter, sequence.ids, sequence.source));
                 }
             }
         }
@@ -304,7 +304,7 @@ module.exports.start = function (context)
         return character;
     }
     //
-    lookupUnihanInput.addEventListener
+    lookUpUnihanInput.addEventListener
     (
         'input',
         (event) =>
@@ -319,7 +319,7 @@ module.exports.start = function (context)
             }
         }
     );
-    lookupUnihanInput.addEventListener
+    lookUpUnihanInput.addEventListener
     (
         'keypress',
         (event) =>
@@ -327,11 +327,11 @@ module.exports.start = function (context)
             if (event.key === 'Enter')
             {
                 event.preventDefault ();
-                lookupLookupButton.click ();
+                lookUpLookUpButton.click ();
             }
         }
     );
-    lookupUnihanInput.addEventListener
+    lookUpUnihanInput.addEventListener
     (
         'keydown',
         (event) =>
@@ -341,41 +341,41 @@ module.exports.start = function (context)
                 if (event.key === 'ArrowUp')
                 {
                     event.preventDefault ();
-                    if (lookupUnihanHistoryIndex === -1)
+                    if (lookUpUnihanHistoryIndex === -1)
                     {
-                        lookupUnihanHistorySave = event.currentTarget.value;
+                        lookUpUnihanHistorySave = event.currentTarget.value;
                     }
-                    lookupUnihanHistoryIndex++;
-                    if (lookupUnihanHistoryIndex > (lookupUnihanHistory.length - 1))
+                    lookUpUnihanHistoryIndex++;
+                    if (lookUpUnihanHistoryIndex > (lookUpUnihanHistory.length - 1))
                     {
-                        lookupUnihanHistoryIndex = (lookupUnihanHistory.length - 1);
+                        lookUpUnihanHistoryIndex = (lookUpUnihanHistory.length - 1);
                     }
-                    if (lookupUnihanHistoryIndex !== -1)
+                    if (lookUpUnihanHistoryIndex !== -1)
                     {
-                        event.currentTarget.value = lookupUnihanHistory[lookupUnihanHistoryIndex];
+                        event.currentTarget.value = lookUpUnihanHistory[lookUpUnihanHistoryIndex];
                         event.currentTarget.dispatchEvent (new Event ('input'));
                     }
                 }
                 else if (event.key === 'ArrowDown')
                 {
                     event.preventDefault ();
-                    lookupUnihanHistoryIndex--;
-                    if (lookupUnihanHistoryIndex < -1)
+                    lookUpUnihanHistoryIndex--;
+                    if (lookUpUnihanHistoryIndex < -1)
                     {
-                        lookupUnihanHistoryIndex = -1;
-                        lookupUnihanHistorySave = null;
+                        lookUpUnihanHistoryIndex = -1;
+                        lookUpUnihanHistorySave = null;
                     }
-                    if (lookupUnihanHistoryIndex === -1)
+                    if (lookUpUnihanHistoryIndex === -1)
                     {
-                        if (lookupUnihanHistorySave !== null)
+                        if (lookUpUnihanHistorySave !== null)
                         {
-                            event.currentTarget.value = lookupUnihanHistorySave;
+                            event.currentTarget.value = lookUpUnihanHistorySave;
                             event.currentTarget.dispatchEvent (new Event ('input'));
                         }
                     }
                     else
                     {
-                        event.currentTarget.value = lookupUnihanHistory[lookupUnihanHistoryIndex];
+                        event.currentTarget.value = lookUpUnihanHistory[lookUpUnihanHistoryIndex];
                         event.currentTarget.dispatchEvent (new Event ('input'));
                     }
                 }
@@ -383,27 +383,27 @@ module.exports.start = function (context)
         }
     );
     //
-    function updateLookupUnihanData (character)
+    function updateLookUpUnihanData (character)
     {
-        lookupUnihanInput.value = "";
-        lookupUnihanInput.blur ();
-        lookupUnihanInput.dispatchEvent (new Event ('input'));
-        displayLookupData (character);
+        lookUpUnihanInput.value = "";
+        lookUpUnihanInput.blur ();
+        lookUpUnihanInput.dispatchEvent (new Event ('input'));
+        displayLookUpData (character);
         unit.scrollTop = 0;
         unit.scrollLeft = 0;
     }
     //
-    lookupLookupButton.addEventListener
+    lookUpLookUpButton.addEventListener
     (
         'click',
         (event) =>
         {
-            if (lookupUnihanInput.value)
+            if (lookUpUnihanInput.value)
             {
-                let character = parseUnihanCharacter (lookupUnihanInput.value);
+                let character = parseUnihanCharacter (lookUpUnihanInput.value);
                 if (character)
                 {
-                    updateLookupUnihanData (character);
+                    updateLookUpUnihanData (character);
                 }
                 else
                 {
@@ -412,28 +412,28 @@ module.exports.start = function (context)
             }
             else
             {
-                lookupUnihanHistoryIndex = -1;
-                lookupUnihanHistorySave = null;
-                updateLookupUnihanData ("");
+                lookUpUnihanHistoryIndex = -1;
+                lookUpUnihanHistorySave = null;
+                updateLookUpUnihanData ("");
             }
         }
     );
     //
     function insertUnihanCharacter (menuItem)
     {
-        lookupUnihanInput.value = menuItem.id;
-        lookupUnihanInput.dispatchEvent (new Event ('input'));
-        lookupLookupButton.click ();
+        lookUpUnihanInput.value = menuItem.id;
+        lookUpUnihanInput.dispatchEvent (new Event ('input'));
+        lookUpLookUpButton.click ();
     };
-    lookupHistoryButton.addEventListener
+    lookUpHistoryButton.addEventListener
     (
         'click',
         (event) =>
         {
             let historyMenuTemplate = [ ];
-            if (lookupUnihanHistory.length > 0)
+            if (lookUpUnihanHistory.length > 0)
             {
-                for (let unihan of lookupUnihanHistory)
+                for (let unihan of lookUpUnihanHistory)
                 {
                     historyMenuTemplate.push
                     (
@@ -455,14 +455,14 @@ module.exports.start = function (context)
         }
     );
     //
-    currentLookupUnihanCharacter = prefs.lookupUnihanCharacter;
-    updateLookupUnihanData (currentLookupUnihanCharacter);
+    currentLookUpUnihanCharacter = prefs.lookupUnihanCharacter;
+    updateLookUpUnihanData (currentLookUpUnihanCharacter);
     //
-    lookupInstructions.open = prefs.lookupInstructions;
+    lookUpInstructions.open = prefs.lookupInstructions;
     //
-    lookupReferences.open = prefs.lookupReferences;
+    lookUpReferences.open = prefs.lookupReferences;
     //
-    linksList (lookupLinks, idsRefLinks);
+    linksList (lookUpLinks, idsRefLinks);
     //
     parseDefaultFolderPath = prefs.parseDefaultFolderPath;
     //
@@ -1049,10 +1049,10 @@ module.exports.stop = function (context)
     {
         tabName: getCurrentTabName (),
         //
-        lookupUnihanHistory: lookupUnihanHistory,
-        lookupUnihanCharacter: currentLookupUnihanCharacter,
-        lookupInstructions: lookupInstructions.open,
-        lookupReferences: lookupReferences.open,
+        lookupUnihanHistory: lookUpUnihanHistory,
+        lookupUnihanCharacter: currentLookUpUnihanCharacter,
+        lookupInstructions: lookUpInstructions.open,
+        lookupReferences: lookUpReferences.open,
         //
         parseIdsCharacters: parseIdsCharacters.value,
         parseDisplayModeSelect: parseDisplayModeSelect.value,

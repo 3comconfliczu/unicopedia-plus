@@ -403,7 +403,7 @@
 
 #unihan-data-finder-unit .search-data .data-row.variant
 {
-    color: gray;
+    color: var(--color-dimmed);
 }
 
 #unihan-data-finder-unit .search-data .symbol-data
@@ -448,7 +448,7 @@
 
 #unihan-data-finder-unit .search-data .value-data .item.no-match
 {
-    color: gray;
+    color: var(--color-dimmed);
     list-style-type: circle;
 }
 
@@ -551,7 +551,7 @@
     background-image: url("crosshatch-1-1.svg");
     background-size: 8px;
     background-position: center;
-    color: gray;
+    color: var(--color-dimmed);
 }
 
 #unihan-data-finder-unit .view-by-grid .search-data td.symbol-cell.unassigned .symbol

@@ -286,7 +286,7 @@
 #unihan-inspector-unit .unihan-info .field .list .item.cjk-radical,
 #unihan-inspector-unit .unihan-info .field .value.kangxi-radical
 {
-    color: gray;
+    color: var(--color-dimmed);
     list-style-type: circle;
 }
 

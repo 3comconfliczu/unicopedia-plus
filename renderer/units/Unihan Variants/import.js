@@ -3,7 +3,7 @@ const unit = document.getElementById ('unihan-variants-unit');
 //
 const historyButton = unit.querySelector ('.history-button');
 const unihanInput = unit.querySelector ('.unihan-input');
-const lookupButton = unit.querySelector ('.lookup-button');
+const lookUpButton = unit.querySelector ('.look-up-button');
 const extraVariantsCheckbox = unit.querySelector ('.extra-variants-checkbox');
 const linearCharacter = unit.querySelector ('.linear-character');
 const linearVariants = unit.querySelector ('.linear-variants');
@@ -119,7 +119,7 @@ module.exports.start = function (context)
             if (event.key === 'Enter')
             {
                 event.preventDefault ();
-                lookupButton.click ();
+                lookUpButton.click ();
             }
         }
     );
@@ -581,7 +581,7 @@ module.exports.start = function (context)
         }
     );
     //
-    lookupButton.addEventListener
+    lookUpButton.addEventListener
     (
         'click',
         (event) =>
@@ -611,7 +611,7 @@ module.exports.start = function (context)
     {
         unihanInput.value = menuItem.id;
         unihanInput.dispatchEvent (new Event ('input'));
-        lookupButton.click ();
+        lookUpButton.click ();
     };
     historyButton.addEventListener
     (

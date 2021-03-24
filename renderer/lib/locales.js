@@ -89,8 +89,8 @@ const locales =
     "nn": "Norwegian (Nynorsk)",
     "no": "Norwegian",
     "oc": "Occitan",
-    "or": "Oriya",
     "om": "Oromo",
+    "or": "Oriya",
     "pa": "Punjabi",    // "Panjabi"
     "pl": "Polish",
     "ps": "Pashto",
