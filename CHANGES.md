@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.3.3
+
+- Improved history pop-up menus for specimens and looked up characters.
+- Used proper verb terminology for lookup: look up.
+- Updated `IDS.TXT` data file.
+- Updated `Electron` to version `12.0.2`.
+
 ## 9.3.2
 
 - Removed all unwanted tooltips in generated SVG in the **Unihan Variants** utility, and in the **Parse IDS** feature of the **Unihan Components** utility.

@@ -793,6 +793,8 @@ module.exports.start = function (context)
         (event) =>
         {
             let historyMenuTemplate = [ ];
+            historyMenuTemplate.push ({ label: "Specimen History", enabled: false })
+            // historyMenuTemplate.push ({ type: 'separator' })
             if (blockSpecimenHistory.length > 0)
             {
                 for (let specimen of blockSpecimenHistory)
@@ -812,7 +814,7 @@ module.exports.start = function (context)
                 historyMenuTemplate.push ({ label: "(no history yet)", enabled: false });
             }
             let historyContextualMenu = Menu.buildFromTemplate (historyMenuTemplate);
-            pullDownMenus.popup (event.currentTarget, historyContextualMenu);
+            pullDownMenus.popup (event.currentTarget, historyContextualMenu, 0);
         }
     );
     //

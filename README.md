@@ -225,7 +225,7 @@ The following utilities are currently available:
 - It is possible to choose how many characters are shown one page at a time.
 - A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>, as defined in the [Blocks.txt](https://www.unicode.org/Public/UNIDATA/Blocks.txt) data file.
 - It is also possible to directly enter a code point (or character) in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the code point, scroll its basic data into view, and highlight its hexadecimal code value.
-- You can quickly reuse a previously entered code point by using the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate up and down through the history stack in the <kbd>Specimen</kbd> field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically jump to a specific character.
+- You can quickly reuse a previously entered code point by using the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate up and down through the history stack in the <kbd>Specimen</kbd> field. Alternatively, you can also use the <kbd>Specimen&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically jump to a specific character.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -316,7 +316,7 @@ The following utilities are currently available:
 
 - The **Look Up IDS** feature of the **Unihan Components** utility displays all the IDS (Ideographic Description Sequences) of a given Unihan character, as compiled in the freely available [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
 - Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the IDS.
-- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
+- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>Lookup&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
 - IDS are provided for the set of 92,856 Unihan characters (excluding CJK *compatibility* ideographs) defined in **Unicode 13.0**.
 - Notes:
     - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
@@ -411,7 +411,7 @@ The following utilities are currently available:
 - It is possible to choose how many characters are shown one page at a time.
 - A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>.
 - It is also possible to directly enter a Unihan character or code point in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the character, scroll it into view, and highlight it.
-- You can quickly reuse a previously entered Unihan character by using the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate up and down through the history stack in the <kbd>Specimen</kbd> field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically jump to a specific character.
+- You can quickly reuse a previously entered Unihan character by using the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate up and down through the history stack in the <kbd>Specimen</kbd> field. Alternatively, you can also use the <kbd>Specimen&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically jump to a specific character.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -437,7 +437,7 @@ The following utilities are currently available:
     - basic Unicode information: name, age, plane, block, script, script extensions, general category, extended properties, decomposition, standardized variation, equivalent unified ideograph;
     - basic Unihan information: set (*IICore*, *Unihan Core*, *Full Unihan*), status (*unified* or *compatibility* ideograph), compatibility source, radical/strokes, definition, numeric value, related characters, variant characters.
 - Basic radical information can also be obtained for the 214 KangXi radicals and the 115 additional CJK radicals.
-- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
+- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>Lookup&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
 - It is also possible to look up a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
     - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
     - `Unihan Core`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
@@ -502,7 +502,7 @@ The following utilities are currently available:
 
 - The **Unihan Variants** utility displays all the variants of a given Unihan character.
 - Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the variants.
-- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
+- Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>Lookup&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
 - Click the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.
 - Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
 - Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
