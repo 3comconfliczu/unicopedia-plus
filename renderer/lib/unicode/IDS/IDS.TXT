@@ -1,7 +1,7 @@
 ﻿# Ideographic Description Sequences (IDS) for CJK Unified Ideographs
 # URL: https://babelstone.co.uk/CJK/IDS.TXT
 # Maintained by: Andrew West (魏安) <babelstone@gmail.com>
-# Date: 2021-03-27
+# Date: 2021-03-28
 # Unicode Version: 13.0 (92,856 entries)
 #
 # Notes
@@ -84972,12 +84972,12 @@ U+2DFCD	𭿍	^⿰目重$(G)
 U+2DFCE	𭿎	^⿰目类$(G)
 U+2DFCF	𭿏	^⿰目亮$(G)
 U+2DFD0	𭿐	^⿱𰯯目$(S)
-U+2DFD1	𭿑	^⿰目畢$(K)
+U+2DFD1	𭿑	^⿰目𭺾$(K)	^⿰目畢$(Z)
 U+2DFD2	𭿒	^⿰目針$(G)
 U+2DFD3	𭿓	^⿳丿罒⿻土羊$(J)
 U+2DFD4	𭿔	^⿰目羔$(S)
 U+2DFD5	𭿕	^⿰目曹$(S)
-U+2DFD6	𭿖	^⿰目焉$(K)
+U+2DFD6	𭿖	^⿰目⿱正{59}$(K)	^⿰目焉$(Z)
 U+2DFD7	𭿗	^⿱𥈀廾$(J)
 U+2DFD8	𭿘	^⿰目莖$(S)
 U+2DFD9	𭿙	^⿰目𮍖$(S)
