@@ -73,9 +73,10 @@ for (let line of lines)
 //
 let unencodedCharacters = { };
 //
-for (let value of Object.values (unencoded))
+for (let number in unencoded)
 {
-    unencodedCharacters[value.character] = value.comment;
+    let value = unencoded[number];
+    unencodedCharacters[value.character] = { number, comment: value.comment };
 }
 //
 module.exports = { codePoints, unencodedCharacters };

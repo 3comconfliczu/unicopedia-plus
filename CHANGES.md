@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.4.0
+
+- Added two submenus: `Insert Radical Form` (experimental) and `Insert Unencoded Component` (in addition to `Insert Operator`) to the contextual menu available on the input field of the `Parse IDS` and `Match IDS` features of the `Unihan Components` utility.
+- Added Unihan sample scripts `Detect Missing Radical Equivalents` and `List Radicals in IDS` to the **JavaScript Runner** utility.
+- Assigned the "orphaned" `CJK Radical Repeat` character to a variant of `KangXi Radical Ice`: affects the **Unihan Components**, **Unihan Inspector**, and **Unihan Radical-Strokes** utilities.
+- Updated `IDS.TXT` data file.
+
 ## 9.3.3
 
 - Improved history pop-up menus for specimens and looked up characters.

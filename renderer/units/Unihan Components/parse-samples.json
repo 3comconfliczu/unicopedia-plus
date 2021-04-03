@@ -112,16 +112,16 @@
         "items":
         [
             {
-                "label": "Invalid Component (Katakana)",
+                "label": "Extra Components",
+                "string": "⿰虫圭⿱土土"
+            },
+            {
+                "label": "Invalid Components",
                 "string": "⿰イ韋"
             },
             {
-                "label": "Expected Component",
+                "label": "Missing Components",
                 "string": "⿰⿳⿱⿵𠆢一米口𠬶"
-            },
-            {
-                "label": "Excess Components",
-                "string": "⿰虫圭⿱土土"
             }
         ]
     },

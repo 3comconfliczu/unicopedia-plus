@@ -70,5 +70,15 @@
             "name": "Full Han Radical-Stroke Index - RSIndex.pdf",
             "href": "https://www.unicode.org/Public/13.0.0/charts/RSIndex.pdf"
         }
+    ],
+    [
+        {
+            "name": "Kangxi Radicals - U2F00.pdf",
+            "href": "https://www.unicode.org/charts/PDF/U2F00.pdf"
+        },
+        {
+            "name": "CJK Radicals Supplement - U2E80.pdf",
+            "href": "https://www.unicode.org/charts/PDF/U2E80.pdf"
+        }
     ]
 ]

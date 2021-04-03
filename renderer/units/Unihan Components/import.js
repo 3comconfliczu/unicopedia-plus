@@ -73,6 +73,7 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { codePoints, unencodedCharacters } = require ('../../lib/unicode/parsed-ids-data.js');
     const ids = require ('../../lib/unicode/ids.js');
     //
@@ -106,27 +107,94 @@ module.exports.start = function (context)
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
-    let insertOperator = (menuItem) => { webContents.insertText (menuItem.id); };
+    let textSeparator = (process.platform === 'darwin') ? "\t" : "\xA0\xA0";
+    //
+    let insertCharacter = (menuItem) => { webContents.insertText (menuItem.id); };
     //
     let insertMenuTemplate =
     [
-        {
-            label: "Insert Operator",
-            submenu:
-            [
-            ]
-        }
+        {　label: "Insert Operator",　submenu:　[　]　},
+        {　label: "Insert Radical Form",　submenu:　[　]　},
+        {　label: "Insert Unencoded Component",　submenu:　[　]　}
     ];
-    let operatorsSubmenu = insertMenuTemplate[0].submenu;
+    let operatorSubmenu = insertMenuTemplate[0].submenu;
     for (let operator in ids.operators)
     {
         let idcData = ids.operators[operator];
-        operatorsSubmenu.push
+        operatorSubmenu.push
         (
             {
-                label: `${operator}\xA0\xA0<${unicode.characterToCodePoint (operator)}>\xA0${idcData.name}`,
+                label: `${operator}${textSeparator}<${unicode.characterToCodePoint (operator)}>${textSeparator}${idcData.name}`,
                 id: operator,
-                click: insertOperator
+                click: insertCharacter
+            }
+        );
+    }
+    let radicalFormSubmenu = insertMenuTemplate[1].submenu;
+    const equivalentRadicals =
+    {
+        // "⺍": "𭕄",
+        // "⺩": "𤣩",
+        // "⺫": "罒",
+        // "⻏": "阝"
+    };
+    for (let kangxiRadical of kangxiRadicals)
+    {
+        let number = kangxiRadical.number;
+        let radical = kangxiRadical.radical;
+        let unified = kangxiRadical.unified;
+        let radicalForm = (radical in equivalentRadicals) ? equivalentRadicals[radical] : unified;
+        let name = kangxiRadical.name;
+        let info = `KangXi Rad.\xA0${number}\xA0\xA0${radical}\xA0\xA0(${name})`;
+        radicalFormSubmenu.push
+        (
+            {
+                label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
+                id: radicalForm,
+                click: insertCharacter
+            }
+        );
+        if ("cjk" in kangxiRadical)
+        {
+            let ckjRadicals = kangxiRadical.cjk;
+            for (let ckjRadical of ckjRadicals)
+            {
+                let radical = ckjRadical.radical;
+                let radicalForm;
+                if (radical in equivalentRadicals)
+                {
+                    radicalForm = equivalentRadicals[radical];
+                }
+                else if (ckjRadical.unified === unified)
+                {
+                    radicalForm = radical;
+                }
+                else
+                {
+                    radicalForm = ckjRadical.unified;
+                }
+                let info = `CJK Radical\xA0${number}\xA0\xA0${radical}\xA0\xA0(${ckjRadical.name})`;
+                radicalFormSubmenu.push
+                (
+                    {
+                        label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
+                        id: radicalForm,
+                        click: insertCharacter
+                    }
+                );
+            }
+        }
+    }
+    let unencodedSubmenu = insertMenuTemplate[2].submenu;
+    for (let character in unencodedCharacters)
+    {
+        let value = unencodedCharacters[character];
+        unencodedSubmenu.push
+        (
+            {
+                label: `<${unicode.characterToCodePoint (character)}>${textSeparator}${value.number}\xA0${value.comment}`,
+                id: character,
+                click: insertCharacter
             }
         );
     }
@@ -179,7 +247,8 @@ module.exports.start = function (context)
         tooltip = `<${data.codePoint}>\xA0${(data.name === "<control>") ? data.alias : data.name}`;
         if (character in unencodedCharacters)
         {
-            tooltip += `\n(${unencodedCharacters[character]})`;
+            let value = unencodedCharacters[character];
+            tooltip += `\n${value.number}\xA0${value.comment}`;
         }
         else if (isInvalid)
         {
@@ -196,8 +265,7 @@ module.exports.start = function (context)
         characters.className = 'characters';
         let character = document.createElement ('td');
         character.className = 'character';
-        let data = unicode.getCharacterBasicData (unihanCharacter);
-        character.title = `${data.codePoint}\xA0${data.name}`;
+        character.title = getTooltip (unihanCharacter);
         character.textContent = unihanCharacter;
         characters.appendChild (character);
         let characterGap = document.createElement ('td');
@@ -440,7 +508,7 @@ module.exports.start = function (context)
                     historyMenuTemplate.push
                     (
                         {
-                            label: `${unihan}${(process.platform === 'darwin') ? "\t" : "\xA0\xA0"}${unicode.characterToCodePoint (unihan)}`,
+                            label: `${unihan}${textSeparator}${unicode.characterToCodePoint (unihan)}`,
                             id: unihan,
                             toolTip: unicode.getCharacterBasicData (unihan).name,
                             click: insertUnihanCharacter

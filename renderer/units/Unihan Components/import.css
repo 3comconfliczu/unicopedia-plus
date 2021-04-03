@@ -215,10 +215,10 @@
 
 #unihan-components-unit .parse-ids .interface .error-message
 {
-    border: 1px dotted var(--color-error);
-    background-color: white;
-    padding: 0 5px;
-    color: var(--color-error);
+    background-color: var(--color-error);
+    border-radius: 2.5px;
+    padding: 0 5px 0 6px;
+    color: white;
 }
 
 #unihan-components-unit .parse-ids .interface .error-message .excess-characters
