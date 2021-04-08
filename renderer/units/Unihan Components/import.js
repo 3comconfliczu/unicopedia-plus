@@ -28,8 +28,6 @@ const parseLoadButton = unit.querySelector ('.parse-ids .load-button');
 const parseSaveButton = unit.querySelector ('.parse-ids .save-button');
 const parseIdsCharacters = unit.querySelector ('.parse-ids .characters-input');
 const parseDisplayModeSelect = unit.querySelector ('.parse-ids .display-mode-select');
-const parseErrorMessage = unit.querySelector ('.parse-ids .error-message');
-const parseExcessCharacters = unit.querySelector ('.parse-ids .excess-characters');
 const parseGraphContainer = unit.querySelector ('.parse-ids .graph-container');
 const parseInstructions = unit.querySelector ('.parse-ids .instructions');
 const parseReferences = unit.querySelector ('.parse-ids .references');
@@ -131,19 +129,12 @@ module.exports.start = function (context)
         );
     }
     let radicalFormSubmenu = insertMenuTemplate[1].submenu;
-    const equivalentRadicals =
-    {
-        // "⺍": "𭕄",
-        // "⺩": "𤣩",
-        // "⺫": "罒",
-        // "⻏": "阝"
-    };
     for (let kangxiRadical of kangxiRadicals)
     {
         let number = kangxiRadical.number;
         let radical = kangxiRadical.radical;
         let unified = kangxiRadical.unified;
-        let radicalForm = (radical in equivalentRadicals) ? equivalentRadicals[radical] : unified;
+        let radicalForm = unified;
         let name = kangxiRadical.name;
         let info = `KangXi Rad.\xA0${number}\xA0\xA0${radical}\xA0\xA0(${name})`;
         radicalFormSubmenu.push
@@ -161,11 +152,7 @@ module.exports.start = function (context)
             {
                 let radical = ckjRadical.radical;
                 let radicalForm;
-                if (radical in equivalentRadicals)
-                {
-                    radicalForm = equivalentRadicals[radical];
-                }
-                else if (ckjRadical.unified === unified)
+                if (ckjRadical.unified === unified)
                 {
                     radicalForm = radical;
                 }
@@ -669,11 +656,27 @@ module.exports.start = function (context)
     let parser = new DOMParser ();
     let serializer = new XMLSerializer ();
     //
-    function treeToGraphData (tree)
+    function treeToGraphData (tree, excessCharacters, displayMode)
     {
         // console.log (require ('../../lib/json2.js').stringify (tree, null, 4));
         let data = "";
         let nodeIndex = 0;
+        if (excessCharacters && (displayMode === 'LR'))
+        {
+            data += `    subgraph\n`;
+            data += `    {\n`;
+            data += `        rank = "min"\n`;
+            for (let excessCharacter of excessCharacters)
+            {
+                let currentNodeIndex = nodeIndex;
+                data += `        n${nodeIndex++} [ label = ${JSON.stringify (excessCharacter)}, tooltip = ${JSON.stringify (getTooltip (excessCharacter))}, color = "#CC0000", fontcolor = "#CC0000", style = "bold" ]\n`;
+                if (nodeIndex < excessCharacters.length)
+                {
+                    data += `        n${currentNodeIndex} -> n${nodeIndex} [ style = "invis" ]\n`;
+                }
+            }
+            data += `    }\n`;
+        }
         function walkTree (tree)
         {
             if ((typeof tree === 'string') && (Array.from (tree).length === 1))
@@ -716,12 +719,21 @@ module.exports.start = function (context)
             }
         }
         walkTree (tree);
+        if (excessCharacters && (displayMode === 'TB'))
+        {
+            data += `    subgraph\n`;
+            data += `    {\n`;
+            for (let excessCharacter of excessCharacters)
+            {
+                data += `        n${nodeIndex++} [ label = ${JSON.stringify (excessCharacter)}, tooltip = ${JSON.stringify (getTooltip (excessCharacter))}, color = "#CC0000", fontcolor = "#CC0000", style = "bold" ]\n`;
+            }
+            data += `    }\n`;
+        }
         return data;
     }
     //
     function displayParseData (idsString)
     {
-        parseErrorMessage.hidden = true;
         dotString = "";
         svgResult = "";
         while (parseGraphContainer.firstChild)
@@ -730,13 +742,13 @@ module.exports.start = function (context)
         }
         if (idsString)
         {
+            let excessCharacters = null;
             let delta = ids.compare (idsString);
             if (delta > 0)
             {
-                parseExcessCharacters.textContent = [...idsString].slice (-delta).join ("");
-                parseErrorMessage.hidden = false;
+                excessCharacters = [...idsString].slice (-delta);
             }
-            let data = treeToGraphData (ids.getTree (idsString));
+            let data = treeToGraphData (ids.getTree (idsString), excessCharacters, parseDisplayModeSelect.value);
             dotString =
                 dotTemplate
                 .replace ('{{rankdir}}', parseDisplayModeSelect.value)

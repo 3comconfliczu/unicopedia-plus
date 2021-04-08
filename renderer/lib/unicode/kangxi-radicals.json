@@ -171,6 +171,7 @@
                 "number": 16,
                 "name": "Table",
                 "radical": "⺇",
+                "legacy": "几",
                 "unified": "𠘨",
                 "strokes": 2
             }
@@ -195,6 +196,7 @@
                 "number": 18,
                 "name": "Knife One",
                 "radical": "⺈",
+                "refer": "𠂊",
                 "unified": "刀",
                 "comment": "Form used at top",
                 "strokes": 2
@@ -299,6 +301,7 @@
                 "number": 27,
                 "name": "Cliff",
                 "radical": "⺁",
+                "refer": "𠂆",
                 "unified": "厂",
                 "strokes": 2
             }
@@ -385,6 +388,7 @@
         "number": 39,
         "name": "Child",
         "radical": "⼦",
+        "other": "孑",
         "unified": "子",
         "strokes": 3
     },
@@ -422,6 +426,7 @@
                 "number": 42,
                 "name": "Small Two",
                 "radical": "⺍",
+                "refer": "𭕄",
                 "unified": "小",
                 "comment": "Form used at top",
                 "strokes": 3
@@ -432,6 +437,7 @@
         "number": 43,
         "name": "Lame",
         "radical": "⼪",
+        "refer": "𡯁",
         "unified": "尢",
         "strokes": 3,
         "cjk":
@@ -440,6 +446,7 @@
                 "number": 43,
                 "name": "Lame One",
                 "radical": "⺎",
+                "legacy": "尢",
                 "unified": "兀",
                 "strokes": 3
             },
@@ -461,6 +468,7 @@
                 "number": 43,
                 "name": "Lame Four",
                 "radical": "⺑",
+                "legacy": "尣",
                 "unified": "𡯂",
                 "strokes": 4
             }
@@ -642,6 +650,7 @@
                 "number": 61,
                 "name": "Heart Two",
                 "radical": "⺗",
+                "refer": "㣺",
                 "unified": "心",
                 "comment": "Form used at bottom",
                 "strokes": 4
@@ -762,6 +771,7 @@
                 "number": 72,
                 "name": "Sun",
                 "radical": "⺜",
+                "refer": "冃",
                 "unified": "日",
                 "strokes": 4
             }
@@ -1011,6 +1021,7 @@
         "number": 93,
         "name": "Cow",
         "radical": "⽜",
+        "other": "牜",
         "unified": "牛",
         "strokes": 4,
         "cjk":
@@ -1061,6 +1072,7 @@
                 "number": 96,
                 "name": "Jade",
                 "radical": "⺩",
+                "refer": "𤣩",
                 "unified": "王",
                 "comment": "Form used on left side",
                 "strokes": 4
@@ -1121,6 +1133,7 @@
                 "number": 103,
                 "name": "Bolt of Cloth",
                 "radical": "⺪",
+                "legacy": "疋",
                 "unified": "𤴔",
                 "comment": "Form used on left side",
                 "strokes": 5
@@ -1174,7 +1187,7 @@
                 "number": 109,
                 "name": "Eye",
                 "radical": "⺫",
-                "refer": "⺲",
+                "refer": "罒",
                 "unified": "目",
                 "comment": "Form used at top",
                 "strokes": 5
@@ -1266,6 +1279,7 @@
                 "number": 118,
                 "name": "Bamboo",
                 "radical": "⺮",
+                "legacy": "竹",
                 "unified": "𥫗",
                 "strokes": 6
             }
@@ -1331,7 +1345,7 @@
                 "number": 122,
                 "name": "Net Two",
                 "radical": "⺲",
-                "refer": "⺫",
+                "refer": "𦉰",
                 "unified": "罒",
                 "strokes": 5
             },
@@ -1339,6 +1353,7 @@
                 "number": 122,
                 "name": "Net Three",
                 "radical": "⺳",
+                "legacy": "网",
                 "unified": "㓁",
                 "strokes": 4
             },
@@ -1346,6 +1361,7 @@
                 "number": 122,
                 "name": "Net Four",
                 "radical": "⺴",
+                "legacy": "网",
                 "unified": "冗",
                 "strokes": 4
             },
@@ -1378,6 +1394,7 @@
                 "number": 123,
                 "name": "Ram",
                 "radical": "⺷",
+                "legacy": "羊",
                 "unified": "𦍌",
                 "comment": "Form used at top",
                 "strokes": 6
@@ -1386,6 +1403,7 @@
                 "number": 123,
                 "name": "Ewe",
                 "radical": "⺸",
+                "legacy": "羋",
                 "unified": "𦍋",
                 "strokes": 7
             }
@@ -1510,6 +1528,7 @@
                 "number": 134,
                 "name": "Mortar",
                 "radical": "⺽",
+                "legacy": "臼",
                 "unified": "𦥑",
                 "strokes": 7
             }
@@ -1709,6 +1728,7 @@
         "number": 149,
         "name": "Speech",
         "radical": "⾔",
+        "other": "訁",
         "unified": "言",
         "strokes": 7,
         "cjk":
@@ -1795,6 +1815,7 @@
                 "number": 157,
                 "name": "Foot",
                 "radical": "⻊",
+                "legacy": "足",
                 "unified": "𧾷",
                 "comment": "Form used on left side",
                 "strokes": 7
@@ -1915,6 +1936,7 @@
         "number": 167,
         "name": "Gold",
         "radical": "⾦",
+        "other": "釒",
         "unified": "金",
         "strokes": 8,
         "cjk":
@@ -1992,7 +2014,7 @@
                 "number": 170,
                 "name": "Mound One",
                 "radical": "⻕",
-                "refer": "阜",
+                "legacy": "阜",
                 "unified": "𨸏",
                 "strokes": 8
             },
@@ -2548,6 +2570,7 @@
                 "number": 212,
                 "name": "J-Simplified Dragon",
                 "radical": "⻯",
+                "legacy": "龍",
                 "unified": "竜",
                 "strokes": 10
             },

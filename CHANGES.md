@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.5.0
+
+- Improved display of possible excess characters in the **Parse IDS** feature of the **Unihan Components** utility.
+- Updated the `Noto Sans CJK` set of fonts to version `2.003`.
+- Refined additional data of `kangxi-radicals.json`.
+- Updated `IDS.TXT` data file.
+
 ## 9.4.0
 
 - Added two submenus: `Insert Radical Form` (experimental) and `Insert Unencoded Component` (in addition to `Insert Operator`) to the contextual menu available on the input field of the **Parse IDS** and **Match IDS** features of the **Unihan Components** utility.
