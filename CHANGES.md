@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 - Improved display of possible excess characters in the **Parse IDS** feature of the **Unihan Components** utility.
 - Updated the `Noto Sans CJK` set of fonts to version `2.003`.
 - Refined additional data of `kangxi-radicals.json`.
+- Updated `BabelStoneHanPUA.woff2` font file.
 - Updated `IDS.TXT` data file.
 
 ## 9.4.0
