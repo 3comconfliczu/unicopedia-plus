@@ -1,7 +1,7 @@
 ﻿# Ideographic Description Sequences (IDS) for CJK Unified Ideographs
 # URL: https://babelstone.co.uk/CJK/IDS.TXT
 # Maintained by: Andrew West (魏安) <babelstone@gmail.com>
-# Date: 2021-04-10
+# Date: 2021-04-11
 # Unicode Version: 13.0 (92,856 entries)
 #
 # Notes
@@ -39580,7 +39580,7 @@ U+22E45	𢹅	^⿰扌濁$(V)
 U+22E46	𢹆	^⿰扌諧$(V)
 U+22E47	𢹇	^⿰扌黙$(V)
 U+22E48	𢹈	^⿰扌篭$(V)
-U+22E49	𢹉	^⿰扌頽$(V)
+U+22E49	𢹉	^⿰扌頺$(V)
 U+22E4A	𢹊	^⿰扌熾$(V)
 U+22E4B	𢹋	^⿰扌⿱般血$(T)
 U+22E4C	𢹌	^⿰扌遲$(V)
@@ -84055,7 +84055,7 @@ U+2DC38	𭰸	^⿰氵⿱夂正$(K)
 U+2DC39	𭰹	^⿰氵冞$(J)
 U+2DC3A	𭰺	^⿰氵⿱亦十$(K)
 U+2DC3B	𭰻	^⿰氵𥁃$(K)
-U+2DC3C	𭰼	^⿰氵劵$(J)
+U+2DC3C	𭰼	^⿰氵⿱关力$(J)
 U+2DC3D	𭰽	^⿰氵𢗨$(G)
 U+2DC3E	𭰾	^⿰氵⿱⿹𠄎㐅皿$(S)
 U+2DC3F	𭰿	^⿰波也$(S)
