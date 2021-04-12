@@ -7,13 +7,13 @@ for (let kangxiRadical of kangxiRadicals)
     let kangxiUnified = kangxiRadical.unified;
     if ("cjk" in kangxiRadical)
     {
-        let ckjRadicals = kangxiRadical.cjk;
-        for (let ckjRadical of ckjRadicals)
+        let cjkRadicals = kangxiRadical.cjk;
+        for (let cjkRadical of cjkRadicals)
         {
-            let cjkUnified = ckjRadical.unified;
+            let cjkUnified = cjkRadical.unified;
             if (cjkUnified === kangxiUnified)
             {
-                cjkRadicalList.push (ckjRadical);
+                cjkRadicalList.push (cjkRadical);
             }
         }
     }

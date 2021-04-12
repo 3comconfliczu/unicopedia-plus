@@ -104,26 +104,23 @@ module.exports.start = function (context)
     //
     let lastStrokes = 0;
     let optionGroup = null;
-    kangxiRadicals.forEach
-    (
-        (radical, index) =>
+    for (let kangxiRadical of kangxiRadicals)
+    {
+        if (lastStrokes !== kangxiRadical.strokes)
         {
-            if (lastStrokes !== radical.strokes)
+            if (optionGroup)
             {
-                if (optionGroup)
-                {
-                    radicalSelect.appendChild (optionGroup);
-                }
-                optionGroup = document.createElement ('optgroup');
-                optionGroup.label = `◎\xA0\xA0${fromRadicalStrokes (radical.strokes, true).replace (" ", "\u2002")}`;
-                lastStrokes = radical.strokes;
+                radicalSelect.appendChild (optionGroup);
             }
-            let option = document.createElement ('option');
-            option.textContent = `${fromRadical (index + 1).replace (/^(\S+)\s(\S+)\s/u, "$1\u2002$2\u2002")}`;
-            option.value = index + 1;
-            optionGroup.appendChild (option);
+            optionGroup = document.createElement ('optgroup');
+            optionGroup.label = `◎\xA0\xA0${fromRadicalStrokes (kangxiRadical.strokes, true).replace (" ", "\u2002")}`;
+            lastStrokes = kangxiRadical.strokes;
         }
-    );
+        let option = document.createElement ('option');
+        option.textContent = `${fromRadical (kangxiRadical.number).replace (/^(\S+)\s(\S+)\s/u, "$1\u2002$2\u2002")}`;
+        option.value = kangxiRadical.number;
+        optionGroup.appendChild (option);
+    }
     radicalSelect.appendChild (optionGroup);
     //
     radicalSelect.value = currentRadical;

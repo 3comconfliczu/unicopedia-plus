@@ -73,6 +73,7 @@ module.exports.start = function (context)
     const unicode = require ('../../lib/unicode/unicode.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { codePoints, unencodedCharacters } = require ('../../lib/unicode/parsed-ids-data.js');
+    const { fromRadical, fromStrokes, fromRadicalStrokes } = require ('../../lib/unicode/get-rs-strings.js');
     const ids = require ('../../lib/unicode/ids.js');
     //
     const idsRefLinks = require ('./ids-ref-links.json');
@@ -129,15 +130,33 @@ module.exports.start = function (context)
         );
     }
     let radicalFormSubmenu = insertMenuTemplate[1].submenu;
+    let lastStrokes = 0;
     for (let kangxiRadical of kangxiRadicals)
     {
+        if (lastStrokes !== kangxiRadical.strokes)
+        {
+            radicalFormSubmenu.push
+            (
+                {
+                    label: `◎\xA0\xA0${fromRadicalStrokes (kangxiRadical.strokes, true).replace (" ", "\u2002")}`,
+                    enabled: false
+                }
+            );
+            lastStrokes = kangxiRadical.strokes;
+        }
         let number = kangxiRadical.number;
         let radical = kangxiRadical.radical;
         let unified = kangxiRadical.unified;
         let radicalForm = unified;
         let name = kangxiRadical.name;
         let info = `KangXi Rad.\xA0${number}\xA0\xA0${radical}\xA0\xA0(${name})`;
-        radicalFormSubmenu.push
+        let radicalMenu =
+        {
+            label: `${fromRadical (kangxiRadical.number).replace (/^(\S+)\s(\S+)\s/u, "$1\u2002$2\u2002")}`,
+            submenu: [ ]
+        };
+        let radicalSubMenu = radicalMenu.submenu;
+        radicalSubMenu.push
         (
             {
                 label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
@@ -145,23 +164,43 @@ module.exports.start = function (context)
                 click: insertCharacter
             }
         );
+        if (kangxiRadical.alternate)
+        {
+            radicalForm = kangxiRadical.alternate;
+            radicalSubMenu.push
+            (
+                {
+                    label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
+                    id: radicalForm,
+                    click: insertCharacter
+                }
+            );
+        }
         if ("cjk" in kangxiRadical)
         {
-            let ckjRadicals = kangxiRadical.cjk;
-            for (let ckjRadical of ckjRadicals)
+            radicalSubMenu.push ({ type: 'separator' });
+            let cjkRadicals = kangxiRadical.cjk;
+            for (let cjkRadical of cjkRadicals)
             {
-                let radical = ckjRadical.radical;
+                let radical = cjkRadical.radical;
                 let radicalForm;
-                if (ckjRadical.unified === unified)
+                if (cjkRadical.unified === unified)
                 {
-                    radicalForm = radical;
+                    if (cjkRadical.substitute)
+                    {
+                        radicalForm = cjkRadical.substitute;
+                    }
+                    else
+                    {
+                        radicalForm = radical;
+                    }
                 }
                 else
                 {
-                    radicalForm = ckjRadical.unified;
+                    radicalForm = cjkRadical.unified;
                 }
-                let info = `CJK Radical\xA0${number}\xA0\xA0${radical}\xA0\xA0(${ckjRadical.name})`;
-                radicalFormSubmenu.push
+                let info = `CJK Rad.\xA0${number}\xA0\xA0${radical}\xA0\xA0(${cjkRadical.name})`;
+                radicalSubMenu.push
                 (
                     {
                         label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
@@ -169,8 +208,21 @@ module.exports.start = function (context)
                         click: insertCharacter
                     }
                 );
+                if (cjkRadical.alternate)
+                {
+                    radicalForm = cjkRadical.alternate;
+                    radicalSubMenu.push
+                    (
+                        {
+                            label: `${radicalForm}${textSeparator}<${unicode.characterToCodePoint (radicalForm)}>${textSeparator}${info}`,
+                            id: radicalForm,
+                            click: insertCharacter
+                        }
+                    );
+                }
             }
         }
+        radicalFormSubmenu.push (radicalMenu);
     }
     let unencodedSubmenu = insertMenuTemplate[2].submenu;
     for (let character in unencodedCharacters)

@@ -196,8 +196,8 @@
                 "number": 18,
                 "name": "Knife One",
                 "radical": "⺈",
-                "refer": "𠂊",
                 "unified": "刀",
+                "other": "𠂊",
                 "comment": "Form used at top",
                 "strokes": 2
             },
@@ -301,8 +301,8 @@
                 "number": 27,
                 "name": "Cliff",
                 "radical": "⺁",
-                "refer": "𠂆",
                 "unified": "厂",
+                "substitute": "𠂆",
                 "strokes": 2
             }
         ]
@@ -388,8 +388,8 @@
         "number": 39,
         "name": "Child",
         "radical": "⼦",
-        "other": "孑",
         "unified": "子",
+        "alternate": "孑",
         "strokes": 3
     },
     {
@@ -426,8 +426,8 @@
                 "number": 42,
                 "name": "Small Two",
                 "radical": "⺍",
-                "refer": "𭕄",
                 "unified": "小",
+                "substitute": "𭕄",
                 "comment": "Form used at top",
                 "strokes": 3
             }
@@ -437,8 +437,8 @@
         "number": 43,
         "name": "Lame",
         "radical": "⼪",
-        "refer": "𡯁",
         "unified": "尢",
+        "other": "𡯁",
         "strokes": 3,
         "cjk":
         [
@@ -650,8 +650,8 @@
                 "number": 61,
                 "name": "Heart Two",
                 "radical": "⺗",
-                "refer": "㣺",
                 "unified": "心",
+                "other": "㣺",
                 "comment": "Form used at bottom",
                 "strokes": 4
             }
@@ -771,8 +771,8 @@
                 "number": 72,
                 "name": "Sun",
                 "radical": "⺜",
-                "refer": "冃",
                 "unified": "日",
+                "substitute": "冃",
                 "strokes": 4
             }
         ]
@@ -1021,8 +1021,8 @@
         "number": 93,
         "name": "Cow",
         "radical": "⽜",
-        "other": "牜",
         "unified": "牛",
+        "alternate": "牜",
         "strokes": 4,
         "cjk":
         [
@@ -1031,6 +1031,7 @@
                 "name": "Cow",
                 "radical": "⺧",
                 "unified": "牛",
+                "substitute": "𠂒",
                 "strokes": 4
             }
         ]
@@ -1072,8 +1073,8 @@
                 "number": 96,
                 "name": "Jade",
                 "radical": "⺩",
-                "refer": "𤣩",
                 "unified": "王",
+                "alternate": "𤣩",
                 "comment": "Form used on left side",
                 "strokes": 4
             }
@@ -1187,8 +1188,8 @@
                 "number": 109,
                 "name": "Eye",
                 "radical": "⺫",
-                "refer": "罒",
                 "unified": "目",
+                "substitute": "罒",
                 "comment": "Form used at top",
                 "strokes": 5
             }
@@ -1345,8 +1346,8 @@
                 "number": 122,
                 "name": "Net Two",
                 "radical": "⺲",
-                "refer": "𦉰",
                 "unified": "罒",
+                "other": "𦉰",
                 "strokes": 5
             },
             {
@@ -1728,8 +1729,8 @@
         "number": 149,
         "name": "Speech",
         "radical": "⾔",
-        "other": "訁",
         "unified": "言",
+        "alternate": "訁",
         "strokes": 7,
         "cjk":
         [
@@ -1906,6 +1907,7 @@
                 "name": "City",
                 "radical": "⻏",
                 "unified": "邑",
+                "substitute": "阝",
                 "comment": "Form used on right side",
                 "strokes": 3
             }
@@ -1936,8 +1938,8 @@
         "number": 167,
         "name": "Gold",
         "radical": "⾦",
-        "other": "釒",
         "unified": "金",
+        "alternate": "釒",
         "strokes": 8,
         "cjk":
         [

@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.6.0
+
+- Added three Unihan sample scripts: `List IDS Indivisible Characters`, `List IDS Unrepresentable Characters`, and `Detect Radical-Strokes Discrepancies` to the **JavaScript Runner** utility.
+- Revamped the `Insert Radical Form` submenu belonging to the contextual menu available on the input fields of the **Parse IDS** and **Match IDS** features of the **Unihan Components** utility.
+- Improved `kangxi-radicals.json`.
+- Updated `IDS.TXT` data file.
+
 ## 9.5.0
 
 - Improved display of possible excess characters in the **Parse IDS** feature of the **Unihan Components** utility.

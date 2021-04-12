@@ -625,10 +625,10 @@ module.exports.start = function (context)
                     }
                     else if ("cjk" in kangxiRadical)
                     {
-                        let ckjRadicals = kangxiRadical.cjk;
-                        for (let cjkIndex = 0; cjkIndex < ckjRadicals.length; cjkIndex++)
+                        let cjkRadicals = kangxiRadical.cjk;
+                        for (let cjkIndex = 0; cjkIndex < cjkRadicals.length; cjkIndex++)
                         {
-                            let cjkRadical = ckjRadicals[cjkIndex];
+                            let cjkRadical = cjkRadicals[cjkIndex];
                             if (cjkRadical.radical === character)
                             {
                                 radicalIndex = kangxiIndex;
@@ -638,10 +638,10 @@ module.exports.start = function (context)
                     }
                 }
                 let kangXiRadical;
-                let unified;
                 let kangxiClass;
-                let cjkRadicals = [ ];
-                let cjkClasses = [ ];
+                let cjkRadicalArray = [ ];
+                let cjkClassArray = [ ];
+                let unified;
                 if (radicalIndex >= 0)
                 {
                     let kangxiRadical = kangxiRadicals[radicalIndex];
@@ -657,33 +657,32 @@ module.exports.start = function (context)
                     }
                     if ("cjk" in kangxiRadical)
                     {
-                        let ckjRadicals = kangxiRadical.cjk;
-                        for (let cjkIndex = 0; cjkIndex < ckjRadicals.length; cjkIndex++)
+                        let cjkRadicals = kangxiRadical.cjk;
+                        for (let cjkIndex = 0; cjkIndex < cjkRadicals.length; cjkIndex++)
                         {
-                            let cjkRadical = ckjRadicals[cjkIndex];
-                            cjkRadicals.push (`${radicalIndex + 1} ${cjkRadical.radical} (${cjkRadical.name})`);
+                            let cjkRadical = cjkRadicals[cjkIndex];
+                            cjkRadicalArray.push (`${radicalIndex + 1} ${cjkRadical.radical} (${cjkRadical.name})`);
                             if (cjkRadical.radical === character)
                             {
-                                cjkClasses.push ('cjk-radical-current');
+                                cjkClassArray.push ('cjk-radical-current');
                                 unified = cjkRadical.unified;
                             }
                             else
                             {
-                                cjkClasses.push ('cjk-radical');
+                                cjkClassArray.push ('cjk-radical');
                             }
                         }
                     }
                 }
                 else
                 {
-                    // Only one case: ⺀ U+2E80 CJK RADICAL REPEAT
-                    kangXiRadical = "<unknown>";   // "？", "?", "??", "<unknown>"
+                    kangXiRadical = "<unknown>";
                 }
                 //
                 let radicalFields =
                 [
                     { name: "KangXi Radical", value: kangXiRadical, class: kangxiClass },
-                    { name: "CJK Radicals", value: cjkRadicals, class: cjkClasses },
+                    { name: "CJK Radicals", value: cjkRadicalArray, class: cjkClassArray },
                     { name: "Equivalent Unified Ideograph", value: unified }
                 ];
                 appendFields (unihanInfo, radicalFields);
