@@ -26,6 +26,7 @@ const parseSamplesButton = unit.querySelector ('.parse-ids .samples-button');
 const parseCountNumber = unit.querySelector ('.parse-ids .count-number');
 const parseLoadButton = unit.querySelector ('.parse-ids .load-button');
 const parseSaveButton = unit.querySelector ('.parse-ids .save-button');
+const parseEntryCharacter = unit.querySelector ('.parse-ids .character-input');
 const parseIdsCharacters = unit.querySelector ('.parse-ids .characters-input');
 const parseDisplayModeSelect = unit.querySelector ('.parse-ids .display-mode-select');
 const parseGraphContainer = unit.querySelector ('.parse-ids .graph-container');
@@ -71,6 +72,7 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { codePoints, unencodedCharacters } = require ('../../lib/unicode/parsed-ids-data.js');
     const { fromRadical, fromStrokes, fromRadicalStrokes } = require ('../../lib/unicode/get-rs-strings.js');
@@ -89,6 +91,7 @@ module.exports.start = function (context)
         lookupInstructions: true,
         lookupReferences: false,
         //
+        parseEntryCharacter: "",
         parseIdsCharacters: "",
         parseDisplayModeSelect: "",
         parseInstructions: true,
@@ -296,6 +299,35 @@ module.exports.start = function (context)
         return tooltip;
     }
     //
+    function getCodePointTooltip (character)
+    {
+        let data = unicode.getCharacterBasicData (character);
+        let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+        let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
+        let set = "Full Unihan";
+        let tags = unihanData.codePoints[data.codePoint];
+        if ("kIICore" in tags)
+        {
+            set = "IICore";
+        }
+        else if ("kUnihanCore2020" in tags)
+        {
+            set = "Unihan Core (2020)";
+        }
+        let lines =
+        [
+            `Code Point: ${data.codePoint}`,
+            `Age: Unicode ${data.age} (${data.ageDate})`,
+            `Set: ${set}`,
+            `Status: ${status}`
+        ];
+        if (source)
+        {
+            lines.push (`Source: ${source}`);
+        }
+        return lines.join ("\n");
+    }
+    //
     function createIDSTable (unihanCharacter, IDSCharacters, IDSSource)
     {
         let table = document.createElement ('table');
@@ -336,6 +368,7 @@ module.exports.start = function (context)
         codePoints.className = 'code-points';
         let codePoint = document.createElement ('td');
         codePoint.className = 'code-point';
+        codePoint.title = getCodePointTooltip (unihanCharacter);
         codePoint.textContent = unicode.characterToCodePoint (unihanCharacter);
         codePoints.appendChild (codePoint);
         codepointGap = document.createElement ('td');
@@ -575,13 +608,16 @@ module.exports.start = function (context)
     //
     parseDefaultFolderPath = prefs.parseDefaultFolderPath;
     //
+    const parseEntryIDSpattern = /^([^\t]*)\t([^\t]*)$/u;
+    //
     parseClearButton.addEventListener
     (
         'click',
         (event) =>
         {
+            parseEntryCharacter.value = "";
             parseIdsCharacters.value = "";
-            parseIdsCharacters.focus ();
+            parseEntryCharacter.focus ();
             parseIdsCharacters.dispatchEvent (new Event ('input'));
         }
     );
@@ -593,7 +629,21 @@ module.exports.start = function (context)
         parseSamples,
         (sample) =>
         {
-            parseIdsCharacters.value = sample.string;
+            let entry;
+            let ids;
+            let found = sample.string.match (parseEntryIDSpattern);
+            if (found)
+            {
+                entry = found[1];
+                ids = found[2];
+            }
+            else
+            {
+                entry = "";
+                ids = sample.string;
+            }
+            parseEntryCharacter.value = entry;
+            parseIdsCharacters.value = ids;
             parseIdsCharacters.dispatchEvent (new Event ('input'));
         }
     );
@@ -620,7 +670,21 @@ module.exports.start = function (context)
                 'utf8',
                 (text, filePath) =>
                 {
-                    parseIdsCharacters.value = text;
+                    let entry;
+                    let ids;
+                    let found = text.match (parseEntryIDSpattern);
+                    if (found)
+                    {
+                        entry = found[1];
+                        ids = found[2];
+                    }
+                    else
+                    {
+                        entry = "";
+                        ids = text;
+                    }
+                    parseEntryCharacter.value = entry;
+                    parseIdsCharacters.value = ids;
                     parseIdsCharacters.dispatchEvent (new Event ('input'));
                     parseDefaultFolderPath = path.dirname (filePath);
                 }
@@ -640,8 +704,17 @@ module.exports.start = function (context)
                 parseDefaultFolderPath,
                 (filePath) =>
                 {
+                    let text;
                     parseDefaultFolderPath = path.dirname (filePath);
-                    return parseIdsCharacters.value;
+                    if (parseEntryCharacter.value)
+                    {
+                        text = `${parseEntryCharacter.value}\t${parseIdsCharacters.value}`;
+                    }
+                    else
+                    {
+                        text = parseIdsCharacters.value;
+                    }
+                    return text;
                 }
             );
         }
@@ -684,7 +757,29 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
-        // Fix incorrect centering of text in polygon
+        // Fix incorrect centering of text in ellipses (circles)
+        let ellipses = doc.documentElement.querySelectorAll ('.node ellipse');
+        for (let ellipse of ellipses)
+        {
+            let cx = ellipse.getAttribute ('cx');
+            let texts = ellipse.parentNode.querySelectorAll ('text');
+            for (let text of texts)
+            {
+                let textAnchor = text.getAttribute ('text-anchor');
+                if (textAnchor !== "middle")
+                {
+                    text.setAttribute ('text-anchor', "middle");
+                    text.setAttribute ('x', cx);
+                }
+            }
+            if (texts.length === 1)
+            {
+                let text = texts[0];
+                let y = parseFloat (text.getAttribute ('y'));
+                text.setAttribute ('y', y + 2); // Empirical adjustment
+            }
+        }
+        // Fix incorrect centering of text in polygons (squares)
         let polygons = doc.documentElement.querySelectorAll ('.node polygon');
         for (let polygon of polygons)
         {
@@ -708,21 +803,36 @@ module.exports.start = function (context)
     let parser = new DOMParser ();
     let serializer = new XMLSerializer ();
     //
-    function treeToGraphData (tree, excessCharacters, displayMode)
+    function treeToGraphData (entry, tree, excessCharacters, displayMode)
     {
         // console.log (require ('../../lib/json2.js').stringify (tree, null, 4));
         let data = "";
         let nodeIndex = 0;
+        if (entry)
+        {
+            data += `    n${nodeIndex++} [ label = ${JSON.stringify (entry)}, shape = circle, width = 0.6, fillcolor = "#F7F7F7", style = "filled, bold", tooltip = ${JSON.stringify (getTooltip (entry))} ]\n`;
+        }
+        else
+        {
+            nodeIndex++;
+        }
         if (excessCharacters && (displayMode === 'LR'))
         {
             data += `    subgraph\n`;
             data += `    {\n`;
-            data += `        rank = "min"\n`;
+            let excessNodes = [ ];
+            excessNodes.push (`n${nodeIndex + excessCharacters.length}`);
+            data += `        n${nodeIndex + excessCharacters.length} -> n${nodeIndex} [ style = "invis" ]\n`;
+            for (let index = nodeIndex; index <= excessCharacters.length ; index++)
+            {
+                excessNodes.push (`n${index}`);
+            }
+            data += `        { rank = same; ${excessNodes.join ('; ')} }\n`;
             for (let excessCharacter of excessCharacters)
             {
                 let currentNodeIndex = nodeIndex;
                 data += `        n${nodeIndex++} [ label = ${JSON.stringify (excessCharacter)}, tooltip = ${JSON.stringify (getTooltip (excessCharacter))}, color = "#CC0000", fontcolor = "#CC0000", style = "bold" ]\n`;
-                if (nodeIndex < excessCharacters.length)
+                if (nodeIndex <= excessCharacters.length)
                 {
                     data += `        n${currentNodeIndex} -> n${nodeIndex} [ style = "invis" ]\n`;
                 }
@@ -770,21 +880,29 @@ module.exports.start = function (context)
                 }
             }
         }
+        if (entry)
+        {
+            data += `    n${0} -> n${nodeIndex} [ arrowhead = none, style = "dashed" ]\n`;
+        }
         walkTree (tree);
         if (excessCharacters && (displayMode === 'TB'))
         {
             data += `    subgraph\n`;
             data += `    {\n`;
+            let excessNodes = [ ];
+            excessNodes.push (`n${1}`);
             for (let excessCharacter of excessCharacters)
             {
+                excessNodes.push (`n${nodeIndex}`);
                 data += `        n${nodeIndex++} [ label = ${JSON.stringify (excessCharacter)}, tooltip = ${JSON.stringify (getTooltip (excessCharacter))}, color = "#CC0000", fontcolor = "#CC0000", style = "bold" ]\n`;
             }
+            data += `        { rank = same; ${excessNodes.join ('; ')} }\n`;
             data += `    }\n`;
         }
         return data;
     }
     //
-    function displayParseData (idsString)
+    function displayParseData (entry, idsString)
     {
         dotString = "";
         svgResult = "";
@@ -800,7 +918,7 @@ module.exports.start = function (context)
             {
                 excessCharacters = [...idsString].slice (-delta);
             }
-            let data = treeToGraphData (ids.getTree (idsString), excessCharacters, parseDisplayModeSelect.value);
+            let data = treeToGraphData (entry, ids.getTree (idsString), excessCharacters, parseDisplayModeSelect.value);
             dotString =
                 dotTemplate
                 .replace ('{{rankdir}}', parseDisplayModeSelect.value)
@@ -825,17 +943,88 @@ module.exports.start = function (context)
         }
     }
     //
+    parseEntryCharacter.addEventListener
+    (
+        'input',
+        (event) =>
+        {
+            parseIdsCharacters.dispatchEvent (new Event ('input'));
+        }
+    );
+    //
+    function smartPaste (menuItem)
+    {
+        let text = clipboard.readText ();
+        if (text)
+        {
+            let entry;
+            let ids;
+            let found = text.match (parseEntryIDSpattern);
+            if (found)
+            {
+                entry = found[1];
+                ids = found[2];
+            }
+            else
+            {
+                entry = "";
+                ids = text;
+            }
+            setTimeout
+            (
+                () =>
+                {
+                    parseEntryCharacter.focus ();
+                    webContents.selectAll ();
+                    webContents.replace (entry);
+                }
+            );
+            setTimeout
+            (
+                () =>
+                {
+                    parseIdsCharacters.focus ();
+                    webContents.selectAll ();
+                    webContents.replace (ids);
+                    parseIdsCharacters.dispatchEvent (new Event ('input'));
+                }
+            );
+        }
+    };
+    //
+    let smartPasteMenuTemplate =
+    [
+        {　label: "Smart Paste",　click: smartPaste }
+    ];
+    let smartPasteContextualMenu = Menu.buildFromTemplate (smartPasteMenuTemplate);
+    //
+    parseEntryCharacter.addEventListener
+    (
+        'contextmenu',
+        (event) =>
+        {
+            if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
+            {
+                // event.preventDefault ();
+                let factor = webFrame.getZoomFactor ();
+                smartPasteContextualMenu.popup ({ window: mainWindow, x: Math.round (event.x * factor), y: Math.round (event.y * factor) });
+            }
+        }
+    );
+    //
     parseIdsCharacters.addEventListener
     (
         'input',
         (event) =>
         {
+            let entry = parseEntryCharacter.value;
             let idsCharacters = event.currentTarget.value;
             parseCountNumber.textContent = Array.from (idsCharacters).length;
-            displayParseData (idsCharacters);
+            displayParseData (Array.from (entry)[0], idsCharacters);
         }
     );
     //
+    parseEntryCharacter.value = prefs.parseEntryCharacter;
     parseIdsCharacters.value = prefs.parseIdsCharacters;
     parseIdsCharacters.dispatchEvent (new Event ('input'));
     //
@@ -1188,6 +1377,7 @@ module.exports.stop = function (context)
         lookupInstructions: lookUpInstructions.open,
         lookupReferences: lookUpReferences.open,
         //
+        parseEntryCharacter: parseEntryCharacter.value,
         parseIdsCharacters: parseIdsCharacters.value,
         parseDisplayModeSelect: parseDisplayModeSelect.value,
         parseInstructions: parseInstructions.open,

@@ -1,5 +1,36 @@
 //
+const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
+const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
+//
+function getTooltip (character)
+{
+    let data = unicode.getCharacterBasicData (character);
+    let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
+    let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
+    let set = "Full Unihan";
+    let tags = unihanData.codePoints[data.codePoint];
+    if ("kIICore" in tags)
+    {
+        set = "IICore";
+    }
+    else if ("kUnihanCore2020" in tags)
+    {
+        set = "Unihan Core (2020)";
+    }
+    let lines =
+    [
+        `Code Point: ${data.codePoint}`,
+        `Age: Unicode ${data.age} (${data.ageDate})`,
+        `Set: ${set}`,
+        `Status: ${status}`
+    ];
+    if (source)
+    {
+        lines.push (`Source: ${source}`);
+    }
+    return lines.join ("\n");
+}
 //
 module.exports.create = function (items, params)
 {
@@ -37,7 +68,7 @@ module.exports.create = function (items, params)
             {
                 symbol.classList.add ('nested');
             }
-            symbol.title = `Code Point:\xA0${unicode.characterToCodePoint (item.character)}`;
+            symbol.title = getTooltip (item.character);
             symbol.textContent = item.character;
             dataWrapper.appendChild (symbol);
         }

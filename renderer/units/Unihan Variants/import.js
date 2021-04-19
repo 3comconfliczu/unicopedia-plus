@@ -328,7 +328,7 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
-        // Fix incorrect centering of text in circles
+        // Fix incorrect centering of text in ellipses (circles)
         let ellipses = doc.documentElement.querySelectorAll ('.node ellipse');
         for (let ellipse of ellipses)
         {

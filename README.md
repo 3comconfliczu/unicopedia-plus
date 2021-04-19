@@ -329,9 +329,10 @@ The following utilities are currently available:
 ### Parse IDS
 
 - The **Parse IDS** feature of the **Unihan Components** utility displays the parsing graph of any well-formed IDS (Ideographic Description Sequence).
-- The IDS string can by directly typed, or pasted from the clipboard into the main input field.
-- It is also possible to input predefined IDS strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
-- As a convenience, the input field can be emptied using the <kbd>Clear</kbd> button.
+- The IDS string can by directly typed, or pasted from the clipboard into the <kbd>IDS</kbd> input field.
+- Optionally, a Unihan character can be used as reference in the <kbd>Entry</kbd> input field.
+- It is possible to input predefined sets of Entry and IDS strings selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu.
+- As a convenience, the input fields can be emptied using the <kbd>Clear</kbd> button.
 - The IDS graph can be displayed either vertically or horizontally. Use the <kbd>Display Mode</kbd> drop-down menu to toggle between the two modes.
 - Notes:
     - Only *prefix* operators are supported, not *infix* ones (such as `+` and `-`).

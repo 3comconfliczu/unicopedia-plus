@@ -160,7 +160,7 @@
 
 #unihan-components-unit .look-up-ids .ids-container .characters .ids-characters
 {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 #unihan-components-unit .look-up-ids .ids-container .gap
@@ -213,21 +213,6 @@
     align-items: baseline;
 }
 
-#unihan-components-unit .parse-ids .interface .error-message
-{
-    background-color: var(--color-error);
-    border-radius: 2.5px;
-    padding: 0 5px 0 6px;
-    color: white;
-}
-
-#unihan-components-unit .parse-ids .interface .error-message .excess-characters
-{
-    font-family: var(--ids-family);
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
 #unihan-components-unit .parse-ids .option + .option
 {
     margin-left: 0.75em;
@@ -244,15 +229,38 @@
     font-weight: bold;
 }
 
+#unihan-components-unit .parse-ids .ids-group
+{
+    display: flex;
+}
+
+#unihan-components-unit .parse-ids .character-input
+{
+    vertical-align: top;
+    text-align: center;
+    font-family: var(--ids-family);
+    font-size: 36px;
+    line-height: 1.2em;
+    width: 52px;
+    padding: 3px;
+}
+
+#unihan-components-unit .parse-ids .ids-wrapper
+{
+    margin-left: 1em;
+    width: 100%;
+}
+
 #unihan-components-unit .parse-ids .characters-input
 {
     vertical-align: top;
     font-family: var(--ids-family);
     font-size: 36px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     line-height: 1.2em;
     width: 100%;
     padding: 3px 6px;
+    tab-size: 4;
     text-overflow: ellipsis;
 }
 
