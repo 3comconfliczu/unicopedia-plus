@@ -323,6 +323,15 @@ The following utilities are currently available:
     - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
         - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
         - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+    - The IDS are based on the reference character glyphs shown in their respective **Unicode 13.0** charts:
+        - [CJK Unified Ideographs - U4E00.pdf](https://www.unicode.org/charts/PDF/U4E00.pdf)
+        - [CJK Unified Ideographs Extension A - U3400.pdf](https://www.unicode.org/charts/PDF/U3400.pdf)
+        - [CJK Unified Ideographs Extension B - U20000.pdf](https://www.unicode.org/charts/PDF/U20000.pdf)
+        - [CJK Unified Ideographs Extension C - U2A700.pdf](https://www.unicode.org/charts/PDF/U2A700.pdf)
+        - [CJK Unified Ideographs Extension D - U2B740.pdf](https://www.unicode.org/charts/PDF/U2B740.pdf)
+        - [CJK Unified Ideographs Extension E - U2B820.pdf](https://www.unicode.org/charts/PDF/U2B820.pdf)
+        - [CJK Unified Ideographs Extension F - U2CEB0.pdf](https://www.unicode.org/charts/PDF/U2CEB0.pdf)
+        - [CJK Unified Ideographs Extension G - U30000.pdf](https://www.unicode.org/charts/PDF/U30000.pdf)
 
 <img src="screenshots/unihan-components-lookup-ids.png" width="1080px" alt="Unihan Components - Look Up IDS screenshot">
 
@@ -335,11 +344,20 @@ The following utilities are currently available:
 - As a convenience, the input fields can be emptied using the <kbd>Clear</kbd> button.
 - The IDS graph can be displayed either vertically or horizontally. Use the <kbd>Display Mode</kbd> drop-down menu to toggle between the two modes.
 - Notes:
-    - Only *prefix* operators are supported, not *infix* ones (such as `+` and `-`).
+    - Only *prefix* operators are supported, not *infix* ones (such as `-`).
     - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
     - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
         - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
         - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+    - The IDS are based on the reference character glyphs shown in their respective **Unicode 13.0** charts:
+        - [CJK Unified Ideographs - U4E00.pdf](https://www.unicode.org/charts/PDF/U4E00.pdf)
+        - [CJK Unified Ideographs Extension A - U3400.pdf](https://www.unicode.org/charts/PDF/U3400.pdf)
+        - [CJK Unified Ideographs Extension B - U20000.pdf](https://www.unicode.org/charts/PDF/U20000.pdf)
+        - [CJK Unified Ideographs Extension C - U2A700.pdf](https://www.unicode.org/charts/PDF/U2A700.pdf)
+        - [CJK Unified Ideographs Extension D - U2B740.pdf](https://www.unicode.org/charts/PDF/U2B740.pdf)
+        - [CJK Unified Ideographs Extension E - U2B820.pdf](https://www.unicode.org/charts/PDF/U2B820.pdf)
+        - [CJK Unified Ideographs Extension F - U2CEB0.pdf](https://www.unicode.org/charts/PDF/U2CEB0.pdf)
+        - [CJK Unified Ideographs Extension G - U30000.pdf](https://www.unicode.org/charts/PDF/U30000.pdf)
 
 <img src="screenshots/unihan-components-parse-ids.png" width="1080px" alt="Unihan Components - Parse IDS screenshot">
 
@@ -361,6 +379,15 @@ The following utilities are currently available:
     - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
         - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
         - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+    - The IDS are based on the reference character glyphs shown in their respective **Unicode 13.0** charts:
+        - [CJK Unified Ideographs - U4E00.pdf](https://www.unicode.org/charts/PDF/U4E00.pdf)
+        - [CJK Unified Ideographs Extension A - U3400.pdf](https://www.unicode.org/charts/PDF/U3400.pdf)
+        - [CJK Unified Ideographs Extension B - U20000.pdf](https://www.unicode.org/charts/PDF/U20000.pdf)
+        - [CJK Unified Ideographs Extension C - U2A700.pdf](https://www.unicode.org/charts/PDF/U2A700.pdf)
+        - [CJK Unified Ideographs Extension D - U2B740.pdf](https://www.unicode.org/charts/PDF/U2B740.pdf)
+        - [CJK Unified Ideographs Extension E - U2B820.pdf](https://www.unicode.org/charts/PDF/U2B820.pdf)
+        - [CJK Unified Ideographs Extension F - U2CEB0.pdf](https://www.unicode.org/charts/PDF/U2CEB0.pdf)
+        - [CJK Unified Ideographs Extension G - U30000.pdf](https://www.unicode.org/charts/PDF/U30000.pdf)
 
 <img src="screenshots/unihan-components-match-ids.png" width="1080px" alt="Unihan Components - Match IDS screenshot">
 

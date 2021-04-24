@@ -60,8 +60,7 @@ const operators =
     "↔": { name: "Mirror Operator", arity: 1 },
     "↷": { name: "Rotation Operator", arity: 1 },
     // Infix operators (unupported for the time being)
-    // "-": { name: "Subtraction Operator", arity: -2 },
-    // "+": { name: "Joining Operator", arity: -2 }
+    // "-": { name: "Subtraction Operator", arity: -2 }
 };
 //
 const regexp = require ('../../lib/unicode/regexp.js');

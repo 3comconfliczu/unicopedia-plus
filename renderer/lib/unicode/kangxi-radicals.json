@@ -11,6 +11,7 @@
         "name": "Line",
         "radical": "⼁",
         "unified": "丨",
+        "alternate": "亅",
         "strokes": 1
     },
     {
@@ -84,6 +85,7 @@
         "name": "Man",
         "radical": "⼈",
         "unified": "人",
+        "alternate": "𠆢",
         "strokes": 2,
         "cjk":
         [
@@ -116,6 +118,7 @@
         "name": "Eight",
         "radical": "⼋",
         "unified": "八",
+        "alternate": "丷",
         "strokes": 2
     },
     {
@@ -197,7 +200,7 @@
                 "name": "Knife One",
                 "radical": "⺈",
                 "unified": "刀",
-                "other": "𠂊",
+                "alternate": "𠂊",
                 "comment": "Form used at top",
                 "strokes": 2
             },
@@ -438,7 +441,7 @@
         "name": "Lame",
         "radical": "⼪",
         "unified": "尢",
-        "other": "𡯁",
+        "alternate": "𡯁",
         "strokes": 3,
         "cjk":
         [
@@ -651,7 +654,7 @@
                 "name": "Heart Two",
                 "radical": "⺗",
                 "unified": "心",
-                "other": "㣺",
+                "alternate": "㣺",
                 "comment": "Form used at bottom",
                 "strokes": 4
             }
@@ -1347,7 +1350,7 @@
                 "name": "Net Two",
                 "radical": "⺲",
                 "unified": "罒",
-                "other": "𦉰",
+                "alternate": "𦉰",
                 "strokes": 5
             },
             {
@@ -1575,6 +1578,7 @@
         "name": "Grass",
         "radical": "⾋",
         "unified": "艸",
+        "alternate": "䒑",
         "strokes": 6,
         "cjk":
         [

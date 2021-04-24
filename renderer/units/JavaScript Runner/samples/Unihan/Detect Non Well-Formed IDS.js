@@ -8,7 +8,7 @@ for (let codePoint in codePoints)
     let { sequences } = codePoints[codePoint];
     for (let sequence of sequences)
     {
-        if (compare (sequence.ids) && !(/[\-\+]/u.test (sequence.ids)))
+        if (compare (sequence.ids) && !(/-/u.test (sequence.ids)))
         {
             lines.push (`${codePoint}\t${codePointsToCharacters (codePoint)}\t${sequence.ids}`);
         }

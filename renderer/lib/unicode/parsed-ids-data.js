@@ -7,7 +7,7 @@ let unencoded = { };
 let codePoints = { };
 //
 // Copy of https://babelstone.co.uk/CJK/IDS.TXT (consistent with the BabelStoneHanPUA.ttf font)
-let lines = fs.readFileSync (path.join (__dirname, 'IDS', 'IDS.TXT'), { encoding: 'utf8' }).replace (/^\uFEFF/, "").split ("\r\n");
+let lines = fs.readFileSync (path.join (__dirname, 'IDS', 'IDS.TXT'), { encoding: 'utf8' }).replace (/^\uFEFF/, "").split (/\r?\n/);
 for (let line of lines)
 {
     if (line)
@@ -54,7 +54,7 @@ for (let line of lines)
                         sequences.push
                         (
                             {
-                                ids: found[1].replaceAll (/\{\d+\}/gu, number => unencoded[number].character),
+                                ids: found[1].replaceAll (/\{\d+\}/gu, number => unencoded[number] ? unencoded[number].character : "！"),
                                 source: found[2]
                             }
                         );

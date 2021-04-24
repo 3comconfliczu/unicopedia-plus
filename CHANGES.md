@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.7.1
+
+- Updated `IDS.TXT` data file.
+- Updated `BabelStoneHanPUA.woff2` font file.
+- Updated `Electron` to version `12.0.5`.
+
 ## 9.7.0
 
 - Added optional entry character to the **Parse IDS** feature of the **Unihan Components** utility.
