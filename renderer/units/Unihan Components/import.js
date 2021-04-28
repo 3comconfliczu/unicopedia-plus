@@ -56,7 +56,7 @@ let matchDefaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { clipboard, remote, shell, webFrame } = require ('electron');
+    const { clipboard, remote, shell } = require ('electron');
     const { BrowserWindow, getCurrentWebContents, getCurrentWindow, Menu } = remote;
     //
     const mainWindow = getCurrentWindow ();
@@ -1006,8 +1006,7 @@ module.exports.start = function (context)
             if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
             {
                 // event.preventDefault ();
-                let factor = webFrame.getZoomFactor ();
-                smartPasteContextualMenu.popup ({ window: mainWindow, x: Math.round (event.x * factor), y: Math.round (event.y * factor) });
+                smartPasteContextualMenu.popup ({ window: mainWindow });
             }
         }
     );
@@ -1036,8 +1035,7 @@ module.exports.start = function (context)
             if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
             {
                 event.preventDefault ();
-                let factor = webFrame.getZoomFactor ();
-                insertContextualMenu.popup ({ window: mainWindow, x: Math.round (event.x * factor), y: Math.round (event.y * factor) });
+                insertContextualMenu.popup ({ window: mainWindow });
             }
         }
     );
@@ -1129,8 +1127,7 @@ module.exports.start = function (context)
             if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
             {
                 event.preventDefault ();
-                let factor = webFrame.getZoomFactor ();
-                insertContextualMenu.popup ({ window: mainWindow, x: Math.round (event.x * factor), y: Math.round (event.y * factor) });
+                insertContextualMenu.popup ({ window: mainWindow });
             }
         }
     );

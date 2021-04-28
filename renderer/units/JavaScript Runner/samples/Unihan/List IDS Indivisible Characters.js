@@ -10,9 +10,10 @@ for (let codePoint in codePoints)
     {
         if (sequence.ids === character)
         {
-            indivisibleCharacters.push (character);
+            indivisibleCharacters.push (`${codePoint}\t${character}`);
+            break;
         }
     }
 }
 $.writeln ("Count:", indivisibleCharacters.length);
-$.writeln (indivisibleCharacters.join (" "));
+$.writeln (indivisibleCharacters.join ("\n"));

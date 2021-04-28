@@ -59,7 +59,7 @@ const operators =
     "〾": { name: "Ideographic Variation Indicator", arity: 1 },
     "↔": { name: "Mirror Operator", arity: 1 },
     "↷": { name: "Rotation Operator", arity: 1 },
-    // Infix operators (unupported for the time being)
+    // Infix operators (unsupported for the time being)
     // "-": { name: "Subtraction Operator", arity: -2 }
 };
 //

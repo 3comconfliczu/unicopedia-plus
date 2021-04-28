@@ -4,7 +4,7 @@
     "escapeExitsFullScreen": true,
     "unitsMenu": true,
     "developerFeatures": true,
-    "smartZoom": false,
+    "smartZoom": true,
     "minZoomLevel": -2,
     "maxZoomLevel": 4,
     "window":

@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "9.7.1",
+    "version": "9.8.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -26,7 +26,11 @@
             "artifactName": "${name}-${os}-${version}.${ext}",
             "category": "public.app-category.utilities",
             "icon": "icons/icon.icns",
-            "target": "pkg"
+            "target": [
+                "zip",
+                "dmg",
+                "pkg"
+            ]
         },
         "pkg": {
             "license": "license-index.html",

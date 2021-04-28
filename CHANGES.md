@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.8.0
+
+- Enabled smart zoom feature; fixed position issue of pull-down button menu.
+- Added support for building `.zip` (compressed archive), `.dmg` (disk image), and `.pkg` (installer) files for macOS.
+- Updated `IDS.TXT` data file.
+
 ## 9.7.1
 
 - Updated `IDS.TXT` data file.
