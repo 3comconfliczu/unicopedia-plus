@@ -6,7 +6,9 @@
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "build-mac": "electron-builder --macos",
+        "build:macos": "electron-builder --macos",
+        "build:linux": "electron-builder --linux",
+        "build:win": "electron-builder --win",
         "build-darwin": "electron-packager . --asar --out=build --platform=darwin --ignore=/~.* --ignore=^/screenshots --icon=icons/icon.icns --overwrite",
         "build-linux": "electron-packager . --asar --out=build --platform=linux --ignore=/~.* --ignore=^/screenshots --icon=icons/icon.png --overwrite",
         "build-win32": "electron-packager . --asar --out=build --platform=win32 --ignore=/~.* --ignore=^/screenshots --icon=icons/icon.ico --overwrite"
@@ -14,6 +16,7 @@
     "build": {
         "appId": "com.tonton-pixel.unicopedia-plus",
         "copyright": "Copyright © 2018-2021 ${author}.",
+        "artifactName": "${name}-${os}-${version}.${ext}",
         "directories": {
             "output": "build",
             "buildResources": "build-res"
@@ -23,7 +26,6 @@
             "!screenshots/*"
         ],
         "mac": {
-            "artifactName": "${name}-${os}-${version}.${ext}",
             "category": "public.app-category.utilities",
             "icon": "icons/icon.icns",
             "target": [
@@ -38,6 +40,15 @@
             "allowAnywhere": true,
             "isRelocatable": false,
             "isVersionChecked": false
+        },
+        "linux": {
+            "category": "Development",
+            "icon": "icons/icon.png",
+            "target": "AppImage"
+        },
+        "win": {
+            "icon": "icons/icon.ico",
+            "target": "portable"
         }
     },
     "keywords": [
