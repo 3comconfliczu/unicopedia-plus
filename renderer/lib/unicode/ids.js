@@ -57,8 +57,9 @@ const operators =
     "⿺": { name: "IDC Surround from Lower Left", arity: 2 },   // \p{IDS_Binary_Operator}
     "⿻": { name: "IDC Overlaid", arity: 2 },                   // \p{IDS_Binary_Operator}
     "〾": { name: "Ideographic Variation Indicator", arity: 1 },
-    "↔": { name: "Mirror Operator", arity: 1 },
-    "↷": { name: "Rotation Operator", arity: 1 },
+    "↔": { name: "Horizontal Mirror Operator", arity: 1 },
+    // "↕": { name: "Vertical Mirror Operator", arity: 1 },
+    "↷": { name: "180° Rotation Operator", arity: 1 },
     // Infix operators (unsupported for the time being)
     // "-": { name: "Subtraction Operator", arity: -2 }
 };

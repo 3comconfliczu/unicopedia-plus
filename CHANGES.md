@@ -2,6 +2,14 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.9.0
+
+- Added support for building `.AppImage` (for Linux), and `.exe` (for Windows) executable files.
+- Added new Unihan sample script: `List CJK Strokes in IDS` to the **JavaScript Runner** utility.
+- Added Unihan set info (`IICore`, `U-Core`, `Full`) to the sample scripts: `List IDS Indivisible Characters` and `List IDS Unrepresentable Characters` in the **JavaScript Runner** utility.
+- Updated `IDS.TXT` data file.
+- Updated `Electron` to version `12.0.6`.
+
 ## 9.8.0
 
 - Enabled smart zoom feature; fixed position issue of pull-down button menu.
