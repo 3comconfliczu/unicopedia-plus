@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.9.1
+
+- Added new submenu: `Insert CJK Stroke` to the contextual menu available on the input field of the **Parse IDS** and **Match IDS** features of the **Unihan Components** utility.
+- Updated `IDS.TXT` data file.
+- Updated `BabelStoneHanPUA.woff2` font file.
+- Updated `Electron` to version `12.0.7`.
+
 ## 9.9.0
 
 - Added support for building `.AppImage` (for Linux), and `.exe` (for Windows) executable files.

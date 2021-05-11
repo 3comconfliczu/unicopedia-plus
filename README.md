@@ -72,7 +72,7 @@ The following utilities are currently available:
 
 ## JavaScript Runner
 
-- The **JavaScript Runner** utility lets you execute JavaScript code, and comes with several sample scripts related to Unicode, Unihan and emoji; it is useful for quick testing/prototyping or data processing.
+- The **JavaScript Runner** utility lets you execute JavaScript code, and comes with several sample scripts related to Unicode, Unihan, IDS, and emoji; it is useful for quick testing/prototyping or data processing.
 
 <img src="screenshots/javascript-runner.png" width="1080px" alt="JavaScript Runner screenshot">
 

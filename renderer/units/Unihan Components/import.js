@@ -115,11 +115,27 @@ module.exports.start = function (context)
     //
     let insertMenuTemplate =
     [
+        {　label: "Insert CJK Stroke",　submenu:　[　]　},
         {　label: "Insert Operator",　submenu:　[　]　},
         {　label: "Insert Radical Form",　submenu:　[　]　},
         {　label: "Insert Unencoded Component",　submenu:　[　]　}
     ];
-    let operatorSubmenu = insertMenuTemplate[0].submenu;
+    //
+    let cjkStrokeSubmenu = insertMenuTemplate[0].submenu;
+    for (let cjKStroke of "㇀㇁㇂㇃㇄㇅㇆㇇㇈㇉㇊㇋㇌㇍㇎㇏㇐㇑㇒㇓㇔㇕㇖㇗㇘㇙㇚㇛㇜㇝㇞㇟㇠㇡㇢㇣")
+    {
+        let name = unicode.getCharacterBasicData (cjKStroke).name;
+        cjkStrokeSubmenu.push
+        (
+            {
+                label: `${cjKStroke}${textSeparator}<${unicode.characterToCodePoint (cjKStroke)}>${textSeparator}${name}`,
+                id: cjKStroke,
+                click: insertCharacter
+            }
+        );
+    }
+    //
+    let operatorSubmenu = insertMenuTemplate[1].submenu;
     for (let operator in ids.operators)
     {
         let idcData = ids.operators[operator];
@@ -132,7 +148,8 @@ module.exports.start = function (context)
             }
         );
     }
-    let radicalFormSubmenu = insertMenuTemplate[1].submenu;
+    //
+    let radicalFormSubmenu = insertMenuTemplate[2].submenu;
     let lastStrokes = 0;
     for (let kangxiRadical of kangxiRadicals)
     {
@@ -227,7 +244,8 @@ module.exports.start = function (context)
         }
         radicalFormSubmenu.push (radicalMenu);
     }
-    let unencodedSubmenu = insertMenuTemplate[2].submenu;
+    //
+    let unencodedSubmenu = insertMenuTemplate[3].submenu;
     for (let character in unencodedCharacters)
     {
         let value = unencodedCharacters[character];
@@ -240,6 +258,7 @@ module.exports.start = function (context)
             }
         );
     }
+    //
     let insertContextualMenu = Menu.buildFromTemplate (insertMenuTemplate);
     //
     function updateTab (tabName)
@@ -608,7 +627,7 @@ module.exports.start = function (context)
     //
     parseDefaultFolderPath = prefs.parseDefaultFolderPath;
     //
-    const parseEntryIDSpattern = /^([^\t]*)\t([^\t]*)$/u;
+    const parseEntryIDSpattern = /^([^\t]*)\t([^\t]*)/u;
     //
     parseClearButton.addEventListener
     (
@@ -952,6 +971,11 @@ module.exports.start = function (context)
         }
     );
     //
+    function smartFilterString (string)
+    {
+        return Array.from (string).filter ((char) => (char in ids.operators) || ids.isValidOperand (char)).join ("");
+    }
+    //
     function smartPaste (menuItem)
     {
         let text = clipboard.readText ();
@@ -976,7 +1000,7 @@ module.exports.start = function (context)
                 {
                     parseEntryCharacter.focus ();
                     webContents.selectAll ();
-                    webContents.replace (entry);
+                    webContents.replace (smartFilterString (entry));
                 }
             );
             setTimeout
@@ -985,7 +1009,7 @@ module.exports.start = function (context)
                 {
                     parseIdsCharacters.focus ();
                     webContents.selectAll ();
-                    webContents.replace (ids);
+                    webContents.replace (smartFilterString (ids));
                     parseIdsCharacters.dispatchEvent (new Event ('input'));
                 }
             );

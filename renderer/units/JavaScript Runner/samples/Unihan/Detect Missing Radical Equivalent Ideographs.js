@@ -1,4 +1,4 @@
-// Detect Missing Radical Equivalents
+// Detect Missing Radical Equivalent Ideographs
 const kangxiRadicals = require ('./lib/unicode/kangxi-radicals.json');
 const { characterToCodePoint } = require ('./lib/unicode/unicode.js');
 let cjkRadicalList = [ ];
