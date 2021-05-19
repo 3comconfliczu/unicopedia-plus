@@ -1,4 +1,5 @@
 // Detect Unihan Self Variants
+const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 const variantProperties =
 [
     "kSemanticVariant",
@@ -8,7 +9,6 @@ const variantProperties =
     "kTraditionalVariant",
     "kZVariant"
 ];
-const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 let selfVariants = { };
 for (let codePoint in codePoints)
 {

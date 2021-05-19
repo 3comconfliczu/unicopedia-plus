@@ -2,7 +2,7 @@
 const fs = require ('fs');
 const path = require ('path');
 const { app } = require ('electron').remote;
-let compatibilityVariants = require ('./lib/unicode/get-cjk-compatibility-variants.js');
+const compatibilityVariants = require ('./lib/unicode/get-cjk-compatibility-variants.js');
 let sortedCompatibilityVariants = { };
 let sortedCharacters = Object.keys (compatibilityVariants).sort ((a, b) => a.codePointAt (0) - b.codePointAt (0));
 for (let character of sortedCharacters)

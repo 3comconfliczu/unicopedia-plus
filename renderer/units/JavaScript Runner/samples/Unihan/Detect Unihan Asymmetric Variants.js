@@ -1,4 +1,5 @@
 // Detect Unihan Asymmetric Variants
+const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 const symmetricVariantProperties =
 [
     "kSemanticVariant",
@@ -6,7 +7,6 @@ const symmetricVariantProperties =
     "kSpoofingVariant",
     "kZVariant"
 ];
-const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 let asymmetricVariants = { };
 for (let codePoint in codePoints)
 {

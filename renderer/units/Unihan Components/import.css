@@ -15,7 +15,7 @@
 
 #unihan-components-unit .tab-bar .tab-label span
 {
-    padding: 0.2em 1em;
+    padding: 0.2em 0.85em;
     font-size: 1em;
     font-weight: 600;
     border: 1px solid var(--color-accent);
@@ -26,14 +26,19 @@
     vertical-align: middle;
 }
 
-#unihan-components-unit .tab-bar .tab-label:first-of-type span
+#unihan-components-unit .tab-group + .tab-group
+{
+    margin-left: 1.25em;
+}
+
+#unihan-components-unit .tab-group .tab-label:first-of-type span
 {
     border-top-left-radius : 0.5em;
     border-bottom-left-radius : 0.5em;
     margin-right: -3px;
 }
 
-#unihan-components-unit .tab-bar .tab-label:last-of-type span
+#unihan-components-unit .tab-group .tab-label:last-of-type span
 {
     border-top-right-radius : 0.5em;
     border-bottom-right-radius : 0.5em;
@@ -458,6 +463,128 @@
     font-weight: bold;
 }
 
+#unihan-components-unit .find-by-components .actions
+{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.25em 0;
+}
+
+#unihan-components-unit .find-by-components .action-group
+{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 0 0.5em 0;
+    white-space: nowrap;
+}
+
+#unihan-components-unit .find-by-components .search-wrap
+{
+    width: 100%;
+}
+
+#unihan-components-unit .find-by-components .search-string
+{
+    font-family: ASCII, var(--ids-family);
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    line-height: 1.25em;
+    background: white;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    width: 100%;
+}
+
+#unihan-components-unit .find-by-components .search-string.error
+{
+    color: var(--color-error);
+    outline-color: var(--color-error);
+}
+
+#unihan-components-unit .find-by-components .search-message
+{
+    display: none;
+}
+
+#unihan-components-unit .find-by-components .search-message.shown::before
+{
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    width: 20px;
+    height: 10px;
+    background-color: var(--color-error);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+#unihan-components-unit .find-by-components .search-message.shown
+{
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    margin-right: 2rem;
+    font-family: var(--monospace-family);
+    font-size: 12px;
+    white-space: pre-wrap;
+    padding: 0.375em 0.75em;
+    color: white;
+    background-color: var(--color-error);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px #AAAAAA;
+    z-index: 1;
+}
+
+#unihan-components-unit .find-by-components .search-group
+{
+    flex-grow: 1;
+    margin-right: -0.5em;
+}
+
+#unihan-components-unit .find-by-components .search-group .action
+{
+    margin-right: 0.5em;
+}
+
+#unihan-components-unit .find-by-components .results
+{
+    text-align: left;
+    font-size: small;
+    margin: 0.25em 0 0 0;
+    user-select: text;
+    cursor: text;
+}
+
+#unihan-components-unit .find-by-components .results .results-button
+{
+    padding: 3px 6px;
+    margin-right: 1em;
+    user-select: none;
+}
+
+#unihan-components-unit .find-by-components .results .results-button svg.gear
+{
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: text-bottom;
+}
+
+#unihan-components-unit .find-by-components .results .results-string
+{
+    line-height: 1em;
+}
+
+#unihan-components-unit .find-by-components .results .results-string .hit-count
+{
+    font-weight: bold;
+}
+
 #unihan-components-unit .pagination-bar
 {
     display: flex;
@@ -602,6 +729,29 @@
 #unihan-components-unit .regex-examples code.select-all
 {
     user-select: all;
+    cursor: text;
+}
+
+#unihan-components-unit .unencoded .glyph-list
+{
+    margin-left: 8px;
+    margin-top: -0.25em;
+}
+
+#unihan-components-unit .unencoded .glyph-list .glyph
+{
+    display: inline-block;
+    border: 1px solid gray;
+    background-color: white;
+    font-family: var(--ids-family);
+    font-size: 36px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 4px;
+    user-select: text;
     cursor: text;
 }
 

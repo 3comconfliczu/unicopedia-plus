@@ -1,5 +1,5 @@
 // Display Emoji Size Statistics
-let emojiTestList = require ('emoji-test-list');
+const emojiTestList = require ('emoji-test-list');
 let sizes = { };
 for (let emoji in emojiTestList)
 {

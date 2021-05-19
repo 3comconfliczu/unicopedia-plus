@@ -1,9 +1,9 @@
 // Write Unihan Data to File
-let start = window.performance.now ();
 const fs = require ('fs');
 const path = require ('path');
 const { app } = require ('electron').remote;
 const { codePoints, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
+let start = window.performance.now ();
 let sortedCodePoints = { };
 fullSet.forEach (codePoint => { sortedCodePoints[codePoint] = codePoints[codePoint]; });
 const jsonFile = path.join (app.getPath ('desktop'), 'unihan-data.json');

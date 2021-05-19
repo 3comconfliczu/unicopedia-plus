@@ -6,7 +6,7 @@ This desktop application works on macOS, Linux and Windows operating systems.
 
 ## What's New?
 
-- New **Unihan Components** utility, made up of three features: **Look Up IDS**, **Parse IDS**, and **Match IDS**.
+- New **Unihan Components** utility, made up of four features: **Look Up IDS**, **Parse IDS**, **Match IDS**, and **Find by Components**.
 
     <img src="screenshots/UP-social-preview.png" alt="Unicopedia Plus social preview">
 
@@ -36,6 +36,7 @@ The following utilities are currently available:
     - **Look Up IDS**
     - **Parse IDS**
     - **Match IDS**
+    - **Find by Components**
 - **Unihan Data Finder**
     - **Find by Tag Value**
     - **Match Character**
@@ -390,6 +391,33 @@ The following utilities are currently available:
         - [CJK Unified Ideographs Extension G - U30000.pdf](https://www.unicode.org/charts/PDF/U30000.pdf)
 
 <img src="screenshots/unihan-components-match-ids.png" width="1080px" alt="Unihan Components - Match IDS screenshot">
+
+### Find by Components
+
+- The **Find by Components** feature of the **Unihan Components** utility displays a list of Unihan characters matching a set of individual components. It makes use of the IDS (Ideographic Description Sequences) defined in the [IDS.TXT](https://babelstone.co.uk/CJK/IDS.TXT) data file, maintained by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+- After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
+- It is possible to choose how many characters are shown one page at a time.
+- The search is performed on the set of 92,856 Unihan characters (excluding CJK *compatibility* ideographs) defined in **Unicode 13.0**.
+- Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
+    - `Copy Results` [copy the results as string to the clipboard]
+    - `Save Results..` [save the results as string to a text file]
+    - `Clear Results` [clear the current list of results]
+- Notes:
+    - Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font [BabelStone Han PUA](https://www.babelstone.co.uk/Fonts/PUA.html), created by [Andrew West](https://en.wikipedia.org/wiki/Andrew_West_(linguist)).
+    - For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+        - [BabelStone Han](https://www.babelstone.co.uk/Fonts/Han.html) (`BabelStoneHan.ttf`)
+        - [Hanazono Mincho](https://github.com/cjkvi/HanaMinAFDKO/releases) (`HanaMinA.otf`, `HanaMinB.otf`, `HanaMinC.otf`)
+    - The IDS are based on the reference character glyphs shown in their respective **Unicode 13.0** charts:
+        - [CJK Unified Ideographs - U4E00.pdf](https://www.unicode.org/charts/PDF/U4E00.pdf)
+        - [CJK Unified Ideographs Extension A - U3400.pdf](https://www.unicode.org/charts/PDF/U3400.pdf)
+        - [CJK Unified Ideographs Extension B - U20000.pdf](https://www.unicode.org/charts/PDF/U20000.pdf)
+        - [CJK Unified Ideographs Extension C - U2A700.pdf](https://www.unicode.org/charts/PDF/U2A700.pdf)
+        - [CJK Unified Ideographs Extension D - U2B740.pdf](https://www.unicode.org/charts/PDF/U2B740.pdf)
+        - [CJK Unified Ideographs Extension E - U2B820.pdf](https://www.unicode.org/charts/PDF/U2B820.pdf)
+        - [CJK Unified Ideographs Extension F - U2CEB0.pdf](https://www.unicode.org/charts/PDF/U2CEB0.pdf)
+        - [CJK Unified Ideographs Extension G - U30000.pdf](https://www.unicode.org/charts/PDF/U30000.pdf)
+
+<img src="screenshots/unihan-components-find-by-components.png" width="1080px" alt="Unihan Components - Find by Components screenshot">
 
 ## Unihan Data Finder
 

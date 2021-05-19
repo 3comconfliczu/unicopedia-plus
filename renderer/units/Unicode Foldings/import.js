@@ -34,9 +34,36 @@ module.exports.start = function (context)
     const fileDialogs = require ('../../lib/file-dialogs.js');
     const linksList = require ('../../lib/links-list.js');
     const locales = require ('../../lib/locales.js');
-    const { toCase } = require ('../../lib/foldings.js');
     //
     const unicode = require ('../../lib/unicode/unicode.js');
+    //
+    function toCase (string, folding, locale)
+    {
+        let result = string;
+        if (folding === 'uppercase')
+        {
+            if (typeof locale === 'undefined')
+            {
+                result = string.toUpperCase ();
+            }
+            else
+            {
+                result = string.toLocaleUpperCase (locale || undefined);
+            }
+        }
+        else if (folding === 'lowercase')
+        {
+            if (typeof locale === 'undefined')
+            {
+                result = string.toLowerCase ();
+            }
+            else
+            {
+                result = string.toLocaleLowerCase (locale || undefined);
+            }
+        }
+        return result;
+    }
     //
     let option;
     option = document.createElement ('option');

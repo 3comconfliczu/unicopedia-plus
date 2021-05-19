@@ -1,8 +1,8 @@
 // Run Normalization Conformance Test
-let start = window.performance.now ();
 const normalizationTestData = require ('./lib/unicode/parsed-normalization-test-data.js');
 const unicodeData = require ('./lib/unicode/parsed-unicode-data.js');
 const unicode = require ('./lib/unicode/unicode.js');
+let start = window.performance.now ();
 let errors = [ ];
 function assert (source, form, expected, compared)
 {

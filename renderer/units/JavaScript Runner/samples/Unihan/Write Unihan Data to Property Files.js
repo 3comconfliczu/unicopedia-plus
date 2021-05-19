@@ -1,9 +1,9 @@
 // Write Unihan Data to Property Files
-let start = window.performance.now ();
 const fs = require ('fs');
 const path = require ('path');
 const { app } = require ('electron').remote;
 const { codePoints, fullSet } = require ('./lib/unicode/parsed-unihan-data.js');
+let start = window.performance.now ();
 const properties = { };
 for (let codePoint of fullSet)
 {

@@ -2,6 +2,15 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.10.0
+
+- Added placeholder for a new **Find by Components** feature to the **Unihan Components** utility.
+- Added helper lists of unencoded glyphs to the **Unihan Components** utility.
+- Reorganized items of the Insert contextual menu available on the input fields of the **Unihan Components** utility.
+- Updated `IDS.TXT` data file.
+- Updated `BabelStoneHanPUA.woff2` font file.
+- Updated `Electron` to version `12.0.8`.
+
 ## 9.9.1
 
 - Added new submenu: `Insert CJK Stroke` to the contextual menu available on the input field of the **Parse IDS** and **Match IDS** features of the **Unihan Components** utility.

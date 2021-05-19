@@ -1,4 +1,5 @@
 // Get Max Stroke Count
+const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 const extraSources = true;
 const rsTags =
 [
@@ -7,7 +8,6 @@ const rsTags =
     "kRSAdobe_Japan1_6"
 ];
 //
-const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 let maxStrokes = -1;
 let maxCodePoint = "";
 let maxTagValue = "";

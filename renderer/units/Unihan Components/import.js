@@ -10,6 +10,8 @@ const lookUpUnihanInput = unit.querySelector ('.look-up-ids .unihan-input');
 const lookUpLookUpButton = unit.querySelector ('.look-up-ids .look-up-button');
 const lookUpIdsContainer = unit.querySelector ('.look-up-ids .ids-container');
 const lookUpInstructions = unit.querySelector ('.look-up-ids .instructions');
+const lookUpUnencoded = unit.querySelector ('.look-up-ids .unencoded');
+const lookUpUnencodedGlyphs = unit.querySelector ('.look-up-ids .glyph-list');
 const lookUpReferences = unit.querySelector ('.look-up-ids .references');
 const lookUpLinks = unit.querySelector ('.look-up-ids .links');
 //
@@ -31,6 +33,8 @@ const parseIdsCharacters = unit.querySelector ('.parse-ids .characters-input');
 const parseDisplayModeSelect = unit.querySelector ('.parse-ids .display-mode-select');
 const parseGraphContainer = unit.querySelector ('.parse-ids .graph-container');
 const parseInstructions = unit.querySelector ('.parse-ids .instructions');
+const parseUnencoded = unit.querySelector ('.parse-ids .unencoded');
+const parseUnencodedGlyphs = unit.querySelector ('.parse-ids .glyph-list');
 const parseReferences = unit.querySelector ('.parse-ids .references');
 const parseLinks = unit.querySelector ('.parse-ids .links');
 //
@@ -47,12 +51,30 @@ const matchTotalCount = unit.querySelector ('.match-ids .total-count');
 const matchSearchData = unit.querySelector ('.match-ids .search-data');
 const matchInstructions = unit.querySelector ('.match-ids .instructions');
 const matchRegexExamples = unit.querySelector ('.match-ids .regex-examples');
+const matchUnencoded = unit.querySelector ('.match-ids .unencoded');
+const matchUnencodedGlyphs = unit.querySelector ('.match-ids .glyph-list');
 const matchReferences = unit.querySelector ('.match-ids .references');
 const matchLinks = unit.querySelector ('.match-ids .links');
 //
 const matchParams = { };
 //
 let matchDefaultFolderPath;
+//
+const findSearchString = unit.querySelector ('.find-by-components .search-string');
+const findSearchMessage = unit.querySelector ('.find-by-components .search-message');
+const findSearchButton = unit.querySelector ('.find-by-components .search-button');
+const findResultsButton = unit.querySelector ('.find-by-components .results-button');
+const findHitCount = unit.querySelector ('.find-by-components .hit-count');
+const findTotalCount = unit.querySelector ('.find-by-components .total-count');
+const findInstructions = unit.querySelector ('.find-by-components .instructions');
+const findUnencoded = unit.querySelector ('.find-by-components .unencoded');
+const findUnencodedGlyphs = unit.querySelector ('.find-by-components .glyph-list');
+const findReferences = unit.querySelector ('.find-by-components .references');
+const findLinks = unit.querySelector ('.find-by-components .links');
+//
+const findParams = { };
+//
+let findDefaultFolderPath;
 //
 module.exports.start = function (context)
 {
@@ -89,12 +111,14 @@ module.exports.start = function (context)
         lookupUnihanHistory: [ ],
         lookupUnihanCharacter: "",
         lookupInstructions: true,
+        lookupUnencoded: false,
         lookupReferences: false,
         //
         parseEntryCharacter: "",
         parseIdsCharacters: "",
         parseDisplayModeSelect: "",
         parseInstructions: true,
+        parseUnencoded: false,
         parseReferences: false,
         parseDefaultFolderPath: context.defaultFolderPath,
         //
@@ -104,8 +128,16 @@ module.exports.start = function (context)
         matchPageSize: 64,
         matchInstructions: true,
         matchRegexExamples: false,
+        matchUnencoded: false,
         matchReferences: false,
-        matchDefaultFolderPath: context.defaultFolderPath
+        matchDefaultFolderPath: context.defaultFolderPath,
+        //
+        findSearchString: "",
+        findPageSize: 64,
+        findInstructions: true,
+        findUnencoded: false,
+        findReferences: false,
+        findDefaultFolderPath: context.defaultFolderPath
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
@@ -115,27 +147,14 @@ module.exports.start = function (context)
     //
     let insertMenuTemplate =
     [
-        {　label: "Insert CJK Stroke",　submenu:　[　]　},
-        {　label: "Insert Operator",　submenu:　[　]　},
-        {　label: "Insert Radical Form",　submenu:　[　]　},
-        {　label: "Insert Unencoded Component",　submenu:　[　]　}
+        { label: "Insert Operator", submenu: [ ] },
+        { type: 'separator' },
+        { label: "Insert CJK Stroke", submenu: [ ] },
+        { label: "Insert Radical Form", submenu: [ ] },
+        { label: "Insert Unencoded Component", submenu: [ ] }
     ];
     //
-    let cjkStrokeSubmenu = insertMenuTemplate[0].submenu;
-    for (let cjKStroke of "㇀㇁㇂㇃㇄㇅㇆㇇㇈㇉㇊㇋㇌㇍㇎㇏㇐㇑㇒㇓㇔㇕㇖㇗㇘㇙㇚㇛㇜㇝㇞㇟㇠㇡㇢㇣")
-    {
-        let name = unicode.getCharacterBasicData (cjKStroke).name;
-        cjkStrokeSubmenu.push
-        (
-            {
-                label: `${cjKStroke}${textSeparator}<${unicode.characterToCodePoint (cjKStroke)}>${textSeparator}${name}`,
-                id: cjKStroke,
-                click: insertCharacter
-            }
-        );
-    }
-    //
-    let operatorSubmenu = insertMenuTemplate[1].submenu;
+    let operatorSubmenu = insertMenuTemplate[0].submenu;
     for (let operator in ids.operators)
     {
         let idcData = ids.operators[operator];
@@ -149,7 +168,21 @@ module.exports.start = function (context)
         );
     }
     //
-    let radicalFormSubmenu = insertMenuTemplate[2].submenu;
+    let cjkStrokeSubmenu = insertMenuTemplate[2].submenu;
+    for (let cjKStroke of "㇀㇁㇂㇃㇄㇅㇆㇇㇈㇉㇊㇋㇌㇍㇎㇏㇐㇑㇒㇓㇔㇕㇖㇗㇘㇙㇚㇛㇜㇝㇞㇟㇠㇡㇢㇣")
+    {
+        let name = unicode.getCharacterBasicData (cjKStroke).name;
+        cjkStrokeSubmenu.push
+        (
+            {
+                label: `${cjKStroke}${textSeparator}<${unicode.characterToCodePoint (cjKStroke)}>${textSeparator}${name}`,
+                id: cjKStroke,
+                click: insertCharacter
+            }
+        );
+    }
+    //
+    let radicalFormSubmenu = insertMenuTemplate[3].submenu;
     let lastStrokes = 0;
     for (let kangxiRadical of kangxiRadicals)
     {
@@ -245,7 +278,7 @@ module.exports.start = function (context)
         radicalFormSubmenu.push (radicalMenu);
     }
     //
-    let unencodedSubmenu = insertMenuTemplate[3].submenu;
+    let unencodedSubmenu = insertMenuTemplate[4].submenu;
     for (let character in unencodedCharacters)
     {
         let value = unencodedCharacters[character];
@@ -260,6 +293,23 @@ module.exports.start = function (context)
     }
     //
     let insertContextualMenu = Menu.buildFromTemplate (insertMenuTemplate);
+    insertMenuTemplate[0].enabled = false;
+    let insertOperandsContextualMenu = Menu.buildFromTemplate (insertMenuTemplate);
+    //
+    function createGlyphList ()
+    {
+        let list = document.createElement ('div');
+        for (let character in unencodedCharacters)
+        {
+            let value = unencodedCharacters[character];
+            let glyph = document.createElement ('span')
+            glyph.className = 'glyph';
+            glyph.textContent = character;
+            glyph.title = `<${unicode.characterToCodePoint (character)}>\n${value.number}\xA0${value.comment}`;
+            list.appendChild (glyph);
+        }
+        return list;
+    }
     //
     function updateTab (tabName)
     {
@@ -620,6 +670,10 @@ module.exports.start = function (context)
     updateLookUpUnihanData (currentLookUpUnihanCharacter);
     //
     lookUpInstructions.open = prefs.lookupInstructions;
+    //
+    lookUpUnencoded.open = prefs.lookupUnencoded;
+    //
+    lookUpUnencodedGlyphs.appendChild (createGlyphList ());
     //
     lookUpReferences.open = prefs.lookupReferences;
     //
@@ -1018,7 +1072,7 @@ module.exports.start = function (context)
     //
     let smartPasteMenuTemplate =
     [
-        {　label: "Smart Paste",　click: smartPaste }
+        { label: "Smart Paste", click: smartPaste }
     ];
     let smartPasteContextualMenu = Menu.buildFromTemplate (smartPasteMenuTemplate);
     //
@@ -1065,6 +1119,10 @@ module.exports.start = function (context)
     );
     //
     parseInstructions.open = prefs.parseInstructions;
+    //
+    parseUnencoded.open = prefs.parseUnencoded;
+    //
+    parseUnencodedGlyphs.appendChild (createGlyphList ());
     //
     parseReferences.open = prefs.parseReferences;
     //
@@ -1368,9 +1426,101 @@ module.exports.start = function (context)
     matchInstructions.open = prefs.matchInstructions;
     matchRegexExamples.open = prefs.matchRegexExamples;
     //
+    matchUnencoded.open = prefs.matchUnencoded;
+    //
+    matchUnencodedGlyphs.appendChild (createGlyphList ());
+    //
     matchReferences.open = prefs.matchReferences;
     //
     linksList (matchLinks, idsRefLinks);
+    //
+    findSearchString.addEventListener
+    (
+        'keypress',
+        (event) =>
+        {
+            if (event.key === 'Enter')
+            {
+                event.preventDefault ();
+                findSearchButton.click ();
+            }
+        }
+    );
+    findSearchString.addEventListener
+    (
+        'focusin',
+        (event) =>
+        {
+            if (event.currentTarget.classList.contains ('error'))
+            {
+                findSearchMessage.classList.add ('shown');
+            }
+        }
+    );
+    findSearchString.addEventListener
+    (
+        'focusout',
+        (event) =>
+        {
+            if (event.currentTarget.classList.contains ('error'))
+            {
+                findSearchMessage.classList.remove ('shown');
+            }
+        }
+    );
+    findSearchString.addEventListener
+    (
+        'input',
+        (event) =>
+        {
+            event.currentTarget.classList.remove ('error');
+            findSearchMessage.textContent = "";
+            findSearchMessage.classList.remove ('shown');
+            if (false)
+            {
+                event.currentTarget.classList.add ('error');
+                findSearchMessage.textContent = "Fatal Error!";
+                if (event.currentTarget === document.activeElement)
+                {
+                    findSearchMessage.classList.add ('shown');
+                }
+            }
+        }
+    );
+    findSearchString.value = prefs.findSearchString;
+    findSearchString.dispatchEvent (new Event ('input'));
+    //
+    findSearchString.addEventListener
+    (
+        'contextmenu',
+        (event) =>
+        {
+            if (BrowserWindow.getFocusedWindow () === mainWindow)   // Should not be necessary...
+            {
+                event.preventDefault ();
+                insertOperandsContextualMenu.popup ({ window: mainWindow });
+            }
+        }
+    );
+    //
+    function updateFindResults (hitCount, totalCount)
+    {
+        findHitCount.textContent = hitCount;
+        findTotalCount.textContent = totalCount;
+        findResultsButton.disabled = (hitCount <= 0);
+    }
+    //
+    updateFindResults (0, unihanCount); // Temp!!
+    //
+    findInstructions.open = prefs.findInstructions;
+    //
+    findUnencoded.open = prefs.findUnencoded;
+    //
+    findUnencodedGlyphs.appendChild (createGlyphList ());
+    //
+    findReferences.open = prefs.findReferences;
+    //
+    linksList (findLinks, idsRefLinks);
 };
 //
 module.exports.stop = function (context)
@@ -1396,12 +1546,14 @@ module.exports.stop = function (context)
         lookupUnihanHistory: lookUpUnihanHistory,
         lookupUnihanCharacter: currentLookUpUnihanCharacter,
         lookupInstructions: lookUpInstructions.open,
+        lookupUnencoded: lookUpUnencoded.open,
         lookupReferences: lookUpReferences.open,
         //
         parseEntryCharacter: parseEntryCharacter.value,
         parseIdsCharacters: parseIdsCharacters.value,
         parseDisplayModeSelect: parseDisplayModeSelect.value,
         parseInstructions: parseInstructions.open,
+        parseUnencoded: parseUnencoded.open,
         parseReferences: parseReferences.open,
         parseDefaultFolderPath: parseDefaultFolderPath,
         //
@@ -1411,8 +1563,16 @@ module.exports.stop = function (context)
         matchPageSize: matchParams.pageSize,
         matchInstructions: matchInstructions.open,
         matchRegexExamples: matchRegexExamples.open,
+        matchUnencoded: matchUnencoded.open,
         matchReferences: matchReferences.open,
-        matchDefaultFolderPath: matchDefaultFolderPath
+        matchDefaultFolderPath: matchDefaultFolderPath,
+        //
+        findSearchString: findSearchString.value,
+        findPageSize: findParams.pageSize,
+        findInstructions: findInstructions.open,
+        findUnencoded: findUnencoded.open,
+        findReferences: findReferences.open,
+        findDefaultFolderPath: findDefaultFolderPath
     };
     context.setPrefs (prefs);
 };

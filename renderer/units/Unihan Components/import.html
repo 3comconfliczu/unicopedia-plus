@@ -1,9 +1,14 @@
 <section id="unihan-components-unit">
     <div class="plain-panel">
         <div class="tab-bar">
-            <label class="tab-label"><input class="tab-radio" type="radio"><span>Look Up IDS</span></label>
-            <label class="tab-label"><input class="tab-radio" type="radio"><span>Parse IDS</span></label>
-            <label class="tab-label"><input class="tab-radio" type="radio"><span>Match IDS</span></label>
+            <span class="tab-group">
+                <label class="tab-label"><input class="tab-radio" type="radio"><span>Look Up IDS</span></label>
+                <label class="tab-label"><input class="tab-radio" type="radio"><span>Parse IDS</span></label>
+                <label class="tab-label"><input class="tab-radio" type="radio"><span>Match IDS</span></label>
+            </span>
+            <span class="tab-group">
+                <label class="tab-label"><input class="tab-radio" type="radio"><span>Find by Components</span></label>
+            </span>
         </div>
         <div class="tab-panes">
             <div class="tab-pane look-up-ids">
@@ -86,6 +91,29 @@
                 </div>
                 <div class="search-data"></div>
             </div>
+            <div class="tab-pane find-by-components">
+                <div class="actions">
+                    <span class="action-group search-group">
+                        <span class="action search-wrap">
+                            <input class="search-string" type="search" maxlength="256" placeholder="Components...">
+                            <span class="search-message"></span>
+                        </span>
+                        <span class="action">
+                            <button class="search-button" type="button">Search</button>
+                        </span>
+                    </span>
+                </div>
+                <div class="results">
+                    <button class="pull-down-menu results-button" type="button" title="Results"><svg class="gear"><use href="/images/actions.svg#gear"></use></svg></button><span class="results-string">Unihan characters:&nbsp;<span class="hit-count"></span>&nbsp;/&nbsp;<span class="total-count"></span></span>
+                </div>
+                <div class="search-data"></div>
+                <!-- Temporary -->
+                <div style="text-align: center;">
+                    <svg style="width: 128px; height: 128px;"><use href="/images/symbols.svg#under-construction"></use></svg>
+                    <br>
+                    <span style="font-weight: bold;">Under Construction</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="tab-infos">
@@ -123,8 +151,12 @@
                         </li>
                     </ul>
                 </details>
+                <details class="unencoded">
+                    <summary>Unencoded Glyphs</summary>
+                    <div class="glyph-list"></div>
+                </details>
                 <details class="references">
-                    <summary>References</summary>
+                    <summary>Reference Links</summary>
                     <div class="links"></div>
                 </details>
             </div>
@@ -166,8 +198,12 @@
                         </li>
                     </ul>
                 </details>
+                <details class="unencoded">
+                    <summary>Unencoded Glyphs</summary>
+                    <div class="glyph-list"></div>
+                </details>
                 <details class="references">
-                    <summary>References</summary>
+                    <summary>Reference Links</summary>
                     <div class="links"></div>
                 </details>
             </div>
@@ -237,8 +273,63 @@
                         <li>Unihan characters whose IDS contains one trinary operator followed by two binary operators:<br><code class="select-all">\p{IDS_Trinary_Operator}\p{IDS_Binary_Operator}{2}</code> or <code class="select-all">\p{IDST}\p{IDSB}{2}</code></li>
                     </ul>
                 </details>
+                <details class="unencoded">
+                    <summary>Unencoded Glyphs</summary>
+                    <div class="glyph-list"></div>
+                </details>
                 <details class="references">
-                    <summary>References</summary>
+                    <summary>Reference Links</summary>
+                    <div class="links"></div>
+                </details>
+            </div>
+        </div>
+        <div class="tab-info find-by-components">
+            <div class="accent-panel">
+                <details class="instructions">
+                    <summary>Instructions</summary>
+                    <ul>
+                        <li>The <strong>Find by Components</strong> feature of the <strong>Unihan Components</strong> utility displays a list of Unihan characters matching a set of individual components. It makes use of the IDS (Ideographic Description Sequences) defined in the <a title="https://babelstone.co.uk/CJK/IDS.TXT" href="https://babelstone.co.uk/CJK/IDS.TXT">IDS.TXT</a> data file, maintained by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                        <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
+                        <li>It is possible to choose how many characters are shown one page at a time.</li>
+                        <li>The search is performed on the set of 92,856 Unihan characters (excluding CJK <em>compatibility</em> ideographs) defined in <strong>Unicode 13.0</strong>.</li>
+                        <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
+                            <ul>
+                                <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
+                                <li><code>Save Results..</code> [save the results as string to a text file]</li>
+                                <li><code>Clear Results</code> [clear the current list of results]</li>
+                            </ul>
+                        </li>
+                        <li>Notes:
+                            <ul>
+                                <li>Unencoded components of IDS, if any, are assigned code points belonging to the PUA (Private Use Area) block, and are properly displayed by using an embedded copy of the custom font <a title="https://www.babelstone.co.uk/Fonts/PUA.html" href="https://www.babelstone.co.uk/Fonts/PUA.html">BabelStone Han PUA</a>, created by <a title="https://en.wikipedia.org/wiki/Andrew_West_(linguist)" href="https://en.wikipedia.org/wiki/Andrew_West_(linguist)">Andrew West</a>.</li>
+                                <li>For best display results, most recent versions of the following fonts should be downloaded and installed at the OS level:
+                                    <ul>
+                                        <li><a title="https://www.babelstone.co.uk/Fonts/Han.html" href="https://www.babelstone.co.uk/Fonts/Han.html">BabelStone Han</a> (<code>BabelStoneHan.ttf</code>)</li>
+                                        <li><a title="https://github.com/cjkvi/HanaMinAFDKO/releases" href="https://github.com/cjkvi/HanaMinAFDKO/releases">Hanazono Mincho</a> (<code>HanaMinA.otf</code>, <code>HanaMinB.otf</code>, <code>HanaMinC.otf</code>)</li>
+                                    </ul>
+                                </li>
+                                <li>The IDS are based on the reference character glyphs shown in their respective <strong>Unicode 13.0</strong> charts:
+                                    <ul>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U4E00.pdf" title="https://www.unicode.org/charts/PDF/U4E00.pdf">CJK Unified Ideographs - U4E00.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U3400.pdf" title="https://www.unicode.org/charts/PDF/U3400.pdf">CJK Unified Ideographs Extension A - U3400.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U20000.pdf" title="https://www.unicode.org/charts/PDF/U20000.pdf">CJK Unified Ideographs Extension B - U20000.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U2A700.pdf" title="https://www.unicode.org/charts/PDF/U2A700.pdf">CJK Unified Ideographs Extension C - U2A700.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U2B740.pdf" title="https://www.unicode.org/charts/PDF/U2B740.pdf">CJK Unified Ideographs Extension D - U2B740.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U2B820.pdf" title="https://www.unicode.org/charts/PDF/U2B820.pdf">CJK Unified Ideographs Extension E - U2B820.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U2CEB0.pdf" title="https://www.unicode.org/charts/PDF/U2CEB0.pdf">CJK Unified Ideographs Extension F - U2CEB0.pdf</a></li>
+                                        <li><a href="https://www.unicode.org/charts/PDF/U30000.pdf" title="https://www.unicode.org/charts/PDF/U30000.pdf">CJK Unified Ideographs Extension G - U30000.pdf</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </details>
+                <details class="unencoded">
+                    <summary>Unencoded Glyphs</summary>
+                    <div class="glyph-list"></div>
+                </details>
+                <details class="references">
+                    <summary>Reference Links</summary>
                     <div class="links"></div>
                 </details>
             </div>
