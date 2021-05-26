@@ -23,6 +23,8 @@ let lookUpUnihanHistorySave = null;
 //
 let currentLookUpUnihanCharacter;
 //
+let parseDefaultFolderPath;
+//
 const parseClearButton = unit.querySelector ('.parse-ids .clear-button');
 const parseSamplesButton = unit.querySelector ('.parse-ids .samples-button');
 const parseCountNumber = unit.querySelector ('.parse-ids .count-number');
@@ -38,7 +40,7 @@ const parseUnencodedGlyphs = unit.querySelector ('.parse-ids .glyph-list');
 const parseReferences = unit.querySelector ('.parse-ids .references');
 const parseLinks = unit.querySelector ('.parse-ids .links');
 //
-let parseDefaultFolderPath;
+let resultsDefaultFolderPath;
 //
 const matchSearchString = unit.querySelector ('.match-ids .search-string');
 const matchSearchMessage = unit.querySelector ('.match-ids .search-message');
@@ -58,8 +60,6 @@ const matchLinks = unit.querySelector ('.match-ids .links');
 //
 const matchParams = { };
 //
-let matchDefaultFolderPath;
-//
 const findSearchString = unit.querySelector ('.find-by-components .search-string');
 const findSearchMessage = unit.querySelector ('.find-by-components .search-message');
 const findSearchButton = unit.querySelector ('.find-by-components .search-button');
@@ -73,8 +73,6 @@ const findReferences = unit.querySelector ('.find-by-components .references');
 const findLinks = unit.querySelector ('.find-by-components .links');
 //
 const findParams = { };
-//
-let findDefaultFolderPath;
 //
 module.exports.start = function (context)
 {
@@ -114,13 +112,15 @@ module.exports.start = function (context)
         lookupUnencoded: false,
         lookupReferences: false,
         //
+        parseDefaultFolderPath: context.defaultFolderPath,
         parseEntryCharacter: "",
         parseIdsCharacters: "",
         parseDisplayModeSelect: "",
         parseInstructions: true,
         parseUnencoded: false,
         parseReferences: false,
-        parseDefaultFolderPath: context.defaultFolderPath,
+        //
+        resultsDefaultFolderPath: context.defaultFolderPath,
         //
         matchSearchString: "",
         matchNestedMatch: false,
@@ -130,14 +130,12 @@ module.exports.start = function (context)
         matchRegexExamples: false,
         matchUnencoded: false,
         matchReferences: false,
-        matchDefaultFolderPath: context.defaultFolderPath,
         //
         findSearchString: "",
         findPageSize: 64,
         findInstructions: true,
         findUnencoded: false,
-        findReferences: false,
-        findDefaultFolderPath: context.defaultFolderPath
+        findReferences: false
     };
     let prefs = context.getPrefs (defaultPrefs);
     //
@@ -1128,7 +1126,7 @@ module.exports.start = function (context)
     //
     linksList (parseLinks, idsRefLinks);
     //
-    matchDefaultFolderPath = prefs.matchDefaultFolderPath;
+    resultsDefaultFolderPath = prefs.resultsDefaultFolderPath;
     //
     matchNestedMatch.checked = prefs.matchNestedMatch;
     //
@@ -1369,10 +1367,10 @@ module.exports.start = function (context)
         (
             "Save text file:",
             [ { name: "Text (*.txt)", extensions: [ 'txt' ] } ],
-            matchDefaultFolderPath,
+            resultsDefaultFolderPath,
             (filePath) =>
             {
-                matchDefaultFolderPath = path.dirname (filePath);
+                resultsDefaultFolderPath = path.dirname (filePath);
                 return string;
             }
         );
@@ -1549,13 +1547,15 @@ module.exports.stop = function (context)
         lookupUnencoded: lookUpUnencoded.open,
         lookupReferences: lookUpReferences.open,
         //
+        parseDefaultFolderPath: parseDefaultFolderPath,
         parseEntryCharacter: parseEntryCharacter.value,
         parseIdsCharacters: parseIdsCharacters.value,
         parseDisplayModeSelect: parseDisplayModeSelect.value,
         parseInstructions: parseInstructions.open,
         parseUnencoded: parseUnencoded.open,
         parseReferences: parseReferences.open,
-        parseDefaultFolderPath: parseDefaultFolderPath,
+        //
+        resultsDefaultFolderPath: resultsDefaultFolderPath,
         //
         matchSearchString: matchSearchString.value,
         matchNestedMatch: matchNestedMatch.checked,
@@ -1565,14 +1565,12 @@ module.exports.stop = function (context)
         matchRegexExamples: matchRegexExamples.open,
         matchUnencoded: matchUnencoded.open,
         matchReferences: matchReferences.open,
-        matchDefaultFolderPath: matchDefaultFolderPath,
         //
         findSearchString: findSearchString.value,
         findPageSize: findParams.pageSize,
         findInstructions: findInstructions.open,
         findUnencoded: findUnencoded.open,
-        findReferences: findReferences.open,
-        findDefaultFolderPath: findDefaultFolderPath
+        findReferences: findReferences.open
     };
     context.setPrefs (prefs);
 };

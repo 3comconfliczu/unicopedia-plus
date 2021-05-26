@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 9.11.0
+
+- Updated `IDS.TXT` data file.
+- Updated `BabelStoneHanPUA.woff2` font file.
+- Updated `Electron` to version `13.0.1`.
+
 ## 9.10.0
 
 - Added placeholder for a new **Find by Components** feature to the **Unihan Components** utility.

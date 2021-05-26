@@ -275,17 +275,24 @@
     ],
     [
         {
+            "lang": "ja",
+            "name": "漢字辞典オンライン",
+            "href": "https://kanji.jitenon.jp/"
+        },
+        {
+            "lang": "ja",
+            "name": "漢字ペディア",
+            "href": "https://www.kanjipedia.jp/"
+        }
+    ],
+    [
+        {
             "name": "Jisho.org: Japanese Dictionary",
             "href": "https://jisho.org/"
         },
         {
             "name": "Tangorin Japanese Dictionary",
             "href": "https://tangorin.com/"
-        },
-        {
-            "lang": "ja",
-            "name": "漢字ペディア",
-            "href": "https://www.kanjipedia.jp/"
         }
     ],
     [

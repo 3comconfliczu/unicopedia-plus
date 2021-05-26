@@ -122,6 +122,10 @@ module.exports.create = function (characters, params, highlightedCharacter)
                 {
                     symbol.textContent = ((data.name === "<control>") || (character === " ")) ? "\xA0" : data.character;
                 }
+                if (data.category === 'Private_Use')
+                {
+                    symbol.classList.add ('private-use');
+                }
             }
             else
             {
