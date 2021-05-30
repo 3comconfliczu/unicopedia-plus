@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.0.0
+
+- Removed the experimental **Unihan Components** utility.
+
 ## 9.11.0
 
 - Updated `IDS.TXT` data file.

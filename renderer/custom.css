@@ -38,12 +38,6 @@
 */
 @font-face
 {
-    font-family: "BabelStone Han PUA";
-    src: url("ids-fonts/BabelStoneHanPUA.woff2");
-}
-
-@font-face
-{
     font-family: "NotDef";
     src: url("not-def-font/AND-Regular.otf") format("opentype");
 }
@@ -86,5 +80,4 @@
     --sans-serif-emoji-family: "Segoe UI", Arial, Geneva, Verdana, Tahoma, "DejaVu Sans", "Liberation Sans", "Noto Sans", Ubuntu, sans-serif, "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", emoji;
     --emoji-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", emoji;
     --unihan-family: sans-serif;
-    --ids-family: "BabelStone Han PUA", "BabelStone Han", "Hanazono Mincho A", "Hanazono Mincho B", "Hanazono Mincho C", serif;
 }
