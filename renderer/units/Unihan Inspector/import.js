@@ -26,8 +26,8 @@ let showCategories;
 //
 module.exports.start = function (context)
 {
-    const { remote, shell } = require ('electron');
-    const { Menu } = remote;
+    const { shell } = require ('electron');
+    const { Menu } = require ('@electron/remote');
     //
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
     const linksList = require ('../../lib/links-list.js');

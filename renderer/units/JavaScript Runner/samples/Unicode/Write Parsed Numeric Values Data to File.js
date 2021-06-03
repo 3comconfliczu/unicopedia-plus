@@ -1,8 +1,4 @@
 // Write Parsed Numeric Values Data to File
-const fs = require ('fs');
-const path = require ('path');
-const { app } = require ('electron').remote;
 const characters = require ('./lib/unicode/parsed-numeric-values-data.js');
-const jsonFile = path.join (app.getPath ('desktop'), 'numeric-values-data.json');
-fs.writeFileSync (jsonFile, $.stringify (characters, null, 4));
+let jsonFile = $.save ($.stringify (characters, null, 4), 'numeric-values-data.json');
 $.writeln (`Wrote parsed numeric values data to JSON file:\n${jsonFile}`);

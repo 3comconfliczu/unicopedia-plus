@@ -30,8 +30,8 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote, shell } = require ('electron');
-    const { Menu } = remote;
+    const { shell } = require ('electron');
+    const { Menu } = require ('@electron/remote');
     //
     const fs = require ('fs');
     const path = require ('path');

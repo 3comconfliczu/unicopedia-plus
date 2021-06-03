@@ -44,8 +44,8 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { clipboard, remote, shell } = require ('electron');
-    const { Menu } = remote;
+    const { clipboard, shell } = require ('electron');
+    const { Menu } = require ('@electron/remote');
     //
     const path = require ('path');
     //

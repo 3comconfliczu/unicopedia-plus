@@ -18,8 +18,8 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { remote, shell } = require ('electron');
-    const { getCurrentWebContents } = remote;
+    const { shell } = require ('electron');
+    const { app, getCurrentWebContents } = require ('@electron/remote');
     //
     const webContents = getCurrentWebContents ();
     //
@@ -263,7 +263,28 @@ module.exports.start = function (context)
                                         };
                                     },
                                 //
-                                stringify: json.stringify
+                                stringify: json.stringify,
+                                //
+                                save:
+                                    (string, filename, dirname) =>
+                                    {
+                                        let filepath;
+                                        if (dirname)
+                                        {
+                                            let dirpath = path.join (app.getPath ('desktop'), dirname);
+                                            if (!fs.existsSync (dirpath))
+                                            {
+                                                fs.mkdirSync (dirpath);
+                                            }
+                                            filepath = path.join (dirpath, filename);
+                                        }
+                                        else
+                                        {
+                                            filepath = path.join (app.getPath ('desktop'), filename);
+                                        }
+                                        fs.writeFileSync (filepath, string);
+                                        return filepath;
+                                    }
                             };
                             // http://dfkaye.github.io/2014/03/14/javascript-eval-and-function-constructor/
                             // Because Function does not have access to the local scope, the "use strict"
