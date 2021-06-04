@@ -268,21 +268,32 @@ module.exports.start = function (context)
                                 save:
                                     (string, filename, dirname) =>
                                     {
-                                        let filepath;
+                                        let filepath = null;
+                                        let desktopPath = app.getPath ('desktop');
                                         if (dirname)
                                         {
-                                            let dirpath = path.join (app.getPath ('desktop'), dirname);
-                                            if (!fs.existsSync (dirpath))
+                                            let dirpath = path.join (desktopPath, dirname);
+                                            if (dirpath.startsWith (desktopPath))
                                             {
-                                                fs.mkdirSync (dirpath);
+                                                if (!fs.existsSync (dirpath))
+                                                {
+                                                    fs.mkdirSync (dirpath);
+                                                }
+                                                filepath = path.join (dirpath, filename);
                                             }
-                                            filepath = path.join (dirpath, filename);
                                         }
                                         else
                                         {
-                                            filepath = path.join (app.getPath ('desktop'), filename);
+                                            filepath = path.join (desktopPath, filename);
                                         }
-                                        fs.writeFileSync (filepath, string);
+                                        if (filepath && filepath.startsWith (desktopPath))
+                                        {
+                                            fs.writeFileSync (filepath, string);
+                                        }
+                                        else
+                                        {
+                                            filepath = null;
+                                        }
                                         return filepath;
                                     }
                             };
