@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.3.0
+
+- Added `Creative Commons Symbols` samples to the **Unicode Inspector** utility.
+- Added `CJK Strokes` samples to the **CJK Font Variants** utility.
+- Updated `@electron/remote` module to version `1.2.0`.
+- Updated `Electron` to version `13.1.3`.
+
 ## 10.2.0
 
 - Fixed potential vulnerability of built-in `$.save ()` function in the **JavaScript Runner** utility.
