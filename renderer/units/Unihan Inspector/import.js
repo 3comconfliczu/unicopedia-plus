@@ -68,7 +68,6 @@ module.exports.start = function (context)
     const defaultFontSize = 72;
     //
     const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Blank"`;
-    // const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Sans CJK MO", "Blank"`;
     //
     let canvas = document.createElement ('canvas');
     canvas.width = defaultFontSize;
@@ -88,8 +87,7 @@ module.exports.start = function (context)
         "ko": { label: "KR", title: "Korean typeface" },
         "zh-Hans": { label: "SC", title: "Simplified Chinese typeface" },
         "zh-Hant-TW": { label: "TC", title: "Traditional Chinese (Taiwan) typeface" },
-        "zh-Hant-HK": { label: "HK", title: "Traditional Chinese (Hong Kong) typeface" },
-        // "zh-Hant-MO": { label: "MO", title: "Traditional Chinese (Macao) typeface" }
+        "zh-Hant-HK": { label: "HK", title: "Traditional Chinese (Hong Kong) typeface" }
     };
     const languageKeys = Object.keys (languages);
     //

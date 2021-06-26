@@ -11,6 +11,7 @@ const saveButton = unit.querySelector ('.save-button');
 const charactersInput = unit.querySelector ('.characters-input');
 const codePointsInput = unit.querySelector ('.code-points-input');
 const writingModeSelect = unit.querySelector ('.writing-mode-select');
+const fontWeightSelect = unit.querySelector ('.font-weight-select');
 const eastAsianSelect = unit.querySelector ('.east-asian-select');
 const graphemesNumber = unit.querySelector ('.graphemes-number');
 const sheet = unit.querySelector ('.sheet');
@@ -36,6 +37,7 @@ module.exports.start = function (context)
     {
         charactersInput: "",
         writingModeSelect: "",
+        fontWeightSelect: 400,
         eastAsianSelect: "",
         instructions: true,
         references: false,
@@ -46,10 +48,12 @@ module.exports.start = function (context)
     let headStyle = document.createElement ('style');
     document.head.appendChild (headStyle);
     //
+    let head2Style = document.createElement ('style');
+    document.head.appendChild (head2Style);
+    //
     const defaultFontSize = 72;
     //
     const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Blank"`;
-    // const cjkBlankFont = `${defaultFontSize}px "Sans CJK JP", "Sans CJK KR", "Sans CJK SC", "Sans CJK TC", "Sans CJK HK", "Sans CJK MO", "Blank"`;
     //
     let canvas = document.createElement ('canvas');
     canvas.width = defaultFontSize;
@@ -148,8 +152,7 @@ module.exports.start = function (context)
         { title: "Korean", name: "Korean", tag: 'ko', code: "KR" },
         { title: "Simplified Chinese", name: "Simplified Chinese", tag: 'zh-Hans', code: "SC" },
         { title: "Traditional Chinese (TW)", name: "Traditional Chinese (Taiwan)", tag: 'zh-Hant-TW', code: "TC" },
-        { title: "Traditional Chinese (HK)", name: "Traditional Chinese (Hong Kong)", tag: 'zh-Hant-HK', code: "HK" },
-        // { title: "Traditional Chinese (MO)", name: "Traditional Chinese (Macao)", tag: 'zh-Hant-MO', code: "MO" }
+        { title: "Traditional Chinese (HK)", name: "Traditional Chinese (Hong Kong)", tag: 'zh-Hant-HK', code: "HK" }
     ];
     //
     const useFooter = true;
@@ -499,6 +502,21 @@ module.exports.start = function (context)
         }
     );
     //
+    fontWeightSelect.value = prefs.fontWeightSelect;
+    if (fontWeightSelect.selectedIndex < 0) // -1: no element is selected
+    {
+        fontWeightSelect.selectedIndex = 0;
+    }
+    fontWeightSelect.addEventListener
+    (
+        'input',
+        event =>
+        {
+            head2Style.textContent = `#${unitId} .cjk-char { font-variation-settings: 'wght' ${event.currentTarget.value}; }`;
+        }
+    );
+    fontWeightSelect.dispatchEvent (new Event ('input'));
+    //
     eastAsianSelect.value = prefs.eastAsianSelect;
     if (eastAsianSelect.selectedIndex < 0) // -1: no element is selected
     {
@@ -572,6 +590,7 @@ module.exports.stop = function (context)
     {
         charactersInput: charactersInput.value,
         writingModeSelect: writingModeSelect.value,
+        fontWeightSelect: parseInt (fontWeightSelect.value),
         eastAsianSelect: eastAsianSelect.value,
         instructions: instructions.open,
         references: references.open,

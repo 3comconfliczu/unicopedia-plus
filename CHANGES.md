@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.4.0
+
+- Used set of `Source Sans Han` variable fonts version `2.004`.
+- Added font weight selection menu to the **CJK Font Variants** utility.
+- Updated `Electron` to version `13.1.4`.
+
 ## 10.3.0
 
 - Added `Creative Commons Symbols` samples to the **Unicode Inspector** utility.

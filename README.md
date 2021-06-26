@@ -39,18 +39,19 @@ The following utilities are currently available:
 
 ## CJK Font Variants
 
-- The **CJK Font Variants** utility displays simultaneously any string of CJK (Chinese/Japanese/Korean) characters in five different typefaces belonging to the open-source set of [Google Noto CJK Fonts](https://github.com/googlefonts/noto-cjk):
+- The **CJK Font Variants** utility displays simultaneously any string of CJK (Chinese/Japanese/Korean) characters in five different typefaces belonging to the open-source set of [Source Han Sans Fonts](https://github.com/adobe-fonts/source-han-sans):
 
 | Language | Tag | Code | Typeface |
 | -------- | --- | ---- | -------- |
-| Japanese | ja | JP | Noto Sans CJK JP Regular |
-| Korean | ko | KR | Noto Sans CJK KR Regular |
-| Simplified Chinese | zh-Hans | SC | Noto Sans CJK SC Regular |
-| Traditional Chinese (Taiwan) | zh-Hant-TW | TC | Noto Sans CJK TC Regular |
-| Traditional Chinese (Hong Kong) | zh-Hant-HK | HK | Noto Sans CJK HK Regular |
+| Japanese | ja | JP | Source Han Sans |
+| Korean | ko | KR | Source Han Sans K |
+| Simplified Chinese | zh-Hans | SC | Source Han Sans SC |
+| Traditional Chinese (Taiwan) | zh-Hant-TW | TC | Source Han Sans TC |
+| Traditional Chinese (Hong Kong) | zh-Hant-HK | HK | Source Han Sans HC |
 
 - Additionally, it is possible to specify a set of logographic glyph variants for display by using the <kbd>East Asian Variant</kbd> drop-down menu.
 - Font variants of the CJK characters can be visualized either vertically or horizontally. Use the <kbd>Writing Mode</kbd> drop-down menu to toggle between the two modes.
+- Use the <kbd>Font Weight</kbd> drop-down menu to select the font weight of the CJK characters, among: `Extra Light`, `Light`, `Regular`, `Medium`, `Semi Bold`, `Bold`, `Extra Bold`, `Heavy`.
 - Clicking inside any character frame displays momentarily the same glyph for all language flavors, while alt-clicking (or shift-clicking) applies to all characters of the string in a given language flavor. This is especially useful to quickly spot the differences between glyph variations. If the <kbd>⇪ Caps Lock</kbd> key is turned on as well, the differences are shown in contrasting colors instead.
 - CJK characters can be entered either directly in the "Characters" input field, or using a series of code points in hexadecimal format in the "Code points" input field.
 - It is also possible to input predefined strings of CJK characters selected from the <kbd>Samples&nbsp;▾</kbd> pop-up menu; some of them make use of the information found in the [StandardizedVariants.txt](https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt) or [IVD_Sequences.txt](https://www.unicode.org/ivd/data/2020-11-06/IVD_Sequences.txt) data files.

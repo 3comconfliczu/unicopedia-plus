@@ -3,39 +3,32 @@
 @font-face
 {
     font-family: "Sans CJK JP";
-    src: url("cjk-fonts/NotoSansCJKjp-Regular.otf") format("opentype");
+    src: url("cjk-fonts/SourceHanSans-VF.otf.woff2") format("woff2");
 }
 
 @font-face
 {
     font-family: "Sans CJK KR";
-    src: url("cjk-fonts/NotoSansCJKkr-Regular.otf") format("opentype");
+    src: url("cjk-fonts/SourceHanSansK-VF.otf.woff2") format("woff2");
 }
 
 @font-face
 {
     font-family: "Sans CJK SC";
-    src: url("cjk-fonts/NotoSansCJKsc-Regular.otf") format("opentype");
+    src: url("cjk-fonts/SourceHanSansSC-VF.otf.woff2") format("woff2");
 }
 
 @font-face
 {
     font-family: "Sans CJK TC";
-    src: url("cjk-fonts/NotoSansCJKtc-Regular.otf") format("opentype");
+    src: url("cjk-fonts/SourceHanSansTC-VF.otf.woff2") format("woff2");
 }
 
 @font-face
 {
     font-family: "Sans CJK HK";
-    src: url("cjk-fonts/NotoSansCJKhk-Regular.otf") format("opentype");
+    src: url("cjk-fonts/SourceHanSansHC-VF.otf.woff2") format("woff2");
 }
-/*
-@font-face
-{
-    font-family: "Sans CJK MO";
-    src: url("cjk-fonts/NotoSansCJKmo-Regular.otf") format("opentype");
-}
-*/
 @font-face
 {
     font-family: "NotDef";
