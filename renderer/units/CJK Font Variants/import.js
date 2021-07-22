@@ -502,6 +502,11 @@ module.exports.start = function (context)
         }
     );
     //
+    for (let option of fontWeightSelect.querySelectorAll ('option'))
+    {
+        option.title = `Weight: ${option.value}`;
+    }
+    //
     fontWeightSelect.value = prefs.fontWeightSelect;
     if (fontWeightSelect.selectedIndex < 0) // -1: no element is selected
     {

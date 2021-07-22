@@ -443,9 +443,9 @@ The following utilities are currently available:
 - The **Unihan Variants** utility displays all the variants of a given Unihan character.
 - Any Unihan character can be entered in the <kbd>Unihan</kbd> input field either as a character or a code point. Click on the <kbd>Look Up</kbd> button to display the variants.
 - Previously looked up characters are kept in a history stack; use the <kbd>Alt</kbd>+<kbd>↑</kbd> and <kbd>Alt</kbd>+<kbd>↓</kbd> keyboard shortcuts to navigate through them up and down inside the input field. Alternatively, you can also use the <kbd>Lookup&nbsp;History&nbsp;▾</kbd> pop-up menu to automatically look up a specific character.
-- Click the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.
-- Click the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
-- Click the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
+- Click on the <kbd>Extra Variants</kbd> checkbox to include the Yasuoka variants as well; otherwise, only the standard Unihan variants are listed.
+- Click on the <kbd>Detailed Relations</kbd> checkbox to make use of a directed labeled graph to display variant relations; otherwise, a basic undirected graph is used instead.
+- Click on the <kbd>Code Points</kbd> checkbox to display as well the code point of each Unihan character of the graph.
 - The different variant relations are indicated using the following labels:
     - `Compat.`: reverse link of `Unified`
     - `Kyūjitai`: Japanese traditional character variants (旧字体)
@@ -458,7 +458,7 @@ The following utilities are currently available:
     - `Traditional`: characters listed under the *kTraditionalVariant* Unihan tag
     - `Unified`: characters listed under the *kCompatibilityVariant* Unihan tag
     - `Yasuoka`: characters drawn from the "Variants table for Unicode" data file <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z">UniVariants.txt</a> provided by Prof. <a title="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/" href="http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/">Kōichi Yasuoka</a>
-- Click the <kbd>Save...</kbd> button to save the current graph as a SVG file.
+- Click on the <kbd>Save...</kbd> button to save the current graph as a SVG file.
 - Notes:
     - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, set, ideograph status, compatibility source.
     - The currently looked up Unihan character appears in a bolder circle; clicking on any other circled variant character lets you "navigate" through all the variants.

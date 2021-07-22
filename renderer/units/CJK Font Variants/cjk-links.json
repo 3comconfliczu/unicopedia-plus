@@ -113,6 +113,16 @@
     ],
     [
         {
+            "name": "font-weight - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"
+        },
+        {
+            "name": "font-variation-settings - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings"
+        }
+    ],
+    [
+        {
             "name": "Requirements for Chinese Text Layout",
             "href": "https://www.w3.org/TR/clreq/"
         },

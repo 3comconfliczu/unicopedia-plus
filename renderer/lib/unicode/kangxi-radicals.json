@@ -11,7 +11,6 @@
         "name": "Line",
         "radical": "⼁",
         "unified": "丨",
-        "alternate": "亅",
         "strokes": 1
     },
     {
@@ -71,6 +70,7 @@
         "name": "Two",
         "radical": "⼆",
         "unified": "二",
+        "alternate": "𠄞",
         "strokes": 2
     },
     {
@@ -167,6 +167,7 @@
         "name": "Table",
         "radical": "⼏",
         "unified": "几",
+        "alternate": "𠘧",
         "strokes": 2,
         "cjk":
         [
@@ -254,6 +255,7 @@
         "name": "Ten",
         "radical": "⼗",
         "unified": "十",
+        "alternate": "𬂛",
         "strokes": 2
     },
     {
@@ -414,6 +416,7 @@
         "name": "Small",
         "radical": "⼩",
         "unified": "小",
+        "alternate": "𡭔",
         "strokes": 3,
         "cjk":
         [
@@ -489,6 +492,7 @@
         "name": "Sprout",
         "radical": "⼬",
         "unified": "屮",
+        "alternate": "䶹",
         "strokes": 3
     },
     {
@@ -503,6 +507,7 @@
         "name": "River",
         "radical": "⼮",
         "unified": "巛",
+        "alternate": "川",
         "strokes": 3
     },
     {
@@ -517,6 +522,7 @@
         "name": "Oneself",
         "radical": "⼰",
         "unified": "己",
+        "alternate": "已",
         "strokes": 3,
         "cjk":
         [
@@ -809,6 +815,7 @@
         "name": "Tree",
         "radical": "⽊",
         "unified": "木",
+        "alternate": "朩",
         "strokes": 4
     },
     {
@@ -1578,7 +1585,6 @@
         "name": "Grass",
         "radical": "⾋",
         "unified": "艸",
-        "alternate": "䒑",
         "strokes": 6,
         "cjk":
         [

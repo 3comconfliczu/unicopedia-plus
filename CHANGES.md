@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.4.1
+
+- Updated `Electron` to version `13.1.7`.
+- Updated `Electron Packager` to version `15.3.0`.
+
 ## 10.4.0
 
 - Used set of `Source Han Sans` variable fonts version `2.004`.
