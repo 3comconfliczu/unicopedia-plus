@@ -328,6 +328,10 @@
     ],
     [
         {
+            "name": "TH-Fonts",
+            "href": "http://cheonhyeong.com/Simplified/download.html"
+        },
+        {
             "name": "Hanazono fonts",
             "href": "http://fonts.jp/hanazono/"
         },
@@ -355,6 +359,22 @@
             "lang": "ja",
             "name": "グループ:品字様 - GlyphWiki",
             "href": "http://glyphwiki.org/wiki/Group:%E5%93%81%E5%AD%97%E6%A7%98"
+        }
+    ],
+    [
+        {
+            "name": "KAGE Glyph Editor",
+            "href": "https://kurgm.github.io/kage-editor/"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - kurgm/kage-editor: A graphical KAGE glyph editor",
+            "href": "https://github.com/kurgm/kage-editor"
+        },
+        {
+            "name": "GitHub - kurgm/kage-engine: Kanji-glyph Automatic Generating Engine",
+            "href": "https://github.com/kurgm/kage-engine"
         }
     ],
     [

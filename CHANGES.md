@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.4.2
+
+- Updated Unihan reference links.
+- Updated `@electron/remote` module to version `1.2.1`.
+- Updated `Electron` to version `13.1.9`.
+
 ## 10.4.1
 
 - Updated `Electron` to version `13.1.7`.
