@@ -5,6 +5,7 @@ const unit = document.getElementById (unitId);
 //
 const clearButton = unit.querySelector ('.clear-button');
 const charactersSamples = unit.querySelector ('.characters-samples');
+const countInfo = unit.querySelector ('.count-info');
 const countNumber = unit.querySelector ('.count-number');
 const loadButton = unit.querySelector ('.load-button');
 const saveButton = unit.querySelector ('.save-button');
@@ -536,6 +537,22 @@ module.exports.start = function (context)
         }
     );
     eastAsianSelect.dispatchEvent (new Event ('input'));
+    //
+    // Discard non-wide characters
+    countInfo.addEventListener
+    (
+        'dblclick',
+        event =>
+        {
+            let characters = charactersInput.value;
+            let newCharacters = wideSplit (characters).join ("");
+            if (newCharacters.length < characters.length)
+            {
+                charactersInput.value = newCharacters;
+                charactersInput.dispatchEvent (new Event ('input'));
+            }
+        }
+    );
     //
     charactersInput.addEventListener
     (

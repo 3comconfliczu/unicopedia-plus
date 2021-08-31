@@ -309,7 +309,7 @@ const tags =
     },
     "kIRG_SSource":
     {
-        "name": "IRG Source: SAT (Japan)",
+        "name": "IRG Source: SAT",
         "category": "IRG Sources",
         "syntax": "SAT-\\d{5}"
     },
@@ -322,7 +322,7 @@ const tags =
     },
     "kIRG_UKSource":
     {
-        "name": "IRG Source: UK",
+        "name": "IRG Source: U.K.",
         "category": "IRG Sources",
         "syntax": "UK-\\d{5}"
     },
@@ -429,7 +429,7 @@ const tags =
         "category": "Other Mappings",
         "separator": " ",
         "syntax": "(20[0-9]{2})(:U\\+[23]?[0-9A-F]{4})*"
-        // "syntax": "20[0-9]{2}"    // Unicode 14.0 (wrong!)
+        // "syntax": "20[0-9]{2}"    // Unicode 14.0
     },
     "kKPS0":
     {

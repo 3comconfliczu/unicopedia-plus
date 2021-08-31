@@ -384,6 +384,7 @@
 #unihan-inspector-unit .tags-data .tags-list .value
 {
     width: 100%;
+    word-break: break-word;
 }
 
 #unihan-inspector-unit .instructions ul

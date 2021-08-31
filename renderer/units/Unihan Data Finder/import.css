@@ -435,6 +435,11 @@
     line-height: 1.2em;
 }
 
+#unihan-data-finder-unit .search-data .value-data
+{
+    word-break: break-word;
+}
+
 #unihan-data-finder-unit .search-data .value-data .list
 {
     margin: 0;

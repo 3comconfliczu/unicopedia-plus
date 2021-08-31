@@ -240,6 +240,10 @@
                 "string": "♠♥♣♦\n♤♡♧♢"
             },
             {
+                "label": "Right-To-Left Override",
+                "string": "\u202ERight-To-Left Override"
+            },
+            {
                 "label": "Rounded Symbols",
                 "string": "🉠🉡🉢🉣🉤🉥"
             },

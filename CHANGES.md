@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.5.0
+
+- Updated `Electron` to version `14.0.0`.
+
 ## 10.4.2
 
 - Updated Unihan reference links.
