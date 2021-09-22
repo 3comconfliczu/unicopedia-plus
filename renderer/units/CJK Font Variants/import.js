@@ -7,6 +7,7 @@ const clearButton = unit.querySelector ('.clear-button');
 const charactersSamples = unit.querySelector ('.characters-samples');
 const countInfo = unit.querySelector ('.count-info');
 const countNumber = unit.querySelector ('.count-number');
+const totalCountNumber = unit.querySelector ('.total-count-number');
 const loadButton = unit.querySelector ('.load-button');
 const saveButton = unit.querySelector ('.save-button');
 const charactersInput = unit.querySelector ('.characters-input');
@@ -560,10 +561,11 @@ module.exports.start = function (context)
         event =>
         {
             let characters = event.currentTarget.value;
-            countNumber.textContent = Array.from (characters).length;
+            totalCountNumber.textContent = Array.from (characters).length;
             codePointsInput.value = unicode.charactersToCodePoints (characters, true);
             let wideCharacters = wideSplit (characters);
             graphemesNumber.textContent = wideCharacters.length;
+            countNumber.textContent = Array.from (wideCharacters.join ("")).length;
             createSheet (wideCharacters);
         }
     );
@@ -582,10 +584,11 @@ module.exports.start = function (context)
         event =>
         {
             let characters = unicode.codePointsToCharacters (event.currentTarget.value);
-            countNumber.textContent = Array.from (characters).length;
+            totalCountNumber.textContent = Array.from (characters).length;
             charactersInput.value = characters;
             let wideCharacters = wideSplit (characters);
             graphemesNumber.textContent = wideCharacters.length;
+            countNumber.textContent = Array.from (wideCharacters.join ("")).length;
             createSheet (wideCharacters);
         }
     );

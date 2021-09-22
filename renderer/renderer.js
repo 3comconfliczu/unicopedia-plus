@@ -288,12 +288,13 @@ for (let unitName of unitNames)
 uncategorizedNav.appendChild (navItem);
 navigation.appendChild (uncategorizedNav);
 //
-let div = document.createElement ('div');
-div.innerHTML = '<svg class="app-color-icon"><use href="../icons/icon.svg#app-color-icon"></use></svg>';
-div.title = `${appName} v${appVersion}\n${settings.copyright}`;
-footer.appendChild (div);
+let appIcon = document.createElement ('div');
+appIcon.innerHTML = '<svg class="app-color-icon"><use href="../icons/icon.svg#app-color-icon"></use></svg>';
+appIcon.title = `${appName} v${appVersion}\n${settings.copyright}`;
+footer.appendChild (appIcon);
+//
 // Easter egg...
-div.querySelector ('use').addEventListener
+appIcon.querySelector ('use').addEventListener
 (
     'dblclick',
     (event) =>
@@ -306,6 +307,11 @@ div.querySelector ('use').addEventListener
         }
     }
 );
+//
+let unicodeSupport = document.createElement ('div');
+unicodeSupport.className = 'unicode-version';
+unicodeSupport.textContent = `Unicode ${process.versions.unicode}`;
+footer.appendChild (unicodeSupport);
 //
 ipcRenderer.on
 (

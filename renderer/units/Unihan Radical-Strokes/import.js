@@ -213,6 +213,20 @@ module.exports.start = function (context)
         return rsValues.join ("\n");
     }
     //
+    const simpleBlockNames =
+    {
+        "U+4E00..U+9FFF": "CJK Unified (URO)",
+        "U+3400..U+4DBF": "CJK Unified Extension A",
+        "U+20000..U+2A6DF": "CJK Unified Extension B",
+        "U+2A700..U+2B73F": "CJK Unified Extension C",
+        "U+2B740..U+2B81F": "CJK Unified Extension D",
+        "U+2B820..U+2CEAF": "CJK Unified Extension E",
+        "U+2CEB0..U+2EBEF": "CJK Unified Extension F",
+        "U+30000..U+3134F": "CJK Unified Extension G",
+        "U+F900..U+FAFF": "CJK Compatibility",
+        "U+2F800..U+2FA1F": "CJK Compatibility Supplement"
+    };
+    //
     function getTooltip (character)
     {
         let data = unicode.getCharacterBasicData (character);
@@ -231,6 +245,7 @@ module.exports.start = function (context)
         let lines =
         [
             `Code Point: ${data.codePoint}`,
+            `Block: ${simpleBlockNames[data.blockRange]}`,
             `Age: Unicode ${data.age} (${data.ageDate})`,
             `Set: ${set}`,
             `Status: ${status}`

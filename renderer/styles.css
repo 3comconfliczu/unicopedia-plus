@@ -133,6 +133,13 @@ svg.app-color-icon
     fill: var(--color-accent);
 }
 
+div.unicode-version
+{
+    font-weight: 600;
+    /* font-size: 12px; */
+    /* font-style: italic; */
+}
+
 code,
 kbd
 {

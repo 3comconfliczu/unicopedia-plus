@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.6.0
+
+- Added simple block name to Unihan character tooltips.
+- Updated `@electron/remote` module to version `2.0.1`.
+- Updated `Electron Packager` to version `15.4.0`.
+- Updated `Electron` to version `15.0.0`.
+
 ## 10.5.0
 
 - Updated `Electron` to version `14.0.0`.

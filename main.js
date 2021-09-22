@@ -2,7 +2,9 @@
 const electron = require ('electron');
 const { app, BrowserWindow, dialog, globalShortcut, ipcMain, Menu, shell } = electron;
 //
-require ('@electron/remote/main').initialize ();
+const remoteMain = require ('@electron/remote/main');
+//
+remoteMain.initialize ();
 //
 let mainWindow = null;
 //
@@ -456,7 +458,6 @@ else
             {
                 contextIsolation: false,
                 nodeIntegration: true,
-                enableRemoteModule: true,
                 spellcheck: false
             }
         };
@@ -465,6 +466,8 @@ else
             windowOptions.icon = path.join (__dirname, 'icons', 'icon-256.png');
         }
         mainWindow = new BrowserWindow (windowOptions);
+        //
+        remoteMain.enable (mainWindow.webContents);
         //
         mainWindow.loadFile (path.join (__dirname, 'renderer', 'index.html'));
         //

@@ -328,7 +328,7 @@ const tags =
     },
     "kIRG_USource":
     {
-        "name": "IRG Source: Unicode",
+        "name": "IRG Source: UTC",
         "category": "IRG Sources",
         "syntax": "UTC-\\d{5}"
     },
