@@ -2,6 +2,17 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 10.7.0
+
+- Added support for `Emoji 14.0` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:
+    - Updated instructions/documentation.
+    - Updated emoji age and date informations.
+    - Updated emoji shortnames and keywords using `CLDR 40.0` annotations.
+    - Updated `emoji-test-list`, `emoji-test-groups`, `emoji-test-patterns` NPM modules to their version `14.0.0`.
+- Updated `Electron` to version `15.1.0`.
+
+**Note**: updating to the most recent `Unicode 14.0` version is on hold until the `Electron` framework supports it (currently `Unicode 13.0`).
+
 ## 10.6.0
 
 - Added simple block name to Unihan character tooltips.

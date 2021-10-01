@@ -447,6 +447,12 @@ input[type=number]:disabled
     pointer-events: none;
 }
 
+input[type=text],
+input[type=search]
+{
+    tab-size: 4;
+}
+
 select
 {
     font-size: 1em;
