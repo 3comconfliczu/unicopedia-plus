@@ -73,6 +73,7 @@ const combiningClasses =
 {
     "0": "Not_Reordered",           // Spacing and enclosing marks; also many vowel and consonant signs, even if nonspacing
     "1": "Overlay",                 // Marks which overlay a base letter or symbol
+    "6": "Han_Reading",             // Diacritic reading marks for CJK unified ideographs
     "7": "Nukta",                   // Diacritic nukta marks in Brahmi-derived scripts
     "8": "Kana_Voicing",            // Hiragana/Katakana voicing marks
     "9": "Virama",                  // Viramas
@@ -198,14 +199,17 @@ const scripts =
     "Cakm": "Chakma",
     "Cham": "Cham",
     "Cher": "Cherokee",
+    "Chrs": "Chorasmian",
     "Zyyy": "Common",
     "Copt": "Coptic",
     "Qaac": "Coptic",   // alias?
     "Xsux": "Cuneiform",
     "Cprt": "Cypriot",
+    "Cpmn": "Cypro_Minoan",
     "Cyrl": "Cyrillic",
     "Dsrt": "Deseret",
     "Deva": "Devanagari",
+    "Diak": "Dives_Akuru",
     "Dogr": "Dogra",
     "Dupl": "Duployan",
     "Egyp": "Egyptian_Hieroglyphs",
@@ -236,8 +240,10 @@ const scripts =
     "Kthi": "Kaithi",
     "Knda": "Kannada",
     "Kana": "Katakana",
+    "Hrkt": "Katakana_Or_Hiragana",
     "Kali": "Kayah_Li",
     "Khar": "Kharoshthi",
+    "Kits": "Khitan_Small_Script",
     "Khmr": "Khmer",
     "Khoj": "Khojki",
     "Sind": "Khudawadi",
@@ -285,6 +291,7 @@ const scripts =
     "Sogo": "Old_Sogdian",
     "Sarb": "Old_South_Arabian",
     "Orkh": "Old_Turkic",
+    "Ougr": "Old_Uyghur",
     "Orya": "Oriya",
     "Osge": "Osage",
     "Osma": "Osmanya",
@@ -316,6 +323,7 @@ const scripts =
     "Tavt": "Tai_Viet",
     "Takr": "Takri",
     "Taml": "Tamil",
+    "Tnsa": "Tangsa",
     "Tang": "Tangut",
     "Telu": "Telugu",
     "Thaa": "Thaana",
@@ -323,10 +331,14 @@ const scripts =
     "Tibt": "Tibetan",
     "Tfng": "Tifinagh",
     "Tirh": "Tirhuta",
+    "Toto": "Toto",
     "Ugar": "Ugaritic",
+    "Zzzz": "Unknown",
     "Vaii": "Vai",
+    "Vith": "Vithkuqi",
     "Wcho": "Wancho",
     "Wara": "Warang_Citi",
+    "Yezi": "Yezidi",
     "Yiii": "Yi",
     "Zanb": "Zanabazar_Square"
 };
@@ -426,7 +438,8 @@ const versionDates =
     "11.0": "June 2018",
     "12.0": "March 2019",
     "12.1": "May 2019",
-    "13.0": "March 2020"
+    "13.0": "March 2020",
+    "14.0": "September 2021"
 };
 //
 function uniHexify (string)

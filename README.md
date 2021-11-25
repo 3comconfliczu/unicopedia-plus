@@ -71,7 +71,7 @@ The following utilities are currently available:
 
 ## Regex Properties
 
-- The **Regex Properties** utility displays all the **Unicode 13.0** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
+- The **Regex Properties** utility displays all the **Unicode 14.0** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
 - These properties are suitable to build Unicode-aware regular expressions in JavaScript (ECMAScript 6) using the 'u' flag.
 - Unicode properties fall into four groups, which can be displayed individually using the <kbd>Category</kbd> drop-down menu:
     - **General Category** properties
@@ -188,7 +188,7 @@ The following utilities are currently available:
 - It is possible to choose how many characters are shown one page at a time.
 - When available, name aliases are displayed (in italics and smaller typeface) after the unique and immutable Unicode name. A correction alias is indicated by a leading reference mark `※`.
 - All names and aliases are obtained from the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) and [NameAliases.txt](https://www.unicode.org/Public/UNIDATA/NameAliases.txt) data files.
-- The search is performed on the 283,440 assigned characters (or code points) defined in the **Unicode 13.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- The search is performed on the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -203,7 +203,7 @@ The following utilities are currently available:
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Match Decomposition</kbd> toggle button to extend the search to characters whose *decomposition mapping* matches the query string.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the 283,440 assigned characters (or code points) defined in the **Unicode 13.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- The search is performed on the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -245,7 +245,7 @@ The following utilities are currently available:
 - As a convenience, the input fields can be emptied using the <kbd>Clear</kbd> button.
 - In output, the standard Unicode code point format `U+0041` is used, i.e. "U+" directly followed by 4 or 5 hex digits.
 - In input, more hexadecimal formats are allowed, including Unicode escape sequences, such as `\u611B` or `\u{1F49C}`. Moving out of the field or typing the Enter key converts all valid codes to standard Unicode code point format.
-- Information is provided for the 283,440 assigned characters (or code points) defined in the **Unicode 13.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- Information is provided for the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Extra information is also obtained from the following data files:
     - [ArabicShaping.txt](https://www.unicode.org/Public/UNIDATA/ArabicShaping.txt)
     - [Blocks.txt](https://www.unicode.org/Public/UNIDATA/Blocks.txt)
@@ -263,7 +263,7 @@ The following utilities are currently available:
     - [ScriptExtensions.txt](https://www.unicode.org/Public/UNIDATA/ScriptExtensions.txt)
     - [StandardizedVariants.txt](https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt)
     - [VerticalOrientation.txt](https://www.unicode.org/Public/UNIDATA/VerticalOrientation.txt)
-    - [emoji-data.txt](https://www.unicode.org/Public/13.0.0/ucd/emoji/emoji-data.txt)
+    - [emoji-data.txt](https://www.unicode.org/Public/14.0.0/ucd/emoji/emoji-data.txt)
 
 <img src="screenshots/unicode-inspector.png" width="1080px" alt="Unicode Inspector screenshot">
 
@@ -312,7 +312,7 @@ The following utilities are currently available:
 - Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the 93,858 Unihan characters (or code points) defined in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The search is performed on the 93,867 Unihan characters (or code points) defined in **Unicode 14.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*
@@ -336,7 +336,7 @@ The following utilities are currently available:
 - Click on the <kbd>Match Variants</kbd> toggle button to extend the search to characters whose *variants* match the query string.
 - Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the set of 93,858 Unihan characters defined in **Unicode 13.0**.
+- The search is performed on the set of 93,867 Unihan characters defined in **Unicode 14.0**.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -347,7 +347,7 @@ The following utilities are currently available:
 
 ### View by Grid
 
-- The **View by Grid** feature of the **Unihan Data Finder** utility displays in real time a grid view of the 10 blocks containing the 93,858 Unihan characters defined in **Unicode 13.0**.
+- The **View by Grid** feature of the **Unihan Data Finder** utility displays in real time a grid view of the 10 blocks containing the 93,867 Unihan characters defined in **Unicode 14.0**.
 - It is possible to choose how many characters are shown one page at a time.
 - A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>.
 - It is also possible to directly enter a Unihan character or code point in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the character, scroll it into view, and highlight it.
@@ -363,7 +363,7 @@ The following utilities are currently available:
 
 ## Unihan Inspector
 
-- The **Unihan Inspector** utility displays all available Unihan tags for each of the 93,858 Unihan characters defined in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The **Unihan Inspector** utility displays all available Unihan tags for each of the 93,867 Unihan characters defined in **Unicode 14.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*
@@ -381,7 +381,7 @@ The following utilities are currently available:
 - It is also possible to look up a randomly selected Unihan character by clicking on the <kbd>Random</kbd> button; use the <kbd>Set</kbd> drop-down menu to perform the draw on a specified Unihan set:
     - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
     - `Unihan Core`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
-    - `Full Unihan`: the full set of 93,858 Unihan characters.
+    - `Full Unihan`: the full set of 93,867 Unihan characters.
 - The currently looked up character is displayed at a large scale, followed by its code point.
 - Click on <kbd>◀</kbd> or <kbd>▶</kbd> to step through five different CJK typefaces, among:
     - `JP`: Japanese
@@ -419,7 +419,7 @@ The following utilities are currently available:
 - Use the <kbd>Set</kbd> drop-down menu to perform the search on a specified Unihan set:
     - `IICore`: the IICore set of 9,810 CJK unified ideographs in common usage,
     - `Unihan Core`: the Unihan core set (2020) of 20,720 CJK unified and compatibility ideographs, minimal set of required ideographs for East Asia,
-    - `Full Unihan`: the full set of 93,858 Unihan characters.
+    - `Full Unihan`: the full set of 93,867 Unihan characters.
 - Use the <kbd>Extra Sources</kbd> checkbox to extend the search to all radical/strokes source tags, or use only the IRG-defined source tag common to all Unihan characters.
 - Use the <kbd>Radical</kbd> and <kbd>Strokes</kbd> drop-down menus to select the KangXi radical and the additional stroke count of the Unihan characters you are looking for, then click on the <kbd>Search</kbd> button.
 - If the number of additional strokes is negative, 0 is used instead. For example, the Unihan character 王 gets listed under 'Radical 96 ⽟ (Jade)' + '0 Stroke', although its additional stroke count is -1.
@@ -463,6 +463,7 @@ The following utilities are currently available:
     - Hovering over any circled Unihan character of the graph displays a tooltip with basic information: code point, age, set, ideograph status, compatibility source.
     - The currently looked up Unihan character appears in a bolder circle; clicking on any other circled variant character lets you "navigate" through all the variants.
     - In order to avoid visual clutter, any relation between two Unihan characters obtained from the Yasuoka variants is not displayed if another "standard" one with the same orientation already exists.
+    - By design, *compatibility* characters, if any, always appear on the *left* side of a graph with detailed relations.
 
 <img src="screenshots/unihan-variants.png" width="1080px" alt="Unihan Variants screenshot">
 

@@ -812,6 +812,10 @@ module.exports.start = function (context)
                     let maxLength = textInputString.maxLength;
                     if ((maxLength > 0) && (text.length > maxLength))
                     {
+                        if (/[\uD800-\uDBFF]/.test (text[maxLength - 1]))   // Unpaired high surrogate
+                        {
+                            maxLength = maxLength - 1;
+                        }
                         text = text.substring (0, maxLength);
                     }
                     textInputString.value = text;

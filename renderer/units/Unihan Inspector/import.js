@@ -363,6 +363,10 @@ module.exports.start = function (context)
             let unihanCodePoint= document.createElement ('div');
             unihanCodePoint.textContent = codePoint;
             unihanCodePoint.className = 'unihan-code-point';
+            if (regexp.isCompatibility (character))
+            {
+                unihanCodePoint.classList.add ('compatibility');
+            }
             unihanWrapper.appendChild (unihanCodePoint);
             unihanCard.appendChild (unihanWrapper);
             let typefaceWidget = document.createElement ('div');

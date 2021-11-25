@@ -120,6 +120,10 @@ module.exports.create = function (title, items, params)
                 characterData.appendChild (symbol);
                 let codePoint = document.createElement ('span');
                 codePoint.className = 'code-point';
+                if (character.isCompatibility)
+                {
+                    codePoint.classList.add ('compatibility');
+                }
                 codePoint.textContent = character.code;
                 codePoint.title = character.codeTooltip;
                 characterData.appendChild (codePoint );

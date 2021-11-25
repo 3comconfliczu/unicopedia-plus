@@ -429,6 +429,11 @@
     padding: 0.25em 0.5em;
 }
 
+#unihan-data-finder-unit .search-data .code-point-data.compatibility
+{
+    font-style: italic;
+}
+
 #unihan-data-finder-unit .search-data .tag-data,
 #unihan-data-finder-unit .search-data .value-data
 {
@@ -697,12 +702,12 @@
     cursor: text;
 }
 
-#unihan-data-finder-unit .unihan-blocks tr:nth-child(even)
+#unihan-data-finder-unit .unihan-blocks tr:nth-child(even) td
 {
     background-color: white;
 }
 
-#unihan-data-finder-unit .unihan-blocks tr:nth-child(odd)
+#unihan-data-finder-unit .unihan-blocks tr:nth-child(odd) td
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
 }

@@ -175,11 +175,6 @@ module.exports.start = function (context)
         }
     );
     //
-    function isCompatibility (character)
-    {
-        return regexp.isUnihan (character) && (!regexp.isUnified (character));
-    }
-    //
     const simpleBlockNames =
     {
         "U+4E00..U+9FFF": "CJK Unified (URO)",
@@ -197,8 +192,8 @@ module.exports.start = function (context)
     function getTooltip (character)
     {
         let data = unicode.getCharacterBasicData (character);
-        let status = isCompatibility (character) ? "Compatibility Ideograph" : "Unified Ideograph";
-        let source = isCompatibility (character) ? getCompatibilitySource (character) : "";
+        let status = regexp.isCompatibility (character) ? "Compatibility Ideograph" : "Unified Ideograph";
+        let source = regexp.isCompatibility (character) ? getCompatibilitySource (character) : "";
         let set = "Full Unihan";
         let tags = unihanData.codePoints[data.codePoint];
         if ("kIICore" in tags)
@@ -364,11 +359,26 @@ module.exports.start = function (context)
                 let y = parseFloat (text.getAttribute ('y'));
                 text.setAttribute ('y', y + 2); // Empirical adjustment
             }
+            else
+            {
+                // Take this opportunity to italicize the code point of compatibility characters 
+                let character = texts[0].textContent;
+                let text = texts[1];
+                if (regexp.isCompatibility (character))
+                {
+                    text.setAttribute ('font-style', "italic");
+                }
+            }
         }
         // Remove unwanted tooltips
         let tooltips = doc.documentElement.querySelectorAll ('.edge title, .node title');
         for (let tooltip of tooltips)
         {
+            let lineBreak = tooltip.nextSibling;
+            if (lineBreak && (lineBreak.nodeType === 3) && (lineBreak.nodeValue.match (/\r?\n/)))
+            {
+                lineBreak.remove ();
+            }
             tooltip.remove ();
         }
         return serializer.serializeToString (doc);
@@ -476,13 +486,13 @@ module.exports.start = function (context)
                 let data = "";
                 if (detailedRelationsCheckbox.checked)
                 {
-                    let compatibilityVariants = variants.filter (variant => (variant !== character) && isCompatibility (variant));
+                    let compatibilityVariants = variants.filter (variant => (variant !== character) && regexp.isCompatibility (variant));
                     if (compatibilityVariants.length > 0)
                     {
                         data += `    { rank = same; ${compatibilityVariants.join ('; ')} }\n`;
                     }
                     data += `    { rank = same; ${character} }\n`;
-                    let unifiedVariants = variants.filter (variant => (variant !== character) && (!isCompatibility (variant)));
+                    let unifiedVariants = variants.filter (variant => (variant !== character) && (!regexp.isCompatibility (variant)));
                     if (unifiedVariants.length > 0)
                     {
                         data += `    { rank = same; ${unifiedVariants.join ('; ')} }\n`;

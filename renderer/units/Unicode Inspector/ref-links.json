@@ -14,6 +14,12 @@
         }
     ],
     [
+        {
+            "name": "UTN #27: Known anomalies in Unicode Character Names",
+            "href": "https://www.unicode.org/notes/tn27/"
+        }
+    ],
+    [
          {
             "name": "UAX #14: Unicode Line Breaking Algorithm",
             "href": "https://unicode.org/reports/tr14/"

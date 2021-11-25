@@ -160,6 +160,11 @@
     padding: 0 5px;
 }
 
+#unihan-inspector-unit .unihan-card .unihan-code-point.compatibility
+{
+    font-style: italic;
+}
+
 #unihan-inspector-unit .unihan-card .filler
 {
     margin-top: -1.4em;

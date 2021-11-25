@@ -41,16 +41,16 @@
     ],
     [
         {
-            "name": "The Unicode Standard, Version 13.0 - Chapter 18: East Asia - ch18.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch18.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Chapter 18: East Asia - ch18.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch18.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - About the Code Charts - ch24.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch24.pdf"
+            "name": "The Unicode Standard, Version 14.0 - About the Code Charts - ch24.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch24.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Han Unification History - appE.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appE.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Han Unification History - appE.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appE.pdf"
         }
     ],
     [
@@ -227,11 +227,6 @@
     ],
     [
         {
-            "lang": "zh-Hans",
-            "name": "康熙字典扫描版_康熙字典原图扫描版",
-            "href": "http://www.guoxuedashi.com/kangxi/saomiao/"
-        },
-        {
             "lang": "zh-Hant",
             "name": "康熙字典全文檢索網上版",
             "href": "http://www.kangxizidian.com/search/"
@@ -315,13 +310,6 @@
     [
         {
             "lang": "ja",
-            "name": "MJ文字情報検索システム | 独立行政法人 情報処理推進機構 - IPA - Kanji Search",
-            "href": "https://mojikiban.ipa.go.jp/search/home"
-        }
-    ],
-    [
-        {
-            "lang": "ja",
             "name": "IPAexフォントおよびIPAフォントについて | 一般社団法人 文字情報技術促進協議会",
             "href": "https://moji.or.jp/ipafont/"
         }
@@ -342,12 +330,6 @@
         {
             "name": "BabelStone Fonts : BabelStone Han",
             "href": "https://www.babelstone.co.uk/Fonts/Han.html"
-        }
-    ],
-    [
-        {
-            "name": "GlyphWiki and OpenType: A Collaborative Glyph Development Environment and its Font Exporting System - atypi2012_kawabata_31-07-2012.pdf",
-            "href": "https://www.atypi.org/type-typography/glyphwiki-a-wiki-based-glyph-design-and-font-production-system.-taichi-kawabata-and-kamichi-koichi"
         }
     ],
     [

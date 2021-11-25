@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.0.0-alpha.1
+
+- Added italic style to code points of compatibility characters in the **Unicode Data Finder**, **Unicode Inspector**, **Unihan Radical-Strokes**, and **Unihan Variants** utilities.
+- Added new built-in function `$.getpath ()` to the **JavaScript Runner** utility.
+- Updated reference links and screenshots.
+- Updated `Electron` to version `17.0.0-alpha.4`: adds full support for `Unicode 14.0`.
+
 ## 10.7.0
 
 - Added support for `Emoji 14.0` to the **Emoji Data Finder** and **Emoji Picture Book** utilities:

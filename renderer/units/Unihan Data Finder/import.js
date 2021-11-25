@@ -1098,10 +1098,10 @@ module.exports.start = function (context)
     );
     //
     gridInstructions.open = prefs.gridInstructions;
+    //
     gridUnihanBlocks.open = prefs.gridUnihanBlocks;
     //
     let blocksTable = require ('./blocks-table.js');
-    //
     gridBlocks.appendChild (blocksTable.create (unihanBlocks));
     //
     gridReferences.open = prefs.gridReferences;

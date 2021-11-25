@@ -1,8 +1,8 @@
 //
-// Temporary until Electron framework adds built-in support for Unicode 13.0
+// Temporary until Electron framework adds built-in support for Unicode 14.0
 // let rewritePattern = require ('regexpu-core');
 //
-// Support for Unicode 13.0 finally added in Electron 10.0.0 (2020-08-25)
+// Support for Unicode 14.0 finally added in Electron 17.0.0-alpha.4 (2021-11-25) (Chromium 98.0.4706.0)
 let rewritePattern = null;
 //
 function build (pattern, options)
@@ -61,6 +61,11 @@ function isUnified (character)
     return unifiedRegex.test (character);
 }
 //
+function isCompatibility (character)
+{
+    return isUnihan (character) && (!isUnified (character));
+}
+//
 const radicalPattern = '\\p{Radical}';
 const radicalRegex = build (radicalPattern, { useRegex: true });
 //
@@ -75,6 +80,7 @@ module.exports =
     isAssigned,
     isUnihan,
     isUnified,
+    isCompatibility,
     isRadical
 };
 //

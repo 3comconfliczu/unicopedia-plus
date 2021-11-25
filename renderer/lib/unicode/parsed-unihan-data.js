@@ -11,6 +11,7 @@ const tags =
     {
         "name": "Accounting Numeric",
         "category": "Numeric Values",
+        "separator": " ",
         "syntax": "[0-9]+"
     },
     "kBigFive":
@@ -272,21 +273,19 @@ const tags =
     {
         "name": "IRG Source: China",
         "category": "IRG Sources",
-        "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|JZ|KJ|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}"
-        // "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|DM|JZ|KJ|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}"  // Unicode 14.0
+        "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|DM|JZ|KJ|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}"
     },
     "kIRG_HSource":
     {
         "name": "IRG Source: Hong Kong",
         "category": "IRG Sources",
         "syntax": "H-[0-9A-F]{4}|H(B[012]|D)-[0-9A-F]{4}|HU-[023][0-9A-F]{4}"
-        // "syntax": "H-[0-9A-F]{4}|H(B[012]|D)-[0-9A-F]{4}|HU-[023][0-9A-F]{4}"   // Unicode 14.0
     },
     "kIRG_JSource":
     {
         "name": "IRG Source: Japan",
         "category": "IRG Sources",
-        "syntax": "J1?((([0134AK]|A[34]|3A|ARIB|MJ)-[0-9A-F]{4,6})|(H-(((IB|JT|[0-9]{2})[0-9A-F]{4}S?))))"
+        "syntax": "J[014]-[0-9A-F]{4}|J3A?-[0-9A-F]{4}|J13A?-[0-9A-F]{4}|J14-[0-9A-F]{4}|JA[34]?-[0-9A-F]{4}|JARIB-[0-9A-F]{4}|JH-(JT[ABC][0-9A-F]{3}S?|IB\\d{4}|\\d{6})|JK-\\d{5}|JMJ-\\d{6}"
     },
     "kIRG_KPSource":
     {
@@ -304,8 +303,7 @@ const tags =
     {
         "name": "IRG Source: Macao",
         "category": "IRG Sources",
-        "syntax": "MAC-[0-9]{5}"
-        // "syntax": "MA-[0-9A-F]{4}|MB[12]-[0-9A-F]{4}|MC-\\d{5}|MDH?-[23]?[0-9A-F]{4}"    // Unicode 14.0
+        "syntax": "MA-[0-9A-F]{4}|MB[12]-[0-9A-F]{4}|MC-\\d{5}|MDH?-[23]?[0-9A-F]{4}"
     },
     "kIRG_SSource":
     {
@@ -317,8 +315,7 @@ const tags =
     {
         "name": "IRG Source: Taiwan",
         "category": "IRG Sources",
-        "syntax": "T([1-7A-F]|13)-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"
-        // "syntax": "T([1-7A-F]|1[13])-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"  // Unicode 14.0
+        "syntax": "T([1-7A-F]|1[13])-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"
     },
     "kIRG_UKSource":
     {
@@ -336,8 +333,7 @@ const tags =
     {
         "name": "IRG Source: Vietnam",
         "category": "IRG Sources",
-        "syntax": "V[0-4U]-[023]?[0-9A-F]{4}"
-        // "syntax": "V[0-4N]-[023F]?[0-9A-F]{4}"  // Unicode 14.0
+        "syntax": "V[0-4]-[0-9A-F]{4}|VN-[023F][0-9A-F]{4}"
     },
     "kJa":
     {
@@ -428,8 +424,7 @@ const tags =
         "name": "Korean Name",
         "category": "Other Mappings",
         "separator": " ",
-        "syntax": "(20[0-9]{2})(:U\\+[23]?[0-9A-F]{4})*"
-        // "syntax": "20[0-9]{2}"    // Unicode 14.0
+        "syntax": "20[0-9]{2}"
     },
     "kKPS0":
     {
@@ -512,6 +507,7 @@ const tags =
     {
         "name": "Other Numeric",
         "category": "Numeric Values",
+        "separator": " ",
         "syntax": "[0-9]+"
     },
     "kPhonetic":
@@ -519,13 +515,13 @@ const tags =
         "name": "Phonetic Index (Ten Thousand Characters: An Analytic Dictionary)",
         "category": "Dictionary-like Data",
         "separator": " ",
-        "syntax": "[1-9][0-9]{0,3}[A-D]?\\*?"
-        // "syntax": "[1-9][0-9]{0,3}[A-Dx]?[*+]?"   // Unicode 14.0
+        "syntax": "[1-9][0-9]{0,3}[A-Dx]?[*+]?"
     },
     "kPrimaryNumeric":
     {
         "name": "Primary Numeric",
         "category": "Numeric Values",
+        "separator": " ",
         "syntax": "[0-9]+"
     },
     "kPseudoGB1":
@@ -590,13 +586,13 @@ const tags =
         "separator": " ",
         "syntax": "U\\+[23]?[0-9A-F]{4}"
     },
-    // "kStrange": // Unicode 14.0
-    // {
-    //     "name": "Strange",
-    //     "category": "Dictionary-like Data",
-    //     "separator": " ",
-    //     "syntax": "[ACU]|B:U\\+31[0-2AB][0-9A-F]|[FMOR](:U\\+[23]?[0-9A-F]{4})?|H:U\\+31[3-8][0-9A-F]|I(:U\\+[23]?[0-9A-F]{4})*|K(:U\\+30[A-F][0-9A-F])+|S:[4-9][0-9]"
-    // },
+    "kStrange":
+    {
+        "name": "Strange",
+        "category": "Dictionary-like Data",
+        "separator": " ",
+        "syntax": "[ACU]|B:U\\+31[0-2AB][0-9A-F]|[FMOR](:U\\+[23]?[0-9A-F]{4})?|H:U\\+31[3-8][0-9A-F]|I(:U\\+[23]?[0-9A-F]{4})*|K(:U\\+30[A-F][0-9A-F])+|S:[4-9][0-9]"
+    },
     "kTaiwanTelegraph":
     {
         "name": "Taiwan Telegraph",
@@ -725,7 +721,7 @@ const categories =
             "kHDZRadBreak",
             "kHKGlyph",
             "kPhonetic",
-            // "kStrange", // Unicode 14.0
+            "kStrange",
             "kUnihanCore2020"
         ]
     },

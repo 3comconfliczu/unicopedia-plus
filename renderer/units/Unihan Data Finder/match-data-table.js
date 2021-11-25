@@ -124,6 +124,10 @@ module.exports.create = function (characters, regex, params)
             dataRow.appendChild (symbolData);
             let codePointData = document.createElement ('td');
             codePointData.className = 'code-point-data';
+            if (regexp.isCompatibility (data.character))
+            {
+                codePointData.classList.add ('compatibility');
+            }
             codePointData.textContent = data.codePoint;
             dataRow.appendChild (codePointData);
             let ageData = document.createElement ('td');

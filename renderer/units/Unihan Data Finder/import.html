@@ -112,7 +112,7 @@
                         <li>Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.</li>
                         <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the 93,858 Unihan characters (or code points) defined in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
+                        <li>The search is performed on the 93,867 Unihan characters (or code points) defined in <strong>Unicode 14.0</strong>, in the set of data files contained in the <a title="https://www.unicode.org/Public/UNIDATA/Unihan.zip" href="https://www.unicode.org/Public/UNIDATA/Unihan.zip">Unihan.zip</a> archive file:
                             <ul>
                                 <li><em>Unihan_DictionaryIndices.txt</em></li>
                                 <li><em>Unihan_DictionaryLikeData.txt</em></li>
@@ -188,7 +188,7 @@
                         <li>Click on the <kbd><svg style="width: 15px; height: 15px; vertical-align: text-bottom; stroke: var(--color);"><use href="/images/search.svg#match-variants-icon"></use></svg></kbd> (<em>Match Variants</em>) toggle button to extend the search to characters whose <em>variants</em> match the query string.</li>
                         <li>Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the set of 93,858 Unihan characters defined in <strong>Unicode 13.0</strong>.</li>
+                        <li>The search is performed on the set of 93,867 Unihan characters defined in <strong>Unicode 14.0</strong>.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -208,6 +208,7 @@
                         <li>Unihan characters with the 'compatibility ideograph' status:<br><code class="select-all">[^\p{Unified_Ideograph}]</code> or <code class="select-all">\P{Unified_Ideograph}</code></li>
                         <li>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead:<br><code class="select-all">(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code></li>
                         <li>Unihan characters belonging to the 'CJK Unified Ideographs Extension G' block:<br><code class="select-all">[\u{30000}-\u{3134F}]</code></li>
+                        <li>Twelve consecutive Unihan characters in a range, from 龍 (U+9F8D) to 龘 (U+9F98):<br><code class="select-all">[龍-龘]</code></li>
                     </ul>
                     <p><span class="match-variants on"><svg><use href="/images/search.svg#match-variants-icon"></use></svg></span> (<em>Match Variants</em>) toggled <strong>on</strong>:</p>
                     <ul>
@@ -226,7 +227,7 @@
                 <details class="instructions">
                     <summary>Instructions</summary>
                     <ul>
-                        <li>The <strong>View by Grid</strong> feature of the <strong>Unihan Data Finder</strong> utility displays in real time a grid view of the 10 blocks containing the 93,858 Unihan characters defined in <strong>Unicode 13.0</strong>.</li>
+                        <li>The <strong>View by Grid</strong> feature of the <strong>Unihan Data Finder</strong> utility displays in real time a grid view of the 10 blocks containing the 93,867 Unihan characters defined in <strong>Unicode 14.0</strong>.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
                         <li>A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>.</li>
                         <li>It is also possible to directly enter a Unihan character or code point in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the character, scroll it into view, and highlight it.</li>

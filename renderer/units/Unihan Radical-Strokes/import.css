@@ -216,6 +216,11 @@
     border: 1px dotted var(--color-dimmed);
 }
 
+#unihan-radical-strokes-unit .rs-data-chart .characters-data .character-data .code-point.compatibility
+{
+    font-style: italic;
+}
+
 #unihan-radical-strokes-unit .radicals-table
 {
     margin-bottom: 1.25em;

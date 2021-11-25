@@ -44,12 +44,12 @@
     white-space: nowrap;
 }
 
-#regex-properties-unit .property-list tr:nth-child(even)
+#regex-properties-unit .property-list tr:nth-child(even) td
 {
     background-color: white;
 }
 
-#regex-properties-unit .property-list tr:nth-child(odd)
+#regex-properties-unit .property-list tr:nth-child(odd) td
 {
     background-color: var(--color-bg);
 }
@@ -88,12 +88,14 @@
     margin: 0.25em 0 0.75em 0;
 }
 
-#regex-properties-unit .instructions table tr:nth-child(odd)
+#regex-properties-unit .instructions table tr:nth-child(odd) th,
+#regex-properties-unit .instructions table tr:nth-child(odd) td
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.85), hsla(0, 0%, 100%, 0.85));
 }
 
-#regex-properties-unit .instructions table tr:nth-child(even)
+#regex-properties-unit .instructions table tr:nth-child(even) th,
+#regex-properties-unit .instructions table tr:nth-child(even) td
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
 }

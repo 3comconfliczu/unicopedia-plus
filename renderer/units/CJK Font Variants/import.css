@@ -377,12 +377,12 @@
     text-align: center;
 }
 
-#cjk-font-variants-unit .fonts-table tr:nth-child(even)
+#cjk-font-variants-unit .fonts-table tr:nth-child(even) td
 {
     background-color: white;
 }
 
-#cjk-font-variants-unit .fonts-table tr:nth-child(odd)
+#cjk-font-variants-unit .fonts-table tr:nth-child(odd) td
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
 }

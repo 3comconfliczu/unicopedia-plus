@@ -505,6 +505,10 @@
                 "alias": "Cprt"
             },
             {
+                "canonic": "Cypro_Minoan",
+                "alias": "Cpmn"
+            },
+            {
                 "canonic": "Cyrillic",
                 "alias": "Cyrl"
             },
@@ -837,6 +841,10 @@
                 "alias": "Orkh"
             },
             {
+                "canonic": "Old_Uyghur",
+                "alias": "Ougr"
+            },
+            {
                 "canonic": "Oriya",
                 "alias": "Orya"
             },
@@ -961,6 +969,10 @@
                 "alias": "Taml"
             },
             {
+                "canonic": "Tangsa",
+                "alias": "Tnsa"
+            },
+            {
                 "canonic": "Tangut",
                 "alias": "Tang"
             },
@@ -989,12 +1001,20 @@
                 "alias": "Tirh"
             },
             {
+                "canonic": "Toto",
+                "alias": "Toto"
+            },
+            {
                 "canonic": "Ugaritic",
                 "alias": "Ugar"
             },
             {
                 "canonic": "Vai",
                 "alias": "Vaii"
+            },
+            {
+                "canonic": "Vithkuqi",
+                "alias": "Vith"
             },
             {
                 "canonic": "Wancho",
@@ -1137,6 +1157,10 @@
                 "alias": "Cprt"
             },
             {
+                "canonic": "Cypro_Minoan",
+                "alias": "Cpmn"
+            },
+            {
                 "canonic": "Cyrillic",
                 "alias": "Cyrl"
             },
@@ -1469,6 +1493,10 @@
                 "alias": "Orkh"
             },
             {
+                "canonic": "Old_Uyghur",
+                "alias": "Ougr"
+            },
+            {
                 "canonic": "Oriya",
                 "alias": "Orya"
             },
@@ -1593,6 +1621,10 @@
                 "alias": "Taml"
             },
             {
+                "canonic": "Tangsa",
+                "alias": "Tnsa"
+            },
+            {
                 "canonic": "Tangut",
                 "alias": "Tang"
             },
@@ -1621,12 +1653,20 @@
                 "alias": "Tirh"
             },
             {
+                "canonic": "Toto",
+                "alias": "Toto"
+            },
+            {
                 "canonic": "Ugaritic",
                 "alias": "Ugar"
             },
             {
                 "canonic": "Vai",
                 "alias": "Vaii"
+            },
+            {
+                "canonic": "Vithkuqi",
+                "alias": "Vith"
             },
             {
                 "canonic": "Wancho",

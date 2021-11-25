@@ -159,12 +159,12 @@
     height: 2.5em;
 }
 
-#unicode-normalizer-unit .forms-table tr:nth-child(even)
+#unicode-normalizer-unit .forms-table tr:nth-child(even) td
 {
     background-color: white;
 }
 
-#unicode-normalizer-unit .forms-table tr:nth-child(odd)
+#unicode-normalizer-unit .forms-table tr:nth-child(odd) td
 {
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
 }

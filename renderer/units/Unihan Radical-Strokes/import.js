@@ -327,6 +327,7 @@ module.exports.start = function (context)
                         }
                         character.tooltip = getFullRSTooltip (codePoint);
                         character.codeTooltip = getTooltip (character.symbol);
+                        character.isCompatibility = regexp.isCompatibility (character.symbol);
                         items[residualStrokes - options.minStrokes].characters.push (character);
                     }
                 }

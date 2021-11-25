@@ -314,6 +314,13 @@
     margin: 0 1em 0 0.5em;
 }
 
+/* Dirty hack */
+#unicode-data-finder-unit .search-data .symbol.private-use
+{
+    font-family: "BabelStone Han";
+    color: var(--color-accent);
+}
+
 #unicode-data-finder-unit .search-data .data-table
 {
     margin: 0.8em 0;

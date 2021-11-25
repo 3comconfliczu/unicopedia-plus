@@ -103,8 +103,24 @@
     ],
     [
         {
-            "name": "GitHub - googlefonts/noto-fonts: Noto fonts, except for CJK and emoji",
-            "href": "https://github.com/googlefonts/noto-fonts"
+            "name": "Unicode/Versions - Wikibooks, open books for an open world",
+            "href": "https://en.wikibooks.org/wiki/Unicode/Versions"
+        },
+        {
+            "name": "History of Unicode Release and Publication Dates",
+            "href": "https://www.unicode.org/history/publicationdates.html"
+        }
+    ],
+    [
+        {
+            "name": "About Versions of the Unicode® Standard",
+            "href": "https://www.unicode.org/versions/"
+        }
+    ],
+    [
+        {
+            "name": "Updates and Errata",
+            "href": "https://unicode.org/errata/"
         }
     ],
     [
@@ -126,165 +142,173 @@
         }
     ],
     [
-         {
-            "name": "UAX #34: Unicode Named Character Sequences",
-            "href": "https://www.unicode.org/reports/tr34/"
-        },
         {
-            "name": "NamedSequences.txt",
-            "href": "https://www.unicode.org/Public/UNIDATA/NamedSequences.txt"
+            "name": "Components of Unicode 14.0.0",
+            "href": "https://www.unicode.org/versions/components-14.0.0.html"
         }
     ],
     [
         {
-            "name": "The Unicode Standard, Version 13.0 - Core Specification.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/UnicodeStandard-13.0.pdf"
+            "name": "Unicode 14.0.0",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/"
         }
     ],
     [
         {
-            "name": "The Unicode Standard, Version 13.0 – Title and Copyright - Title.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/Title.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Contents - UnicodeBookTOC.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/UnicodeBookTOC.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Preface - Preface.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/Preface.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Core Specification.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/UnicodeStandard-14.0.pdf"
         }
     ],
     [
         {
-            "name": "The Unicode Standard, Version 13.0 - Introduction - ch01.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch01.pdf"
+            "name": "The Unicode Standard, Version 14.0 – Title and Copyright - Title.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/Title.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - General Structure - ch02.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch02.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Contents - UnicodeBookTOC.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/UnicodeBookTOC.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Conformance - ch03.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch03.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Character Properties - ch04.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch04.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Implementation Guidelines - ch05.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch05.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Writing Systems and Punctuation - ch06.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch06.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Europe-I - ch07.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch07.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Europe-II - ch08.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch08.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Middle East-I - ch09.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch09.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Middle East-II - ch10.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch10.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Cuneiform and Hieroglyphs - ch11.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch11.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - South and Central Asia-I - ch12.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch12.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - South and Central Asia-II - ch13.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch13.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - South and Central Asia-III - ch14.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch14.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - South and Central Asia-IV - ch15.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch15.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Southeast Asia - ch16.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch16.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Indonesia and Oceania - ch17.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch17.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - East Asia - ch18.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch18.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Africa - ch19.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch19.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Americas- ch20.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch20.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Notational Systems - ch21.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch21.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Symbols - ch22.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch22.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - Special Areas and Format Characters - ch23.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch23.pdf"
-        },
-        {
-            "name": "The Unicode Standard, Version 13.0 - About the Code Charts - ch24.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/ch24.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Preface - Preface.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/Preface.pdf"
         }
     ],
     [
         {
-            "name": "The Unicode Standard, Version 13.0 - Notational Conventions - appA.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appA.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Introduction - ch01.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch01.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Unicode Publications and Resources - appB.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appB.pdf"
+            "name": "The Unicode Standard, Version 14.0 - General Structure - ch02.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch02.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Relationship to ISO/IEC 10646 - appC.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appC.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Conformance - ch03.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch03.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Version History of the Standard - appD.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appD.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Character Properties - ch04.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch04.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Han Unification History - appE.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appE.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Implementation Guidelines - ch05.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch05.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Documentation of CJK Strokes - appF.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/appF.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Writing Systems and Punctuation - ch06.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch06.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Index - UnicodeBookIX.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/UnicodeBookIX.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Europe-I - ch07.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch07.pdf"
         },
         {
-            "name": "The Unicode Standard, Version 13.0 - Colophon - Colophon.pdf",
-            "href": "https://www.unicode.org/versions/Unicode13.0.0/Colophon.pdf"
+            "name": "The Unicode Standard, Version 14.0 - Europe-II - ch08.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch08.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Middle East-I - ch09.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch09.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Middle East-II - ch10.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch10.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Cuneiform and Hieroglyphs - ch11.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch11.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - South and Central Asia-I - ch12.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch12.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - South and Central Asia-II - ch13.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch13.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - South and Central Asia-III - ch14.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch14.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - South and Central Asia-IV - ch15.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch15.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Southeast Asia - ch16.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch16.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Indonesia and Oceania - ch17.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch17.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - East Asia - ch18.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch18.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Africa - ch19.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch19.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Americas- ch20.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch20.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Notational Systems - ch21.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch21.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Symbols - ch22.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch22.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Special Areas and Format Characters - ch23.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch23.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - About the Code Charts - ch24.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/ch24.pdf"
+        }
+    ],
+    [
+        {
+            "name": "The Unicode Standard, Version 14.0 - Notational Conventions - appA.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appA.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Unicode Publications and Resources - appB.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appB.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Relationship to ISO/IEC 10646 - appC.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appC.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Version History of the Standard - appD.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appD.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Han Unification History - appE.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appE.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Documentation of CJK Strokes - appF.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/appF.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Index - UnicodeBookIX.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/UnicodeBookIX.pdf"
+        },
+        {
+            "name": "The Unicode Standard, Version 14.0 - Colophon - Colophon.pdf",
+            "href": "https://www.unicode.org/versions/Unicode14.0.0/Colophon.pdf"
+        }
+    ],
+    [
+        {
+            "name": "Unicode 14.0 Versioned Charts Index",
+            "href": "https://www.unicode.org/charts/PDF/Unicode-14.0/"
         }
     ],
     [
@@ -301,6 +325,16 @@
         {
             "name": "UTR#17: Unicode Character Encoding Model",
             "href": "https://www.unicode.org/reports/tr17/"
+        }
+    ],
+    [
+         {
+            "name": "UAX #34: Unicode Named Character Sequences",
+            "href": "https://www.unicode.org/reports/tr34/"
+        },
+        {
+            "name": "NamedSequences.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/NamedSequences.txt"
         }
     ],
     [
@@ -343,6 +377,12 @@
         {
             "name": "An Introduction to Writing Systems & Unicode",
             "href": "https://r12a.github.io/scripts/tutorial/"
+        }
+    ],
+    [
+        {
+            "name": "ScriptSource - Writing systems, computers and people",
+            "href": "https://www.scriptsource.org/"
         }
     ],
     [
@@ -393,6 +433,12 @@
         {
             "name": "It’s not wrong that \"🤦🏼‍♂️\".length == 7",
             "href": "https://hsivonen.fi/string-length/"
+        }
+    ],
+    [
+        {
+            "name": "I Can Text You A Pile of Poo, But I Can’t Write My Name by Aditya Mukerjee | Model View Culture",
+            "href": "https://modelviewculture.com/pieces/i-can-text-you-a-pile-of-poo-but-i-cant-write-my-name"
         }
     ]
 ]

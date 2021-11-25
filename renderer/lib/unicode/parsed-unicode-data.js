@@ -1,5 +1,5 @@
 //
-// https://www.unicode.org/versions/Unicode13.0.0/ch04.pdf
+// https://www.unicode.org/versions/Unicode14.0.0/ch04.pdf
 //
 /*
 Table 4-8. Name Derivation Rule Prefix Strings
@@ -68,8 +68,8 @@ for (let line of lines)
                 {
                     // "Hangul" in "UTR #15: Unicode Normalization Forms"
                     // https://www.unicode.org/reports/tr15/tr15-33.html#Hangul
-                    // "Conjoining Jamo Behavior" in "The Unicode Standard, Version 13.0 - ch03.pdf" p. 140
-                    // https://www.unicode.org/versions/Unicode13.0.0/ch03.pdf
+                    // "Conjoining Jamo Behavior" in "The Unicode Standard, Version 14.0 - ch03.pdf" p. 141
+                    // https://www.unicode.org/versions/Unicode14.0.0/ch03.pdf
                     let jamoInitials =
                     [
                         "G", "GG", "N", "D", "DD", "R", "M", "B", "BB",
