@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## 11.0.0-alpha.2
 
-- Used Windows-compatible end-of-line markers when parsing text files (BUG FIX).
+- Used Windows-compatible end-of-line markers when parsing data text files (BUG FIX).
 - Added a new `kStrange` regex example to the **Find by Tag Value** feature of the **Unihan Data Finder** utility.
 
 ## 11.0.0-alpha.1
