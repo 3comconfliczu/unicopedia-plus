@@ -10,7 +10,7 @@ function characterToCodePoint (character, noPrefix)
 //
 let outputLines = [ ];
 //
-let lines = fs.readFileSync ('shinjitai-kyujitai.txt', { encoding: 'utf8' }).split ("\n").sort ();
+let lines = fs.readFileSync ('shinjitai-kyujitai.txt', { encoding: 'utf8' }).split (/\r?\n/).sort ();
 for (let line of lines)
 {
     if (line && (line[0] !== "#"))

@@ -18,7 +18,7 @@ function fieldToString (field)
     return string;
 }
 // Copy of https://www.unicode.org/Public/UNIDATA/NormalizationTest.txt
-lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'NormalizationTest.txt'), { encoding: 'utf8' }).split ("\n");
+lines = fs.readFileSync (path.join (__dirname, 'UNIDATA', 'NormalizationTest.txt'), { encoding: 'utf8' }).split (/\r?\n/);
 for (let line of lines)
 {
     if (line && (line[0] !== "#"))

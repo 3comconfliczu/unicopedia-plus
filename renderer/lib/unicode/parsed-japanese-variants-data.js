@@ -6,7 +6,7 @@ let codePoints = { };
 //
 // Japanese_Variants.txt; compiled from:
 // https://www.bunka.go.jp/kokugo_nihongo/sisaku/joho/joho/kijun/naikaku/kanji/joyokanjisakuin/index.html
-let lines = fs.readFileSync (path.join (__dirname, 'Japanese', 'Japanese_Variants.txt'), { encoding: 'utf8' }).split ("\n");
+let lines = fs.readFileSync (path.join (__dirname, 'Japanese', 'Japanese_Variants.txt'), { encoding: 'utf8' }).split (/\r?\n/);
 for (let line of lines)
 {
     if (line && (line[0] !== "#"))

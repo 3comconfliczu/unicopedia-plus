@@ -5,7 +5,7 @@ const path = require ('path');
 let codePoints = { };
 //
 // Copy of UniVariants.txt contained in http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/CJKtable/UniVariants.Z
-let lines = fs.readFileSync (path.join (__dirname, 'Yasuoka', 'UniVariants.txt'), { encoding: 'ascii' }).split ("\n");
+let lines = fs.readFileSync (path.join (__dirname, 'Yasuoka', 'UniVariants.txt'), { encoding: 'ascii' }).split (/\r?\n/);
 for (let line of lines)
 {
     if (line && (line[0] !== "#"))
