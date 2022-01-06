@@ -248,6 +248,10 @@
                 "string": "🉠🉡🉢🉣🉤🉥"
             },
             {
+                "label": "Tangut Characters",
+                "string": "𘜶𗵐𘏨𘔭"
+            },
+            {
                 "label": "Twelve Macrons",
                 "string": "\na\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304\u0304"
             },
@@ -335,7 +339,7 @@
             },
             {
                 "label": "Inside Block",
-                "string": "\u0530\u18F6\u20C0\u2427\u2B74\uD83C\uDC2C\uD83E\uDC0C"
+                "string": "\u0530\u18F6\u20C1\u2427\u2B74\uD83C\uDC2C\uD83E\uDC0C"
             },
             {
                 "label": "No Block",

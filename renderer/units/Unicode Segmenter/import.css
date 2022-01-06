@@ -72,6 +72,7 @@
 #unicode-segmenter-unit .segment-list
 {
     user-select: text;
+    cursor: text;
     border: 1px solid hsla(0, 0%, 0%, 0.25);
     background-color: white;
     padding: 0.5em;

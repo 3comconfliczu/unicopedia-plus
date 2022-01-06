@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "11.0.0-alpha.2",
+    "version": "11.0.0-beta.1",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -15,7 +15,7 @@
     },
     "build": {
         "appId": "com.tonton-pixel.unicopedia-plus",
-        "copyright": "Copyright © 2018-2021 ${author}.",
+        "copyright": "Copyright © 2018-2022 ${author}.",
         "artifactName": "${name}-${os}-${version}.${ext}",
         "directories": {
             "output": "build",
@@ -86,7 +86,7 @@
         "viz.js": "^2.1.2"
     },
     "devDependencies": {
-        "electron": "17.0.0-alpha.4",
+        "electron": "17.0.0-beta.1",
         "electron-builder": "22.10.5",
         "electron-packager": "^15.4.0"
     }

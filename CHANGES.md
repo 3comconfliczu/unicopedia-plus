@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.0.0-beta.1
+
+- Updated `Electron` to version `17.0.0-beta.1`.
+- Updated samples in the **Unicode Inspector** utility.
+- Updated copyright years.
+
 ## 11.0.0-alpha.2
 
 - Used Windows-compatible end-of-line markers when parsing data text files (BUG FIX).
