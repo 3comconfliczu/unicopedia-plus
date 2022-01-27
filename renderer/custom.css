@@ -29,6 +29,7 @@
     font-family: "Sans CJK HK";
     src: url("cjk-fonts/SourceHanSansHC-VF.otf.woff2") format("woff2");
 }
+
 @font-face
 {
     font-family: "NotDef";
@@ -39,15 +40,6 @@
 {
     font-family: "Blank";
     src: url("blank-font/AdobeBlank2.otf") format("opentype");
-}
-
-@font-face
-{
-    font-family: "ASCII";
-    src: local("Segoe UI Mono"), local(Monaco), local(Menlo), local("DejaVu Sans Mono"), local("Liberation Mono"), local("Noto Mono"), local("Ubuntu Mono");
-    /* src: local("Segoe UI"), local(Arial), local(Geneva), local(Verdana), local(Tahoma), local("DejaVu Sans"), local("Liberation Sans"), local("Noto Sans"), local("Ubuntu"); */
-    font-weight: bold;
-    unicode-range: U+00-7F;
 }
 
 :root

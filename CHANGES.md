@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.0.0-beta.2
+
+- Allowed lowercase 'u' prefix for "relaxed" hex code point formats.
+- Updated `Electron` to version `17.0.0-beta.8`.
+
 ## 11.0.0-beta.1
 
 - Updated `Electron` to version `17.0.0-beta.1`.

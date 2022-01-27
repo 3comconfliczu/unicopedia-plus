@@ -26,8 +26,8 @@
                 "string": "👪⬌👨‍👩‍👦 💑⬌👩‍❤️‍👨 💏⬌👩‍❤️‍💋‍👨"
             },
             {
-                "label": "Math Geekiness",
-                "string": "log(😅) =💧log(😄)"
+                "label": "Fun Replacement",
+                "string": "'🇧🇬🇭🇷'.replace('🇬🇭', '🇦🇬') === '🇧🇦🇬🇷'"
             },
             {
                 "label": "Japanese Buttons",
@@ -36,6 +36,10 @@
             {
                 "label": "Lorem Ipsum",
                 "string": "Lorem ipsum 🚂 dolor sit amet, 🌈 consectetur 🦄 adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "label": "Math Geekiness",
+                "string": "log(😅) =💧log(😄)"
             },
             {
                 "label": "Pan-CJKV Flags",

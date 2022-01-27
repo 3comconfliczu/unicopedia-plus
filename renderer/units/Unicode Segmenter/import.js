@@ -147,6 +147,7 @@ module.exports.start = function (context)
     function updateSegmenter ()
     {
         segmenter = new Intl.Segmenter (localeSelect.value || [ ], { granularity: granularitySelect.value });
+        // console.log (JSON.stringify (segmenter.resolvedOptions ()));
     }
     //
     granularitySelect.value = prefs.granularitySelect;
