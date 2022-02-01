@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "11.0.0-beta.2",
+    "version": "11.0.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -79,14 +79,14 @@
     "license": "MIT",
     "private": false,
     "dependencies": {
-        "@electron/remote": "^2.0.1",
+        "@electron/remote": "^2.0.4",
         "emoji-test-groups": "^14.0.1",
         "emoji-test-list": "^14.0.1",
         "emoji-test-patterns": "^14.0.1",
         "viz.js": "^2.1.2"
     },
     "devDependencies": {
-        "electron": "17.0.0-beta.8",
+        "electron": "^17.0.0",
         "electron-builder": "22.10.5",
         "electron-packager": "^15.4.0"
     }

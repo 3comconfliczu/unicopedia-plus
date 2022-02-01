@@ -774,8 +774,18 @@
     font-weight: bold;
 }
 
+#unihan-data-finder-unit details
+{
+    margin: 1.2em 0;
+}
+
+#unihan-data-finder-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
 #unihan-data-finder-unit summary
 {
     font-weight: bold;
-    margin: 1.2em 0 1em 0;
 }
+

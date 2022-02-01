@@ -1,7 +1,16 @@
 @charset "utf-8";
 
+#unihan-references-unit details
+{
+    margin: 1.2em 0;
+}
+
+#unihan-references-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
 #unihan-references-unit summary
 {
     font-weight: bold;
-    margin: 1.2em 0 1em 0;
 }

@@ -555,8 +555,18 @@
     fill: white;
 }
 
+#unicode-data-finder-unit details
+{
+    margin: 1.2em 0;
+}
+
+#unicode-data-finder-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
 #unicode-data-finder-unit summary
 {
     font-weight: bold;
-    margin: 1.2em 0 1em 0;
 }
+

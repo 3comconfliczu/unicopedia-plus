@@ -2,6 +2,15 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.0.0
+
+- Added full support for **Unicode 14.0**:
+    - Updated `Electron` to version `17.0.0`: supports `Unicode 14.0` (`ICU 70.1`) for new characters, new blocks, new scripts, regular expressions, case folding, line breaking, sorting, normalization, segmentation, etc.
+    - Updated all Unicode and Unihan data files.
+    - Updated all related internal data tables.
+    - Updated all samples, instructions, regex examples, reference links.
+- Updated `@electron/remote` module to version `2.0.4`.
+
 ## 11.0.0-beta.2
 
 - Allowed lowercase 'u' prefix for "relaxed" hex code point formats.

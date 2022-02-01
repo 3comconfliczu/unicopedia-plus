@@ -221,6 +221,20 @@
     ],
     [
         {
+            "lang": "zh-Hant",
+            "name": "- 字形資訊 - CNS11643 中文全字庫",
+            "href": "https://www.cns11643.gov.tw/wordView.jsp"
+        }
+    ],
+    [
+        {
+            "lang": "ja",
+            "name": "文字情報基盤検索システム",
+            "href": "https://moji.or.jp/mojikibansearch/basic"
+        }
+    ],
+    [
+        {
             "name": "MDBG Chinese Dictionary",
             "href": "https://www.mdbg.net/chinese/dictionary?page=cedict"
         }

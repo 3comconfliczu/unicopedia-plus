@@ -424,8 +424,18 @@
     background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
 }
 
+#unihan-inspector-unit details
+{
+    margin: 1.2em 0;
+}
+
+#unihan-inspector-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
 #unihan-inspector-unit summary
 {
     font-weight: bold;
-    margin: 1.2em 0 1em 0;
 }
+

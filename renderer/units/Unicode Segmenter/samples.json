@@ -236,6 +236,14 @@
         "items":
         [
             {
+                "label": "Decomposed Hiragana",
+                "string": "でんぽう"
+            },
+            {
+                "label": "Decomposed Katakana",
+                "string": "ピカドン"
+            },
+            {
                 "label": "Han + Variation Selector-1",
                 "string": "漢︀"
             },
@@ -244,12 +252,12 @@
                 "string": "劍󠄁"
             },
             {
-                "label": "Decomposed Hiragana",
-                "string": "でんぽう"
+                "label": "Han + Vietnamese Reading Mark Ca",
+                "string": "光𖿰"
             },
             {
-                "label": "Decomposed Katakana",
-                "string": "ピカドン"
+                "label": "Han + Vietnamese Reading Mark Nhay",
+                "string": "立𖿱"
             }
         ]
     }

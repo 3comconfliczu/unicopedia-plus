@@ -2,7 +2,7 @@
 // Temporary until Electron framework adds built-in support for Unicode 14.0
 // const rewritePattern = require ('regexpu-core');
 //
-// Support for Unicode 14.0 finally added in Electron 17.0.0-alpha.4 (2021-11-25) (Chromium 98.0.4706.0)
+// Support for Unicode 14.0 finally added in Electron 17.0.0 (2022-02-01) (Chromium 98)
 const rewritePattern = null;
 //
 function build (pattern, options)
@@ -32,7 +32,7 @@ function build (pattern, options)
     }
     if (rewritePattern)
     {
-        pattern = rewritePattern (pattern, flags, { unicodePropertyEscape: true, lookbehind: true, useUnicodeFlag: true });
+        pattern = rewritePattern (pattern, flags, { unicodePropertyEscapes: 'transform' });
     }
     return new RegExp (pattern, flags);
 };

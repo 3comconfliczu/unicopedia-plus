@@ -212,8 +212,18 @@
     cursor: text;
 }
 
+#unicode-normalizer-unit details
+{
+    margin: 1.2em 0;
+}
+
+#unicode-normalizer-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
 #unicode-normalizer-unit summary
 {
     font-weight: bold;
-    margin: 1.2em 0 1em 0;
 }
+
