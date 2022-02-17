@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## 11.1.0
 
 - Added new Unihan sample script: `Detect Kyūjitai as Compatibility Ideographs` to the **JavaScript Runner** utility.
-- Reverted to use local `emoji-test-groups`, `emoji-test-list`, `emoji-test-patterns` modules.
+- Reverted to using local `emoji-test-groups`, `emoji-test-list`, `emoji-test-patterns` modules.
 - Updated **JavaScript Runner** Emoji sample scripts accordingly.
 - Refactored Unihan character data tooltip code.
 - Updated `Electron` to version `17.0.1`.
