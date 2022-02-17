@@ -1,5 +1,5 @@
 // Display Emoji Count
-const emojiTestList = require ('emoji-test-list');
+const emojiTestList = require ('./lib/unicode/emoji-test-list.js');
 let componentCount = 0;
 let keyboardCount = 0;
 let displayCount = 0;

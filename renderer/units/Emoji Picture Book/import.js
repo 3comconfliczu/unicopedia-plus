@@ -151,9 +151,9 @@ module.exports.start = function (context)
         );
     }
     //
-    const emojiList = require ('emoji-test-list');
+    const emojiList = require ('../../lib/unicode/emoji-test-list.js');
     //
-    const emojiGroups = require ('emoji-test-groups');
+    const emojiGroups = require ('../../lib/unicode/emoji-test-groups.js');
     //
     let groupNames = [ ];
     for (let group of emojiGroups)

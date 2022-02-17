@@ -52,8 +52,8 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const unihan = require ('../../lib/unicode/unihan.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
-    const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
     const japaneseVariants = require ('../../lib/unicode/parsed-japanese-variants-data.js');
     const yasuokaVariants = require ('../../lib/unicode/parsed-yasuoka-variants-data.js');
     //
@@ -174,50 +174,6 @@ module.exports.start = function (context)
             }
         }
     );
-    //
-    const simpleBlockNames =
-    {
-        "U+4E00..U+9FFF": "CJK Unified (URO)",
-        "U+3400..U+4DBF": "CJK Unified Extension A",
-        "U+20000..U+2A6DF": "CJK Unified Extension B",
-        "U+2A700..U+2B73F": "CJK Unified Extension C",
-        "U+2B740..U+2B81F": "CJK Unified Extension D",
-        "U+2B820..U+2CEAF": "CJK Unified Extension E",
-        "U+2CEB0..U+2EBEF": "CJK Unified Extension F",
-        "U+30000..U+3134F": "CJK Unified Extension G",
-        "U+F900..U+FAFF": "CJK Compatibility",
-        "U+2F800..U+2FA1F": "CJK Compatibility Supplement"
-    };
-    //
-    function getTooltip (character)
-    {
-        let data = unicode.getCharacterBasicData (character);
-        let status = regexp.isCompatibility (character) ? "Compatibility Ideograph" : "Unified Ideograph";
-        let source = regexp.isCompatibility (character) ? getCompatibilitySource (character) : "";
-        let set = "Full Unihan";
-        let tags = unihanData.codePoints[data.codePoint];
-        if ("kIICore" in tags)
-        {
-            set = "IICore";
-        }
-        else if ("kUnihanCore2020" in tags)
-        {
-            set = "Unihan Core (2020)";
-        }
-        let lines =
-        [
-            `Code Point: ${data.codePoint}`,
-            `Block: ${simpleBlockNames[data.blockRange]}`,
-            `Age: Unicode ${data.age} (${data.ageDate})`,
-            `Set: ${set}`,
-            `Status: ${status}`
-        ];
-        if (source)
-        {
-            lines.push (`Source: ${source}`);
-        }
-        return lines.join ("\n");
-    }
     //
     let variantTags =
     [
@@ -392,7 +348,7 @@ module.exports.start = function (context)
             `<<FONT FACE=${unihanFamilyString} POINT-SIZE="36">{{character}}</FONT>>`
         let options =
         [
-            { name: "tooltip", value: JSON.stringify (getTooltip (character)) },
+            { name: "tooltip", value: JSON.stringify (unihan.getTooltip (character)) },
             { name: "style", value: isLookedUp && "bold" },
             { name: "label", value: label.replace ("{{character}}", character).replace ("{{codepoint}}", codePoint.replace ("U+", "")) }
         ];
@@ -449,7 +405,7 @@ module.exports.start = function (context)
             unihanHistorySave = null;
             let symbol = document.createElement ('span');
             symbol.className = 'symbol';
-            symbol.title = getTooltip (character);
+            symbol.title = unihan.getTooltip (character);
             symbol.textContent = character;
             linearCharacter.appendChild (symbol);
             linearCodePoint.textContent = unicode.charactersToCodePoints (character);
@@ -475,7 +431,7 @@ module.exports.start = function (context)
                 {
                     let symbol = document.createElement ('span');
                     symbol.className = 'symbol';
-                    symbol.title = getTooltip (variant);
+                    symbol.title = unihan.getTooltip (variant);
                     symbol.textContent = variant;
                     linearVariants.appendChild (symbol);
                 }

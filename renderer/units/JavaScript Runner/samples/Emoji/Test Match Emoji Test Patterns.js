@@ -1,6 +1,6 @@
 // Test Match Emoji Test Patterns
-const emojiTestList = require ('emoji-test-list');
-const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiTestList = require ('./lib/unicode/emoji-test-list.js');
+const emojiTestPatterns = require ('./lib/unicode/emoji-test-patterns.js');
 const allEmojiRegex = new RegExp (emojiTestPatterns["Emoji_Test_All"], 'gu');
 let allMatches = Object.keys (emojiTestList).join (" ").match (allEmojiRegex);
 $.writeln ("Emoji_Test_All:", allMatches.length);

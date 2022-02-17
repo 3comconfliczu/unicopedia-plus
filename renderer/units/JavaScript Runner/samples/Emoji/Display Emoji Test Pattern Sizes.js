@@ -1,5 +1,5 @@
 // Display Emoji Test Pattern Sizes
-const emojiTestPatterns = require ('emoji-test-patterns');
+const emojiTestPatterns = require ('./lib/unicode/emoji-test-patterns.js');
 for (let name in emojiTestPatterns)
 {
     let pattern = emojiTestPatterns[name];

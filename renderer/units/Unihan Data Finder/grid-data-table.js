@@ -1,8 +1,7 @@
 //
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
-const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
-const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
+const unihan = require ('../../lib/unicode/unihan.js');
 //
 const deferredSymbols = false;
 //
@@ -103,34 +102,11 @@ module.exports.create = function (characters, params, highlightedCharacter)
             if (regexp.isUnihan (character))
             {
                 let isUnified = regexp.isUnified (character);
-                let status = isUnified ? "Unified Ideograph" : "Compatibility Ideograph";
-                let source = (!isUnified) ? getCompatibilitySource (character) : "";
-                let set = "Full Unihan";
-                let tags = unihanData.codePoints[data.codePoint];
-                if ("kIICore" in tags)
-                {
-                    set = "IICore";
-                }
-                else if ("kUnihanCore2020" in tags)
-                {
-                    set = "Unihan Core (2020)";
-                }
                 if (isUnified && /[\uF900-\uFAFF]/.test (character))
                 {
                     symbolCell.classList.add ('misclassified');
                 }
-                let lines =
-                [
-                    `Code Point: ${data.codePoint}`,
-                    `Age: Unicode ${data.age} (${data.ageDate})`,
-                    `Set: ${set}`,
-                    `Status: ${status}`
-                ];
-                if (source)
-                {
-                    lines.push (`Source: ${source}`);
-                }
-                symbolCell.title = lines.join ("\n");
+                symbolCell.title = unihan.getTooltip (character);
                 if (deferredSymbols)
                 {
                     symbol.textContent = "\u3000";  // Ideographic space

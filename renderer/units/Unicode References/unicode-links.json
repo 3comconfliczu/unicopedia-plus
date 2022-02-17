@@ -393,6 +393,12 @@
     ],
     [
         {
+            "name": "What every JavaScript developer should know about Unicode",
+            "href": "https://dmitripavlutin.com/what-every-javascript-developer-should-know-about-unicode/"
+        }
+    ],
+    [
+        {
             "name": "String.prototype.charCodeAt() - JavaScript | MDN",
             "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt"
         },

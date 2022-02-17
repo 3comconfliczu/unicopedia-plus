@@ -1,4 +1,4 @@
 // Write Emoji List to File
-const emojiTestList = require ('emoji-test-list');
+const emojiTestList = require ('./lib/unicode/emoji-test-list.js');
 let jsonFile = $.save ($.stringify (emojiTestList, null, 4), 'emoji-list.json');
 return `Wrote emoji list to JSON file:\n${jsonFile}`;

@@ -128,13 +128,15 @@ module.exports.start = function (context)
         tab.addEventListener ('click', (event) => { updateTab (event.currentTarget.parentElement.textContent); });
     }
     //
-    const emojiList = require ('emoji-test-list');
+    const emojiList = require ('../../lib/unicode/emoji-test-list.js');
+    //
+    const emojiGroups = require ('../../lib/unicode/emoji-test-groups.js');
+    //
+    const emojiPatterns = require ('../../lib/unicode/emoji-test-patterns.js');
     //
     const emojiCount = Object.keys (emojiList).length;
     //
     const cldrAnnotations = require ('../../lib/unicode/get-cldr-annotations.js');
-    //
-    const emojiGroups = require ('emoji-test-groups');
     //
     const emojiIndices = { };
     //
@@ -611,7 +613,7 @@ module.exports.start = function (context)
     sequenceInstructions.open = prefs.sequenceInstructions;
     sequenceRegexExamples.open = prefs.sequenceRegexExamples;
     //
-    const emojiPattern = require ('emoji-test-patterns')["Emoji_Test_All"];
+    const emojiPattern = emojiPatterns["Emoji_Test_All"];
     const emojiRegex = new RegExp (emojiPattern, 'gu');
     //
     textClearButton.addEventListener

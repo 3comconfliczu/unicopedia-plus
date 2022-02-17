@@ -36,12 +36,11 @@ module.exports.start = function (context)
     const linksList = require ('../../lib/links-list.js');
     //
     const regexp = require ('../../lib/unicode/regexp.js');
-    const unicode = require ('../../lib/unicode/unicode.js');
+    const unihan = require ('../../lib/unicode/unihan.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const kangxiRadicals = require ('../../lib/unicode/kangxi-radicals.json');
     const { fromRSValue } = require ('../../lib/unicode/get-rs-strings.js');
     const { fromRadical, fromStrokes, fromRadicalStrokes } = require ('../../lib/unicode/get-rs-strings.js');
-    const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
     //
     let unihanCount = unihanData.fullSet.length;
     //
@@ -213,50 +212,6 @@ module.exports.start = function (context)
         return rsValues.join ("\n");
     }
     //
-    const simpleBlockNames =
-    {
-        "U+4E00..U+9FFF": "CJK Unified (URO)",
-        "U+3400..U+4DBF": "CJK Unified Extension A",
-        "U+20000..U+2A6DF": "CJK Unified Extension B",
-        "U+2A700..U+2B73F": "CJK Unified Extension C",
-        "U+2B740..U+2B81F": "CJK Unified Extension D",
-        "U+2B820..U+2CEAF": "CJK Unified Extension E",
-        "U+2CEB0..U+2EBEF": "CJK Unified Extension F",
-        "U+30000..U+3134F": "CJK Unified Extension G",
-        "U+F900..U+FAFF": "CJK Compatibility",
-        "U+2F800..U+2FA1F": "CJK Compatibility Supplement"
-    };
-    //
-    function getTooltip (character)
-    {
-        let data = unicode.getCharacterBasicData (character);
-        let status = regexp.isUnified (character) ? "Unified Ideograph" : "Compatibility Ideograph";
-        let source = (!regexp.isUnified (character)) ? getCompatibilitySource (character) : "";
-        let set = "Full Unihan";
-        let tags = unihanData.codePoints[data.codePoint];
-        if ("kIICore" in tags)
-        {
-            set = "IICore";
-        }
-        else if ("kUnihanCore2020" in tags)
-        {
-            set = "Unihan Core (2020)";
-        }
-        let lines =
-        [
-            `Code Point: ${data.codePoint}`,
-            `Block: ${simpleBlockNames[data.blockRange]}`,
-            `Age: Unicode ${data.age} (${data.ageDate})`,
-            `Set: ${set}`,
-            `Status: ${status}`
-        ];
-        if (source)
-        {
-            lines.push (`Source: ${source}`);
-        }
-        return lines.join ("\n");
-    }
-    //
     function findCharactersByRadicalStrokes (options)
     {
         let items = [ ];
@@ -326,7 +281,7 @@ module.exports.start = function (context)
                             }
                         }
                         character.tooltip = getFullRSTooltip (codePoint);
-                        character.codeTooltip = getTooltip (character.symbol);
+                        character.codeTooltip = unihan.getTooltip (character.symbol);
                         character.isCompatibility = regexp.isCompatibility (character.symbol);
                         items[residualStrokes - options.minStrokes].characters.push (character);
                     }

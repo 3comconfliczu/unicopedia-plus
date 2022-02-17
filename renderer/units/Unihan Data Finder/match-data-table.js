@@ -1,6 +1,7 @@
 //
 const regexp = require ('../../lib/unicode/regexp.js');
 const unicode = require ('../../lib/unicode/unicode.js');
+const unihan = require ('../../lib/unicode/unihan.js');
 const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
 const getCompatibilitySource = require ('../../lib/unicode/get-cjk-compatibility-source.js');
 //
@@ -105,6 +106,7 @@ module.exports.create = function (characters, regex, params)
             }
             let dataRow = document.createElement ('tr');
             dataRow.className = 'data-row';
+            dataRow.title = unihan.getTooltip (character);
             if (regex && (!regex.test (character)))
             {
                 dataRow.classList.add ('variant');
@@ -132,9 +134,6 @@ module.exports.create = function (characters, regex, params)
             dataRow.appendChild (codePointData);
             let ageData = document.createElement ('td');
             ageData.className = 'age-data';
-            // ageData.appendChild (document.createTextNode (`Unicode\xA0${data.age}`));
-            // ageData.appendChild (document.createElement ('br'));
-            // ageData.appendChild (document.createTextNode (`(${data.ageDate.replace (" ", "\xA0")})`));
             ageData.textContent = `Unicode\xA0${data.age} (${data.ageDate.replace (" ", "\xA0")})`;
             dataRow.appendChild (ageData);
             let setData = document.createElement ('td');
