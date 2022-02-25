@@ -67,6 +67,12 @@
         {
             "name": "Ideographic Variation Database",
             "href": "https://www.unicode.org/ivd/"
+        }
+    ],
+    [
+        {
+            "name": "L2/16-063 (Proposal to accept the submission to register the “PanCJKV” IVD collection) - 16063-pancjkv-ivd-collection.pdf",
+            "href": "https://www.unicode.org/L2/L2016/16063-pancjkv-ivd-collection.pdf"
         },
         {
             "name": "GitHub - adobe-type-tools/pancjkv-ivd-collection: PanCJKV IVD Collection (UNREGISTERED)",

@@ -232,6 +232,7 @@ module.exports.start = function (context)
                 }
                 currentDiffElement = diffElement;
                 currentAlternateDiff = alternateDiff;
+                document.addEventListener ('mouseup', hideDifferences, { once: true });
             }
             else
             {
@@ -349,7 +350,6 @@ module.exports.start = function (context)
                                 data.lang = language.tag;
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
-                                document.addEventListener ('mouseup', hideDifferences); // document, not data!
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');
@@ -421,7 +421,6 @@ module.exports.start = function (context)
                                 data.lang = language.tag;
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
-                                document.addEventListener ('mouseup', hideDifferences);
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');

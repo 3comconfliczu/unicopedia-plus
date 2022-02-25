@@ -101,8 +101,7 @@ module.exports.create = function (characters, params, highlightedCharacter)
             symbol.className = 'symbol';
             if (regexp.isUnihan (character))
             {
-                let isUnified = regexp.isUnified (character);
-                if (isUnified && /[\uF900-\uFAFF]/.test (character))
+                if (regexp.isUnified (character) && /[\uF900-\uFAFF]/.test (character))
                 {
                     symbolCell.classList.add ('misclassified');
                 }

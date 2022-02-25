@@ -18,7 +18,8 @@ annotations.
 	<annotations>
 		<annotation cp="{">brace | bracket | curly brace | curly bracket | gullwing | open curly bracket</annotation>
 		<annotation cp="{" type="tts">open curly bracket</annotation>
-		<annotation cp="🏻">light skin tone | skin tone | type 1–2</annotation>
+		<!-- <annotation cp="🏻">light skin tone | skin tone | type 1–2</annotation> -->
+		<annotation cp="🏻">light skin tone | skin tone | type 1-2</annotation>
 		<annotation cp="🏻" type="tts">light skin tone</annotation>
 		<annotation cp="🏼">medium-light skin tone | skin tone | type 3</annotation>
 		<annotation cp="🏼" type="tts">medium-light skin tone</annotation>
