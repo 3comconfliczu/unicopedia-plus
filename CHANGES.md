@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## 11.2.0
 
 - Improved performance of built-in functions `$.write ()` and `$.writeln ()` in the **JavaScript Runner** utility.
-- Fixed mouse-up event memory leak.
+- Fixed mouse-up event memory leak in the **CJK Font Variants** utility.
 - Updated `@electron/remote` module to `2.0.5`.
 - Updated `Electron` to version `17.1.0`.
 
