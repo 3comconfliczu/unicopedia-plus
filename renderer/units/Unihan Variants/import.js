@@ -72,9 +72,9 @@ module.exports.start = function (context)
     //
     unihanHistory = prefs.unihanHistory;
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)\p{Variation_Selector}?|(?:[Uu]\+?)?([0-9a-fA-F]{4,5}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)[\u{FE00}-\u{FE0F}\u{E0100}-\u{E01EF}]?|(?:[Uu]\+?)?([0-9a-fA-F]{4,5}))\s*$/u;
     //
-    function parseUnihanCharacter (inputString)
+    function validateUnihanCharacter (inputString)
     {
         let character = "";
         let match = inputString.match (characterOrCodePointRegex);
@@ -104,7 +104,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!parseUnihanCharacter (event.currentTarget.value))
+                if (!validateUnihanCharacter (event.currentTarget.value))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -294,10 +294,10 @@ module.exports.start = function (context)
     function postProcessSVG (svg)
     {
         let doc = parser.parseFromString (svg, 'text/xml');
-        // Fix incorrect centering of text in ellipses (circles)
         let ellipses = doc.documentElement.querySelectorAll ('.node ellipse');
         for (let ellipse of ellipses)
         {
+            // Fix incorrect centering of text in ellipses (circles)
             let cx = ellipse.getAttribute ('cx');
             let texts = ellipse.parentNode.querySelectorAll ('text');
             for (let text of texts)
@@ -569,7 +569,7 @@ module.exports.start = function (context)
         {
             if (unihanInput.value)
             {
-                let character = parseUnihanCharacter (unihanInput.value);
+                let character = validateUnihanCharacter (unihanInput.value);
                 if (character)
                 {
                     updateUnihanData (character);

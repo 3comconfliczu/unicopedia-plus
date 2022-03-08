@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.2.1
+
+- Fixed validation of optional Unihan variation selector (filtered out anyway).
+- Added standardized variation sequence to tooltip of Unihan compatibility characters.  
+- Updated `Electron` to version `17.1.1`.
+
 ## 11.2.0
 
 - Improved performance of built-in functions `$.write ()` and `$.writeln ()` in the **JavaScript Runner** utility.

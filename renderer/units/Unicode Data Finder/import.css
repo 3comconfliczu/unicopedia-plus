@@ -317,7 +317,7 @@
 /* Dirty hack */
 #unicode-data-finder-unit .search-data .symbol.private-use
 {
-    font-family: "BabelStone Han";
+    font-family: "BabelStone Han PUA", "BabelStone Han";
     color: var(--color-accent);
 }
 

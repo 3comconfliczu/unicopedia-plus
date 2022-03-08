@@ -623,7 +623,7 @@ module.exports.start = function (context)
         return blockKey;
     }
     //
-    function parseCharacter (inputString)
+    function validateUnicodeCharacter (inputString)
     {
         let character = "";
         let match = inputString.match (characterOrCodePointRegex);
@@ -649,7 +649,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!getBlockKeyfromCharacter (parseCharacter (event.currentTarget.value)))
+                if (!getBlockKeyfromCharacter (validateUnicodeCharacter (event.currentTarget.value)))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -727,7 +727,7 @@ module.exports.start = function (context)
         {
             if (blockSpecimen.value)
             {
-                let character = parseCharacter (blockSpecimen.value);
+                let character = validateUnicodeCharacter (blockSpecimen.value);
                 let blockKey = getBlockKeyfromCharacter (character);
                 if (blockKey)
                 {

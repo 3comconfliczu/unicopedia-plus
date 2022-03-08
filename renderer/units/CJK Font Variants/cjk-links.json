@@ -57,6 +57,10 @@
         {
             "name": "IVD_Sequences.txt",
             "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Sequences.txt"
+        },
+        {
+            "name": "IVD_Stats.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Stats.txt"
         }
     ],
     [
