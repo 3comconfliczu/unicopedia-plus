@@ -34,13 +34,6 @@
                 "dmg"
             ]
         },
-        "pkg": {
-            "license": "license-index.html",
-            "installLocation": "/Applications",
-            "allowAnywhere": true,
-            "isRelocatable": false,
-            "isVersionChecked": false
-        },
         "linux": {
             "category": "Development",
             "icon": "icons/icon.png",
