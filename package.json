@@ -6,8 +6,10 @@
     "main": "main.js",
     "scripts": {
         "start": "electron .",
-        "build:arm64": "electron-builder --arm64",
-        "build:macos": "electron-builder --macos",
+        "build:mac-universal": "electron-builder --mac --universal",
+        "build:mac-arm64": "electron-builder --mac --arm64",
+        "build:mac-x64": "electron-builder --mac --x64",
+        "build:mac": "electron-builder --mac",
         "build:linux": "electron-builder --linux",
         "build:win": "electron-builder --win",
         "build-darwin": "electron-packager . --asar --out=build --platform=darwin --ignore=/~.* --ignore=^/screenshots --icon=icons/icon.icns --overwrite",
