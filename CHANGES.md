@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.2.2
+
+- Added support for building macOS universal binaries (`x64` and `arm64`).
+- Updated `Electron` to version `17.1.2`.
+- Updated `@electron/remote` module to `2.0.8`.
+
 ## 11.2.1
 
 - Fixed validation of optional Unihan variation selector (filtered out anyway).
