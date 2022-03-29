@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.3.0
+
+- Updated samples of word segmentation issues in the **Unicode Segmenter** utility.
+- Updated `Electron` to version `17.3.0`.
+
 ## 11.2.2
 
 - Added support for building macOS universal binaries (`x64` and `arm64`).

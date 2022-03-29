@@ -252,6 +252,10 @@
                 "string": "劍󠄁"
             },
             {
+                "label": "Han + Ideographic Tone Mark",
+                "string": "漢〪漢〫漢〬漢〭"
+            },
+            {
                 "label": "Han + Vietnamese Reading Mark Cá",
                 "string": "立𖿰"
             },
