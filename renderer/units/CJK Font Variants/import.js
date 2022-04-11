@@ -26,6 +26,11 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
+    const { clipboard } = require ('electron');
+    const { getCurrentWindow, Menu } = require ('@electron/remote');
+    //
+    const currentWindow = getCurrentWindow ();
+    //
     const path = require ('path');
     //
     const pullDownMenus = require ('../../lib/pull-down-menus.js');
@@ -291,6 +296,21 @@ module.exports.start = function (context)
         }
     }
     //
+    let currentGrapheme;
+    //
+    let graphemeMenuTemplate =
+    [
+        { label: "Copy Grapheme", click: (menuItem) => clipboard.writeText (currentGrapheme) }
+    ];
+    let graphemeContextualMenu = Menu.buildFromTemplate (graphemeMenuTemplate);
+    //
+    function showGraphemeMenu (event)
+    {
+        event.preventDefault ();
+        currentGrapheme = event.currentTarget.dataset.wideCharacter;
+        graphemeContextualMenu.popup ({ window: currentWindow });
+    }
+    //
     function createSheet (wideCharacters)
     {
         while (sheet.firstChild)
@@ -350,6 +370,8 @@ module.exports.start = function (context)
                                 data.lang = language.tag;
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
+                                data.dataset.wideCharacter = wideCharacter;
+                                data.addEventListener ('contextmenu', showGraphemeMenu);
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');
@@ -421,6 +443,8 @@ module.exports.start = function (context)
                                 data.lang = language.tag;
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
+                                data.dataset.wideCharacter = wideCharacter;
+                                data.addEventListener ('contextmenu', showGraphemeMenu);
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');

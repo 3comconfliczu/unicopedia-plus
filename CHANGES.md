@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.4.0
+
+- Added `Copy Grapheme` contextual menu to font variants of CJK characters in the **CJK Font Variants** utility.
+- Updated `Electron` to version `17.4.0`.
+
 ## 11.3.0
 
 - Updated samples of word segmentation issues in the **Unicode Segmenter** utility.
