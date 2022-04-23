@@ -186,7 +186,7 @@ module.exports.start = function (context)
     //
     function showDifferences (event)
     {
-        if (!event.button)
+        if (!(event.button || event.ctrlKey || event.metaKey))
         {
             event.preventDefault ();
             let diffElement = event.currentTarget;

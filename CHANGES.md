@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.5.0
+
+- Fixed macOS context menu issue on control-click.
+- Added `Other Applications` to `Help` menu.
+- Updated `Electron Packager` to version `15.5.0`.
+
 ## 11.4.0
 
 - Added `Copy Grapheme` contextual menu to font variants of CJK characters in the **CJK Font Variants** utility.
