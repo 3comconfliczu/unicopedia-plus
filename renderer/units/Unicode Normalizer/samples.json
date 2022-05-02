@@ -165,6 +165,10 @@
                 "string": "ℋ ℌ ℍ 𝐇 𝐻 𝑯 𝓗 𝕳 𝖧 𝗛 𝘏 𝙃 𝙷"
             },
             {
+                "label": "Fullwidth Letters",
+                "string": "ＡＢＣ　ａｂｃ"
+            },
+            {
                 "label": "Fullwidth Punctuation",
                 "string": "．，：；"
             },

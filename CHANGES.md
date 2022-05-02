@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 11.6.0
+
+- Increased font size of Unihan characters in the **View by Grid** feature of the **Unihan Data Finder** utility.
+- Updated `Electron Packager` to version `15.5.1`.
+- Updated `Electron` to version `17.4.2`.
+
 ## 11.5.0
 
 - Fixed macOS context menu issue on control-click.
