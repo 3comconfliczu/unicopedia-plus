@@ -10,8 +10,8 @@ This desktop application works on macOS, Linux and Windows operating systems.
 
 The following utilities are currently available:
 
-- **CJK Font Variants**
 - **JavaScript Runner**
+- **Pan-CJK Font Variants**
 - **Regex Properties**
 - **Emoji Data Finder**
     - **Find by Name**
@@ -37,9 +37,15 @@ The following utilities are currently available:
 - **Unihan References**
 - **Unihan Variants**
 
-## CJK Font Variants
+## JavaScript Runner
 
-- The **CJK Font Variants** utility displays simultaneously any string of CJK (Chinese/Japanese/Korean) characters in five different typefaces belonging to the open-source set of [Source Han Sans Fonts](https://github.com/adobe-fonts/source-han-sans):
+- The **JavaScript Runner** utility lets you execute JavaScript code, and comes with several sample scripts related to Unicode, Unihan, and emoji; it is useful for quick testing/prototyping or data processing.
+
+<img src="screenshots/javascript-runner.png" width="1080px" alt="JavaScript Runner screenshot">
+
+## Pan-CJK Font Variants
+
+- The **Pan-CJK Font Variants** utility displays simultaneously any string of CJK (Chinese/Japanese/Korean) characters in five different typefaces belonging to the open-source set of [Source Han Sans Fonts](https://github.com/adobe-fonts/source-han-sans):
 
 | Language | Tag | Code | Typeface |
 | -------- | --- | ---- | -------- |
@@ -59,19 +65,13 @@ The following utilities are currently available:
 - In output, the standard Unicode code point format `U+7ADC` is used, i.e. "U+" directly followed by 4 or 5 hex digits.
 - In input, more hexadecimal formats are allowed, including Unicode escape sequences, such as `\u9F8D` or `\u{20B9F}`. Moving out of the field or typing the Enter key converts all valid codes to standard Unicode code point format.
 
-<img src="screenshots/cjk-font-variants-horizontal.png" width="1080px" alt="CJK Font Variants (Horizontal) screenshot">
+<img src="screenshots/pan-cjk-font-variants-horizontal.png" width="1080px" alt="Pan-CJK Font Variants (Horizontal) screenshot">
 
-<img src="screenshots/cjk-font-variants-vertical.png" width="1080px" alt="CJK Font Variants (Vertical) screenshot">
-
-## JavaScript Runner
-
-- The **JavaScript Runner** utility lets you execute JavaScript code, and comes with several sample scripts related to Unicode, Unihan, and emoji; it is useful for quick testing/prototyping or data processing.
-
-<img src="screenshots/javascript-runner.png" width="1080px" alt="JavaScript Runner screenshot">
+<img src="screenshots/pan-cjk-font-variants-vertical.png" width="1080px" alt="Pan-CJK Font Variants (Vertical) screenshot">
 
 ## Regex Properties
 
-- The **Regex Properties** utility displays all the **Unicode 14.0** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
+- The **Regex Properties** utility displays all the **Unicode 15.0** properties available for regular expressions, used in particular by the **Emoji Data Finder**, **Unicode Data Finder** and **Unihan Data Finder** utilities.
 - These properties are suitable to build Unicode-aware regular expressions in JavaScript (ECMAScript 6) using the 'u' flag.
 - Unicode properties fall into four groups, which can be displayed individually using the <kbd>Category</kbd> drop-down menu:
     - **General Category** properties
@@ -106,8 +106,8 @@ The following utilities are currently available:
 
 - The **Find by Name** feature of the **Emoji Data Finder** utility displays a list of basic data (emoji, short name, keywords, code points) of matching Unicode emoji searched by name or keyword, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
-- This feature deals with the 4,702 emoji defined in the **Emoji 14.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/14.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,624 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,733 emoji defined in the **Emoji 15.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/15.0/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,655 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -121,8 +121,8 @@ The following utilities are currently available:
 
 - The **Match Sequence** feature of the **Emoji Data Finder** utility displays a list of basic data (emoji, short name, keywords, code points) of Unicode emoji matching a character sequence, including through regular expressions.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any.
-- This feature deals with the 4,702 emoji defined in the **Emoji 14.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/14.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,624 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,733 emoji defined in the **Emoji 15.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/15.0/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,655 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -142,8 +142,8 @@ The following utilities are currently available:
     - `Discard Non-Emoji` [strip out non-emoji characters]
     - `Upgrade to RGI Emoji` [restore incomplete emoji to their **RGI** form]
     - `Remove Duplicate Emoji` [delete emoji duplicates]
-- This feature deals with the 4,702 emoji defined in the **Emoji 14.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/14.0/emoji-test.txt) data file.
-- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,624 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
+- This feature deals with the 4,733 emoji defined in the **Emoji 15.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/15.0/emoji-test.txt) data file.
+- The 9 *component* (5 *skin-tone* and 4 *hair-style*) emoji and the 3,655 *fully-qualified* (**RGI**) emoji are presented in a standard way, while the 1,069 *non-fully-qualified* emoji are shown in a distinctive muted (grayed out) style.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -166,8 +166,8 @@ The following utilities are currently available:
     - **Symbols**
     - **Flags**
 - The size of all emoji pictures (from 32 to 128&nbsp;pixels) can be adjusted by moving the dedicated slider left and right.
-- The groups and subgroups of emoji are those defined in the **Emoji 14.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/14.0/emoji-test.txt) data file.
-- Only the 9 *component* emoji and the 3,624 *fully-qualified* (**RGI**) forms of the emoji are used unless they cannot be displayed properly, depending on the emoji support level of the operating system.
+- The groups and subgroups of emoji are those defined in the **Emoji 15.0** version of the [emoji-test.txt](https://www.unicode.org/Public/emoji/15.0/emoji-test.txt) data file.
+- Only the 9 *component* emoji and the 3,655 *fully-qualified* (**RGI**) forms of the emoji are used unless they cannot be displayed properly, depending on the emoji support level of the operating system.
 - Emoji failing to be represented as proper color pictures are purely and simply discarded.
 - Note: **RGI** stands for *Recommended for General Interchange*.
 
@@ -188,7 +188,7 @@ The following utilities are currently available:
 - It is possible to choose how many characters are shown one page at a time.
 - When available, name aliases are displayed (in italics and smaller typeface) after the unique and immutable Unicode name. A correction alias is indicated by a leading reference mark `※`.
 - All names and aliases are obtained from the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) and [NameAliases.txt](https://www.unicode.org/Public/UNIDATA/NameAliases.txt) data files.
-- The search is performed on the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- The search is performed on the 288,767 assigned characters (or code points) defined in the **Unicode 15.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -203,7 +203,7 @@ The following utilities are currently available:
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - Click on the <kbd>Match Decomposition</kbd> toggle button to extend the search to characters whose *decomposition mapping* matches the query string.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- The search is performed on the 288,767 assigned characters (or code points) defined in the **Unicode 15.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -245,7 +245,7 @@ The following utilities are currently available:
 - As a convenience, the input fields can be emptied using the <kbd>Clear</kbd> button.
 - In output, the standard Unicode code point format `U+0041` is used, i.e. "U+" directly followed by 4 or 5 hex digits.
 - In input, more hexadecimal formats are allowed, including Unicode escape sequences, such as `\u611B` or `\u{1F49C}`. Moving out of the field or typing the Enter key converts all valid codes to standard Unicode code point format.
-- Information is provided for the 284,278 assigned characters (or code points) defined in the **Unicode 14.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
+- Information is provided for the 288,767 assigned characters (or code points) defined in the **Unicode 15.0** version of the [UnicodeData.txt](https://www.unicode.org/Public/UNIDATA/UnicodeData.txt) data file.
 - Extra information is also obtained from the following data files:
     - [ArabicShaping.txt](https://www.unicode.org/Public/UNIDATA/ArabicShaping.txt)
     - [Blocks.txt](https://www.unicode.org/Public/UNIDATA/Blocks.txt)
@@ -263,7 +263,7 @@ The following utilities are currently available:
     - [ScriptExtensions.txt](https://www.unicode.org/Public/UNIDATA/ScriptExtensions.txt)
     - [StandardizedVariants.txt](https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt)
     - [VerticalOrientation.txt](https://www.unicode.org/Public/UNIDATA/VerticalOrientation.txt)
-    - [emoji-data.txt](https://www.unicode.org/Public/14.0.0/ucd/emoji/emoji-data.txt)
+    - [emoji-data.txt](https://www.unicode.org/Public/15.0.0/ucd/emoji/emoji-data.txt)
 
 <img src="screenshots/unicode-inspector.png" width="1080px" alt="Unicode Inspector screenshot">
 
@@ -312,7 +312,7 @@ The following utilities are currently available:
 - Use the <kbd>Categories</kbd> checkbox to toggle between: all Unihan tags ordered alphabetically, or grouped by categories in the drop-down menu.
 - After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the 93,867 Unihan characters (or code points) defined in **Unicode 14.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The search is performed on the 98,060 Unihan characters (or code points) defined in **Unicode 15.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*
@@ -336,7 +336,7 @@ The following utilities are currently available:
 - Click on the <kbd>Match Variants</kbd> toggle button to extend the search to characters whose *variants* match the query string.
 - Unihan variants, if any, are displayed in a distinctive muted (grayed out) style.
 - It is possible to choose how many characters are shown one page at a time.
-- The search is performed on the set of 93,867 Unihan characters defined in **Unicode 14.0**.
+- The search is performed on the set of 98,060 Unihan characters defined in **Unicode 15.0**.
 - Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
     - `Copy Results` [copy the results as string to the clipboard]
     - `Save Results...` [save the results as string to a text file]
@@ -347,7 +347,7 @@ The following utilities are currently available:
 
 ### View by Grid
 
-- The **View by Grid** feature of the **Unihan Data Finder** utility displays in real time a grid view of the 10 blocks containing the 93,867 Unihan characters defined in **Unicode 14.0**.
+- The **View by Grid** feature of the **Unihan Data Finder** utility displays in real time a grid view of the 11 blocks containing the 98,060 Unihan characters defined in **Unicode 15.0**.
 - It is possible to choose how many characters are shown one page at a time.
 - A block can be selected either by <kbd>Block Name</kbd> or by <kbd>Block Range</kbd>.
 - It is also possible to directly enter a Unihan character or code point in the <kbd>Specimen</kbd> field, then click on the <kbd>Go</kbd> button to automatically select the block containing the character, scroll it into view, and highlight it.
@@ -363,7 +363,7 @@ The following utilities are currently available:
 
 ## Unihan Inspector
 
-- The **Unihan Inspector** utility displays all available Unihan tags for each of the 93,867 Unihan characters defined in **Unicode 14.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
+- The **Unihan Inspector** utility displays all available Unihan tags for each of the 98,060 Unihan characters defined in **Unicode 15.0**, in the set of data files contained in the [Unihan.zip](https://www.unicode.org/Public/UNIDATA/Unihan.zip) archive file:
     - *Unihan_DictionaryIndices.txt*
     - *Unihan_DictionaryLikeData.txt*
     - *Unihan_IRGSources.txt*

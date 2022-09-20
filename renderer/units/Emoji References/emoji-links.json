@@ -60,11 +60,11 @@
     [
         {
             "name": "emoji-data.txt",
-            "href": "https://www.unicode.org/Public/14.0.0/ucd/emoji/emoji-data.txt"
+            "href": "https://www.unicode.org/Public/15.0.0/ucd/emoji/emoji-data.txt"
         },
         {
             "name": "emoji-test.txt",
-            "href": "https://www.unicode.org/Public/emoji/14.0/emoji-test.txt"
+            "href": "https://www.unicode.org/Public/emoji/15.0/emoji-test.txt"
         },
         {
             "name": "emoji-ordering.txt",

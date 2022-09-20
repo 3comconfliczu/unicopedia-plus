@@ -4,7 +4,7 @@ const path = require ('path');
 //
 // https://www.unicode.org/reports/tr51/
 //
-// Copy of https://www.unicode.org/Public/emoji/14.0/emoji-test.txt
+// Copy of https://www.unicode.org/Public/emoji/15.0/emoji-test.txt
 //
 function getEmojiList ()
 {

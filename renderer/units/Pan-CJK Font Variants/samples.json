@@ -1,0 +1,366 @@
+[
+    {
+        "label": "Brackets",
+        "items":
+        [
+            {
+                "label": "Black Lenticular",
+                "string": "【漢字】"
+            },
+            {
+                "label": "Double Angle",
+                "string": "《画像》"
+            },
+            {
+                "label": "Plain Corner",
+                "string": "「令和」"
+            },
+            {
+                "label": "Tortoise Shell",
+                "string": "〔勝〕"
+            },
+            {
+                "label": "White Corner",
+                "string": "『言語』"
+            },
+            {
+                "label": "White Lenticular",
+                "string": "〖北極〗"
+            }
+        ]
+    },
+    {
+        "label": "Chinese Zodiac",
+        "items":
+        [
+            {
+                "label": "Animal Signs",
+                "string": "鼠牛虎兔龍蛇馬羊猴雞狗豬"
+            },
+            {
+                "label": "Terrestrial Branches",
+                "string": "子丑寅卯辰巳午未申酉戌亥"
+            }
+        ]
+    },
+    {
+        "label": "East Asian Variants",
+        "items":
+        [
+            {
+                "label": "East Asian Variants 1",
+                "string": "剝剥塡填頬頰麴麹"
+            },
+            {
+                "label": "East Asian Variants 2",
+                "string": "兆謎遡餅餌輩邉"
+            },
+            {
+                "label": "East Asian Variants 3",
+                "string": "⿔龜龜龜龜"
+            },
+            {
+                "label": "East Asian Variants 4",
+                "string": "匕𠤎叱𠮟"
+            }
+        ]
+    },
+    {
+        "label": "Enclosed Ideographs",
+        "items":
+        [
+            {
+                "label": "Bracketed Ideographs",
+                "string": "🉀🉁🉂🉃🉄🉅🉆🉇🉈"
+            },
+            {
+                "label": "Circled Ideographs",
+                "string": "㉄㉅㉆㉇㊀㊁㊂㊃㊄㊅㊆㊇㊈㊉㊊㊋㊌㊍㊎㊏㊐㊑㊒㊓㊔㊕㊖㊗㊘㊙㊚㊛㊜㊝㊞㊟㊠㊡㊢㊣㊤㊥㊦㊧㊨㊩㊪㊫㊬㊭㊮㊯㊰🉐🉑"
+            },
+            {
+                "label": "Parenthesized Ideographs",
+                "string": "㈠㈡㈢㈣㈤㈥㈦㈧㈨㈩㈪㈫㈬㈭㈮㈯㈰㈱㈲㈳㈴㈵㈶㈷㈸㈹㈺㈻㈼㈽㈾㈿㉀㉁㉂㉃"
+            },
+            {
+                "label": "Squared Ideographs",
+                "string": "🈐🈑🈒🈔🈕🈖🈗🈘🈙🈚🈛🈜🈝🈞🈟🈠🈡🈢🈣🈤🈥🈦🈧🈨🈩🈪🈫🈬🈭🈮🈯🈰🈱🈲🈳🈴🈵🈶🈷🈸🈹🈺🈻"
+            }
+        ]
+    },
+    {
+        "label": "Five Unique Glyphs",
+        "items":
+        [
+            {
+                "label": "Unique Glyphs 1",
+                "string": "傑僭割劘匾叟喝塌姿嬴幰廋扇扉搨摩榻"
+            },
+            {
+                "label": "Unique Glyphs 2",
+                "string": "溲潛瀛瘦瞎磨窖竇箭篠簉糙綢纛羸翁翦"
+            },
+            {
+                "label": "Unique Glyphs 3",
+                "string": "翩肓臝艘花裯褐謁譖豁贏轄返迷途造週"
+            },
+            {
+                "label": "Unique Glyphs 4",
+                "string": "遍遭選遼鄰釁閼雕靠靡颼飯驎鬣魔麗麟"
+            }
+        ]
+    },
+    {
+        "label": "Fullwidth Forms",
+        "items":
+        [
+            {
+                "label": "Fullwidth (ASCII)",
+                "string": "　！＂＃＄％＆＇（）＊＋，－．／０１２３４５６７８９：；＜＝＞？＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ［＼］＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｛｜｝～"
+            },
+            {
+                "label": "Fullwidth (Other)",
+                "string": "｟｠￠￡￢￣￤￥￦"
+            }
+        ]
+    },
+    {
+        "label": "IVD Sequences",
+        "items":
+        [
+            {
+                "label": "Crossroads",
+                "string": "辻󠄀辻󠄁"
+            },
+            {
+                "label": "Dragon",
+                "string": "龍󠄀龍󠄁龍󠄂"
+            },
+            {
+                "label": "Fishy",
+                "string": "𩵋󠄀𩵋󠄁"
+            },
+            {
+                "label": "Hemp",
+                "string": "麻󠄀麻󠄁"
+            },
+            {
+                "label": "Joyful",
+                "string": "㐂󠄀㐂󠄁㐂󠄂"
+            },
+            {
+                "label": "Noble",
+                "string": "卿󠄀卿󠄁卿󠄂"
+            },
+            {
+                "label": "Quick",
+                "string": "迅󠄀迅󠄁迅󠄂"
+            },
+            {
+                "label": "Sound",
+                "string": "音󠄀音󠄁"
+            },
+            {
+                "label": "Unicorn",
+                "string": "麟󠄀麟󠄁麟󠄂"
+            }
+        ]
+    },
+    {
+        "label": "Japanese",
+        "items":
+        [
+            {
+                "label": "Decomposed Hiragana",
+                "string": "ひらがな"
+            },
+            {
+                "label": "Decomposed Katakana",
+                "string": "ピカドン"
+            },
+            {
+                "label": "Ghost Character",
+                "string": "㌬・パーツ"
+            },
+            {
+                "label": "Hiragana Digraph",
+                "string": "ゟ＝より"
+            },
+            {
+                "label": "Hiragana Named Sequences",
+                "string": "か゚き゚く゚け゚こ゚"
+            },
+            {
+                "label": "Prefectures of Japan",
+                "string": "都道府県"
+            },
+            {
+                "label": "Square Era Names",
+                "string": "㋿㍻㍼㍽㍾"
+            },
+            {
+                "label": "Square Hiragana",
+                "string": "🈀：ほか"
+            },
+            {
+                "label": "Square Jukugo",
+                "string": "㍿゠株式会社"
+            },
+            {
+                "label": "Square Katakana",
+                "string": "㌀・アパート"
+            },
+            {
+                "label": "Taito (84 Strokes)",
+                "string": "𱁬"
+            }
+        ]
+    },
+    {
+        "label": "Kangxi Radicals",
+        "items":
+        [
+            {
+                "label": "Radical 140 Grass",
+                "string": "艸艹艹艹芝荘荼華蘭"
+            },
+            {
+                "label": "Radical 162 Walk",
+                "string": "辵辶辶辺遊遜邊"
+            }
+        ]
+    },
+    {
+        "label": "Korean",
+        "items":
+        [
+            {
+                "label": "Hangul Letters",
+                "string": "ㄱㄲㄳㄴㄵㄶㄷㄸㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅃㅄㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣㅥㅦㅧㅨㅩㅪㅫㅬㅭㅮㅯㅰㅱㅲㅳㅴㅵㅶㅷㅸㅹㅺㅻㅼㅽㅾㅿㆀㆁㆂㆃㆄㆅㆆㆇㆈㆉㆊㆋㆌㆍㆎ"
+            },
+            {
+                "label": "Hangul Syllables",
+                "string": "간간간"
+            }
+        ]
+    },
+    {
+        "label": "Miscellaneous",
+        "items":
+        [
+            {
+                "label": "Biangbiang Noodles",
+                "string": "𰻝𰻞"
+            },
+            {
+                "label": "CJK Strokes",
+                "string": "㇀㇁㇂㇃㇄㇅㇆㇇㇈㇉㇊㇋㇌㇍㇎㇏㇐㇑㇒㇓㇔㇕㇖㇗㇘㇙㇚㇛㇜㇝㇞㇟㇠㇡㇢㇣"
+            },
+            {
+                "label": "Door Shapes",
+                "string": "⼾戶户戸"
+            },
+            {
+                "label": "Island Variants",
+                "string": "㠀岛島嶋嶌"
+            },
+            {
+                "label": "Miscellaneous 1",
+                "string": "匯囶圀夜屝属彩曜"
+            },
+            {
+                "label": "Miscellaneous 2",
+                "string": "滙爲画畵線萬裏"
+            },
+            {
+                "label": "Society / Shrine",
+                "string": "㈳㊓㍿社社"
+            },
+            {
+                "label": "Swords & Knives",
+                "string": "剑剣剱劍劍󠄁劎劒劔釖釰釼"
+            }
+        ]
+    },
+    {
+        "label": "Numerals",
+        "items":
+        [
+            {
+                "label": "Numerals 1",
+                "string": "一二三四五六七八九"
+            },
+            {
+                "label": "Numerals 2",
+                "string": "〇零十百千万億兆京"
+            }
+        ]
+    },
+    {
+        "label": "Punctuation Marks",
+        "items":
+        [
+            {
+                "label": "Individual",
+                "string": "、。〃〜〝〞〟〰〽゠・﹅﹆！＂＇，－．／：；？＼＿"
+            },
+            {
+                "label": "Mirrored",
+                "string": "〈〉《》「」『』【】〔〕〖〗〘〙〚〛（）［］｛｝｟｠"
+            },
+            {
+                "label": "Small Forms",
+                "string": "﹐﹑﹒﹔﹕﹖﹗﹘﹙﹚﹛﹜﹝﹞﹨"
+            }
+        ]
+    },
+    {
+        "label": "Standardized Variations",
+        "items":
+        [
+            {
+                "label": "Han",
+                "string": "漢漢︀漢漢︁"
+            },
+            {
+                "label": "Lord",
+                "string": "卿卿︀卿卿︁卿卿︂"
+            },
+            {
+                "label": "Turtle",
+                "string": "龜龜︀龜龜︁龜龜︂"
+            },
+            {
+                "label": "Punctuation",
+                "string": "、︀、︁。︀。︁！︀！︁，︀，︁．︀．︁：︀：︁；︀；︁？︀？︁"
+            }
+        ]
+    },
+    {
+        "label": "Wikipedia",
+        "items":
+        [
+            {
+                "label": "Han Unification",
+                "string": "今令免入全具刃化外情才抵次海直真神空者草角道雇骨"
+            },
+            {
+                "label": "Variant Chinese Character",
+                "string": "刃令毒骨縣誤船述煙贈雪及角條低詩函純賭難海喝練灰起英次能窗化"
+            }
+        ]
+    },
+    {
+        "label": "Zhuyin Fuhao (Bopomofo)",
+        "items":
+        [
+            {
+                "label": "Basic Bopomofo",
+                "string": "ㄅㄆㄇㄈㄉㄊㄋㄌㄍㄎㄏㄐㄑㄒㄓㄔㄕㄖㄗㄘㄙㄚㄛㄜㄝㄞㄟㄠㄡㄢㄣㄤㄥㄦㄧㄨㄩㄪㄫㄬㄭㄮㄯ"
+            },
+            {
+                "label": "Additional Bopomofo",
+                "string": "ㆠㆡㆢㆣㆤㆥㆦㆧㆨㆩㆪㆫㆬㆭㆮㆯㆰㆱㆲㆳㆴㆵㆶㆷㆸㆹㆺㆻㆼㆽㆾㆿ"
+            }
+        ]
+    }
+]

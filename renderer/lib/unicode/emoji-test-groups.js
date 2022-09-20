@@ -18,6 +18,7 @@ const subgroupNames =
     "face-costume": "Face | Costume",
     "cat-face": "Cat Face",
     "monkey-face": "Monkey Face",
+    "heart": "Heart",
     "emotion": "Emotion",
     "hand-fingers-open": "Hand | Fingers Open",
     "hand-fingers-partial": "Hand | Fingers Partial",
@@ -108,7 +109,7 @@ const subgroupNames =
 //
 // https://www.unicode.org/reports/tr51/
 //
-// Copy of https://www.unicode.org/Public/emoji/14.0/emoji-test.txt
+// Copy of https://www.unicode.org/Public/emoji/15.0/emoji-test.txt
 //
 function getEmojiGroups ()
 {

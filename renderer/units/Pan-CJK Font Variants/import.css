@@ -1,0 +1,404 @@
+@charset "utf-8";
+
+#pan-cjk-font-variants-unit
+{
+    --color-frame: hsl(196, 100%, 50%);
+    --color-background: hsl(196, 100%, 99%);
+    /* Standard */
+    /* --color-base: hsla(10, 100%, 50%, 0.666); */
+    /* --color-overlay: hsla(190, 100%, 50%, 0.666); */
+    /* Stronger */
+    --color-base: hsla(10, 100%, 50%, 1);
+    --color-overlay: hsla(190, 100%, 50%, 0.75);
+    /* Neutral */
+    /* --color-base: hsla(10, 100%, 50%, 0.75); */
+    /* --color-overlay: hsla(190, 100%, 50%, 0.5); */
+}
+
+#pan-cjk-font-variants-unit .actions
+{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+#pan-cjk-font-variants-unit .actions.interface
+{
+    margin: 1em 0 0 0;
+}
+
+#pan-cjk-font-variants-unit .action-group
+{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#pan-cjk-font-variants-unit .action-group + .action-group,
+#pan-cjk-font-variants-unit .action + .action
+{
+    margin-left: 0.75em;
+}
+
+#pan-cjk-font-variants-unit .count-info
+{
+    line-height: 1em;
+    width: 72px;
+}
+
+#pan-cjk-font-variants-unit .count-number
+{
+    font-weight: bold;
+}
+
+#pan-cjk-font-variants-unit .input-group
+{
+    margin-bottom: 0.5em;
+}
+
+#pan-cjk-font-variants-unit .characters-input,
+#pan-cjk-font-variants-unit .code-points-input
+{
+    line-height: 1.333em;
+    width: 100%;
+    margin: 0.2em 0;
+}
+
+#pan-cjk-font-variants-unit .characters-input
+{
+    font-family: var(--sans-serif-family);
+    font-size: 16px;
+    padding: 2px 6px;
+}
+
+#pan-cjk-font-variants-unit .code-points-input
+{
+    font-family: var(--monospace-family);
+    font-size: 13px;
+    padding: 4px 6px;
+}
+
+#pan-cjk-font-variants-unit .graphemes-group
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 0.75em;
+}
+
+#pan-cjk-font-variants-unit .graphemes-info
+{
+    line-height: 1em;
+    width: 96px;
+}
+
+#pan-cjk-font-variants-unit .graphemes-number
+{
+    font-weight: bold;
+}
+
+#pan-cjk-font-variants-unit .cjk-data-base:lang(ja),
+#pan-cjk-font-variants-unit .cjk-data-overlay:lang(ja)
+{
+    font-family: "Sans CJK JP", "NotDef";
+}
+
+#pan-cjk-font-variants-unit .cjk-data-base:lang(ko),
+#pan-cjk-font-variants-unit .cjk-data-overlay:lang(ko)
+{
+    font-family: "Sans CJK KR", "NotDef";
+}
+
+#pan-cjk-font-variants-unit .cjk-data-base:lang(zh-Hans),
+#pan-cjk-font-variants-unit .cjk-data-overlay:lang(zh-Hans)
+{
+    font-family: "Sans CJK SC", "NotDef";
+}
+
+#pan-cjk-font-variants-unit .cjk-data-base:lang(zh-Hant-TW),
+#pan-cjk-font-variants-unit .cjk-data-overlay:lang(zh-Hant-TW)
+{
+    font-family: "Sans CJK TC", "NotDef";
+}
+
+#pan-cjk-font-variants-unit .cjk-data-base:lang(zh-Hant-HK),
+#pan-cjk-font-variants-unit .cjk-data-overlay:lang(zh-Hant-HK)
+{
+    font-family: "Sans CJK HK", "NotDef";
+}
+
+#pan-cjk-font-variants-unit .sheet table,
+#pan-cjk-font-variants-unit .sheet tr,
+#pan-cjk-font-variants-unit .sheet th,
+#pan-cjk-font-variants-unit .sheet td
+{
+    border-collapse: collapse;
+    border: none;
+    background-color: white;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal 
+{
+    display: block;
+    margin: 1em 0 0 0;
+    background-color: white;
+    border: 1px solid var(--color-frame);
+    overflow-x: scroll;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table
+{
+    margin: 1.25em auto;
+    width: unset;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-title
+{
+    background-color: var(--color-background);
+    border: 1px solid var(--color-frame);
+    color: var(--color);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12.5px;
+    width: 80px;
+    min-width: 80px;
+    line-height: 1.25em;
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-title .cjk-lang
+{
+    /* writing-mode: vertical-rl; */
+    /* transform: rotate(180deg); */
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .empty-row
+{
+    line-height: 1em;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .empty-col
+{
+    width: 1.25em;
+    min-width: 1.25em;
+    vertical-align: middle;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data
+{
+    position: relative;
+    border: 1px solid var(--color-frame);
+    color: var(--color);
+    font-size: 72px;
+    width: 1.1em;
+    min-width: 1.1em;
+    height: 1.1em;
+    min-height: 1.1em;
+    line-height: 1em;
+    /* overflow: hidden; */
+    /* user-select: text; */
+    /* cursor: text; */
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data-base,
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data-overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    writing-mode: horizontal-tb;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data-base.hidden,
+#pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data-overlay.hidden
+{
+    visibility: hidden;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 0 0;
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--color-frame);
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table
+{
+    margin: 1.25em;
+    width: unset;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-title
+{
+    background-color: var(--color-background);
+    border: 1px solid var(--color-frame);
+    color: var(--color);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12.5px;
+    width: 80px;
+    min-width: 80px;
+    height: 79px;
+    min-height: 79px;
+    line-height: 1.25em;
+    padding: 0.25em;
+    overflow: hidden;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data
+{
+    position: relative;
+    border: 1px solid var(--color-frame);
+    color: var(--color);
+    font-size: 72px;
+    width: 1.1em;
+    min-width: 1.1em;
+    height: 1.1em;
+    min-height: 1.1em;
+    /* overflow: hidden; */
+    /* user-select: text; */
+    /* cursor: text; */
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data-base,
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data-overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data-base.hidden,
+#pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data-overlay.hidden
+{
+    visibility: hidden;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .empty-gap
+{
+    line-height: 1em;
+    min-width: 1em;
+}
+
+#pan-cjk-font-variants-unit .sheet.vertical .table .empty-data
+{
+    line-height: 1em;
+}
+
+#pan-cjk-font-variants-unit .plain-panel
+{
+    padding-bottom: 1.5em;
+}
+
+#pan-cjk-font-variants-unit .instructions ul
+{
+    margin: -0.5em 0 1em 0;
+}
+
+#pan-cjk-font-variants-unit .instructions li
+{
+    margin: 0.25em 0;
+}
+
+#pan-cjk-font-variants-unit .instructions li > ul
+{
+    margin: 0 0 0.25em 0;
+}
+
+#pan-cjk-font-variants-unit .instructions kbd
+{
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0 0.333em 1px;
+    border: 1px solid gray;
+    border-radius: 0.2em;
+    background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
+}
+
+#pan-cjk-font-variants-unit .instructions code
+{
+    color: inherit;
+    background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8));
+}
+
+#pan-cjk-font-variants-unit .instructions code.select-all
+{
+    user-select: all;
+    cursor: text;
+}
+
+#pan-cjk-font-variants-unit .fonts-table
+{
+    margin: 0.75em 0;
+    width: unset;
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr th,
+#pan-cjk-font-variants-unit .fonts-table tr td
+{
+    text-align: left;
+    padding: 0.25em 0.75em;
+    /* white-space: nowrap; */
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr th
+{
+    background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0.8))
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr td
+{
+    vertical-align: middle;
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr th.code,
+#pan-cjk-font-variants-unit .fonts-table tr td.code
+{
+    text-align: center;
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr:nth-child(even) td
+{
+    background-color: white;
+}
+
+#pan-cjk-font-variants-unit .fonts-table tr:nth-child(odd) td
+{
+    background: var(--color-accent) linear-gradient(hsla(0, 0%, 100%, 0.95), hsla(0, 0%, 100%, 0.95));
+}
+
+#pan-cjk-font-variants-unit details
+{
+    margin: 1.2em 0;
+}
+
+#pan-cjk-font-variants-unit details[open] summary
+{
+    margin: 1.2em 0;
+}
+
+#pan-cjk-font-variants-unit summary
+{
+    font-weight: bold;
+}
+

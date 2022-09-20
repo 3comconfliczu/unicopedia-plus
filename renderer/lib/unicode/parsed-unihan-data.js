@@ -14,6 +14,13 @@ const tags =
         "separator": " ",
         "syntax": "[0-9]+"
     },
+    "kAlternateTotalStrokes":
+    {
+        "name": "Alternate Total Strokes",
+        "category": "Dictionary-like Data",
+        "separator": " ",
+        "syntax": "(\\d+:[BHJKMPSUV]+)|-"
+    },
     "kBigFive":
     {
         "name": "Big Five",
@@ -57,7 +64,7 @@ const tags =
     "kCihaiT":
     {
         "name": "Cihai",
-        "category": "Dictionary-like Data",
+        "category": "Dictionary Indices",
         "separator": " ",
         "syntax": "[1-9][0-9]{0,3}\\.[0-9]{3}"
     },
@@ -273,13 +280,13 @@ const tags =
     {
         "name": "IRG Source: China",
         "category": "IRG Sources",
-        "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|DM|JZ|KJ|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}"
+        "syntax": "G[013578EKS]-[0-9A-F]{4}|G4K(-\\d{5})?|G(DZ|GH|RM|WZ|XC|XH|ZH)-\\d{4}\\.\\d{2}|G(BK|CH|CY|HC)(-\\d{4}\\.\\d{2})?|GKX-\\d{4}\\.\\d{2,3}|G(HZ|HZR)-\\d{5}\\.\\d{2}|G(CE|FC|IDC|OCD|XHZ)-\\d{3}|G(H|HF|LGYJ|PGLG|T)-\\d{4}|G(CYY|DM|JZ|KJ|XM|ZFY|ZJW|ZYS)-\\d{5}|GFZ-[0-9A-F]{4}|GGFZ-\\d{6}|G(LK|Z)-\\d{7}|GU-[023][0-9A-F]{4}|GZA-[123467]\\d{5}"
     },
     "kIRG_HSource":
     {
         "name": "IRG Source: Hong Kong",
         "category": "IRG Sources",
-        "syntax": "H-[0-9A-F]{4}|H(B[012]|D)-[0-9A-F]{4}|HU-[023][0-9A-F]{4}"
+        "syntax": "H-[0-9A-F]{4}|H(B[012])-[0-9A-F]{4}|HD-[23]?[0-9A-F]{4}|HU-[023][0-9A-F]{4}"
     },
     "kIRG_JSource":
     {
@@ -315,7 +322,7 @@ const tags =
     {
         "name": "IRG Source: Taiwan",
         "category": "IRG Sources",
-        "syntax": "T([1-7A-F]|1[13])-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"
+        "syntax": "T([1-7A-F]|1[1-3])-[0-9A-F]{4}|TU-[023][0-9A-F]{4}"
     },
     "kIRG_UKSource":
     {
@@ -563,7 +570,7 @@ const tags =
         "name": "Semantic Variant",
         "category": "Variants",
         "separator": " ",
-        "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
+        "syntax": "U\\+[23]?[0-9A-F]{4}(<[ks][A-Za-z0-9_]+(:[TBZFJ]+)?(,[ks][A-Za-z0-9_]+(:[TBZFJ]+)?)*)?"
     },
     "kSimplifiedVariant":
     {
@@ -577,7 +584,7 @@ const tags =
         "name": "Specialized Semantic Variant",
         "category": "Variants",
         "separator": " ",
-        "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZFJ]+)?(,k[A-Za-z0-9]+(:[TBZFJ]+)?)*)?"
+        "syntax": "U\\+[23]?[0-9A-F]{4}(<[ks][A-Za-z0-9_]+(:[TBZFJ]+)?(,[ks][A-Za-z0-9_]+(:[TBZFJ]+)?)*)?"
     },
     "kSpoofingVariant":
     {
@@ -638,7 +645,7 @@ const tags =
     "kUnihanCore2020":
     {
         "name": "Unihan Core (2020)",
-        "category": "Dictionary-like Data",
+        "category": "IRG Sources", // Originally "Dictionary-like Data"
         "syntax": "[GHJKMPT]{1,7}"
     },
     "kVietnamese":
@@ -667,7 +674,7 @@ const tags =
         "name": "Shape (Z-) Variant",
         "category": "Variants",
         "separator": " ",
-        "syntax": "U\\+[23]?[0-9A-F]{4}(<k[A-Za-z0-9]+(:[TBZ]+)?(,k[A-Za-z0-9]+(:[TBZ]+)?)*)?"
+        "syntax": "U\\+[23]?[0-9A-F]{4}(<[ks][A-Za-z0-9_]+(:[TBZ]+)?(,[ks][A-Za-z0-9_]+(:[TBZ]+)?)*)?"
     }
 };
 //
@@ -688,6 +695,7 @@ const categories =
         "tags":
         [
             "kCheungBauerIndex",
+            "kCihaiT",
             "kCowles",
             "kDaeJaweon",
             "kFennIndex",
@@ -713,7 +721,6 @@ const categories =
         [
             "kCangjie",
             "kCheungBauer",
-            "kCihaiT",
             "kFenn",
             "kFourCornerCode",
             "kFrequency",
@@ -721,8 +728,7 @@ const categories =
             "kHDZRadBreak",
             "kHKGlyph",
             "kPhonetic",
-            "kStrange",
-            "kUnihanCore2020"
+            "kStrange"
         ]
     },
     {
@@ -740,7 +746,8 @@ const categories =
             "kIRG_TSource",
             "kIRG_UKSource",
             "kIRG_USource",
-            "kIRG_VSource"
+            "kIRG_VSource",
+            "kUnihanCore2020"
         ]
     },
     {
@@ -792,6 +799,7 @@ const categories =
         "name": "Radical-Stroke Counts",
         "tags":
         [
+            "kAlternateTotalStrokes", // New in Unicode 15.0
             "kRSAdobe_Japan1_6",
             "kRSKangXi",
             "kRSUnicode",   // Originally in "IRG Sources"
@@ -893,7 +901,7 @@ for (let filename of filenames)
     {
         if (line && (line[0] !== "#"))
         {
-            let found = line.match (/^(U\+[23]?[0-9A-F]{4})\t(\w+)\t(.+)$/);    // Regex updated for Unicode 13.0
+            let found = line.match (/^(U\+[23]?[0-9A-F]{4})\t(\w+)\t(.+)$/);
             if (found)
             {
                 if (!(found[1] in codePoints))

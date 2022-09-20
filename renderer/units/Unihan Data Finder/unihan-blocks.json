@@ -40,6 +40,11 @@
             "last": "3134F"
         },
         {
+            "name": "CJK Unified Ideographs Extension H",
+            "first": "31350",
+            "last": "323AF"
+        },
+        {
             "name": "CJK Compatibility Ideographs",
             "first": "F900",
             "last": "FAFF"

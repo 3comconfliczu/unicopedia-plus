@@ -22,7 +22,8 @@ const emojiVersions =
     "12.1": { age: "Emoji 12.1", date: "October 2019" },
     "13.0": { age: "Emoji 13.0", date: "March 2020" },
     "13.1": { age: "Emoji 13.1", date: "September 2020" },
-    "14.0": { age: "Emoji 14.0", date: "September 2021" }
+    "14.0": { age: "Emoji 14.0", date: "September 2021" },
+    "15.0": { age: "Emoji 15.0", date: "September 2022" }
 };
 //
 module.exports = emojiVersions;

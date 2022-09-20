@@ -101,7 +101,7 @@
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
                         <li>When available, name aliases are displayed (in italics and smaller typeface) after the unique and immutable Unicode name. A correction alias is indicated by a leading reference mark <code>※</code>.</li>
                         <li>All names and aliases are obtained from the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> and <a title="https://www.unicode.org/Public/UNIDATA/NameAliases.txt" href="https://www.unicode.org/Public/UNIDATA/NameAliases.txt">NameAliases.txt</a> data files.</li>
-                        <li>The search is performed on the 284,278 assigned characters (or code points) defined in the <strong>Unicode 14.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
+                        <li>The search is performed on the 288,767 assigned characters (or code points) defined in the <strong>Unicode 15.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -139,7 +139,7 @@
                         <li>After entering a query, click on the <kbd>Search</kbd> button to display a list of all relevant matches, if any, ordered by code point value.</li>
                         <li>Click on the <kbd><svg style="width: 15px; height: 15px; vertical-align: text-bottom;"><use href="/images/search.svg#match-decomposition-icon"></use></svg></kbd> (<em>Match Decomposition</em>) toggle button to extend the search to characters whose <em>decomposition mapping</em> matches the query string.</li>
                         <li>It is possible to choose how many characters are shown one page at a time.</li>
-                        <li>The search is performed on the 284,278 assigned characters (or code points) defined in the <strong>Unicode 14.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
+                        <li>The search is performed on the 288,767 assigned characters (or code points) defined in the <strong>Unicode 15.0</strong> version of the <a title="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt" href="https://www.unicode.org/Public/UNIDATA/UnicodeData.txt">UnicodeData.txt</a> data file.</li>
                         <li>Use the <kbd>Results&nbsp;▾</kbd> pop-up menu to perform an action among:
                             <ul>
                                 <li><code>Copy Results</code> [copy the results as string to the clipboard]</li>
@@ -160,7 +160,7 @@
                         <li>All assigned Unicode characters:<br><code class="select-all">.*</code> or <code class="select-all">[^]</code> or <code class="select-all">[\s\S]</code></li>
                         <li>Characters with the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\p{Private_Use}</code></li>
                         <li>Characters without the 'General_Category' property equal to 'Private_Use':<br><code class="select-all">\P{Private_Use}</code> or <code class="select-all">[^\p{Private_Use}]</code></li>
-                        <li>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 144,697 Unicode characters defined in Unicode 14.0:<br><code class="select-all">[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>or<br><code class="select-all">(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code></li>
+                        <li>Characters without the 'General_Category' property equal to 'Control', 'Surrogate' or 'Private_Use', i.e., the total of 149,186 Unicode characters actually defined in Unicode 15.0:<br><code class="select-all">[^\p{Control}\p{Surrogate}\p{Private_Use}]</code><br>or<br><code class="select-all">(?=\P{Control})(?=\P{Surrogate})(?=\P{Private_Use})</code></li>
                         <li>Characters with the 'General_Category' property equal to 'Open_Punctuation' or 'Close_Punctuation':<br><code class="select-all">[\p{Open_Punctuation}\p{Close_Punctuation}]</code><br>or<br><code class="select-all">\p{Open_Punctuation}|\p{Close_Punctuation}</code></li>
                         <li>Characters with the 'Dash' binary property, but without the 'General_Category' property equal to 'Dash_Punctuation':<br><code class="select-all">(?=\p{Dash})(?!\p{Dash_Punctuation})</code><br>or<br><code class="select-all">(?=\p{Dash})(?=\P{Dash_Punctuation})</code></li>
                         <li>Characters with the 'Radical' binary property:<br><code class="select-all">\p{Radical}</code></li>
@@ -173,6 +173,7 @@
                         <li>Characters with the 'Emoji_Modifier_Base' binary property, but without the 'Emoji_Presentation' binary property:<br><code class="select-all">(?=\p{Emoji_Modifier_Base})(?!\p{Emoji_Presentation})</code><br>or<br><code class="select-all">(?=\p{Emoji_Modifier_Base})(?=\P{Emoji_Presentation})</code></li>
                         <li>Characters with the 'Ideographic' binary property, but without the 'Unified_Ideograph' binary property:<br><code class="select-all">(?=\p{Ideographic})(?!\p{Unified_Ideograph})</code><br>or<br><code class="select-all">(?=\p{Ideographic})(?=\P{Unified_Ideograph})</code></li>
                         <li>Characters with the 'Script_Extensions' property equal to 'Han', but without the 'Script' property equal to 'Han':<br><code class="select-all">(?=\p{Script_Extensions=Han})(?!\p{Script=Han})</code><br>or<br><code class="select-all">(?=\p{Script_Extensions=Han})(?=\P{Script=Han})</code></li>
+                        <li>Characters with name corrections in Unicode 15.0:<br><code class="select-all">[Ƣƣؖ܉ೞຝຟຣລ࿐ᇬᇭᇮᇯᮽ℘⑈⑉⭺⭼ꀕꩮ︘𒋔𒋕𖹖𖹗𖹶𖹷𛀁𝃅]</code></li>
                     </ul>
                     <p><span class="match-decomposition on"><svg><use href="/images/search.svg#match-decomposition-icon"></use></svg></span> (<em>Match Decomposition</em>) toggled <strong>on</strong>:</p>
                     <ul>

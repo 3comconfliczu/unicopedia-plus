@@ -35,6 +35,10 @@
         {
             "name": "CJK Unified Ideographs Extension G - Wikipedia",
             "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_G"
+        },
+        {
+            "name": "CJK Unified Ideographs Extension H - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/CJK_Unified_Ideographs_Extension_H"
         }
     ],
     [
@@ -98,6 +102,10 @@
         {
             "name": "CJK Unified Ideographs Extension G - U30000.pdf",
             "href": "https://www.unicode.org/charts/PDF/U30000.pdf"
+        },
+        {
+            "name": "CJK Unified Ideographs Extension H - U31350.pdf",
+            "href": "https://www.unicode.org/charts/PDF/U31350.pdf"
         }
     ],
     [

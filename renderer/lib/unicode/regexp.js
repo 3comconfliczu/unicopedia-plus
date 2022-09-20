@@ -1,9 +1,9 @@
 //
-// Temporary until Electron framework adds built-in support for Unicode 14.0
-// const rewritePattern = require ('regexpu-core');
+// Temporary until Electron framework adds built-in support for Unicode 15.0
+const rewritePattern = require ('regexpu-core');
 //
-// Support for Unicode 14.0 finally added in Electron 17.0.0 (2022-02-01) (Chromium 98)
-const rewritePattern = null;
+// Support for Unicode 15.0 finally added in Electron XX.0.0 (XXXX-XX-XX) (Chromium XXX)
+// const rewritePattern = null;
 //
 function build (pattern, options)
 {

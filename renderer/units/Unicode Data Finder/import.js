@@ -603,7 +603,7 @@ module.exports.start = function (context)
         }
     );
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+?)?([0-9a-fA-F]{4,5}|10[0-9a-fA-F]{4}))\s*$/u;
+    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
     //
     function getBlockKeyfromCharacter (character)
     {
@@ -635,7 +635,11 @@ module.exports.start = function (context)
             }
             else if (match[2])
             {
-                character = String.fromCodePoint (parseInt (match[2], 16));
+                let num = parseInt (match[2], 16);
+                if (num <= 0x10FFFF)
+                {
+                    character = String.fromCodePoint (num);
+                }
             }
         }
         return character;

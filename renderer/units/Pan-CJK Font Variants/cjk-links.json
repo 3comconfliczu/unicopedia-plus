@@ -1,0 +1,284 @@
+[
+    [
+        {
+            "name": "CJK characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/CJK_characters"
+        },
+        {
+            "name": "Variant form (Unicode) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Variant_form_(Unicode)"
+        }
+    ],
+    [
+        {
+            "name": "Chinese characters - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Chinese_characters"
+        },
+        {
+            "name": "Kanji - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Kanji"
+        },
+        {
+            "name": "Hanja - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Hanja"
+        }
+    ],
+    [
+        {
+            "name": "Japanese script reform - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Japanese_script_reform"
+        }
+    ],
+    [
+        {
+            "name": "JIS X 0208 - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/JIS_X_0208"
+        },
+        {
+            "name": "JIS X 0212 - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/JIS_X_0212"
+        },
+        {
+            "name": "JIS X 0213 - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/JIS_X_0213"
+        }
+    ],
+    [
+        {
+            "name": "StandardizedVariants.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/StandardizedVariants.txt"
+        }
+    ],
+    [
+        {
+            "name": "IVD_Collections.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Collections.txt"
+        },
+        {
+            "name": "IVD_Sequences.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Sequences.txt"
+        },
+        {
+            "name": "IVD_Stats.txt",
+            "href": "https://www.unicode.org/ivd/data/2020-11-06/IVD_Stats.txt"
+        }
+    ],
+    [
+        {
+            "name": "UTS #37: Unicode Ideographic Variation Database",
+            "href": "https://www.unicode.org/reports/tr37/"
+        },
+        {
+            "name": "Ideographic Variation Database",
+            "href": "https://www.unicode.org/ivd/"
+        }
+    ],
+    [
+        {
+            "name": "L2/16-063 (Proposal to accept the submission to register the “PanCJKV” IVD collection) - 16063-pancjkv-ivd-collection.pdf",
+            "href": "https://www.unicode.org/L2/L2016/16063-pancjkv-ivd-collection.pdf"
+        },
+        {
+            "name": "GitHub - adobe-type-tools/pancjkv-ivd-collection: PanCJKV IVD Collection (UNREGISTERED)",
+            "href": "https://github.com/adobe-type-tools/pancjkv-ivd-collection"
+        }
+    ],
+    [
+        {
+            "name": "UAX #11: East Asian Width",
+            "href": "https://www.unicode.org/reports/tr11/"
+        },
+        {
+            "name": "EastAsianWidth.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/EastAsianWidth.txt"
+        }
+    ],
+    [
+        {
+            "name": "UAX #50: Unicode Vertical Text Layout",
+            "href": "https://www.unicode.org/reports/tr50/"
+        },
+        {
+            "name": "VerticalOrientation.txt",
+            "href": "https://www.unicode.org/Public/UNIDATA/VerticalOrientation.txt"
+        },
+        {
+            "name": "Robust Vertical Text Layout - RobustVerticalLayout.pdf",
+            "href": "https://www.unicode.org/notes/tn22/RobustVerticalLayout.pdf"
+        }
+    ],
+    [
+        {
+            "name": "writing-mode - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode"
+        },
+        {
+            "name": "text-orientation - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"
+        },
+        {
+            "name": "font-variant-east-asian - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-east-asian"
+        }
+    ],
+    [
+        {
+            "name": "font-weight - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight"
+        },
+        {
+            "name": "font-variation-settings - CSS: Cascading Style Sheets | MDN",
+            "href": "https://developer.mozilla.org/en-US/docs/Web/CSS/font-variation-settings"
+        }
+    ],
+    [
+        {
+            "name": "Requirements for Chinese Text Layout",
+            "href": "https://www.w3.org/TR/clreq/"
+        },
+        {
+            "name": "Requirements for Japanese Text Layout",
+            "href": "https://www.w3.org/TR/jlreq/"
+        },
+        {
+            "name": "Requirements for Hangul Text Layout and Typography",
+            "href": "https://www.w3.org/TR/klreq/"
+        },
+        {
+            "name": "Styling vertical Chinese, Japanese, Korean and Mongolian text",
+            "href": "https://www.w3.org/International/articles/vertical-text/"
+        }
+    ],
+    [
+        {
+            "name": "Language tags in HTML and XML",
+            "href": "https://www.w3.org/International/articles/language-tags/"
+        },
+        {
+            "name": "Declaring language in HTML",
+            "href": "https://www.w3.org/International/questions/qa-html-language-declarations"
+        },
+        {
+            "name": "Styling using language attributes",
+            "href": "https://www.w3.org/International/questions/qa-css-lang"
+        },
+        {
+            "name": "Why use the language attribute?",
+            "href": "https://www.w3.org/International/questions/qa-lang-why"
+        }
+    ],
+    [
+        {
+            "name": "BCP 47 - Tags for Identifying Languages",
+            "href": "https://tools.ietf.org/html/bcp47"
+        }
+    ],
+    [
+        {
+            "name": "Language Subtag Registry — IANA",
+            "href": "https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry"
+        }
+    ],
+    [
+        {
+            "name": "List of CJK fonts - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/List_of_CJK_fonts"
+        },
+        {
+            "name": "Source Han Sans - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Source_Han_Sans"
+        },
+        {
+            "name": "Source Han Serif - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Source_Han_Serif"
+        },
+        {
+            "name": "Noto fonts - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Noto_fonts"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - googlefonts/noto-cjk: Noto CJK fonts",
+            "href": "https://github.com/googlefonts/noto-cjk"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - adobe-fonts/adobe-notdef: Adobe NotDef",
+            "href": "https://github.com/adobe-fonts/adobe-notdef"
+        },
+        {
+            "name": "GitHub - adobe-fonts/adobe-blank: Adobe Blank",
+            "href": "https://github.com/adobe-fonts/adobe-blank"
+        },
+        {
+            "name": "GitHub - adobe-fonts/adobe-blank-2: Adobe Blank 2",
+            "href": "https://github.com/adobe-fonts/adobe-blank-2"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - adobe-fonts/source-han-sans: Source Han Sans | 思源黑体 | 思源黑體 | 思源黑體 香港 | 源ノ角ゴシック | 본고딕",
+            "href": "https://github.com/adobe-fonts/source-han-sans"
+        },
+        {
+            "name": "Source Han Sans - SourceHanSansReadMe.pdf",
+            "href": "https://raw.githubusercontent.com/adobe-fonts/source-han-sans/release/SourceHanSansReadMe.pdf"
+        }
+    ],
+    [
+        {
+            "name": "CJK Type Blog | CJK Fonts, Character Sets & Encodings.",
+            "href": "https://ccjktype.fonts.adobe.com/"
+        },
+        {
+            "name": "Source Han Sans Version 2.001",
+            "href": "https://ccjktype.fonts.adobe.com/2019/04/source-han-sans-2001.html"
+        },
+        {
+            "name": "Source Han Serif",
+            "href": "https://source.typekit.com/source-han-serif/"
+        }
+    ],
+    [
+        {
+            "name": "Adobe-Japan1-7 Published!",
+            "href": "https://ccjktype.fonts.adobe.com/2019/04/aj17-published.html"
+        },
+        {
+            "name": "A Brief History of Japan’s Era Name Ligatures",
+            "href": "https://ccjktype.fonts.adobe.com/2019/03/era-name-ligature-history.html"
+        },
+        {
+            "name": "“Bahts is [not] parts”",
+            "href": "https://ccjktype.fonts.adobe.com/2016/03/bahts-is-parts.html"
+        },
+        {
+            "name": "Character ㌬(U+332C) is being mojibake · Issue #78 · adobe-fonts/source-han-sans · GitHub",
+            "href": "https://github.com/adobe-fonts/source-han-sans/issues/78"
+        }
+    ],
+    [
+        {
+            "name": "GitHub - adobe-type-tools/Adobe-Japan1: The Adobe-Japan1-7 Character Collection",
+            "href": "https://github.com/adobe-type-tools/Adobe-Japan1/"
+        }
+    ],
+    [
+        {
+            "name": "Biangbiang noodles - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Biangbiang_noodles"
+        },
+        {
+            "name": "Taito (kanji) - Wikipedia",
+            "href": "https://en.wikipedia.org/wiki/Taito_(kanji)"
+        }
+    ],
+    [
+        {
+            "name": "Your Code Displays Japanese Wrong",
+            "href": "https://heistak.github.io/your-code-displays-japanese-wrong/"
+        }
+    ]
+]

@@ -2,6 +2,16 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.0.0
+
+- Implemented minimal support for `Unicode 15.0`: new blocks, new scripts, new characters.
+- Added new samples to the **Unicode Inspector** and **Unicode Segmenter** utilities.
+- Renamed `CJK Font Variants` utility to `Pan-CJK Font Variants`.
+- Updated `Electron Packager` to version `15.5.2`.
+- Updated `Electron` to version `17.4.11`.
+
+**Warning**: until the `Electron` framework provides full support for `Unicode 15.0`, results for regular expressions, case folding, normalization, segmentation, line breaking, sorting, etc. are still partially unreliable.
+
 ## 11.6.0
 
 - Increased font size of Unihan characters in the **View by Grid** feature of the **Unihan Data Finder** utility.

@@ -641,6 +641,10 @@
                 "alias": "Kana"
             },
             {
+                "canonic": "Kawi",
+                "alias": "Kawi"
+            },
+            {
                 "canonic": "Kayah_Li",
                 "alias": "Kali"
             },
@@ -775,6 +779,10 @@
             {
                 "canonic": "Nabataean",
                 "alias": "Nbat"
+            },
+            {
+                "canonic": "Nag_Mundari",
+                "alias": "Nagm"
             },
             {
                 "canonic": "Nandinagari",
@@ -1293,6 +1301,10 @@
                 "alias": "Kana"
             },
             {
+                "canonic": "Kawi",
+                "alias": "Kawi"
+            },
+            {
                 "canonic": "Kayah_Li",
                 "alias": "Kali"
             },
@@ -1427,6 +1439,10 @@
             {
                 "canonic": "Nabataean",
                 "alias": "Nbat"
+            },
+            {
+                "canonic": "Nag_Mundari",
+                "alias": "Nagm"
             },
             {
                 "canonic": "Nandinagari",
