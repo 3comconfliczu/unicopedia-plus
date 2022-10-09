@@ -65,4 +65,4 @@ for (let codePoint in codePoints)
         }
     }
 }
-return $.stringify (asymmetricVariants, null, 4);
+$.write ($.stringify (asymmetricVariants, null, 4));

@@ -10,4 +10,4 @@ for (let emoji in emojiTestList)
     }
     sizes[size]++;
 }
-return $.stringify (sizes, null, 4);
+$.write ($.stringify (sizes, null, 4));

@@ -306,9 +306,17 @@ module.exports.start = function (context)
     //
     function showGraphemeMenu (event)
     {
-        event.preventDefault ();
-        currentGrapheme = event.currentTarget.dataset.wideCharacter;
-        graphemeContextualMenu.popup ({ window: currentWindow });
+        let cjkData = event.target.closest ('td[class="cjk-data"]');
+        if (cjkData)
+        {
+            event.preventDefault ();
+            let grapheme = cjkData.dataset.wideCharacter;
+            if (grapheme)
+            {
+                currentGrapheme = grapheme;
+                graphemeContextualMenu.popup ({ window: currentWindow });
+            }
+        }
     }
     //
     function createSheet (wideCharacters)
@@ -371,7 +379,6 @@ module.exports.start = function (context)
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
                                 data.dataset.wideCharacter = wideCharacter;
-                                data.addEventListener ('contextmenu', showGraphemeMenu);
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');
@@ -397,6 +404,7 @@ module.exports.start = function (context)
                 {
                     table.appendChild (headerRow.cloneNode (true));
                 }
+                table.addEventListener ('contextmenu', showGraphemeMenu);
                 sheet.appendChild (table);
                 sheet.classList.add ('vertical');
             }
@@ -444,7 +452,6 @@ module.exports.start = function (context)
                                 data.dataset.index = wideCharacterIndex;
                                 data.addEventListener ('mousedown', showDifferences);
                                 data.dataset.wideCharacter = wideCharacter;
-                                data.addEventListener ('contextmenu', showGraphemeMenu);
                                 let base = document.createElement ('div');
                                 base.className = 'cjk-data-base';
                                 let baseChar = document.createElement ('span');
@@ -474,6 +481,7 @@ module.exports.start = function (context)
                         table.appendChild (dataRow);
                     }
                 );
+                table.addEventListener ('contextmenu', showGraphemeMenu);
                 sheet.appendChild (table);
                 sheet.classList.add ('horizontal');
             }

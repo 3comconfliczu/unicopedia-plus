@@ -3,10 +3,10 @@ const { codePoints } = require ('./lib/unicode/parsed-unihan-data.js');
 const variantProperties =
 [
     "kSemanticVariant",
-    "kSimplifiedVariant",
+    // "kSimplifiedVariant",
     "kSpecializedSemanticVariant",
     "kSpoofingVariant",
-    "kTraditionalVariant",
+    // "kTraditionalVariant",
     "kZVariant"
 ];
 let selfVariants = { };
@@ -37,4 +37,4 @@ for (let codePoint in codePoints)
         }
     }
 }
-return $.stringify (selfVariants, null, 4);
+$.write ($.stringify (selfVariants, null, 4));

@@ -30,8 +30,10 @@ let defaultFolderPath;
 //
 module.exports.start = function (context)
 {
-    const { shell } = require ('electron');
-    const { Menu } = require ('@electron/remote');
+    const { clipboard, shell } = require ('electron');
+    const { getCurrentWindow, Menu } = require ('@electron/remote');
+    //
+    const currentWindow = getCurrentWindow ();
     //
     const fs = require ('fs');
     const path = require ('path');
@@ -367,6 +369,30 @@ module.exports.start = function (context)
         return optionsArray.join (", ");
     }
     //
+    let currentCharacter;
+    //
+    let characterMenuTemplate =
+    [
+        { label: "Copy Character", click: (menuItem) => clipboard.writeText (currentCharacter) },
+        { label: "Copy Code Point", click: (menuItem) => clipboard.writeText (unicode.characterToCodePoint (currentCharacter)) }
+    ];
+    let characterContextualMenu = Menu.buildFromTemplate (characterMenuTemplate);
+    //
+    function showCharacterMenu (event)
+    {
+        let graphNode = event.target.closest ('.node');
+        if (graphNode)
+        {
+            event.preventDefault ();
+            let character = graphNode.querySelector ('a text').textContent;
+            if (character)
+            {
+                currentCharacter = character;
+                characterContextualMenu.popup ({ window: currentWindow });
+            }
+        }
+    }
+    //
     function displayData (character)
     {
         dotString = "";
@@ -526,6 +552,7 @@ module.exports.start = function (context)
                     {
                         svgResult = postProcessSVG (result);
                         graphContainer.innerHTML = svgResult;
+                        graphContainer.addEventListener ('contextmenu', showCharacterMenu);
                         saveSVGButton.disabled = false;
                     }
                 );

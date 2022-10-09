@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.1.0
+
+- Updated lists of supported locales.
+- Updated sample scripts in the **JavaScript Runner** utility.
+- Added `Copy` contextual menus to characters of graph in the **Unihan Variants** utility.
+- Optimized `Copy Grapheme` contextual menu in the **Pan-CJK Font Variants** utility.
+
 ## 12.0.0
 
 - Implemented minimal support for `Unicode 15.0`: new blocks, new scripts, new characters.
