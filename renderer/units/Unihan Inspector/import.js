@@ -34,6 +34,7 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const unihan = require ('../../lib/unicode/unihan.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     const numericValuesData = require ('../../lib/unicode/parsed-numeric-values-data.js');
     const compatibilityVariants = require ('../../lib/unicode/get-cjk-compatibility-variants.js');
@@ -872,30 +873,6 @@ module.exports.start = function (context)
         }
     }
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)[\u{FE00}-\u{FE0F}\u{E0100}-\u{E01EF}]?|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
-    //
-    function validateUnihanCharacter (inputString)
-    {
-        let character = "";
-        let match = inputString.match (characterOrCodePointRegex);
-        if (match)
-        {
-            if (match[1])
-            {
-                character = match[1];
-            }
-            else if (match[2])
-            {
-                character = String.fromCodePoint (parseInt (match[2], 16));
-            }
-            if (!(regexp.isUnihan (character) || regexp.isRadical (character)))
-            {
-                character = "";
-            }
-        }
-        return character;
-    }
-    //
     unihanInput.addEventListener
     (
         'input',
@@ -904,7 +881,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!validateUnihanCharacter (event.currentTarget.value))
+                if (!unihan.validateUnihanOrRadicalInput (event.currentTarget.value))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -992,7 +969,7 @@ module.exports.start = function (context)
         {
             if (unihanInput.value)
             {
-                let character = validateUnihanCharacter (unihanInput.value);
+                let character = unihan.validateUnihanOrRadicalInput (unihanInput.value);
                 if (character)
                 {
                     updateUnihanData (character);

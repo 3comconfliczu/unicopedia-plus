@@ -603,8 +603,6 @@ module.exports.start = function (context)
         }
     );
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
-    //
     function getBlockKeyfromCharacter (character)
     {
         let blockKey = null;
@@ -623,28 +621,6 @@ module.exports.start = function (context)
         return blockKey;
     }
     //
-    function validateUnicodeCharacter (inputString)
-    {
-        let character = "";
-        let match = inputString.match (characterOrCodePointRegex);
-        if (match)
-        {
-            if (match[1])
-            {
-                character = match[1];
-            }
-            else if (match[2])
-            {
-                let num = parseInt (match[2], 16);
-                if (num <= 0x10FFFF)
-                {
-                    character = String.fromCodePoint (num);
-                }
-            }
-        }
-        return character;
-    }
-    //
     blockSpecimen.addEventListener
     (
         'input',
@@ -653,7 +629,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!getBlockKeyfromCharacter (validateUnicodeCharacter (event.currentTarget.value)))
+                if (!getBlockKeyfromCharacter (unicode.validateUnicodeInput (event.currentTarget.value)))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -731,7 +707,7 @@ module.exports.start = function (context)
         {
             if (blockSpecimen.value)
             {
-                let character = validateUnicodeCharacter (blockSpecimen.value);
+                let character = unicode.validateUnicodeInput (blockSpecimen.value);
                 let blockKey = getBlockKeyfromCharacter (character);
                 if (blockKey)
                 {

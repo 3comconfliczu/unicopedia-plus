@@ -35,8 +35,41 @@ function getTooltip (character)
     return lines.join ("\n");
 }
 //
+function validateUnifiedInput (inputString)
+{
+    let character = unicode.validateUnicodeInput (inputString);
+    if (!regexp.isUnified (character))
+    {
+        character = "";
+    }
+    return character;
+}
+//
+function validateUnihanInput (inputString)
+{
+    let character = unicode.validateUnicodeInput (inputString);
+    if (!regexp.isUnihan (character))
+    {
+        character = "";
+    }
+    return character;
+}
+//
+function validateUnihanOrRadicalInput (inputString)
+{
+    let character = unicode.validateUnicodeInput (inputString);
+    if (!(regexp.isUnihan (character) || regexp.isRadical (character)))
+    {
+        character = "";
+    }
+    return character;
+}
+//
 module.exports =
 {
-    getTooltip
+    getTooltip,
+    validateUnifiedInput,
+    validateUnihanInput,
+    validateUnihanOrRadicalInput
 };
 //

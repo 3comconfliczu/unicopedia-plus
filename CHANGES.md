@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.2.0
+
+- Refactored Unicode and Unihan input validation code.
+- Updated emoji shortnames and keywords using `CLDR 42.0` annotations.
+- Updated samples of kana named sequences in the **Pan-CJK Font Variants** utility.
+- Updated samples of chess pieces in the **Unicode Inspector** utility.
+
 ## 12.1.0
 
 - Updated lists of supported locales.

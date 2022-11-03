@@ -742,10 +742,10 @@ function codePointsToCharacters (codePoints)
     let code;
     while ((code = regex.exec (codePoints)))
     {
-        let index = parseInt (code[1] || code[2] || code[3] || code[4] || code[5] || code[6], 16);
-        if (index <= 0x10FFFF)
+        let num = parseInt (code[1] || code[2] || code[3] || code[4] || code[5] || code[6], 16);
+        if (num <= 0x10FFFF)
         {
-            characters += String.fromCodePoint (index);
+            characters += String.fromCodePoint (num);
         }
     }
     return characters;
@@ -919,6 +919,30 @@ function matchVerticalOrientation (character, orientationArray)
     return match;
 }
 //
+const characterOrCodePointRegex = /^\s*(?:(.)[\u{FE00}-\u{FE0F}\u{E0100}-\u{E01EF}]?|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
+//
+function validateUnicodeInput (inputString)
+{
+    let character = "";
+    let match = inputString.match (characterOrCodePointRegex);
+    if (match)
+    {
+        if (match[1])
+        {
+            character = match[1];
+        }
+        else if (match[2])
+        {
+            let num = parseInt (match[2], 16);
+            if (num <= 0x10FFFF)
+            {
+                character = String.fromCodePoint (num);
+            }
+        }
+    }
+    return character;
+}
+//
 module.exports =
 {
     characterCount,
@@ -931,6 +955,7 @@ module.exports =
     findCharactersByMatch,
     getCharacterBasicData,
     matchEastAsianWidth,
-    matchVerticalOrientation
+    matchVerticalOrientation,
+    validateUnicodeInput
 };
 //

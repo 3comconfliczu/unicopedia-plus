@@ -303,7 +303,7 @@ appIcon.querySelector ('use').addEventListener
         let isCommandOrControlDoubleClick = (process.platform === 'darwin') ? event.metaKey : event.ctrlKey;
         if (isCommandOrControlDoubleClick)
         {
-            shell.openExternal (settings.electronApp.URL);
+            shell.openExternal (settings.electronApps.URL);
         }
     }
 );

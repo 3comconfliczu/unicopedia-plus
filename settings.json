@@ -25,10 +25,10 @@
     "noCategoryName": "Other",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "copyright": "© 2018-2022 Michel Mariani.",
-    "electronApp":
+    "electronApps":
     {
-        "label": "Unicopedia Plus | Apps | Electron",
-        "URL": "https://www.electronjs.org/apps/unicopedia-plus"
+        "label": "App Showcase | Electron",
+        "URL": "https://www.electronjs.org/apps/"
     },
     "repository":
     {

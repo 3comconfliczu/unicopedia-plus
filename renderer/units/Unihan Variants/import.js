@@ -74,30 +74,6 @@ module.exports.start = function (context)
     //
     unihanHistory = prefs.unihanHistory;
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)[\u{FE00}-\u{FE0F}\u{E0100}-\u{E01EF}]?|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
-    //
-    function validateUnihanCharacter (inputString)
-    {
-        let character = "";
-        let match = inputString.match (characterOrCodePointRegex);
-        if (match)
-        {
-            if (match[1])
-            {
-                character = match[1];
-            }
-            else if (match[2])
-            {
-                character = String.fromCodePoint (parseInt (match[2], 16));
-            }
-            if (!regexp.isUnihan (character))
-            {
-                character = "";
-            }
-        }
-        return character;
-    }
-    //
     unihanInput.addEventListener
     (
         'input',
@@ -106,7 +82,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!validateUnihanCharacter (event.currentTarget.value))
+                if (!unihan.validateUnihanInput (event.currentTarget.value))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -596,7 +572,7 @@ module.exports.start = function (context)
         {
             if (unihanInput.value)
             {
-                let character = validateUnihanCharacter (unihanInput.value);
+                let character = unihan.validateUnihanInput (unihanInput.value);
                 if (character)
                 {
                     updateUnihanData (character);

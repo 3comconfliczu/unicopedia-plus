@@ -80,6 +80,7 @@ module.exports.start = function (context)
     //
     const regexp = require ('../../lib/unicode/regexp.js');
     const unicode = require ('../../lib/unicode/unicode.js');
+    const unihan = require ('../../lib/unicode/unihan.js');
     const unihanData = require ('../../lib/unicode/parsed-unihan-data.js');
     //
     let unihanCount = unihanData.fullSet.length;
@@ -836,30 +837,6 @@ module.exports.start = function (context)
         }
     );
     //
-    const characterOrCodePointRegex = /^\s*(?:(.)[\u{FE00}-\u{FE0F}\u{E0100}-\u{E01EF}]?|(?:[Uu]\+?)?([0-9a-fA-F]{4,8}))\s*$/u;
-    //
-    function validateUnihanCharacter (inputString)
-    {
-        let character = "";
-        let match = inputString.match (characterOrCodePointRegex);
-        if (match)
-        {
-            if (match[1])
-            {
-                character = match[1];
-            }
-            else if (match[2])
-            {
-                character = String.fromCodePoint (parseInt (match[2], 16));
-            }
-            if (!regexp.isUnihan (character))
-            {
-                character = "";
-            }
-        }
-        return character;
-    }
-    //
     gridSpecimen.addEventListener
     (
         'input',
@@ -868,7 +845,7 @@ module.exports.start = function (context)
             event.currentTarget.classList.remove ('invalid');
             if (event.currentTarget.value)
             {
-                if (!validateUnihanCharacter (event.currentTarget.value))
+                if (!unihan.validateUnihanInput (event.currentTarget.value))
                 {
                     event.currentTarget.classList.add ('invalid');
                 }
@@ -945,7 +922,7 @@ module.exports.start = function (context)
         {
             if (gridSpecimen.value)
             {
-                let character = validateUnihanCharacter (gridSpecimen.value);
+                let character = unihan.validateUnihanInput (gridSpecimen.value);
                 if (character)
                 {
                     let index = character.codePointAt (0);

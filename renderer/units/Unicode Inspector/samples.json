@@ -1,5 +1,19 @@
 [
     {
+        "label": "Chess Pieces",
+        "items":
+        [
+            {
+                "label": "Chinese",
+                "string": "🩠🩡🩢🩣🩤🩥🩦\n🩧🩨🩩🩪🩫🩬🩭"
+            },
+            {
+                "label": "Western",
+                "string": "♔♕♖♗♘♙\n♚♛♜♝♞♟"
+            }
+        ]
+    },
+    {
         "label": "CJK Numerals",
         "items":
         [
@@ -198,10 +212,6 @@
             {
                 "label": "Basic Hearts",
                 "string": "❣️❤️💔💙💚💛💜💟"
-            },
-            {
-                "label": "Chess Pieces",
-                "string": "♔♕♖♗♘♙\n♚♛♜♝♞♟"
             },
             {
                 "label": "Counting Rods",

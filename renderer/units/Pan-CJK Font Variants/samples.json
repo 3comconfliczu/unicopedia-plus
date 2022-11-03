@@ -186,8 +186,16 @@
                 "string": "ゟ＝より"
             },
             {
-                "label": "Hiragana Named Sequences",
+                "label": "Hiragana Named Sequences (Nasals)",
                 "string": "か゚き゚く゚け゚こ゚"
+            },
+            {
+                "label": "Katakana Named Sequences (Nasals)",
+                "string": "カ゚キ゚ク゚ケ゚コ゚"
+            },
+            {
+                "label": "Katakana Named Sequences (Ainu)",
+                "string": "セ゚ツ゚ト゚ㇷ゚"
             },
             {
                 "label": "Prefectures of Japan",
