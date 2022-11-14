@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.3.0
+
+- Updated `regexpu-core` module: new scripts Kawi and Nag_Mundari (Unicode 15.0) are now supported in regular expressions.
+
 ## 12.2.0
 
 - Refactored Unicode and Unihan input validation code.
