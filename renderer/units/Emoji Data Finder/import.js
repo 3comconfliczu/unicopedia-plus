@@ -410,7 +410,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentEmojiByName.length > 0)
                     {
@@ -420,7 +420,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentEmojiByName.join (""));
                 }
@@ -428,7 +428,7 @@ module.exports.start = function (context)
             { type: 'separator' },
             {
                 label: "Clear Results",
-                click: () => 
+                click: () =>
                 {
                     currentEmojiByName = [ ];
                     updateNameResults (currentEmojiByName.length, emojiCount);
@@ -571,7 +571,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentEmojiBySequence.length > 0)
                     {
@@ -581,7 +581,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentEmojiBySequence.join (""));
                 }
@@ -589,7 +589,7 @@ module.exports.start = function (context)
             { type: 'separator' },
             {
                 label: "Clear Results",
-                click: () => 
+                click: () =>
                 {
                     currentEmojiBySequence = [ ];
                     updateSequenceResults (currentEmojiBySequence.length, emojiCount);
@@ -740,7 +740,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Discard Non-Emoji", // "Strip Out Non-Emoji"
-                click: () => 
+                click: () =>
                 {
                     textInputString.value = (textInputString.value.match (emojiRegex) || [ ]).join ("");
                     textInputString.dispatchEvent (new Event ('input'));
@@ -748,7 +748,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Upgrade to RGI Emoji", // "Promote to RGI Emoji", "Restore Incomplete Emoji"
-                click: () => 
+                click: () =>
                 {
                     textInputString.value = textInputString.value.replace
                     (
@@ -760,7 +760,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Remove Duplicate Emoji", // "Delete Emoji Duplicates"
-                click: () => 
+                click: () =>
                 {
                     let uniqueEmoji = { };
                     textInputString.value = textInputString.value.replace
@@ -876,7 +876,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentEmojiByText.length > 0)
                     {
@@ -886,7 +886,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentEmojiByText.join (""));
                 }

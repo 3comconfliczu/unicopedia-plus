@@ -352,7 +352,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentCharactersByRadicalStrokes.length > 0)
                     {
@@ -362,7 +362,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentCharactersByRadicalStrokes.join (""));
                 }
@@ -370,7 +370,7 @@ module.exports.start = function (context)
             { type: 'separator' },
             {
                 label: "Clear Results",
-                click: () => 
+                click: () =>
                 {
                     clearSearch (searchData);
                     currentCharactersByRadicalStrokes = [ ];

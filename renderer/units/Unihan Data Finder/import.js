@@ -403,7 +403,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentCharactersByTag.length > 0)
                     {
@@ -413,7 +413,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentCharactersByTag.join (""));
                 }
@@ -421,7 +421,7 @@ module.exports.start = function (context)
             { type: 'separator' },
             {
                 label: "Clear Results",
-                click: () => 
+                click: () =>
                 {
                     clearSearch (tagSearchData);
                     currentCharactersByTag = [ ];
@@ -668,7 +668,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentCharactersByMatch.length > 0)
                     {
@@ -678,7 +678,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentCharactersByMatch.join (""));
                 }
@@ -686,7 +686,7 @@ module.exports.start = function (context)
             { type: 'separator' },
             {
                 label: "Clear Results",
-                click: () => 
+                click: () =>
                 {
                     clearSearch (matchSearchData);
                     currentCharactersByMatch = [ ];
@@ -1047,7 +1047,7 @@ module.exports.start = function (context)
         [
             {
                 label: "Copy Results", // "Copy Results as String"
-                click: () => 
+                click: () =>
                 {
                     if (currentCharactersByGrid.length > 0)
                     {
@@ -1057,7 +1057,7 @@ module.exports.start = function (context)
             },
             {
                 label: "Save Results...", // "Save Results to File"
-                click: () => 
+                click: () =>
                 {
                     saveResults (currentCharactersByGrid.join (""));
                 }

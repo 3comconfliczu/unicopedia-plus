@@ -295,7 +295,7 @@ module.exports.start = function (context)
             }
             else
             {
-                // Take this opportunity to italicize the code point of compatibility characters 
+                // Take this opportunity to italicize the code point of compatibility characters
                 let character = texts[0].textContent;
                 let text = texts[1];
                 if (regexp.isCompatibility (character))

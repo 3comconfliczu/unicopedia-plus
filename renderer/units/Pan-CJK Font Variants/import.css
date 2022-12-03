@@ -141,7 +141,7 @@
     background-color: white;
 }
 
-#pan-cjk-font-variants-unit .sheet.horizontal 
+#pan-cjk-font-variants-unit .sheet.horizontal
 {
     display: block;
     margin: 1em 0 0 0;
@@ -156,11 +156,16 @@
     width: unset;
 }
 
+#pan-cjk-font-variants-unit .table .cjk-data,
+#pan-cjk-font-variants-unit .table .cjk-title
+{
+    border: 1px solid var(--color-frame);
+    color: var(--color);
+}
+
 #pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-title
 {
     background-color: var(--color-background);
-    border: 1px solid var(--color-frame);
-    color: var(--color);
     text-align: center;
     vertical-align: middle;
     font-size: 12.5px;
@@ -192,8 +197,6 @@
 #pan-cjk-font-variants-unit .sheet.horizontal .table .cjk-data
 {
     position: relative;
-    border: 1px solid var(--color-frame);
-    color: var(--color);
     font-size: 72px;
     width: 1.1em;
     min-width: 1.1em;
@@ -244,8 +247,6 @@
 #pan-cjk-font-variants-unit .sheet.vertical .table .cjk-title
 {
     background-color: var(--color-background);
-    border: 1px solid var(--color-frame);
-    color: var(--color);
     text-align: center;
     vertical-align: middle;
     font-size: 12.5px;
@@ -261,8 +262,6 @@
 #pan-cjk-font-variants-unit .sheet.vertical .table .cjk-data
 {
     position: relative;
-    border: 1px solid var(--color-frame);
-    color: var(--color);
     font-size: 72px;
     width: 1.1em;
     min-width: 1.1em;

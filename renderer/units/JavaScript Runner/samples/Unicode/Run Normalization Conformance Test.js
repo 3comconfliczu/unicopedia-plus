@@ -56,7 +56,7 @@ for (let codePoint in unicodeData)
         assert (source, 'NFKC', source, source);
         assert (source, 'NFKD', source, source);
     }
-} 
+}
 let stop = window.performance.now ();
 $.write (`Performed normalization conformance test in ${((stop - start) / 1000).toFixed (2)} seconds: `);
 if (errors.length > 0)

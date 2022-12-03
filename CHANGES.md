@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.3.1
+
+- Fixed incorrect locales containing an '_' character, replaced by '-'.
+
 ## 12.3.0
 
 - Updated `regexpu-core` module: new scripts Kawi and Nag_Mundari (Unicode 15.0) are now supported in regular expressions.
@@ -61,7 +65,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## 11.2.1
 
 - Fixed validation of optional Unihan variation selector (filtered out anyway).
-- Added standardized variation sequence to tooltip of Unihan compatibility characters.  
+- Added standardized variation sequence to tooltip of Unihan compatibility characters.
 - Updated `Electron` to version `17.1.1`.
 
 ## 11.2.0
@@ -600,7 +604,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 - Added release notes (CHANGES.md).
 - Improved layout of emoji in the **Emoji Data Finder** utility.
-- Added support for 4 Unicode properties: `Joining Type`, `Joining Group`, `Indic Positional Category`, `Indic Syllabic Category` to the **Unicode Inspector** utilty. 
+- Added support for 4 Unicode properties: `Joining Type`, `Joining Group`, `Indic Positional Category`, `Indic Syllabic Category` to the **Unicode Inspector** utilty.
 - Fixed incorrect build on `win32` by temporarily removing the `--asar` option of the `electron-packager` command.
 
 ## 6.2.2
@@ -1000,7 +1004,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## 4.4.0
 
 - Extended the *Match Decomposition* search option of the **Match Character** feature of the **Unicode Data Finder** utility.
-- Sorted in lexical order `Binary Properties`, `Core Properties` and `Script Extensions` in the **Unicode Inpector** utility.  
+- Sorted in lexical order `Binary Properties`, `Core Properties` and `Script Extensions` in the **Unicode Inpector** utility.
 
 ## 4.3.0
 

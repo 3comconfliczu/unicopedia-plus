@@ -144,6 +144,7 @@ const locales =
 // https://developer.chrome.com/docs/webstore/i18n/#choosing-locales-to-support
 // https://www.chromium.org/developers/design-documents/extensions/how-the-extension-system-works/i18n/
 //
+// Note: had to replace '_' by '-' to avoid errors when calling String.toLocaleUpperCase ()...
 const locales =
 {
     "am": "Amharic",
@@ -156,10 +157,10 @@ const locales =
     "de": "German",
     "el": "Greek",
     "en": "English",
-    "en_GB": "English (Great Britain)",
-    "en_US": "English (USA)",
+    "en-GB": "English (Great Britain)",
+    "en-US": "English (USA)",
     "es": "Spanish",
-    "es_419": "Spanish (Latin America and Caribbean)",
+    "es-419": "Spanish (Latin America and Caribbean)",
     "et": "Estonian",
     "fa": "Persian",    // ?
     "fi": "Finnish",
@@ -183,8 +184,8 @@ const locales =
     "nl": "Dutch",
     "no": "Norwegian",  // ?
     "pl": "Polish",
-    "pt_BR": "Portuguese (Brazil)",
-    "pt_PT": "Portuguese (Portugal)",
+    "pt-BR": "Portuguese (Brazil)",
+    "pt-PT": "Portuguese (Portugal)",
     "ro": "Romanian",
     "ru": "Russian",
     "sk": "Slovak",
@@ -198,8 +199,8 @@ const locales =
     "tr": "Turkish",
     "uk": "Ukrainian",
     "vi": "Vietnamese",
-    "zh_CN": "Chinese (China)",
-    "zh_TW": "Chinese (Taiwan)",
+    "zh-CN": "Chinese (China)",
+    "zh-TW": "Chinese (Taiwan)",
     //
     // "nb": "Norwegian (Bokmal)",
     // "or": "Oriya",
