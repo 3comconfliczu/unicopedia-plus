@@ -303,6 +303,12 @@ module.exports.start = function (context)
                     text.setAttribute ('font-style', "italic");
                 }
             }
+            // Force white background (none if bold style!)
+            let fill = ellipse.getAttribute ('fill');
+            if (fill === "none")
+            {
+                ellipse.setAttribute ('fill', "#ffffff");
+            }
         }
         // Remove unwanted tooltips
         let tooltips = doc.documentElement.querySelectorAll ('.edge title, .node title');
@@ -356,16 +362,12 @@ module.exports.start = function (context)
     //
     function showCharacterMenu (event)
     {
-        let graphNode = event.target.closest ('.node');
-        if (graphNode)
+        let aTag = event.target.closest ('a');
+        if (aTag)
         {
             event.preventDefault ();
-            let character = graphNode.querySelector ('a text').textContent;
-            if (character)
-            {
-                currentCharacter = character;
-                characterContextualMenu.popup ({ window: currentWindow });
-            }
+            currentCharacter = aTag.querySelector ('text').textContent;
+            characterContextualMenu.popup ({ window: currentWindow });
         }
     }
     //

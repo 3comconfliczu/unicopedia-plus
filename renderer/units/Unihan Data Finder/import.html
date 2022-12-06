@@ -211,7 +211,7 @@
                         <li>Unihan characters with the 'unified ideograph' status:<br><code class="select-all">\p{Unified_Ideograph}</code></li>
                         <li>Unihan characters with the 'compatibility ideograph' status:<br><code class="select-all">[^\p{Unified_Ideograph}]</code> or <code class="select-all">\P{Unified_Ideograph}</code></li>
                         <li>Unihan characters belonging to the 'CJK Compatibility Ideographs' block, but with a 'unified ideograph' status instead:<br><code class="select-all">(?=[\uF900-\uFAFF])\p{Unified_Ideograph}</code></li>
-                        <li>Unihan characters belonging to the 'CJK Unified Ideographs Extension H' block:<br><code class="select-all">[\u{31350}-\u{323AF}]</code></li>
+                        <li>Unihan characters belonging to the 'CJK Unified Ideographs Extension H' block:<br><code class="select-all">[\u{31350}-\u{323AF}]</code> or <code class="select-all">[𱍐-𲎯]</code></li>
                         <li>Twelve consecutive Unihan characters in a range, from 龍 (U+9F8D) to 龘 (U+9F98):<br><code class="select-all">[龍-龘]</code></li>
                         <li>Featured Unihan characters newly introduced in Unicode 15.0:<br><code class="select-all">[𫜹𱍐𱰭𱼀]</code></li>
                     </ul>

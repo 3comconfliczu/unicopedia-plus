@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.4.0
+
+- Maximized clickable area for `Copy` contextual menu in SVG graph of the **Unihan Variants** utility.
+
 ## 12.3.1
 
 - Fixed incorrect locales containing an '_' character, replaced by '-'.
