@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.4.1
+
+- Updated `@electron/remote` module to version `2.0.9`.
+
 ## 12.4.0
 
 - Maximized clickable area for `Copy` contextual menu in SVG graph of the **Unihan Variants** utility.
