@@ -2,6 +2,8 @@
 const electron = require ('electron');
 const { app, BrowserWindow, dialog, globalShortcut, ipcMain, Menu, shell } = electron;
 //
+electron.ipcMain.setMaxListeners (20);
+//
 const remoteMain = require ('@electron/remote/main');
 //
 remoteMain.initialize ();

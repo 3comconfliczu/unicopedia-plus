@@ -412,7 +412,14 @@ module.exports.start = function (context)
             symbol.title = unihan.getTooltip (character);
             symbol.textContent = character;
             linearCharacter.appendChild (symbol);
-            linearCodePoint.textContent = unicode.charactersToCodePoints (character);
+            let codePoint = document.createElement ('span');
+            codePoint.className = 'code-point';
+            if (regexp.isCompatibility (character))
+            {
+                codePoint.classList.add ('compatibility');
+            }
+            codePoint.textContent = unicode.characterToCodePoint (character);
+            linearCodePoint.appendChild (codePoint);
             let relations = getVariantRelations (character);
             // console.log (relations);
             let variants = [ ];
@@ -431,6 +438,7 @@ module.exports.start = function (context)
             // console.log (variants);
             if (variants.length > 0)
             {
+                let isFirst = true;
                 for (let variant of variants)
                 {
                     let symbol = document.createElement ('span');
@@ -438,8 +446,20 @@ module.exports.start = function (context)
                     symbol.title = unihan.getTooltip (variant);
                     symbol.textContent = variant;
                     linearVariants.appendChild (symbol);
+                    if (!isFirst)
+                    {
+                        linearCodePoints.appendChild (document.createTextNode (" "));
+                    }
+                    isFirst = false;
+                    let codePoint = document.createElement ('span');
+                    codePoint.className = 'code-point';
+                    if (regexp.isCompatibility (variant))
+                    {
+                        codePoint.classList.add ('compatibility');
+                    }
+                    codePoint.textContent = unicode.characterToCodePoint (variant);
+                    linearCodePoints.appendChild (codePoint);
                 }
-                linearCodePoints.textContent = unicode.charactersToCodePoints (variants.join (""));
             }
             try
             {

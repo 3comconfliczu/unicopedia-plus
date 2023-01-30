@@ -2,6 +2,11 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.5.0
+
+- Added italic style to code points of compatibility characters in the linear view of the **Unihan Variants** utility.
+- Updated copyright years.
+
 ## 12.4.1
 
 - Updated `@electron/remote` module to version `2.0.9`.

@@ -1,7 +1,7 @@
 {
     "name": "unicopedia-plus",
     "productName": "Unicopedia Plus",
-    "version": "12.4.1",
+    "version": "12.5.0",
     "description": "Developer-oriented set of Unicode, Unihan & emoji utilities.",
     "main": "main.js",
     "scripts": {
@@ -18,7 +18,7 @@
     },
     "build": {
         "appId": "com.tonton-pixel.unicopedia-plus",
-        "copyright": "Copyright © 2018-2022 ${author}.",
+        "copyright": "Copyright © 2018-2023 ${author}.",
         "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
         "directories": {
             "output": "build",

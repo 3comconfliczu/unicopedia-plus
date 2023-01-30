@@ -158,6 +158,12 @@
     height: 2em;
 }
 
+#unihan-variants-unit .linear-code-point .code-point.compatibility,
+#unihan-variants-unit .linear-row.code-points .code-point.compatibility
+{
+    font-style: italic;
+}
+
 #unihan-variants-unit .options
 {
     display: flex;

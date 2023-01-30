@@ -517,4 +517,4 @@ npm run build-darwin
 
 The MIT License (MIT).
 
-Copyright © 2018-2022 Michel Mariani.
+Copyright © 2018-2023 Michel Mariani.
