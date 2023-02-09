@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 12.6.0
+
+- Updated `regexpu-core` module to version `5.3.0`.
+
 ## 12.5.0
 
 - Added italic style to code points of compatibility characters in the linear view of the **Unihan Variants** utility.
