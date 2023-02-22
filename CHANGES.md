@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+
+## 13.0.0
+
+- Updated `Electron` to version `23.1.0`, adding full support for **Unicode 15.0**: regular expressions, case folding, normalization, segmentation, line breaking, sorting, etc.
+- Updated `Electron Builder` to version `23.6.0`.
+- Updated `Electron Packager` to version `17.1.1`.
+
 ## 12.6.0
 
 - Updated `regexpu-core` module to version `5.3.0`.
