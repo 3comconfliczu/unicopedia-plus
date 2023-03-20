@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 13.1.0
+
+- Updated `CJK Unusual` sample in the **Unicode Inspector** utility.
+- Updated `Electron` to version `23.1.4`.
 
 ## 13.0.0
 

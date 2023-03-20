@@ -4,6 +4,8 @@
 
 This desktop application works on macOS, Linux and Windows operating systems.
 
+The specialized [Unicopedia Sinica](https://github.com/tonton-pixel/unicopedia-sinica) application, developer-oriented set of Unicode utilities related to ideographs, is also available.
+
 <img src="screenshots/UP-social-preview.png" alt="Unicopedia Plus social preview">
 
 ## Utilities
