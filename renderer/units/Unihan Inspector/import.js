@@ -105,7 +105,12 @@ module.exports.start = function (context)
     }
     function onLinkClick (event)
     {
-        updateUnihanData (event.currentTarget.dataset.char);
+        let clickable = event.target.closest ('.clickable');
+        if (clickable)
+        {
+            event.preventDefault ();
+            updateUnihanData (clickable.dataset.char);
+        }
     }
     //
     const codePointOrCharacterPattern = '\\b(U\\+[0-9a-fA-F]{4,5})\\b|(.)';
@@ -167,12 +172,12 @@ module.exports.start = function (context)
             {
                 link.classList.add ('clickable');
                 link.dataset.char = clickable.char;
-                link.addEventListener ('click', onLinkClick);
             }
             link.textContent = clickable.matched;
             link.title = getTooltip (clickable.char);
             node.appendChild (link);
         }
+        node.addEventListener ('click', onLinkClick);
         node.appendChild (document.createTextNode (text.slice (lastIndex, text.length)));
     }
     //
@@ -567,7 +572,7 @@ module.exports.start = function (context)
                 rsValues = rsValues.map (rsValue => fromRSValue (rsValue).join (" +\xA0"));
                 //
                 let definitionValue = tags["kDefinition"];
-                let related = unihanData.related[character] || [ ];
+                let crossReferenced = unihanData.crossReferenced[character] || [ ];
                 let numericValue = numericValuesData[codePoint] || "";
                 let unified = [ ];
                 if (unicodeData.decomposition)
@@ -593,7 +598,7 @@ module.exports.start = function (context)
                     { name: "Definition", value: definitionValue },
                     { name: "Numeric Value", value: numericValue },
                     //
-                    { name: "Related", value: related.join (" ") },
+                    { name: "Cross-Referenced", value: crossReferenced.join (" ") },
                     //
                     { name: "Unified Variant", value: unified.join (" ") },
                     { name: "Compatibility Variants", value: compatibility.join (" ") },

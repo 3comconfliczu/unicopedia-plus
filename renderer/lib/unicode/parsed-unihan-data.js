@@ -923,7 +923,7 @@ const regexp = require ('../../lib/unicode/regexp.js');
 const codePointOrHanCharacterPattern = '\\b(U\\+[0-9a-fA-F]{4,5})\\b|(\\p{Script=Han})';
 const codePointOrHanCharacterRegex = regexp.build (codePointOrHanCharacterPattern, { useRegex: true, global: true });
 //
-const related = { };
+const crossReferenced = { };
 fullSet.forEach
 (
     key =>
@@ -955,11 +955,11 @@ fullSet.forEach
             {
                 if (character !== keyCharacter)
                 {
-                    if (!(character in related))
+                    if (!(character in crossReferenced))
                     {
-                        related[character] = [ ];
+                        crossReferenced[character] = [ ];
                     }
-                    related[character].push (keyCharacter);
+                    crossReferenced[character].push (keyCharacter);
                 }
             }
         }
@@ -974,6 +974,6 @@ module.exports =
     fullSet,
     coreSet,
     core2020Set,
-    related
+    crossReferenced
 };
 //
