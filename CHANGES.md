@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](https://semver.org/).
 
+## 13.3.0
+
+- Updated `Electron` to version `24.1.2`.
+
 ## 13.2.0
 
 - Renamed `Related` field to `Cross-Referenced` in the **Unihan Inspector** utility.
